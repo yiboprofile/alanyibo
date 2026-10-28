@@ -1,31 +1,13 @@
 import { products } from '../data/products'
-import { Arrow, Captions, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
+import { Arrow, Label, Tbd, Wrap } from './ui'
 
 /* The page's thesis as one graphic: four products laid out along who pays, and how */
 export default function Spectrum() {
   return (
-    <Wrap id="cases" labelledBy="h-cases" className="pt-[clamp(96px,10vw,144px)]">
-      <Captions left="One plan, three products." right="Four ways to set a price." className="mb-[clamp(48px,6vw,88px)]" />
-
-      <Split
-        heading={
-          <div>
-            <Headline id="h-cases" lines={[<Tbd key="a">Some products sell.</Tbd>, <Tbd key="b">I want to know why.</Tbd>]} />
-            <p className="draft-only mt-3 text-[13px] text-mark-ink">
-              Draft headline, for Alan to approve or replace. It has to be a question he actually asked.
-            </p>
-          </div>
-        }
-      >
-        <Lede>
-          I&rsquo;m Alan Wang, a senior at Urbana High School in Frederick, Maryland. With student teams I wrote one
-          business plan and built three apps. Each one answered the same question differently: who pays, and how?
-        </Lede>
-      </Split>
-
-      <div className="mt-[clamp(56px,6vw,88px)] bg-panel p-6 md:p-10">
+    <Wrap id="cases" className="pt-[clamp(72px,8vw,112px)] scroll-mt-6">
+      <div className="bg-panel p-6 md:p-10">
         <div className="flex items-center justify-between gap-4 mb-8">
-          <Label>Who pays, and how</Label>
+          <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/50">Who pays, and how</h2>
           <Label className="hidden md:block">Free &rarr; the other side pays</Label>
         </div>
 

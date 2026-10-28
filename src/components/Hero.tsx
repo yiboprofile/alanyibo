@@ -1,3 +1,5 @@
+import { Tbd } from './ui'
+
 export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen min-h-[760px] overflow-hidden">
@@ -18,10 +20,10 @@ export default function Hero() {
       {/* Side captions */}
       <div className="absolute inset-x-0 top-[30%] z-10 flex items-start justify-between px-6 md:px-12">
         <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem]">
-          Everyone&rsquo;s moving.
+          One plan, three products.
         </span>
         <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem] text-right">
-          Only some arrive.
+          Four ways to set a price.
         </span>
       </div>
 
@@ -29,35 +31,41 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 z-10 px-6 md:px-12 pb-14 md:pb-16">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 max-w-7xl mx-auto">
           {/* Headline */}
-          <h1
-            className="text-[clamp(2.1rem,4.6vw,3.4rem)] leading-[1.12] tracking-[-0.02em] text-white font-extrabold max-w-lg"
-            style={{ fontFamily: "'Manrope', sans-serif" }}
-          >
-            Everyone&rsquo;s moving.
-            <br />
-            Few are arriving.
-          </h1>
+          <div>
+            <h1
+              className="text-[clamp(2.1rem,4.6vw,3.4rem)] leading-[1.12] tracking-[-0.02em] text-white font-extrabold max-w-lg"
+              style={{ fontFamily: "'Manrope', sans-serif" }}
+            >
+              <Tbd>Some products sell.</Tbd>
+              <br />
+              <Tbd>I want to know why.</Tbd>
+            </h1>
+            <p className="draft-only mt-3 max-w-md text-[13px] text-mark-ink">
+              Draft headline, for Alan to approve or replace. It has to be a question he actually asked.
+            </p>
+          </div>
 
           {/* Subtext + CTAs */}
           <div className="max-w-sm md:pb-1">
             <p className="text-white/60 text-[14.5px] leading-[1.7] font-light">
-              In the rush of everyday noise, clarity is the real advantage. We
-              help you stay focused, move with intention, and get where
-              you&rsquo;re going.
+              I&rsquo;m Alan Wang, a senior at Urbana High School in Frederick,
+              Maryland. With student teams I wrote one business plan and built
+              three apps. Each one answered the same question differently: who
+              pays, and how?
             </p>
 
             <div className="mt-5 flex items-center gap-6">
               <a
-                href="#start"
+                href="#cases"
                 className="inline-flex items-center px-6 py-2.5 rounded-full text-[13px] font-semibold text-black bg-white transition-all duration-200 hover:bg-white/85"
               >
-                Get Started
+                Read the four cases
               </a>
               <a
-                href="#how-it-works"
+                href="#about"
                 className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/80 hover:text-white transition-colors duration-200"
               >
-                See how it works
+                About Alan
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M4 2.5l4 3.5-4 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

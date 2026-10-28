@@ -17,7 +17,7 @@ function AnchorMark() {
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-6">
+    <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-6">
       {/* Logo */}
       <a href="#home" className="flex items-center gap-2.5 shrink-0">
         <AnchorMark />

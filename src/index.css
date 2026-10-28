@@ -25,3 +25,49 @@
     min-height: 100svh;
   }
 }
+
+@theme {
+  --font-display: 'Manrope', sans-serif;
+  --color-panel: #111a17;
+  --color-mark: #1d3a33;
+  --color-mark-ink: #dcefe8;
+}
+
+@layer components {
+  /* Provisional copy, for Alan to fill in. The review switch in App.tsx turns the highlight off. */
+  mark.tbd {
+    background: var(--color-mark);
+    color: var(--color-mark-ink);
+    padding: 0.04em 0.3em;
+    border-radius: 2px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  .tbd-plain mark.tbd {
+    background: transparent;
+    padding: 0;
+    color: rgb(255 255 255 / 0.5);
+  }
+  /* In a headline a filled box clips the descenders, so a blank there is underlined instead */
+  :is(h1, h2) mark.tbd {
+    background: none;
+    padding: 0;
+    color: inherit;
+    text-decoration: underline dashed var(--color-mark-ink);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.14em;
+  }
+  .tbd-plain :is(h1, h2) mark.tbd {
+    text-decoration: none;
+    color: inherit;
+  }
+  .tbd-plain .draft-only {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

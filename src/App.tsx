@@ -2,26 +2,28 @@ import { useState } from 'react'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Overview from './components/Overview'
-import CaseStudy from './components/CaseStudy'
+import Spectrum from './components/Spectrum'
+import ProductBar from './components/ProductBar'
+import Cases from './components/Cases'
 import Note from './components/Note'
 import About from './components/About'
 import Contact from './components/Contact'
-import { cases } from './data/cases'
 
 function App() {
-  // Review aid: highlights every blank Alan still has to fill in. Remove at launch.
-  const [highlight, setHighlight] = useState(true)
+  // Review aid: shows every blank Alan still has to fill in. Remove at launch.
+  const [showBlanks, setShowBlanks] = useState(true)
 
   return (
     <>
-      <main className={`bg-[#0b1210] min-h-screen ${highlight ? '' : 'tbd-plain'}`}>
+      <main className={`bg-[#0b1210] min-h-screen ${showBlanks ? '' : 'tbd-plain'}`}>
         <Navbar />
         <Hero />
-        <Overview />
-        {cases.map((c) => (
-          <CaseStudy key={c.id} c={c} />
-        ))}
+        <Spectrum />
+        {/* the product bar sticks only while the four cases are on screen */}
+        <div>
+          <ProductBar />
+          <Cases />
+        </div>
         <Note />
         <About />
         <Contact />
@@ -36,11 +38,11 @@ function App() {
         <input
           id="tbd-toggle"
           type="checkbox"
-          checked={highlight}
-          onChange={(e) => setHighlight(e.target.checked)}
+          checked={showBlanks}
+          onChange={(e) => setShowBlanks(e.target.checked)}
           className="size-4 accent-[#7fb8a8]"
         />
-        Highlight the blanks
+        Show what&rsquo;s left to write
       </label>
     </>
   )

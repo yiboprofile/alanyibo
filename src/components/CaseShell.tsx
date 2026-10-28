@@ -1,0 +1,154 @@
+import type { ReactNode } from 'react'
+import { Caption, Captions, Headline, Label, Lede, MoreLink, Wrap } from './ui'
+
+type Image = { src: string; alt: string; width: number; height: number; caption: ReactNode; position?: string }
+
+export type Fact = { label: string; value: ReactNode; note?: ReactNode }
+
+export type CaseProps = {
+  id: string
+  model: string
+  captions: [string, string]
+  title: [string, string]
+  lede: ReactNode
+  link: { href: string; label: string }
+  facts: Fact[]
+  product: Image & { kind: 'shot' | 'phone' }
+  photo: Image
+  team: ReactNode
+  blanks: string[]
+  children: ReactNode
+}
+
+function Facts({ facts }: { facts: Fact[] }) {
+  return (
+    <dl className="grid grid-cols-2 lg:grid-cols-4 border-t border-line">
+      {facts.map((f, i) => (
+        <div
+          key={f.label}
+          className={`min-w-0 py-5 pr-4 border-b border-line lg:border-b-0 ${i % 2 === 0 ? 'max-lg:pr-6' : 'max-lg:pl-6 max-lg:border-l'} ${
+            i > 0 ? 'lg:pl-6 lg:border-l' : ''
+          }`}
+        >
+          <dt>
+            <Label>{f.label}</Label>
+          </dt>
+          <dd className="mt-2 font-display font-bold text-[clamp(1.15rem,1.6vw,1.375rem)] leading-[1.25] text-white tabular-nums">
+            {f.value}
+          </dd>
+          {f.note && <dd className="mt-1 text-[13px] leading-snug text-white/50">{f.note}</dd>}
+        </div>
+      ))}
+    </dl>
+  )
+}
+
+function Media({ product, photo }: { product: CaseProps['product']; photo: Image }) {
+  const phone = product.kind === 'phone'
+  return (
+    <div
+      className={`grid grid-cols-1 gap-x-3 gap-y-7 ${
+        phone ? 'md:grid-cols-[minmax(0,1fr)_minmax(0,1.55fr)]' : 'md:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]'
+      }`}
+    >
+      <figure className="min-w-0">
+        <div
+          className={`bg-panel overflow-hidden flex items-center justify-center md:h-[clamp(300px,30vw,440px)] ${
+            phone ? 'px-5 py-7' : 'p-5 md:p-[clamp(20px,2.4vw,36px)]'
+          }`}
+        >
+          <img
+            src={product.src}
+            alt={product.alt}
+            width={product.width}
+            height={product.height}
+            loading="lazy"
+            className={
+              phone
+                ? 'w-auto max-w-full max-h-[60svh] md:max-h-full rounded-[18px]'
+                : 'w-full h-auto md:w-auto md:max-h-full object-contain'
+            }
+          />
+        </div>
+        <Caption>{product.caption}</Caption>
+      </figure>
+      <figure className="min-w-0">
+        <div className="bg-panel overflow-hidden aspect-[4/3] md:aspect-auto md:h-[clamp(300px,30vw,440px)]">
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            loading="lazy"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: photo.position }}
+          />
+        </div>
+        <Caption>{photo.caption}</Caption>
+      </figure>
+    </div>
+  )
+}
+
+/* What Alan still has to write for this case, gathered in one place instead of scattered through the text */
+function Blanks({ items }: { items: string[] }) {
+  return (
+    <aside className="todo border border-dashed border-mark-ink/30 p-6 md:p-8" aria-label="Still to write">
+      <div className="flex flex-wrap items-baseline justify-between gap-2 mb-5">
+        <Label className="text-mark-ink/80">Still to write</Label>
+        <span className="font-mono text-[11px] text-mark-ink/60 tabular-nums">{items.length} blanks</span>
+      </div>
+      <ul className="grid gap-x-10 gap-y-3 md:grid-cols-2">
+        {items.map((b) => (
+          <li key={b} className="grid grid-cols-[14px_minmax(0,1fr)] gap-3 text-[14px] leading-[1.55] text-mark-ink/85">
+            <span className="mt-[5px] size-3.5 border border-mark-ink/50" aria-hidden="true" />
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}
+
+export default function CaseShell(c: CaseProps) {
+  return (
+    <Wrap id={c.id} labelledBy={`h-${c.id}`} className="pt-[clamp(96px,10vw,144px)] scroll-mt-16">
+      <Captions left={c.captions[0]} right={c.captions[1]} className="mb-[clamp(40px,5vw,72px)]" />
+
+      <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-end min-[900px]:justify-between gap-7 min-[900px]:gap-12">
+        <div>
+          <span className="inline-flex items-center gap-2 mb-5 rounded-full border border-accent/40 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+            <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
+            {c.model}
+          </span>
+          <Headline id={`h-${c.id}`} lines={c.title} />
+        </div>
+        <div className="max-w-md min-[900px]:pb-1">
+          <Lede>{c.lede}</Lede>
+          <div className="mt-5">
+            <MoreLink href={c.link.href}>{c.link.label}</MoreLink>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-[clamp(40px,5vw,64px)]">
+        <Facts facts={c.facts} />
+      </div>
+
+      <div className="mt-3 grid gap-3">{c.children}</div>
+
+      <div className="mt-[clamp(48px,5vw,72px)]">
+        <Media product={c.product} photo={c.photo} />
+      </div>
+
+      <p className="mt-8 max-w-[44rem] text-[14.5px] leading-[1.7] text-white/60">
+        <span className="text-white/40">Built by </span>
+        {c.team}
+      </p>
+
+      <div className="mt-8">
+        <Blanks items={c.blanks} />
+      </div>
+    </Wrap>
+  )
+}

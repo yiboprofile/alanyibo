@@ -1,0 +1,43 @@
+/* The four products in price order, from free to a two-sided market. Shared by the overview and the product bar. */
+export const products = [
+  {
+    id: 'dermat',
+    name: 'Dermat AI',
+    kind: 'iPhone app, skin scans',
+    model: 'Free',
+    who: 'Nobody pays',
+    price: '$0',
+    unit: '',
+    outcome: '5.0 stars, 1 rating',
+  },
+  {
+    id: 'soundsplit',
+    name: 'SoundSplit',
+    kind: 'iPhone app, song stems',
+    model: 'Per minute',
+    who: 'You pay for what you use',
+    price: '$14.99+',
+    unit: 'a block of minutes',
+    outcome: '4.0 stars, 4 ratings',
+  },
+  {
+    id: 'holidayhelperai',
+    name: 'HolidayHelperAI',
+    kind: 'Web app, trip planner',
+    model: 'Per month',
+    who: 'You pay to keep using it',
+    price: '$2+',
+    unit: 'a month, three tiers',
+    outcome: '10+ people paid',
+  },
+  {
+    id: 'cravedeals',
+    name: 'CraveDeals',
+    kind: 'Business plan, coupon site',
+    model: 'The other side pays',
+    who: 'The restaurant pays, the diner doesn’t',
+    price: '?',
+    unit: 'per restaurant, to come',
+    outcome: '0 restaurants signed',
+  },
+]

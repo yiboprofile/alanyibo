@@ -1,54 +1,76 @@
-import { Caption, Headline, Lede, Row, Rows, Split, Wrap } from './ui'
+import { Caption, Headline, Label, Lede, Split, Wrap } from './ui'
 
-const record = [
+type Item = { title: string; detail: string; tbd?: boolean }
+
+/* Two lanes over the same four years: what Alan built, and the economics he did away from a screen */
+const years: { year: string; built: Item[]; studied: Item[] }[] = [
   {
-    year: '2026',
-    title: 'Economics Challenge, 1st place',
-    body: (
-      <>
-        One of six chosen from about 100 applicants. Months of FOMC press conferences, the housing market and executive
-        actions; I argued policy as Keir Starmer at Mount St. Mary&rsquo;s University.
-      </>
-    ),
+    year: '2023',
+    built: [{ title: 'HolidayHelperAI', detail: 'Led a team of five. Year to confirm.', tbd: true }],
+    studied: [],
+  },
+  {
+    year: '2024',
+    built: [{ title: 'SoundSplit', detail: 'On the App Store, August.' }],
+    studied: [],
   },
   {
     year: '2025',
-    title: 'FBLA Business Plan Event, 3rd in the nation',
-    body: (
-      <>
-        After 3rd in Maryland. The plan is{' '}
-        <a href="#cravedeals" className="text-white underline decoration-white/35 underline-offset-[0.2em] hover:decoration-white">
-          CraveDeals
-        </a>
-        , above.
-      </>
-    ),
+    built: [
+      { title: 'CraveDeals', detail: 'The business plan.' },
+      { title: 'Dermat AI', detail: 'On the App Store, August.' },
+    ],
+    studied: [{ title: 'FBLA, 3rd in the nation', detail: 'Business Plan Event, after 3rd in Maryland.' }],
   },
   {
     year: '2026',
+    built: [],
+    studied: [
+      { title: 'Economics Challenge, 1st', detail: 'One of six chosen from about 100.' },
+      { title: 'Wharton', detail: 'Leadership in the Business World.' },
+      { title: 'TEDxSCA Youth', detail: 'A talk: Gen-Z is Cooked.' },
+      { title: 'AP Scholar with Distinction', detail: '' },
+    ],
+  },
+]
+
+function Chip({ item, lane }: { item: Item; lane: 'built' | 'studied' }) {
+  return (
+    <li
+      className={`px-3.5 py-3 ${
+        lane === 'built' ? 'bg-white text-[#0b1210]' : 'border border-accent/50 text-white'
+      } ${item.tbd ? 'outline outline-1 outline-dashed outline-offset-2 outline-mark-ink/50' : ''}`}
+    >
+      <span className="block text-[14px] font-semibold leading-snug">{item.title}</span>
+      {item.detail && (
+        <span className={`block mt-0.5 text-[12.5px] leading-snug ${lane === 'built' ? 'text-black/60' : 'text-white/55'}`}>
+          {item.detail}
+        </span>
+      )}
+    </li>
+  )
+}
+
+const notes = [
+  {
+    title: 'Economics Challenge, 1st place',
+    body: 'Months of FOMC press conferences, the housing market and executive actions; I argued policy as Keir Starmer at Mount St. Mary’s University.',
+  },
+  {
     title: 'Wharton, Leadership in the Business World',
-    body: (
-      <>
-        Three weeks of real Harvard Business School cases. My team&rsquo;s final case was Chipotle&rsquo;s entry into
-        Asia.
-      </>
-    ),
+    body: 'Three weeks of real Harvard Business School cases. My team’s final case was Chipotle’s entry into Asia.',
   },
   {
-    year: '2026',
-    title: 'TEDxSCA Youth, a talk',
-    body: <>Gen-Z is Cooked. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).</>,
-    figure: {
-      src: '/media/tedx-stats.webp',
-      alt: 'Alan on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA',
-      caption: 'The slide, as photographed.',
-    },
+    title: 'TEDxSCA Youth',
+    body: 'One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
   },
-  {
-    year: '2026',
-    title: 'AP Scholar with Distinction',
-    body: <>Economics is the direction. The products above are where I test it.</>,
-  },
+]
+
+/* The TEDx slide's three numbers, as bars to one scale */
+const members = [
+  { name: 'FFA', count: 1040, label: '1.04M' },
+  { name: 'DECA', count: 316, label: '316K+' },
+  { name: 'FBLA', count: 230, label: '230K' },
 ]
 
 export default function About() {
@@ -56,29 +78,79 @@ export default function About() {
     <Wrap id="about" labelledBy="h-about" className="pt-[clamp(96px,10vw,144px)]">
       <Split heading={<Headline id="h-about" lines={['Economics,', 'without an app.']} />}>
         <Lede>
-          Alan Wang &middot; Urbana High School, Frederick, Maryland &middot; Class of 2027. Five things from the last two
-          years that have nothing to do with an app.
+          Alan Wang &middot; Urbana High School, Frederick, Maryland &middot; Class of 2027. Economics is the direction.
+          The products are where he tests it.
         </Lede>
       </Split>
 
-      <Rows className="mt-[clamp(64px,7vw,104px)]">
-        {record.map((r) => (
-          <Row key={r.title} label={<span className="tabular-nums">{r.year}</span>}>
-            <div>
-              <h3 className="font-display font-bold text-[clamp(1.2rem,1.6vw,1.375rem)] leading-[1.3] text-white mb-1.5">
-                {r.title}
-              </h3>
-              <p>{r.body}</p>
-            </div>
-            {r.figure && (
-              <figure className="mt-2">
-                <img src={r.figure.src} alt={r.figure.alt} width={1800} height={1200} loading="lazy" className="w-full h-auto" />
-                <Caption>{r.figure.caption}</Caption>
-              </figure>
-            )}
-          </Row>
+      {/* the four-year timeline */}
+      <div className="mt-[clamp(56px,6vw,88px)] bg-panel p-6 md:p-10">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8">
+          <span className="inline-flex items-center gap-2">
+            <span className="size-3 bg-white" aria-hidden="true" />
+            <Label>Built</Label>
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="size-3 border border-accent" aria-hidden="true" />
+            <Label>Studied and argued</Label>
+          </span>
+        </div>
+
+        <ol className="grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-8">
+          {years.map((y) => (
+            <li key={y.year} className="min-w-0 md:border-l md:border-line md:pl-4 first:md:border-l-0 first:md:pl-0">
+              <span className="block font-display font-extrabold text-[clamp(1.6rem,2.6vw,2rem)] leading-none text-white tabular-nums">
+                {y.year}
+              </span>
+              <div className="mt-5 grid gap-5">
+                <ul className="grid gap-2 md:min-h-[150px] content-end">
+                  {y.built.map((it) => (
+                    <Chip key={it.title} item={it} lane="built" />
+                  ))}
+                </ul>
+                <div className="h-px bg-white/25" aria-hidden="true" />
+                <ul className="grid gap-2 content-start">
+                  {y.studied.map((it) => (
+                    <Chip key={it.title} item={it} lane="studied" />
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {/* three of the 2026 items, in a little more detail */}
+      <div className="mt-3 grid gap-3 lg:grid-cols-3">
+        {notes.map((n) => (
+          <article key={n.title} className="bg-panel p-6 md:p-8">
+            <h3 className="font-display font-bold text-[18px] leading-snug text-white">{n.title}</h3>
+            <p className="mt-2 text-[14.5px] leading-[1.65] text-white/65">{n.body}</p>
+          </article>
         ))}
-      </Rows>
+      </div>
+
+      <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+        <figure className="min-w-0">
+          <img src="/media/tedx-stats.webp" alt="Alan on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
+          <Caption>TEDxSCA Youth, 2026. The slide, as photographed.</Caption>
+        </figure>
+        <figure className="bg-panel p-6 md:p-8 flex flex-col">
+          <Label className="block mb-6">The slide&rsquo;s numbers, to scale</Label>
+          <ul className="grid gap-5 flex-1 content-center">
+            {members.map((m) => (
+              <li key={m.name} className="grid grid-cols-[52px_minmax(0,1fr)] items-center gap-3">
+                <span className="font-mono text-[12px] text-white/60">{m.name}</span>
+                <span className="flex items-center gap-3 min-w-0">
+                  <span className="block h-6 bg-accent shrink-0" style={{ width: `${(m.count / 1040) * 72}%` }} />
+                  <span className="font-display font-bold text-[16px] text-white tabular-nums">{m.label}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+          <Caption className="mt-6">Student members of three career organizations, as given on the slide.</Caption>
+        </figure>
+      </div>
     </Wrap>
   )
 }

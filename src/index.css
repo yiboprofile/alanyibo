@@ -28,6 +28,9 @@
 
 @theme {
   --font-display: 'Manrope', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-accent: #8fcbb6;
+  --color-line: rgb(255 255 255 / 0.12);
   --color-panel: #111a17;
   --color-mark: #1d3a33;
   --color-mark-ink: #dcefe8;
@@ -61,7 +64,8 @@
     text-decoration: none;
     color: inherit;
   }
-  .tbd-plain .draft-only {
+  .tbd-plain .draft-only,
+  .tbd-plain .todo {
     display: none;
   }
 }

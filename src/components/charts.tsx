@@ -226,32 +226,39 @@ export function StemSplit() {
   )
 }
 
+/* The three blocks as sold on the App Store, with the minutes each buys (from the in-app purchase screen) */
 const packs = [
-  { name: 'Basic', price: 14.99 },
-  { name: 'Standard', price: 34.99 },
-  { name: 'Premium', price: 119.99 },
+  { name: 'Basic', price: 14.99, minutes: 50 },
+  { name: 'Standard', price: 34.99, minutes: 150 },
+  { name: 'Premium', price: 119.99, minutes: 800 },
 ]
 
-/* Three blocks of minutes, bars to one scale */
+/* Three blocks of minutes, bars to one scale, and what a minute costs in each */
 export function MinutePacks() {
   const top = packs[packs.length - 1].price
   return (
-    <ul className="grid gap-5">
-      {packs.map((p) => (
-        <li key={p.name} className="grid grid-cols-[88px_minmax(0,1fr)] items-center gap-4">
-          <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/50">{p.name}</span>
-          <div className="min-w-0">
-            <div className="flex items-center gap-3">
-              <span className="block h-7 bg-white shrink-0" style={{ width: `${(p.price / top) * 75}%` }} />
-              <span className="font-display font-bold text-[18px] text-white tabular-nums">${p.price}</span>
+    <div>
+      <ul className="grid gap-5">
+        {packs.map((p) => (
+          <li key={p.name} className="grid grid-cols-[88px_minmax(0,1fr)] items-center gap-4">
+            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/50">{p.name}</span>
+            <div className="min-w-0">
+              <div className="flex items-center gap-3">
+                <span className="block h-7 bg-white shrink-0" style={{ width: `${(p.price / top) * 62}%` }} />
+                <span className="font-display font-bold text-[18px] text-white tabular-nums">${p.price}</span>
+              </div>
+              <span className="block mt-1.5 text-[12.5px] text-white/55 tabular-nums">
+                {p.minutes} minutes &middot; <span className="text-accent">${(p.price / p.minutes).toFixed(2)} a minute</span>
+              </span>
             </div>
-            <span className="block mt-1.5 text-[12px] text-white/50">
-              buys <Tbd>[N]</Tbd> minutes
-            </span>
-          </div>
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-6 text-[13.5px] leading-snug text-white/65">
+        The more minutes you buy, the less each one costs: from ${(packs[0].price / packs[0].minutes).toFixed(2)} down to $
+        {(packs[2].price / packs[2].minutes).toFixed(2)}.
+      </p>
+    </div>
   )
 }
 

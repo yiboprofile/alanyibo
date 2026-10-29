@@ -92,37 +92,34 @@ function Media({ product, photo }: { product: NonNullable<CaseProps['product']>;
   )
 }
 
-/* A row of phone screens (scrolls sideways on narrow screens) and the award as a small card */
+/* Phone screens in one row that fits the width on desktop (and scrolls sideways on phones);
+   on wide screens the award sits beside them in a card of the same height, otherwise below */
 function Screens({ screens, photo }: { screens: Image[]; photo?: Image }) {
   return (
-    <div className="grid gap-x-3 gap-y-7 lg:grid-cols-[minmax(0,1fr)_15rem]">
-      <div className="min-w-0 -mx-1 px-1 flex gap-3 overflow-x-auto snap-x snap-mandatory [scrollbar-width:thin]">
+    <div className="grid gap-x-2 gap-y-7 xl:grid-cols-[minmax(0,1fr)_minmax(0,21rem)]">
+      <div
+        className="min-w-0 flex gap-2 overflow-x-auto snap-x snap-mandatory [scrollbar-width:thin] lg:grid lg:overflow-visible"
+        style={{ gridTemplateColumns: `repeat(${screens.length}, minmax(0, 1fr))` }}
+      >
         {screens.map((s) => (
-          <figure key={s.src} className="snap-start shrink-0 w-[min(12rem,44vw)]">
-            <div className="bg-panel p-3 sm:p-4 flex items-center justify-center">
-              <img
-                src={s.src}
-                alt={s.alt}
-                width={s.width}
-                height={s.height}
-                loading="lazy"
-                className="w-full h-auto rounded-[14px]"
-              />
+          <figure key={s.src} className="snap-start shrink-0 w-[min(11rem,42vw)] lg:w-auto min-w-0">
+            <div className="bg-panel p-2 flex items-center justify-center">
+              <img src={s.src} alt={s.alt} width={s.width} height={s.height} loading="lazy" className="w-full h-auto rounded-[12px]" />
             </div>
             <Caption>{s.caption}</Caption>
           </figure>
         ))}
       </div>
       {photo && (
-        <figure className="min-w-0 max-w-[15rem] lg:max-w-none self-start">
-          <div className="bg-panel p-2">
+        <figure className="min-w-0 max-w-[21rem] xl:max-w-none flex flex-col">
+          <div className="bg-panel p-3 flex-1 flex items-center justify-center">
             <img
               src={photo.src}
               alt={photo.alt}
               width={photo.width}
               height={photo.height}
               loading="lazy"
-              className="w-full h-auto"
+              className="w-full h-auto object-contain"
               style={{ objectPosition: photo.position }}
             />
           </div>

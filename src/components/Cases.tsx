@@ -160,14 +160,43 @@ export default function Cases() {
           { label: 'Rating', value: '4.0', note: 'from 4 ratings' },
           { label: 'Award', value: 'Future Star', note: 'DFW IT Association, 2024–25' },
         ]}
-        product={{
-          kind: 'phone',
-          src: '/media/soundsplit-mixer.webp',
-          alt: "SoundSplit's mixer screen: ten sliders, one per instrument, above a song called Shape of You",
-          width: 900,
-          height: 1950,
-          caption: 'The mixer: one slider per stem.',
-        }}
+        screens={[
+          {
+            src: '/media/soundsplit-import.webp',
+            alt: 'SoundSplit: an empty song screen with an Add Song button and a Subscribe button',
+            width: 540,
+            height: 1170,
+            caption: 'Import: add a song from the phone.',
+          },
+          {
+            src: '/media/soundsplit-stems.webp',
+            alt: 'SoundSplit: a grid of stems to choose, such as vocals, drums, bass, piano and guitar, with waveform previews',
+            width: 540,
+            height: 1170,
+            caption: 'Split: choose the stems and preview each one.',
+          },
+          {
+            src: '/media/soundsplit-mixer-hd.webp',
+            alt: "SoundSplit's mixer: one slider per instrument above a song called Shape of You",
+            width: 540,
+            height: 1170,
+            caption: 'Mix: one slider per stem.',
+          },
+          {
+            src: '/media/soundsplit-pricing.webp',
+            alt: 'SoundSplit Go Premium screen: Basic 50 minutes for $15, Standard 150 minutes for $35, Premium 800 minutes for $120, one-time fees',
+            width: 540,
+            height: 1170,
+            caption: 'Pay: three blocks of minutes, one-time fees.',
+          },
+          {
+            src: '/media/soundsplit-balance.webp',
+            alt: 'SoundSplit balance screen: minutes left on a timer, an Add Minutes button, and a history of songs processed',
+            width: 540,
+            height: 1170,
+            caption: 'Meter: minutes left, and what each song used.',
+          },
+        ]}
         photo={{
           src: '/assets/photos/Future-star-award-soundsplit.webp',
           alt: 'The Future Star Award slide for SoundSplit projected in a hall, listing the team',
@@ -185,7 +214,6 @@ export default function Cases() {
           'Purchases so far: how many of the people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
           'The Google Play listing is marked “Contains ads”. If the Android version shows ads, that is a second way of being paid and belongs in this case.',
           'Web app use: visitors or sign-ups on soundsplitai.com, if they are tracked, so the web version is counted too.',
-          'Minutes in each block: Basic, Standard, Premium.',
           'Why metered rather than a subscription, in my own words.',
         ]}
       >
@@ -213,7 +241,10 @@ export default function Cases() {
           <ChartFrame title="What one import does" caption="One song in, separate tracks out. The waveforms are drawn for illustration.">
             <StemSplit />
           </ChartFrame>
-          <ChartFrame title="What a block of minutes costs" caption="In-app purchases on the App Store, October 2026. Bars share one scale.">
+          <ChartFrame
+            title="What a block of minutes costs"
+            caption="In-app purchases on the App Store; minutes per block from the app’s purchase screen. Bars share one scale."
+          >
             <MinutePacks />
           </ChartFrame>
         </div>

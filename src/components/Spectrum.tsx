@@ -9,13 +9,13 @@ export default function Spectrum() {
       <Split heading={<Headline id="h-cases" lines={['Getting people to join', 'is one cold start.']} />}>
         <Lede>
           Getting them to pay is another. Five things I built or co-founded, laid out by who pays and how, from free to a
-          market where someone else pays.
+          commission paid only on results.
         </Lede>
       </Split>
       <div className="mt-[clamp(48px,5vw,72px)] bg-panel p-6 md:p-10">
         <div className="flex items-center justify-between gap-4 mb-8">
           <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/50">Who pays, and how</span>
-          <Label className="hidden lg:block">Free &rarr; the other side pays</Label>
+          <Label className="hidden lg:block">Free &rarr; paid only on results</Label>
         </div>
 
         <ol className="relative grid grid-cols-1 lg:grid-cols-5 gap-x-6">

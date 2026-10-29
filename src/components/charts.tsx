@@ -533,3 +533,37 @@ export function WhereInstalled({ rows }: { rows: { country: string; installs: nu
     </ul>
   )
 }
+
+/* $40 a session against the usual range for one-on-one SAT tutoring, on one dollar scale */
+export function PriceVsMarket() {
+  const top = 140
+  const pct = (v: number) => (v / top) * 100
+  return (
+    <div>
+      <div className="relative h-16 mt-6">
+        <div className="absolute inset-x-0 top-1/2 h-px bg-white/20" aria-hidden="true" />
+        <div
+          className="absolute top-1/2 h-3 -translate-y-1/2 bg-white/25"
+          style={{ left: `${pct(80)}%`, width: `${pct(120) - pct(80)}%` }}
+          aria-hidden="true"
+        />
+        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-white/55 whitespace-nowrap" style={{ left: `${pct(100)}%` }}>
+          usual $80–120
+        </span>
+        <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 size-4 rounded-full bg-accent" style={{ left: `${pct(40)}%` }} aria-hidden="true" />
+        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-accent whitespace-nowrap" style={{ left: `${pct(40)}%` }}>
+          ours $40
+        </span>
+      </div>
+      <div className="flex justify-between font-mono text-[11px] text-white/40 tabular-nums">
+        <span>$0</span>
+        <span>$70</span>
+        <span>$140</span>
+      </div>
+      <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="font-display font-extrabold text-[clamp(2.2rem,4vw,3rem)] leading-none text-accent tabular-nums">½ to ⅓</span>
+        <span className="text-[14px] text-white/60">of the usual price for one-on-one SAT tutoring</span>
+      </p>
+    </div>
+  )
+}

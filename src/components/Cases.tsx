@@ -6,6 +6,7 @@ import {
   WhereInstalled,
   JudgesThenMarket,
   MinutePacks,
+  PriceVsMarket,
   Ratings,
   ScoreGain,
   StemSplit,
@@ -315,22 +316,23 @@ export default function Cases() {
         title={['Urbana SAT Tutoring.', 'Paid for by results.']}
         lede={
           <>
-            An affordable one-on-one SAT tutoring business in Urbana that I co-founded. Every student gets a weekly and
-            monthly plan. We have worked with more than ten clients, and when the founders could not take on more, we
+            An affordable one-on-one SAT tutoring business in Urbana that I co-founded: $40 a session, where one-on-one
+            SAT tutoring usually costs $80 to $120. Every student gets a weekly and monthly plan. We have worked with more than ten clients, and when the founders could not take on more, we
             hired three tutors.
           </>
         }
         links={[]}
         facts={[
           { label: 'Started', value: <Tbd>[grade 11]</Tbd>, note: 'co-founder and tutor' },
-          { label: 'Price', value: '$40', note: 'a session, one-on-one' },
+          { label: 'Price', value: '$40', note: 'a session; the usual rate is $80–120' },
           { label: 'Clients', value: '10+', note: 'with personal plans' },
           { label: 'Best gain', value: '+280', note: '1220 to 1510' },
         ]}
         team={<>I co-founded it and tutor; three more tutors joined as it grew.</>}
         blanks={[
           'When it started: the activity list says grade 12, the additional information says grades 11 and 12.',
-          'Why $40 a session counts as affordable, and how it compares with other SAT tutoring around Urbana.',
+          'Why $40 when others charge $80–120: what the low price cost you, and what it brought in (more students, word of mouth?).',
+          'Where the $80–120 range comes from (local tutors, test-prep companies), so a reader can check it.',
           'Where the first clients came from.',
           'One or two lines from a family or student, with their permission (can be anonymous).',
         ]}
@@ -343,23 +345,28 @@ export default function Cases() {
             <TutorTeam />
           </ChartFrame>
         </div>
+        <ChartFrame title="What a session costs" caption="$40 a session against the usual $80–120 for one-on-one SAT tutoring, on one dollar scale.">
+          <PriceVsMarket />
+        </ChartFrame>
       </CaseShell>
 
       <CaseShell
         id="cravedeals"
-        model="The other side pays"
+        model="Commission on results"
         captions={['The judges scored it.', 'The market is the harder test.']}
         title={['Crave Deals.', 'Third, then the street.']}
         lede={
           <>
-            A coupon company I co-founded to help small local restaurants level the playing field against big chains.
-            The business plan placed 3rd in Maryland, then 3rd in the nation. Since then we have pitched restaurants
-            around Frederick and Urbana, venture firms and investors, and entered pitch competitions.
+            A coupon company I co-founded, and run as COO, to help small local restaurants level the playing field
+            against big chains. We promote a restaurant&rsquo;s deals and take a commission only on what the diners we
+            bring in spend, so a restaurant pays nothing unless it works. The plan placed 3rd in Maryland, then 3rd in
+            the nation; since then we have pitched restaurants around Frederick and Urbana, venture firms and
+            investors.
           </>
         }
         links={[{ href: 'http://crave.deals/', label: 'crave.deals' }]}
         facts={[
-          { label: 'Role', value: 'Co-founder, COO', note: <>grades <Tbd>[10–11 or 10–12]</Tbd></> },
+          { label: 'Commission', value: <Tbd>[x%]</Tbd>, note: 'of what new diners spend; diners pay nothing' },
           { label: 'Restaurants pitched', value: <Tbd>[40+]</Tbd>, note: 'around Frederick and Urbana' },
           { label: 'Pitch prizes', value: <Tbd>[$120+ or $320+]</Tbd>, note: 'local and national' },
           { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan, 2025' },
@@ -387,6 +394,8 @@ export default function Cases() {
           </>
         }
         blanks={[
+          'The commission rate, and why that rate. Delivery apps also take a cut of every order: how does Crave Deals compare, and why would a restaurant prefer it?',
+          'How a diner brought in by Crave Deals is counted (a coupon code, a scan at the counter?), since the commission depends on it.',
           'The real numbers, the same in the activity list, the additional information and here: restaurants pitched (several or 40+), prizes ($120+ or $320+), hours a week (1.5 or 3), grades (10–11 or 10–12).',
           'Is it still running? If any restaurant has signed, say so; if not, “0 signed so far” stays.',
           'Where the mobile app stands.',

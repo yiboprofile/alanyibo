@@ -15,6 +15,8 @@ import {
   YearlyMonths,
 } from './charts'
 import { ChartFrame, Tbd } from './ui'
+import * as dermat from '../data/dermat'
+import * as soundsplit from '../data/soundsplit'
 
 /* Ordered along the price spectrum in the overview: free, pay per use, pay per month, pay per session, then a two-sided market.
    Every fact here matches the Common App activity and honor lists; anything still unconfirmed is a <Tbd> blank. */
@@ -63,6 +65,7 @@ export default function Cases() {
         blanks={[
           'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
           'How many countries in all: both consoles list them.',
+          'The App Store figure here is “Total Downloads” (with redownloads); SoundSplit’s is “First-Time Downloads”. Export the same measure for both apps so they compare fairly.',
           'Why it has no price, in my own words.',
           'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
           'What giving something away taught me that charging for the other apps did not.',
@@ -73,7 +76,13 @@ export default function Cases() {
             title="Who found it"
             caption="Downloads by month. App Store: “Total Downloads” from App Store Connect. Google Play: “User acquisition, all users” from the Play Console. Both count reinstalls; the last month is as exported."
           >
-            <DownloadsByMonth />
+            <DownloadsByMonth
+              months={dermat.monthlyDownloads}
+              appStoreTotal={dermat.appStoreTotal}
+              googlePlayTotal={dermat.googlePlayTotal}
+              top={400}
+              step={100}
+            />
           </ChartFrame>
           <ChartFrame
             title="Who kept it"
@@ -87,7 +96,7 @@ export default function Cases() {
             title="Where Android installs came from"
             caption="Share of all 1,185 Google Play installs. The console names its top four countries; the rest are grouped."
           >
-            <WhereInstalled />
+            <WhereInstalled rows={dermat.playWhere} />
           </ChartFrame>
           <ChartFrame
           title="When can you tell if it was right?"
@@ -105,18 +114,19 @@ export default function Cases() {
         title={['SoundSplit.', 'Sold by the minute.']}
         lede={
           <>
-            An iPhone app that separates a song into its stems, so you can take the vocals out for karaoke or mute the
-            piano to practise along. On the App Store since August 2024. I chose to meter it instead of selling a
-            subscription, so what a person pays follows how much they use.
+            An iPhone and Android app that separates a song into its stems, so you can take the vocals out for karaoke or mute the
+            piano to practise along. On the App Store and Google Play since August 2024. I chose to meter it instead of
+            selling a subscription, so what a person pays follows how much they use.
           </>
         }
         links={[
           { href: 'https://soundsplitai.com/', label: 'soundsplitai.com' },
           { href: 'https://apps.apple.com/us/app/sound-split/id6618147632', label: 'On the App Store' },
+          { href: 'https://play.google.com/store/apps/details?id=sound.split.ai', label: 'On Google Play' },
         ]}
         facts={[
-          { label: 'Launched', value: 'Aug 2024', note: 'iPhone, free to download' },
-          { label: 'Price', value: '$14.99–$119.99', note: 'a block of minutes' },
+          { label: 'Downloads', value: '824', note: '576 App Store, 248 Google Play, in 27 months' },
+          { label: 'Price', value: '$14.99–$119.99', note: 'a block of minutes; free to download' },
           { label: 'Rating', value: '4.0', note: 'from 4 ratings' },
           { label: 'Award', value: 'Future Star', note: 'DFW IT Association, 2024–25' },
         ]}
@@ -142,11 +152,32 @@ export default function Cases() {
           </>
         }
         blanks={[
+          'Purchases so far: how many of the 824 people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
+          'The Google Play listing is marked “Contains ads”. If the Android version shows ads, that is a second way of being paid and belongs in this case.',
           'Minutes in each block: Basic, Standard, Premium.',
           'Why metered rather than a subscription, in my own words.',
-          'Purchases so far, and over what period.',
         ]}
       >
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)]">
+          <ChartFrame
+            title="Who found it"
+            caption="Downloads by month. App Store: “First-Time Downloads” from App Store Connect, which leaves out redownloads. Google Play: “User acquisition, all users” from the Play Console, which includes reinstalls."
+          >
+            <DownloadsByMonth
+              months={soundsplit.monthlyDownloads}
+              appStoreTotal={soundsplit.appStoreTotal}
+              googlePlayTotal={soundsplit.googlePlayTotal}
+              top={100}
+              step={25}
+            />
+          </ChartFrame>
+          <ChartFrame
+            title="Where Android installs came from"
+            caption="Share of all 248 Google Play installs. The console names its top four countries; the rest are grouped."
+          >
+            <WhereInstalled rows={soundsplit.playWhere} />
+          </ChartFrame>
+        </div>
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
           <ChartFrame title="What one import does" caption="One song in, separate tracks out. The waveforms are drawn for illustration.">
             <StemSplit />

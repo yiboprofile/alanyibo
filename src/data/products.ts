@@ -14,12 +14,12 @@ export const products = [
   {
     id: 'soundsplit',
     name: 'SoundSplit',
-    kind: 'iPhone app, song stems',
+    kind: 'iPhone and Android app, song stems',
     model: 'Per minute',
     who: 'You pay for what you use',
     price: '$14.99+',
     unit: 'a block of minutes',
-    outcome: '4.0 stars, 4 ratings',
+    outcome: '824 downloads, 2 stores',
   },
   {
     id: 'holidayhelperai',

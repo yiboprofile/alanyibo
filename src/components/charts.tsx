@@ -400,20 +400,16 @@ export function DownloadsByMonth({
   googlePlayTotal,
   top,
   step,
-  appStoreHeadline,
 }: {
   months: Month[]
   appStoreTotal: number
   googlePlayTotal: number
   top: number
   step: number
-  /* when the store's headline total uses a wider measure than the monthly bars (e.g. with redownloads) */
-  appStoreHeadline?: number
 }) {
   const sum = (m: Month) => m.appStore + m.googlePlay
   const peak = months.reduce((a, b) => (sum(b) > sum(a) ? b : a))
-  const appStore = appStoreHeadline ?? appStoreTotal
-  const total = appStore + googlePlayTotal
+  const total = appStoreTotal + googlePlayTotal
   const lines = Array.from({ length: top / step + 1 }, (_, i) => i * step)
   const cols = { gridTemplateColumns: `repeat(${months.length}, minmax(0, 1fr))` }
   const every = months.length > 18 ? 6 : 3
@@ -451,7 +447,7 @@ export function DownloadsByMonth({
       <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="font-display font-extrabold text-[clamp(2.2rem,4vw,3rem)] leading-none text-white tabular-nums">{total.toLocaleString('en-US')}</span>
         <span className="text-[14px] text-white/60">
-          downloads in {months.length} months: {appStore.toLocaleString('en-US')} on the App Store, {googlePlayTotal.toLocaleString('en-US')} on Google
+          downloads in {months.length} months: {appStoreTotal.toLocaleString('en-US')} on the App Store, {googlePlayTotal.toLocaleString('en-US')} on Google
           Play. The most, {sum(peak)}, in {peak.month}.
         </span>
       </p>

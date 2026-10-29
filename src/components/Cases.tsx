@@ -162,13 +162,12 @@ export default function Cases() {
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)]">
           <ChartFrame
             title="Who found it"
-            caption="App Store bars show first-time downloads by month (576 in all); the total above, 606, includes redownloads, the same measure used for Dermat AI. Google Play: “User acquisition, all users” from the Play Console, which includes reinstalls."
+            caption="Downloads by month. App Store: “Total Downloads” from App Store Connect. Google Play: “User acquisition, all users” from the Play Console. Both count reinstalls, the same measures used for Dermat AI."
           >
             <DownloadsByMonth
               months={soundsplit.monthlyDownloads}
               appStoreTotal={soundsplit.appStoreTotal}
               googlePlayTotal={soundsplit.googlePlayTotal}
-              appStoreHeadline={soundsplit.appStoreTotalWithRedownloads}
               top={100}
               step={25}
             />

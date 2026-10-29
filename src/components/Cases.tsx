@@ -146,9 +146,9 @@ export default function Cases() {
         title={['SoundSplit.', 'Sold by the minute.']}
         lede={
           <>
-            A tool that separates a song into its stems, so you can take the vocals out for karaoke or mute the piano to
-            practise along. It runs on the web at soundsplitai.com, and as an app on the App Store and Google Play since
-            August 2024. I chose to meter it instead of selling a subscription, so what a person pays follows how much
+            An iPhone and Android app that separates a song into its stems, so you can take the vocals out for karaoke or
+            mute the piano to practise along. On the App Store and Google Play since August 2024, with soundsplitai.com
+            as its landing page. I chose to meter it instead of selling a subscription, so what a person pays follows how much
             they use. On Android, free users see a banner ad; buying any block of minutes removes it.
           </>
         }
@@ -158,7 +158,7 @@ export default function Cases() {
           { href: 'https://play.google.com/store/apps/details?id=sound.split.ai', label: 'On Google Play' },
         ]}
         facts={[
-          { label: 'App downloads', value: '854', note: '606 App Store, 248 Google Play, in 27 months; web use not counted' },
+          { label: 'Downloads', value: '854', note: '606 App Store, 248 Google Play, in 27 months' },
           { label: 'Price', value: '$14.99–$119.99', note: 'a block of minutes; free to download' },
           { label: 'Rating', value: '4.0', note: 'from 4 ratings' },
           { label: 'Award', value: 'Future Star', note: 'DFW IT Association, 2024–25' },
@@ -218,7 +218,6 @@ export default function Cases() {
           'Purchases so far: how many of the people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
           'What the banner ads have earned so far, and whether seeing an ad pushes anyone to buy minutes.',
           'Why ads on Android but not on iPhone, if the iPhone app has none.',
-          'Web app use: visitors or sign-ups on soundsplitai.com, if they are tracked, so the web version is counted too.',
           'Why metered rather than a subscription, in my own words.',
         ]}
       >

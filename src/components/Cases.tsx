@@ -95,7 +95,7 @@ export default function Cases() {
         }}
         team={<>Just me. I designed and built Dermat AI, connected the AI model, published it on both stores and did the marketing, all on my own.</>}
         blanks={[
-          'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
+          'The social media behind the November–January rise: which platforms, one or two posts with their views, and whether any of it was paid.',
           'How many countries in all: both consoles list them.',
           'A screenshot of the app’s “not a diagnosis” notice, if it has one: for a health app it shows care for the people using it.',
           'Why it has no price, in my own words.',
@@ -106,7 +106,7 @@ export default function Cases() {
         <div className="grid gap-3 lg:grid-cols-2">
           <ChartFrame
             title="Who found it"
-            caption="Downloads by month. App Store: “Total Downloads” from App Store Connect. Google Play: “User acquisition, all users” from the Play Console. Both count reinstalls; the last month is as exported."
+            caption="Downloads by month. App Store: “Total Downloads” from App Store Connect. Google Play: “User acquisition, all users” from the Play Console. Both count reinstalls; the last month is as exported. The rise from November to January came from my social media marketing."
           >
             <DownloadsByMonth
               months={dermat.monthlyDownloads}

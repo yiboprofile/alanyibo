@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alan Wang · The Stage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+html,body{background:#0B0706;color:#FFF6EE}
+:root{
+  color-scheme:dark;
+  --bg:#0B0706;--fg:#FFF6EE;--muted:rgba(255,246,238,.64);--faint:rgba(255,246,238,.4);--line:rgba(255,246,238,.16);--accent:#FFB547;
+  --display:'Anton','Impact',sans-serif;--sans:'Inter Tight',system-ui,-apple-system,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);--gx:clamp(20px,4.4vw,64px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip}
+body{font-family:var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+::selection{background:rgba(255,181,71,.3)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+
+/* ---------- the talk: one pinned stage over a long runway ---------- */
+.talk{position:relative;height:520vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;min-height:640px;overflow:hidden;isolation:isolate;
+  --p:0;--inset:0px;--radius:0px;--dim:1;--blur:0px;--hero-o:1;--hero-y:0px}
+.frame{position:absolute;inset:var(--inset);border-radius:var(--radius);overflow:hidden;background:#000;
+  box-shadow:0 0 0 1px rgba(255,246,238,calc(var(--p) * 1.2 * .14)),0 40px 120px rgba(0,0,0,.6)}
+.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;
+  filter:brightness(var(--dim)) blur(var(--blur)) saturate(.9);transform:scale(1.04)}
+.frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(11,7,6,.55),rgba(11,7,6,0) 30%,rgba(11,7,6,0) 55%,rgba(11,7,6,.92)),linear-gradient(to right,rgba(11,7,6,.78),rgba(11,7,6,.35) 45%,rgba(11,7,6,0) 70%)}
+@media (max-width:899px){.frame::after{background:linear-gradient(to bottom,rgba(11,7,6,.5),rgba(11,7,6,.2) 25%,rgba(11,7,6,.78) 50%,rgba(11,7,6,.96) 100%)}}
+
+.nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:max(24px,env(safe-area-inset-top,0px)) max(var(--gx),env(safe-area-inset-right,0px)) 0 max(var(--gx),env(safe-area-inset-left,0px))}
+.word{font-family:var(--display);font-size:20px;letter-spacing:.04em}
+.links{display:none;gap:32px}
+.links a{font-size:13.5px;color:rgba(255,246,238,.72);transition:color .25s}
+.links a:hover{color:var(--fg)}
+.navcta{font-size:13.5px;font-weight:500;padding:9px 18px;border-radius:999px;border:1px solid var(--line);transition:border-color .25s,color .25s}
+.navcta:hover{border-color:var(--accent);color:var(--accent)}
+@media (min-width:900px){.links{display:flex}}
+
+.hero{position:absolute;inset:0;z-index:10;pointer-events:none;opacity:var(--hero-o);transform:translateY(var(--hero-y))}
+.hero a{pointer-events:auto}
+.chip{position:absolute;top:22%;left:var(--gx);display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:rgba(255,246,238,.75)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.hero__bottom{position:absolute;left:0;right:0;bottom:0;padding:0 var(--gx) max(30px,env(safe-area-inset-bottom,0px));display:grid;gap:26px;align-items:end}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,6.6vw,112px);line-height:.88;letter-spacing:.005em;text-transform:uppercase}
+h1 .m{display:block;overflow:hidden;padding-bottom:.04em}
+h1 .m>span{display:block;transform:translateY(110%);animation:up .9s var(--ease) both}
+h1 .m:first-child>span{color:rgba(255,246,238,.82)}
+@media (min-width:900px){h1 .m>span{white-space:nowrap}}
+@keyframes up{to{transform:none}}
+.side{max-width:380px}
+.side p{font-weight:300;font-size:16px;line-height:1.6;color:var(--muted)}
+.ctas{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:var(--fg);color:var(--bg);font-size:13.5px;font-weight:500;transition:background .25s,transform .2s}
+.pill:hover{background:var(--accent)}
+.pill:active{transform:scale(.97)}
+.tl{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,246,238,.8)}
+.tl:hover{color:var(--fg)}
+.cue{position:absolute;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);color:var(--faint);font-size:10.5px;display:none}
+@media (min-width:900px){.hero__bottom{grid-template-columns:minmax(0,1fr) 340px;gap:40px;padding-bottom:64px}.side{padding-bottom:8px}.cue{display:block}}
+.rise{opacity:0;transform:translateY(20px);animation:rise .8s var(--ease) both}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* slides, shown inside the frame */
+.slides{position:absolute;inset:var(--inset);z-index:12;pointer-events:none}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,6vw,96px);
+  opacity:var(--o,0);transform:translateY(calc((1 - var(--o,0)) * 30px))}
+.slide .mono{color:var(--accent)}
+.big{font-family:var(--display);font-size:clamp(84px,16vw,260px);line-height:.82;letter-spacing:.005em;margin-top:18px}
+.slide h2{font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.01em;margin-top:22px}
+.slide p{max-width:52ch;margin-top:10px;font-weight:300;font-size:clamp(15px,1.3vw,17px);line-height:1.6;color:rgba(255,246,238,.72)}
+.slide .out{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.slide .out span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(11,7,6,.35)}
+.row4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;margin-top:34px;max-width:980px}
+.row4 div{border-top:1px solid var(--line);padding-top:14px}
+.row4 b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(34px,4.4vw,64px);line-height:1}
+.row4 span{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+@media (min-width:900px){.row4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.slide .title{font-family:var(--display);font-weight:400;font-size:clamp(54px,9vw,140px);line-height:.88;letter-spacing:.005em;text-transform:uppercase}
+
+.hud{position:absolute;z-index:14;left:calc(var(--inset) + clamp(24px,6vw,96px));right:calc(var(--inset) + clamp(24px,6vw,96px));bottom:calc(var(--inset) + 28px);
+  display:flex;align-items:center;gap:18px;opacity:calc((var(--p) - .1) * 25)}
+.hud .count{color:var(--accent);min-width:64px}
+.rail{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.rail i{height:2px;background:rgba(255,246,238,.18);position:relative;overflow:hidden}
+.rail i::after{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleX(var(--f,0));transform-origin:left}
+
+/* ---------- after the talk ---------- */
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gx)}
+.notes{padding-top:clamp(96px,12vw,150px)}
+.notes h2{font-family:var(--display);font-weight:400;font-size:clamp(44px,6.4vw,96px);line-height:.9;text-transform:uppercase}
+.notes ol{list-style:none;margin-top:40px;border-top:1px solid var(--line)}
+.notes li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:6px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.notes .y{color:var(--accent);grid-row:1/3}
+.notes b{font-weight:500;font-size:18px}
+.notes li span:last-child{font-weight:300;color:var(--muted);line-height:1.55}
+@media (min-width:900px){.notes li{grid-template-columns:110px minmax(0,1fr) minmax(0,1.1fr)}.notes .y{grid-row:1}}
+
+.close{position:relative;margin-top:clamp(96px,12vw,150px);min-height:80vh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.close img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;z-index:-2;filter:brightness(.45) sepia(.25)}
+.close::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,var(--bg),rgba(11,7,6,0) 30%,rgba(11,7,6,.95))}
+.close .wrap{width:100%;padding-bottom:max(56px,env(safe-area-inset-bottom,0px));display:grid;gap:26px;align-items:end}
+.close h2{font-family:var(--display);font-weight:400;font-size:clamp(52px,9vw,140px);line-height:.88;text-transform:uppercase}
+.mail{font-family:var(--mono);font-size:14px;user-select:all;color:var(--fg)}
+@media (min-width:900px){.close .wrap{grid-template-columns:1fr 380px}}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:24px var(--gx) 32px;color:var(--faint);font-size:12.5px}
+
+/* reduced motion: no pinned talk, slides become a list */
+@media (prefers-reduced-motion:reduce){
+  .talk{height:auto}
+  .stage{position:relative;height:auto;min-height:0;overflow:visible}
+  .frame{position:relative;height:100svh;min-height:640px}
+  .hero{position:absolute;top:0;height:100svh;min-height:640px}
+  .slides{position:relative;inset:auto}
+  .slide{position:relative;opacity:1;transform:none;padding:56px var(--gx);border-top:1px solid var(--line)}
+  .hud{display:none}
+  h1 .m>span,.rise{animation:none;transform:none;opacity:1}
+}
+</style>
+</head>
+<body>
+
+<div class="talk" id="top">
+  <div class="stage" id="stage">
+    <div class="frame"><video src="../../public/media/tedx-hero.mp4" poster="../../public/media/tedx-hero-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video></div>
+
+    <nav class="nav rise" style="animation-delay:.05s" aria-label="Main">
+      <a class="word" href="#top">ALAN WANG</a>
+      <div class="links"><a href="#cases">Cases</a><a href="#record">Record</a><a href="#write">Write</a></div>
+      <a class="navcta" href="#write">Write to Alan</a>
+    </nav>
+
+    <div class="hero">
+      <span class="chip mono rise" style="animation-delay:.3s"><i aria-hidden="true"></i>TEDxSCA Youth, 2026</span>
+      <div class="hero__bottom">
+        <h1><span class="m"><span style="animation-delay:.35s">Some products sell.</span></span><span class="m"><span style="animation-delay:.47s">I want to know why.</span></span></h1>
+        <div class="side">
+          <p class="rise" style="animation-delay:.9s">I&rsquo;m Alan Wang, a senior at Urbana High School in Frederick, Maryland. With student teams I wrote one business plan and built three apps. Each one answered the same question differently: who pays, and how?</p>
+          <div class="ctas rise" style="animation-delay:1.05s">
+            <a class="pill" href="#cases">Read the four cases</a>
+            <a class="tl" href="#record">About Alan <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <span class="cue mono rise" style="animation-delay:1.4s">Scroll to start the talk &darr;</span>
+    </div>
+
+    <div class="slides" id="cases" aria-label="The talk, five slides">
+      <section class="slide">
+        <span class="mono">The question</span>
+        <h2 class="title" style="margin-top:18px">Four products.<br>Four prices.</h2>
+        <div class="row4">
+          <div><b>$0</b><span>Dermat AI · free</span></div>
+          <div><b>$14.99+</b><span>SoundSplit · per minute</span></div>
+          <div><b>$2+</b><span>HolidayHelperAI · per month</span></div>
+          <div><b>?</b><span>CraveDeals · the other side pays</span></div>
+        </div>
+      </section>
+      <section class="slide">
+        <span class="mono">Free</span>
+        <div class="big">$0</div>
+        <h2>Dermat AI</h2>
+        <p>An iPhone app that photographs skin and reports what it may be looking at. A skin check is a trust good: you can&rsquo;t tell if the answer was right. So what does $0 say about a health app from a student team?</p>
+        <div class="out"><span>5.0 from 1 rating</span><span>Emerging Standout Award, 2025</span></div>
+      </section>
+      <section class="slide">
+        <span class="mono">Per minute</span>
+        <div class="big">$14.99+</div>
+        <h2>SoundSplit</h2>
+        <p>Separates a song into vocals, drums and instruments. Free to download; the separation is metered in blocks of minutes, because every minute processed has a cost.</p>
+        <div class="out"><span>4.0 from 4 ratings</span><span>Future Star Award</span></div>
+      </section>
+      <section class="slide">
+        <span class="mono">Per month</span>
+        <div class="big">$2+</div>
+        <h2>HolidayHelperAI</h2>
+        <p>A trip planner with an AI assistant. Three tiers, $2, $4 and $8.99 a month, each adding one feature. I led the team of five and set the prices.</p>
+        <div class="out"><span>10+ people paid</span><span>Stellar Young Achiever</span></div>
+      </section>
+      <section class="slide">
+        <span class="mono">The other side pays</span>
+        <div class="big">3rd &rarr; 0</div>
+        <h2>CraveDeals</h2>
+        <p>A coupon platform where restaurants pay and diners don&rsquo;t. Judges placed the plan 3rd in the nation. The market never started: diners wait for deals, restaurants wait for diners.</p>
+        <div class="out"><span>FBLA, 3rd in the nation</span><span>0 restaurants signed</span></div>
+      </section>
+    </div>
+
+    <div class="hud" aria-hidden="true"><span class="count mono" id="count">01 / 05</span><div class="rail" id="rail"><i></i><i></i><i></i><i></i><i></i></div></div>
+  </div>
+</div>
+
+<main>
+  <section class="wrap notes" id="record">
+    <span class="mono" style="color:var(--accent)">Notes from the record</span>
+    <h2 style="margin-top:16px">Economics,<br>without an app.</h2>
+    <ol>
+      <li><span class="y mono">2026</span><b>Economics Challenge, 1st place</b><span>One of six chosen from about 100. Argued policy as Keir Starmer at Mount St. Mary&rsquo;s.</span></li>
+      <li><span class="y mono">2026</span><b>TEDxSCA Youth</b><span>A talk, Gen-Z is Cooked. One slide counted FBLA (230K), DECA (316K+) and FFA (1.04M).</span></li>
+      <li><span class="y mono">2026</span><b>Wharton, Leadership in the Business World</b><span>Three weeks of Harvard Business School cases; the last was Chipotle&rsquo;s entry into Asia.</span></li>
+      <li><span class="y mono">2025</span><b>FBLA Business Plan Event, 3rd in the nation</b><span>After 3rd in Maryland. The plan is CraveDeals.</span></li>
+    </ol>
+  </section>
+
+  <section class="close" id="write" aria-labelledby="h-write">
+    <img src="../../public/media/tedx-audience.webp" alt="" loading="lazy">
+    <div class="wrap">
+      <h2 id="h-write">Questions?<br>Write to me.</h2>
+      <div class="side">
+        <p>About the plan, the prices or the numbers: <span class="mail">[email removed]</span></p>
+        <div class="ctas"><a class="pill" href="mailto:[email removed]">Email Alan</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><span>Alan Wang · Urbana High School · Frederick, Maryland</span><span>Direction B · The Stage</span></footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const v = document.querySelector('.frame video');
+  v.muted = true;
+  if (reduce) { v.removeAttribute('autoplay'); v.pause(); } else v.play().catch(() => {});
+
+  const talk = document.querySelector('.talk');
+  const stage = document.getElementById('stage');
+  const slides = [...document.querySelectorAll('.slide')];
+  const rail = [...document.querySelectorAll('#rail i')];
+  const count = document.getElementById('count');
+  if (reduce) return;
+
+  const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+  const smooth = (e0, e1, x) => { const t = clamp((x - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+  // each slide owns a scroll window and crossfades over 4% of the runway at each end
+  const windows = [[.135, .28], [.28, .46], [.46, .64], [.64, .82], [.82, 1.05]];
+  let target = 0, cur = 0, raf = 0;
+
+  const read = () => {
+    const r = talk.getBoundingClientRect();
+    target = clamp(-r.top / Math.max(1, r.height - innerHeight), 0, 1);
+    if (!raf) raf = requestAnimationFrame(tick);
+  };
+  const tick = () => {
+    raf = 0;
+    cur += (target - cur) * 0.14;
+    if (Math.abs(target - cur) < 0.0005) cur = target;
+    const intro = smooth(0, .12, cur);
+    const s = stage.style;
+    const inset = innerWidth < 768 ? 12 : innerWidth * 0.05;
+    s.setProperty('--p', cur.toFixed(4));
+    s.setProperty('--inset', (intro * inset).toFixed(1) + 'px');
+    s.setProperty('--radius', (intro * 28).toFixed(1) + 'px');
+    s.setProperty('--dim', (1 - intro * .7).toFixed(3));
+    s.setProperty('--blur', (intro * 6).toFixed(2) + 'px');
+    s.setProperty('--hero-o', (1 - smooth(0, .07, cur)).toFixed(3));
+    s.setProperty('--hero-y', (smooth(0, .1, cur) * 60).toFixed(1) + 'px');
+    let active = 0;
+    slides.forEach((el, i) => {
+      const [a, b] = windows[i];
+      const o = Math.min(smooth(a + .004, a + .03, cur), 1 - smooth(b - .03, b - .004, cur));
+      el.style.setProperty('--o', o.toFixed(3));
+      if (cur >= a) active = i;
+      rail[i].style.setProperty('--f', clamp((cur - a) / (b - a), 0, 1).toFixed(3));
+    });
+    count.textContent = String(active + 1).padStart(2, '0') + ' / 05';
+    if (cur !== target) raf = requestAnimationFrame(tick);
+  };
+  addEventListener('scroll', read, { passive: true });
+  addEventListener('resize', read);
+  read();
+
+  // "Read the four cases" jumps to the first slide inside the talk
+  document.querySelectorAll('a[href="#cases"]').forEach((a) => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const top = talk.offsetTop + (talk.offsetHeight - innerHeight) * 0.16;
+    scrollTo({ top, behavior: 'smooth' });
+  }));
+})();
+</script>
+</body>
+</html>

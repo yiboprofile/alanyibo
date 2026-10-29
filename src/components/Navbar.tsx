@@ -1,9 +1,7 @@
 const navLinks = [
-  { label: 'Product', href: '#product' },
-  { label: 'Approach', href: '#approach' },
-  { label: 'Use Cases', href: '#use-cases' },
-  { label: 'Resources', href: '#resources' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Four cases', href: '#cases' },
+  { label: 'Pricing note', href: '#note' },
+  { label: 'About', href: '#about' },
 ]
 
 function AnchorMark() {
@@ -42,12 +40,12 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* Log in */}
+      {/* Contact */}
       <a
-        href="#login"
+        href="#write"
         className="shrink-0 text-[13px] font-medium text-white/85 hover:text-white transition-colors duration-200"
       >
-        Log In
+        Write to Alan
       </a>
     </nav>
   )

@@ -208,8 +208,9 @@ export default function Cases() {
         }}
         team={
           <>
-            Vaibhav Sykhesh, Raymond Zhou, Bradley Chen, Mihir Kumar and me. SoundSplit and Dermat AI are published
-            through a family member&rsquo;s company developer account, APIDEED LLC.
+            Vaibhav Sykhesh, Raymond Zhou, Bradley Chen, Mihir Kumar and me.
+            <br />
+            SoundSplit and Dermat AI are published through a family member&rsquo;s company developer account, APIDEED LLC.
           </>
         }
         blanks={[
@@ -390,7 +391,9 @@ export default function Cases() {
         team={
           <>
             Three co-founders. As COO I wrote the market analysis and the financial sections and visited restaurants in
-            the Frederick area. <Tbd>[Co-founders&rsquo; names, and what each of them does.]</Tbd>
+            the Frederick area.
+            <br />
+            <Tbd>[Co-founders&rsquo; names, and what each of them does.]</Tbd>
           </>
         }
         blanks={[

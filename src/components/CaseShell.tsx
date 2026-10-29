@@ -205,7 +205,7 @@ export default function CaseShell(c: CaseProps) {
         )
       )}
 
-      <p className="mt-8 max-w-[44rem] text-[14.5px] leading-[1.7] text-white/60">
+      <p className="mt-8 text-[14.5px] leading-[1.7] text-white/60">
         <span className="text-white/40">Team: </span>
         {c.team}
       </p>

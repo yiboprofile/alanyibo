@@ -65,7 +65,6 @@ export default function Cases() {
         blanks={[
           'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
           'How many countries in all: both consoles list them.',
-          'The App Store figure here is “Total Downloads” (with redownloads); SoundSplit’s is “First-Time Downloads”. Export the same measure for both apps so they compare fairly.',
           'Why it has no price, in my own words.',
           'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
           'What giving something away taught me that charging for the other apps did not.',
@@ -126,7 +125,7 @@ export default function Cases() {
           { href: 'https://play.google.com/store/apps/details?id=sound.split.ai', label: 'On Google Play' },
         ]}
         facts={[
-          { label: 'App downloads', value: '824', note: '576 App Store, 248 Google Play, in 27 months; web use not counted' },
+          { label: 'App downloads', value: '854', note: '606 App Store, 248 Google Play, in 27 months; web use not counted' },
           { label: 'Price', value: '$14.99–$119.99', note: 'a block of minutes; free to download' },
           { label: 'Rating', value: '4.0', note: 'from 4 ratings' },
           { label: 'Award', value: 'Future Star', note: 'DFW IT Association, 2024–25' },
@@ -153,7 +152,7 @@ export default function Cases() {
           </>
         }
         blanks={[
-          'Purchases so far: how many of the 824 people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
+          'Purchases so far: how many of the people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
           'The Google Play listing is marked “Contains ads”. If the Android version shows ads, that is a second way of being paid and belongs in this case.',
           'Web app use: visitors or sign-ups on soundsplitai.com, if they are tracked, so the web version is counted too.',
           'Minutes in each block: Basic, Standard, Premium.',
@@ -163,12 +162,13 @@ export default function Cases() {
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)]">
           <ChartFrame
             title="Who found it"
-            caption="Downloads by month. App Store: “First-Time Downloads” from App Store Connect, which leaves out redownloads. Google Play: “User acquisition, all users” from the Play Console, which includes reinstalls."
+            caption="App Store bars show first-time downloads by month (576 in all); the total above, 606, includes redownloads, the same measure used for Dermat AI. Google Play: “User acquisition, all users” from the Play Console, which includes reinstalls."
           >
             <DownloadsByMonth
               months={soundsplit.monthlyDownloads}
               appStoreTotal={soundsplit.appStoreTotal}
               googlePlayTotal={soundsplit.googlePlayTotal}
+              appStoreHeadline={soundsplit.appStoreTotalWithRedownloads}
               top={100}
               step={25}
             />

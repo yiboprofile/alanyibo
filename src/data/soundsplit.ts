@@ -31,6 +31,8 @@ export const monthlyDownloads = [
   { month: 'Oct 2026', appStore: 10, googlePlay: 2 },
 ]
 export const appStoreTotal = 576
+/* App Store Connect "Total Downloads" (with redownloads), as reported by Alan; the same measure used for Dermat AI */
+export const appStoreTotalWithRedownloads = 606
 export const googlePlayTotal = 248
 /* Google Play installs by country, all time; the console names only its top four countries */
 export const playWhere = [

@@ -19,7 +19,7 @@ export const products = [
     who: 'You pay for what you use',
     price: '$14.99+',
     unit: 'a block of minutes',
-    outcome: '824 downloads, 2 stores',
+    outcome: '854 downloads, 2 stores',
   },
   {
     id: 'holidayhelperai',

@@ -1,7 +1,7 @@
 /* every item here appears on the application or in the store data, and can be checked */
 const proof = [
   'FBLA chapter ~50 → ~400',
-  'Dermat AI ~2,000 downloads',
+  '2 apps ~2,850 downloads',
   '3rd in the nation',
   'TEDx speaker',
   'National Merit Semifinalist',

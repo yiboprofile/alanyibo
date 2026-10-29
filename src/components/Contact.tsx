@@ -11,12 +11,12 @@ export default function Contact() {
       className="relative w-full h-screen min-h-[700px] mt-[clamp(96px,10vw,144px)] overflow-hidden"
     >
       <img
-        src="/media/tedx-audience.webp"
+        src="/media/tedx-forward.webp"
         alt=""
-        width={1800}
-        height={1200}
+        width={1280}
+        height={720}
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover object-[66%_50%]"
+        className="absolute inset-0 w-full h-full object-cover object-[70%_45%]"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/15 to-black/75" />
       <div className="absolute inset-0" style={{ background: 'rgba(11,18,16,0.28)' }} />

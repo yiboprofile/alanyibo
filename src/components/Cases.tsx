@@ -132,7 +132,7 @@ export default function Cases() {
           </ChartFrame>
           <ChartFrame
           title="When can you tell if it was right?"
-          caption="A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? Every answer Dermat AI gives ends with a note that it is not a medical diagnosis, and the button at the top of the assistant opens the full notice."
+          caption="A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? Every answer Dermat AI gives ends with a note that it is not a medical diagnosis, the button at the top of the assistant opens the full notice, and every answer has a flag to report it as wrong."
         >
           <TrustScale />
         </ChartFrame>

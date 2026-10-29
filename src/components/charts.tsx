@@ -1,3 +1,4 @@
+import { appStoreMonthly, appStoreTotal, playNow, playPeak, playWeekly, playWhere } from '../data/dermat'
 import { Label, Tbd } from './ui'
 
 /* ---------- CraveDeals ---------- */
@@ -385,5 +386,121 @@ export function TutorTeam() {
         <span className="block mt-2.5 text-[13px] text-white/60">3 tutors hired once the founders could not take more students</span>
       </div>
     </div>
+  )
+}
+
+/* ---------- Dermat AI: who found it, who kept it, where they are ---------- */
+
+/* Monthly App Store downloads, bars to one scale with gridlines at 50 */
+export function DownloadsByMonth() {
+  const top = 150
+  const peak = appStoreMonthly.reduce((a, b) => (b.downloads > a.downloads ? b : a))
+  return (
+    <div>
+      <div className="relative h-44 ml-8">
+        {[0, 50, 100, 150].map((v) => (
+          <div key={v} className="absolute inset-x-0 border-t border-white/10" style={{ bottom: `${(v / top) * 100}%` }}>
+            <span className="absolute -left-8 -translate-y-1/2 font-mono text-[10.5px] text-white/40 tabular-nums">{v}</span>
+          </div>
+        ))}
+        <div className="absolute inset-0 grid grid-cols-[repeat(15,minmax(0,1fr))] items-end gap-[3px] sm:gap-1.5">
+          {appStoreMonthly.map((m) => (
+            <div key={m.month} className="relative h-full flex items-end">
+              <span
+                className={`block w-full ${m === peak ? 'bg-accent' : 'bg-white/80'}`}
+                style={{ height: `${(m.downloads / top) * 100}%` }}
+                title={`${m.month}: ${m.downloads}`}
+              />
+              {m === peak && (
+                <span className="absolute left-1/2 -translate-x-1/2 font-mono text-[11px] text-accent tabular-nums whitespace-nowrap" style={{ bottom: `calc(${(m.downloads / top) * 100}% + 4px)` }}>
+                  {m.downloads}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="ml-8 mt-2 grid grid-cols-[repeat(15,minmax(0,1fr))] gap-[3px] sm:gap-1.5 font-mono text-[10px] text-white/40">
+        {appStoreMonthly.map((m, i) => (
+          <span key={m.month} className="whitespace-nowrap">{i % 3 === 0 ? m.month.replace(' 20', " '") : ''}</span>
+        ))}
+      </div>
+      <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="font-display font-extrabold text-[clamp(2.2rem,4vw,3rem)] leading-none text-white tabular-nums">{appStoreTotal}</span>
+        <span className="text-[14px] text-white/60">App Store downloads in 15 months; the most, {peak.downloads}, in {peak.month}</span>
+      </p>
+    </div>
+  )
+}
+
+/* Devices with the app installed on Google Play, weekly average, on one fixed scale */
+export function InstalledOverTime() {
+  // a narrow canvas keeps the labels readable once the chart shrinks to phone width
+  const W = 440
+  const H = 210
+  const pad = { l: 32, r: 8, t: 18, b: 26 }
+  const top = 250
+  const n = playWeekly.length
+  const x = (i: number) => pad.l + (i / (n - 1)) * (W - pad.l - pad.r)
+  const y = (v: number) => pad.t + (1 - v / top) * (H - pad.t - pad.b)
+  const line = playWeekly.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.installed).toFixed(1)}`).join(' ')
+  const area = `${line} L${x(n - 1).toFixed(1)},${y(0)} L${x(0).toFixed(1)},${y(0)} Z`
+  const peakI = playWeekly.reduce((bi, p, i) => (p.installed > playWeekly[bi].installed ? i : bi), 0)
+  const ticks = playWeekly
+    .map((p, i) => ({ i, d: new Date(p.week) }))
+    .filter(({ d, i }) => i === 0 || d.getUTCDate() <= 7)
+    .filter(({ d }) => [0, 3, 6, 9].includes(d.getUTCMonth()))
+  return (
+    <div>
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label={`Google Play installed audience: ${playPeak.installed} devices at the peak on ${playPeak.day}, about ${Math.round(playNow.installed)} now`}>
+        {[0, 100, 200].map((v) => (
+          <g key={v}>
+            <line x1={pad.l} x2={W - pad.r} y1={y(v)} y2={y(v)} stroke="rgba(255,255,255,0.1)" />
+            <text x={pad.l - 6} y={y(v) + 3.5} textAnchor="end" className="fill-white/40 font-mono text-[11px]">{v}</text>
+          </g>
+        ))}
+        <path d={area} fill="#8fcbb6" fillOpacity="0.14" />
+        <path d={line} fill="none" stroke="#8fcbb6" strokeWidth="2" strokeLinejoin="round" />
+        <circle cx={x(peakI)} cy={y(playWeekly[peakI].installed)} r="4" fill="#8fcbb6" />
+        <text x={x(peakI)} y={y(playWeekly[peakI].installed) - 9} textAnchor="middle" className="fill-white font-mono text-[11px]">
+          peak day {playPeak.installed}
+        </text>
+        <circle cx={x(n - 1)} cy={y(playWeekly[n - 1].installed)} r="4" fill="#ffffff" />
+        <text x={x(n - 1) - 6} y={y(playWeekly[n - 1].installed) - 9} textAnchor="end" className="fill-white font-mono text-[11px]">
+          now ~{Math.round(playNow.installed)}
+        </text>
+        {ticks.map(({ i, d }) => (
+          <text key={i} x={x(i)} y={H - 6} textAnchor={i === 0 ? 'start' : 'middle'} className="fill-white/40 font-mono text-[10.5px]">
+            {d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' })} &rsquo;{String(d.getUTCFullYear()).slice(2)}
+          </text>
+        ))}
+      </svg>
+      <p className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="font-display font-extrabold text-[clamp(2.2rem,4vw,3rem)] leading-none text-white tabular-nums">~{Math.round(playNow.installed)}</span>
+        <span className="text-[14px] text-white/60">Android devices still have it installed, a year after launch</span>
+      </p>
+    </div>
+  )
+}
+
+/* Where the Android users are now; the console names only its top four countries */
+export function WhereInstalled() {
+  const total = playWhere.reduce((s, c) => s + c.installed, 0)
+  const top = Math.max(...playWhere.map((c) => c.installed))
+  return (
+    <ul className="grid gap-3.5">
+      {playWhere.map((c) => {
+        const other = c.country.startsWith('All other')
+        return (
+          <li key={c.country} className="grid grid-cols-[minmax(0,8.5rem)_minmax(0,1fr)] items-center gap-3">
+            <span className={`text-[13px] leading-tight ${other ? 'text-white' : 'text-white/65'}`}>{c.country}</span>
+            <span className="flex items-center gap-2.5 min-w-0">
+              <span className={`block h-3.5 shrink-0 ${other ? 'bg-accent' : 'bg-white/70'}`} style={{ width: `${(c.installed / top) * 70}%` }} />
+              <span className="font-mono text-[11.5px] text-white/60 tabular-nums">{Math.round((c.installed / total) * 100)}%</span>
+            </span>
+          </li>
+        )
+      })}
+    </ul>
   )
 }

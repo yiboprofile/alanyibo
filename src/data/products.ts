@@ -4,12 +4,12 @@ export const products = [
   {
     id: 'dermat',
     name: 'Dermat AI',
-    kind: 'iPhone app, skin scans',
+    kind: 'iPhone and Android app, skin scans',
     model: 'Free',
     who: 'Nobody pays',
     price: '$0',
     unit: '',
-    outcome: '5.0 stars, 1 rating',
+    outcome: '811 App Store downloads',
   },
   {
     id: 'soundsplit',

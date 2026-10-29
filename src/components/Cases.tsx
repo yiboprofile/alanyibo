@@ -1,6 +1,9 @@
 import CaseShell from './CaseShell'
 import {
   ColdStartLoop,
+  DownloadsByMonth,
+  InstalledOverTime,
+  WhereInstalled,
   JudgesThenMarket,
   MinutePacks,
   Ratings,
@@ -36,9 +39,9 @@ export default function Cases() {
           { href: 'https://play.google.com/store/apps/details?id=com.dermatai.app', label: 'On Google Play' },
         ]}
         facts={[
-          { label: 'Launched', value: 'Aug 2025', note: 'iPhone and Android, rated 18+' },
           { label: 'Price', value: '$0', note: 'nothing to buy inside' },
-          { label: 'Rating', value: '5.0', note: 'from 1 rating' },
+          { label: 'App Store', value: '811', note: 'downloads, Aug 2025 to Oct 2026' },
+          { label: 'Google Play', value: '~117', note: 'devices with it installed now; peak 221' },
           { label: 'Award', value: 'Emerging Standout', note: 'DFW IT Talent Champion, 2025–26' },
         ]}
         product={{
@@ -58,17 +61,42 @@ export default function Cases() {
         }}
         team={<Tbd>[Teammates, and what I did.]</Tbd>}
         blanks={[
+          'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
+          'Google Play’s own install total (Statistics, “User acquisitions”), so Android can be shown as downloads like the App Store.',
+          'How many countries in all: both consoles list them.',
           'Why it has no price, in my own words.',
           'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
           'What giving something away taught me that charging for the other apps did not.',
         ]}
       >
-        <ChartFrame
+        <div className="grid gap-3 lg:grid-cols-2">
+          <ChartFrame
+            title="Who found it"
+            caption="App Store downloads by month, from App Store Connect. Downloads may include reinstalls; the last month is as exported."
+          >
+            <DownloadsByMonth />
+          </ChartFrame>
+          <ChartFrame
+            title="Who kept it"
+            caption={<>Google Play “installed audience”: devices with the app installed, averaged by week, from the Play Console. It counts people who kept the app, not downloads, so it is not added to the App Store figure.</>}
+          >
+            <InstalledOverTime />
+          </ChartFrame>
+        </div>
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)]">
+          <ChartFrame
+            title="Where Android users are"
+            caption="Share of devices with the app installed, last 30 days. The console names its top four countries; the rest are grouped."
+          >
+            <WhereInstalled />
+          </ChartFrame>
+          <ChartFrame
           title="When can you tell if it was right?"
           caption="A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team?"
         >
           <TrustScale />
         </ChartFrame>
+        </div>
       </CaseShell>
 
       <CaseShell

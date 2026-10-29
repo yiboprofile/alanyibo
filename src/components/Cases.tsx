@@ -216,7 +216,7 @@ export default function Cases() {
         }
         blanks={[
           'Purchases so far: how many of the people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
-          'What the banner ads have earned so far, and whether seeing an ad pushes anyone to buy minutes.',
+          'Whether seeing an ad pushes anyone to buy minutes, and what under $90 in ad revenue says about ads as a way to be paid.',
           'Why metered rather than a subscription, in my own words.',
         ]}
       >
@@ -249,7 +249,7 @@ export default function Cases() {
           </ChartFrame>
           <ChartFrame
             title="Who pays"
-            caption="The same app, paid for two ways: advertisers pay for people who have not bought minutes, and buying any block of minutes removes the ad."
+            caption="The same app, paid for two ways: advertisers pay for people who have not bought minutes, and buying any block of minutes removes the ad. Banner ads have earned under $90 in total."
           >
             <WhoPaysAndroid />
           </ChartFrame>

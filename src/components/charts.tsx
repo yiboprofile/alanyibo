@@ -570,8 +570,8 @@ export function PriceVsMarket() {
 
 /* SoundSplit, on iPhone and Android: the same app is paid for two ways, depending on whether a person has bought minutes */
 const androidPaths = [
-  { who: 'Free user', sees: 'A banner ad', pays: 'The advertiser pays', strong: false },
-  { who: 'Bought a block', sees: 'No ads', pays: 'The user pays per minute', strong: true },
+  { who: 'Free user', sees: 'A banner ad', pays: 'The advertiser pays', earned: 'under $90 so far', strong: false },
+  { who: 'Bought a block', sees: 'No ads', pays: 'The user pays per minute', earned: null, strong: true },
 ]
 
 export function WhoPaysAndroid() {
@@ -588,7 +588,10 @@ export function WhoPaysAndroid() {
           <span className="hidden sm:block text-white/40" aria-hidden="true">&rarr;</span>
           <span className="px-3.5 py-2.5 text-[14px] text-white/75 bg-white/[0.06]">{p.sees}</span>
           <span className="hidden sm:block text-white/40" aria-hidden="true">&rarr;</span>
-          <span className={`px-3.5 py-2.5 text-[14px] font-semibold ${p.strong ? 'text-white' : 'text-accent'}`}>{p.pays}</span>
+          <span className={`px-3.5 py-2.5 text-[14px] font-semibold ${p.strong ? 'text-white' : 'text-accent'}`}>
+            {p.pays}
+            {p.earned && <span className="block mt-0.5 font-mono text-[11px] font-normal text-white/55 tabular-nums">{p.earned}</span>}
+          </span>
         </li>
       ))}
     </ol>

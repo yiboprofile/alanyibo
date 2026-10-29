@@ -97,7 +97,7 @@ export default function Cases() {
         blanks={[
           'The social media behind the November–January rise: which platforms, one or two posts with their views, and whether any of it was paid.',
           'How many countries in all: both consoles list them.',
-          'A screenshot of the app’s “not a diagnosis” notice, if it has one: for a health app it shows care for the people using it.',
+          'A screenshot of the note at the end of an answer, so a reader can see its exact words.',
           'Why it has no price, in my own words.',
           'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
           'What giving something away taught me that charging for the other apps did not.',
@@ -132,7 +132,7 @@ export default function Cases() {
           </ChartFrame>
           <ChartFrame
           title="When can you tell if it was right?"
-          caption="A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team?"
+          caption="A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? Every answer Dermat AI gives ends with a note that it is not a medical diagnosis."
         >
           <TrustScale />
         </ChartFrame>

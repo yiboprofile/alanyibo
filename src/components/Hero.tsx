@@ -1,3 +1,12 @@
+/* every item here appears on the application or in the store data, and can be checked */
+const proof = [
+  'FBLA chapter ~50 → ~400',
+  'Dermat AI ~2,000 downloads',
+  '3rd in the nation',
+  'TEDx speaker',
+  'National Merit Semifinalist',
+]
+
 export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen min-h-[760px] overflow-hidden">
@@ -49,9 +58,13 @@ export default function Hero() {
               and built three apps. Most of it came down to the same problem:
               getting the first person to say yes.
             </p>
-            {/* proof line: every item here appears on the application and can be checked */}
-            <p className="mt-4 font-mono text-[10.5px] uppercase tracking-[0.12em] leading-[1.9] text-white/55">
-              FBLA chapter ~50 &rarr; ~400 &middot; 3rd in the nation &middot; TEDx speaker &middot; National Merit Semifinalist
+            <p className="mt-4 flex flex-wrap gap-x-2 font-mono text-[10.5px] uppercase tracking-[0.12em] leading-[1.9] text-white/55">
+              {proof.map((item, i) => (
+                <span key={item} className="whitespace-nowrap">
+                  {item}
+                  {i < proof.length - 1 && <span aria-hidden="true"> &middot;</span>}
+                </span>
+              ))}
             </p>
 
             <div className="mt-5 flex items-center gap-6">

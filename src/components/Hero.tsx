@@ -1,5 +1,3 @@
-import { Tbd } from './ui'
-
 export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen min-h-[760px] overflow-hidden">
@@ -36,13 +34,10 @@ export default function Hero() {
               className="text-[clamp(2.1rem,4.6vw,3.4rem)] leading-[1.12] tracking-[-0.02em] text-white font-extrabold max-w-lg"
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
-              <Tbd>Someone has to</Tbd>
+              Some products sell.
               <br />
-              <Tbd>go first.</Tbd>
+              I want to know why.
             </h1>
-            <p className="draft-only mt-3 max-w-md text-[13px] text-mark-ink">
-              Draft headline, for Alan to approve or replace. The earlier draft was &ldquo;Some products sell. I want to know why.&rdquo;
-            </p>
           </div>
 
           {/* Subtext + CTAs */}

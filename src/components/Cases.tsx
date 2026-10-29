@@ -120,7 +120,7 @@ export default function Cases() {
           </>
         }
         links={[
-          { href: 'https://soundsplitai.com/', label: 'Web app: soundsplitai.com' },
+          { href: 'https://soundsplitai.com/', label: 'soundsplitai.com' },
           { href: 'https://apps.apple.com/us/app/sound-split/id6618147632', label: 'On the App Store' },
           { href: 'https://play.google.com/store/apps/details?id=sound.split.ai', label: 'On Google Play' },
         ]}

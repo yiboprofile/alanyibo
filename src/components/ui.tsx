@@ -36,7 +36,7 @@ function LinkIcon({ href }: { href: string }) {
   )
 }
 
-export function MoreLink({ href, children }: { href: string; children: ReactNode }) {
+export function MoreLink({ href, children, compact = false }: { href: string; children: ReactNode; compact?: boolean }) {
   const external = href.startsWith('http')
   return (
     <a
@@ -46,7 +46,13 @@ export function MoreLink({ href, children }: { href: string; children: ReactNode
     >
       {external && <LinkIcon href={href} />}
       {children}
-      <Arrow />
+      {compact ? (
+        <span className="hidden sm:inline-flex">
+          <Arrow />
+        </span>
+      ) : (
+        <Arrow />
+      )}
     </a>
   )
 }

@@ -125,12 +125,23 @@ export default function CaseShell(c: CaseProps) {
         </div>
         <div className="max-w-md min-[900px]:pb-1">
           <Lede>{c.lede}</Lede>
-          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
-            {c.links.map((l) => (
-              <MoreLink key={l.href} href={l.href}>
-                {l.label}
-              </MoreLink>
-            ))}
+          {/* the links stay on one line: on phones the "On the" and the arrows drop, the icons say where each goes */}
+          <div className="mt-5 flex flex-nowrap gap-x-2.5 whitespace-nowrap max-sm:[&_a]:text-[12.5px]">
+            {c.links.map((l) => {
+              const store = l.label.match(/^(On (?:the )?)(.*)$/)
+              return (
+                <MoreLink key={l.href} href={l.href} compact>
+                  {store ? (
+                    <span>
+                      <span className="hidden sm:inline">{store[1]}</span>
+                      {store[2]}
+                    </span>
+                  ) : (
+                    l.label
+                  )}
+                </MoreLink>
+              )
+            })}
           </div>
         </div>
       </div>

@@ -89,7 +89,7 @@ export default function Cases() {
           alt: 'Certificate: Emerging Standout Award, DFW IT Talent Champion Competition, to Team Dermat AI, 15 September 2025',
           width: 1600,
           height: 1244,
-          caption: 'Emerging Standout Award, DFW IT Talent Champion, September 2025.',
+          caption: 'Emerging Standout Award, DFW IT Talent Champion, September 2025. Entered on my own.',
         }}
         team={<>Just me. I designed and built Dermat AI, connected the AI model, published it on both stores and did the marketing, all on my own.</>}
         blanks={[

@@ -19,13 +19,13 @@ function App() {
       <main className={`bg-[#0b1210] min-h-screen ${showBlanks ? '' : 'tbd-plain'}`}>
         <Navbar />
         <Hero />
+        <People />
         <Spectrum />
         {/* the product bar sticks only while the cases are on screen */}
         <div>
           <ProductBar />
           <Cases />
         </div>
-        <People />
         <Note />
         <About />
         <Contact />

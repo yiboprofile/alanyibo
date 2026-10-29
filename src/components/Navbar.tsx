@@ -1,6 +1,6 @@
 const navLinks = [
-  { label: 'Cases', href: '#cases' },
   { label: 'People', href: '#people' },
+  { label: 'Cases', href: '#cases' },
   { label: 'Pricing note', href: '#note' },
   { label: 'About', href: '#about' },
 ]

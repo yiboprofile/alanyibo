@@ -20,10 +20,10 @@ export default function Hero() {
       {/* Side captions */}
       <div className="absolute inset-x-0 top-[30%] z-10 flex items-start justify-between px-6 md:px-12">
         <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem]">
-          Two companies, three apps.
+          First one person.
         </span>
         <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem] text-right">
-          Five ways to set a price.
+          Then the room.
         </span>
       </div>
 
@@ -36,12 +36,12 @@ export default function Hero() {
               className="text-[clamp(2.1rem,4.6vw,3.4rem)] leading-[1.12] tracking-[-0.02em] text-white font-extrabold max-w-lg"
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
-              <Tbd>Some products sell.</Tbd>
+              <Tbd>Someone has to</Tbd>
               <br />
-              <Tbd>I want to know why.</Tbd>
+              <Tbd>go first.</Tbd>
             </h1>
             <p className="draft-only mt-3 max-w-md text-[13px] text-mark-ink">
-              Draft headline, for Alan to approve or replace. It has to be a question he actually asked.
+              Draft headline, for Alan to approve or replace. The earlier draft was &ldquo;Some products sell. I want to know why.&rdquo;
             </p>
           </div>
 
@@ -49,21 +49,22 @@ export default function Hero() {
           <div className="max-w-sm md:pb-1">
             <p className="text-white/60 text-[14.5px] leading-[1.7] font-light">
               I&rsquo;m Alan Wang, a senior at Urbana High School in Frederick,
-              Maryland. I co-founded a coupon company and an SAT tutoring
-              business, and built three apps with student teams. Each one
-              answered the same question differently: who pays, and how?
+              Maryland. I helped grow our FBLA chapter from about 50 members to
+              400, co-founded a coupon company and an SAT tutoring business,
+              and built three apps. Most of it came down to the same problem:
+              getting the first person to say yes.
             </p>
             {/* proof line: every item here appears on the application and can be checked */}
             <p className="mt-4 font-mono text-[10.5px] uppercase tracking-[0.12em] leading-[1.9] text-white/55">
-              National Merit Semifinalist &middot; FBLA, 3rd in the nation &middot; TEDx speaker &middot; 3 apps, 3 awards
+              FBLA chapter ~50 &rarr; ~400 &middot; 3rd in the nation &middot; TEDx speaker &middot; National Merit Semifinalist
             </p>
 
             <div className="mt-5 flex items-center gap-6">
               <a
-                href="#cases"
+                href="#people"
                 className="inline-flex items-center px-6 py-2.5 rounded-full text-[13px] font-semibold text-black bg-white transition-all duration-200 hover:bg-white/85"
               >
-                Read the cases
+                See who joined
               </a>
               <a
                 href="#about"

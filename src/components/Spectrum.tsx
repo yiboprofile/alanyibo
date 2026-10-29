@@ -1,13 +1,20 @@
 import { products } from '../data/products'
-import { Arrow, Label, Tbd, Wrap } from './ui'
+import { Arrow, Captions, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
 
 /* The page's thesis as one graphic: five products laid out along who pays, and how */
 export default function Spectrum() {
   return (
-    <Wrap id="cases" className="pt-[clamp(72px,8vw,112px)] scroll-mt-6">
-      <div className="bg-panel p-6 md:p-10">
+    <Wrap id="cases" labelledBy="h-cases" className="pt-[clamp(96px,10vw,144px)] scroll-mt-6">
+      <Captions left="Joining is free." right="Paying is not." className="mb-[clamp(40px,5vw,72px)]" />
+      <Split heading={<Headline id="h-cases" lines={['Getting people to join', 'is one cold start.']} />}>
+        <Lede>
+          Getting them to pay is another. Five things I built or co-founded, laid out by who pays and how, from free to a
+          market where someone else pays.
+        </Lede>
+      </Split>
+      <div className="mt-[clamp(48px,5vw,72px)] bg-panel p-6 md:p-10">
         <div className="flex items-center justify-between gap-4 mb-8">
-          <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/50">Who pays, and how</h2>
+          <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/50">Who pays, and how</span>
           <Label className="hidden lg:block">Free &rarr; the other side pays</Label>
         </div>
 

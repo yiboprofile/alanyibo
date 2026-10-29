@@ -91,7 +91,7 @@ export default function Cases() {
           height: 1244,
           caption: 'Emerging Standout Award, DFW IT Talent Champion, September 2025.',
         }}
-        team={<>Just me. I built Dermat AI on my own.</>}
+        team={<>Just me. I designed and built Dermat AI, connected the AI model, published it on both stores and did the marketing, all on my own.</>}
         blanks={[
           'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
           'How many countries in all: both consoles list them.',

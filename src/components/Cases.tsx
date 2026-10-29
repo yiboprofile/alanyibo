@@ -147,9 +147,10 @@ export default function Cases() {
         lede={
           <>
             An iPhone and Android app that separates a song into its stems, so you can take the vocals out for karaoke or
-            mute the piano to practise along. On the App Store and Google Play since August 2024, with soundsplitai.com
-            as its landing page. I chose to meter it instead of selling a subscription, so what a person pays follows how much
-            they use. Free users see a banner ad, on iPhone and Android alike; buying any block of minutes removes it.
+            mute the piano to practise along. On the App Store and Google Play since August 2024. I chose to meter it
+            instead of selling a subscription: every minute we process costs us money, so the cost follows how much a
+            person uses. A flat subscription would invite heavy use, and the heaviest users would cost more than they
+            paid.
           </>
         }
         links={[
@@ -160,7 +161,7 @@ export default function Cases() {
         facts={[
           { label: 'Downloads', value: '854', note: '606 App Store, 248 Google Play, in 27 months' },
           { label: 'Price', value: '$14.99–$119.99', note: 'a block of minutes; free to download' },
-          { label: 'Rating', value: '4.0', note: 'from 4 ratings' },
+          { label: 'Bought minutes', value: '9', note: 'people, about 1 in 95 downloads' },
           { label: 'Award', value: 'Future Star', note: 'DFW IT Association, 2024–25' },
         ]}
         screens={[
@@ -215,9 +216,8 @@ export default function Cases() {
           </>
         }
         blanks={[
-          'Purchases so far: how many of the people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
+          'Which blocks the 9 buyers chose, and what that says about the three prices.',
           'Whether seeing an ad pushes anyone to buy minutes, and what under $90 in ad revenue says about ads as a way to be paid.',
-          'Why metered rather than a subscription, in my own words.',
         ]}
       >
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)]">

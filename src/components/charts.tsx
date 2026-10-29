@@ -571,7 +571,7 @@ export function PriceVsMarket() {
 /* SoundSplit, on iPhone and Android: the same app is paid for two ways, depending on whether a person has bought minutes */
 const androidPaths = [
   { who: 'Free user', sees: 'A banner ad', pays: 'The advertiser pays', earned: 'under $90 so far', strong: false },
-  { who: 'Bought a block', sees: 'No ads', pays: 'The user pays per minute', earned: null, strong: true },
+  { who: 'Bought a block', sees: 'No ads', pays: 'The user pays per minute', earned: '9 people so far', strong: true },
 ]
 
 export function WhoPaysAndroid() {

@@ -1,24 +1,26 @@
-/* Dermat AI usage, from the store consoles. Generated from the two CSV exports; do not edit by hand.
-   App Store: monthly downloads (App Store Connect). Google Play: installed audience, the number of
-   devices with the app installed on a given day (Play Console). The two are different measures. */
-export const appStoreMonthly = [
-  { month: 'Aug 2025', downloads: 30 },
-  { month: 'Sep 2025', downloads: 20 },
-  { month: 'Oct 2025', downloads: 31 },
-  { month: 'Nov 2025', downloads: 81 },
-  { month: 'Dec 2025', downloads: 101 },
-  { month: 'Jan 2026', downloads: 133 },
-  { month: 'Feb 2026', downloads: 95 },
-  { month: 'Mar 2026', downloads: 74 },
-  { month: 'Apr 2026', downloads: 41 },
-  { month: 'May 2026', downloads: 38 },
-  { month: 'Jun 2026', downloads: 40 },
-  { month: 'Jul 2026', downloads: 26 },
-  { month: 'Aug 2026', downloads: 34 },
-  { month: 'Sep 2026', downloads: 30 },
-  { month: 'Oct 2026', downloads: 37 },
+/* Dermat AI usage, generated from three store exports; do not edit by hand.
+   App Store: monthly "Total Downloads" (App Store Connect; includes redownloads).
+   Google Play: daily "User acquisition, all users, all events" (new and returning installs), and
+   daily "Installed audience" (devices with the app installed that day, so never summed). */
+export const monthlyDownloads = [
+  { month: 'Aug 2025', appStore: 30, googlePlay: 3 },
+  { month: 'Sep 2025', appStore: 20, googlePlay: 8 },
+  { month: 'Oct 2025', appStore: 31, googlePlay: 37 },
+  { month: 'Nov 2025', appStore: 81, googlePlay: 67 },
+  { month: 'Dec 2025', appStore: 101, googlePlay: 175 },
+  { month: 'Jan 2026', appStore: 133, googlePlay: 245 },
+  { month: 'Feb 2026', appStore: 95, googlePlay: 213 },
+  { month: 'Mar 2026', appStore: 74, googlePlay: 147 },
+  { month: 'Apr 2026', appStore: 41, googlePlay: 91 },
+  { month: 'May 2026', appStore: 38, googlePlay: 55 },
+  { month: 'Jun 2026', appStore: 40, googlePlay: 47 },
+  { month: 'Jul 2026', appStore: 26, googlePlay: 27 },
+  { month: 'Aug 2026', appStore: 34, googlePlay: 31 },
+  { month: 'Sep 2026', appStore: 30, googlePlay: 20 },
+  { month: 'Oct 2026', appStore: 37, googlePlay: 19 },
 ]
 export const appStoreTotal = 811
+export const googlePlayTotal = 1185
 export const playWeekly = [
   { week: '2025-08-28', installed: 1.3 },
   { week: '2025-09-04', installed: 1.1 },
@@ -84,11 +86,11 @@ export const playWeekly = [
 ]
 export const playPeak = { day: '23 Mar 2026', installed: 221 }
 export const playNow = { through: '26 Oct 2026', installed: 116.5 }
-/* average over the last 30 days; the console names only its top four countries */
+/* Google Play installs by country, all time; the console names only its top four countries */
 export const playWhere = [
-  { country: 'India', installed: 21.8 },
-  { country: 'United States', installed: 5.6 },
-  { country: 'Bangladesh', installed: 4.5 },
-  { country: 'Pakistan', installed: 4.1 },
-  { country: 'All other countries', installed: 80.5 },
+  { country: 'India', installs: 415 },
+  { country: 'Bangladesh', installs: 44 },
+  { country: 'United States', installs: 43 },
+  { country: 'Pakistan', installs: 32 },
+  { country: 'All other countries', installs: 651 },
 ]

@@ -9,7 +9,7 @@ export const products = [
     who: 'Nobody pays',
     price: '$0',
     unit: '',
-    outcome: '811 App Store downloads',
+    outcome: '~2,000 downloads, 2 stores',
   },
   {
     id: 'soundsplit',

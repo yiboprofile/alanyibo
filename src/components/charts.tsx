@@ -568,7 +568,7 @@ export function PriceVsMarket() {
   )
 }
 
-/* SoundSplit on Android: the same app is paid for two ways, depending on whether a person has bought minutes */
+/* SoundSplit, on iPhone and Android: the same app is paid for two ways, depending on whether a person has bought minutes */
 const androidPaths = [
   { who: 'Free user', sees: 'A banner ad', pays: 'The advertiser pays', strong: false },
   { who: 'Bought a block', sees: 'No ads', pays: 'The user pays per minute', strong: true },

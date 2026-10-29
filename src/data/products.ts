@@ -16,7 +16,7 @@ export const products = [
     name: 'SoundSplit',
     kind: 'iPhone and Android app, song stems',
     model: 'Per minute',
-    who: 'You pay for what you use; on Android, ads pay for free users',
+    who: 'You pay for what you use; ads pay for free users',
     price: '$14.99+',
     unit: 'a block of minutes',
     outcome: '854 downloads, 2 stores',

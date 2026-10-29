@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Spectrum from './components/Spectrum'
 import ProductBar from './components/ProductBar'
 import Cases from './components/Cases'
+import People from './components/People'
 import Note from './components/Note'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -19,11 +20,12 @@ function App() {
         <Navbar />
         <Hero />
         <Spectrum />
-        {/* the product bar sticks only while the four cases are on screen */}
+        {/* the product bar sticks only while the cases are on screen */}
         <div>
           <ProductBar />
           <Cases />
         </div>
+        <People />
         <Note />
         <About />
         <Contact />

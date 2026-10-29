@@ -1,4 +1,5 @@
-/* The four products in price order, from free to a two-sided market. Shared by the overview and the product bar. */
+/* The five products in price order, from free to a two-sided market. Shared by the overview and the product bar.
+   A value wrapped in [brackets] is still unconfirmed and is shown as a blank. */
 export const products = [
   {
     id: 'dermat',
@@ -31,13 +32,23 @@ export const products = [
     outcome: '10+ people paid',
   },
   {
+    id: 'tutoring',
+    name: 'Urbana SAT Tutoring',
+    kind: 'Tutoring business, co-founded',
+    model: 'Per session',
+    who: 'Families pay for a result',
+    price: '[rate]',
+    unit: 'a session, one-on-one',
+    outcome: '10+ clients, up to +280',
+  },
+  {
     id: 'cravedeals',
-    name: 'CraveDeals',
-    kind: 'Business plan, coupon site',
+    name: 'Crave Deals',
+    kind: 'Coupon company, co-founded',
     model: 'The other side pays',
     who: 'The restaurant pays, the diner doesn’t',
-    price: '?',
+    price: '[price]',
     unit: 'per restaurant, to come',
-    outcome: '0 restaurants signed',
+    outcome: '3rd in the nation, still pitching',
   },
 ]

@@ -11,10 +11,10 @@ export type CaseProps = {
   captions: [string, string]
   title: [string, string]
   lede: ReactNode
-  link: { href: string; label: string }
+  links: { href: string; label: string }[]
   facts: Fact[]
-  product: Image & { kind: 'shot' | 'phone' }
-  photo: Image
+  product?: Image & { kind: 'shot' | 'phone' }
+  photo?: Image
   team: ReactNode
   blanks: string[]
   children: ReactNode
@@ -43,7 +43,7 @@ function Facts({ facts }: { facts: Fact[] }) {
   )
 }
 
-function Media({ product, photo }: { product: CaseProps['product']; photo: Image }) {
+function Media({ product, photo }: { product: NonNullable<CaseProps['product']>; photo: Image }) {
   const phone = product.kind === 'phone'
   return (
     <div
@@ -125,8 +125,12 @@ export default function CaseShell(c: CaseProps) {
         </div>
         <div className="max-w-md min-[900px]:pb-1">
           <Lede>{c.lede}</Lede>
-          <div className="mt-5">
-            <MoreLink href={c.link.href}>{c.link.label}</MoreLink>
+          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+            {c.links.map((l) => (
+              <MoreLink key={l.href} href={l.href}>
+                {l.label}
+              </MoreLink>
+            ))}
           </div>
         </div>
       </div>
@@ -137,12 +141,14 @@ export default function CaseShell(c: CaseProps) {
 
       <div className="mt-3 grid gap-3">{c.children}</div>
 
-      <div className="mt-[clamp(48px,5vw,72px)]">
-        <Media product={c.product} photo={c.photo} />
-      </div>
+      {c.product && c.photo && (
+        <div className="mt-[clamp(48px,5vw,72px)]">
+          <Media product={c.product} photo={c.photo} />
+        </div>
+      )}
 
       <p className="mt-8 max-w-[44rem] text-[14.5px] leading-[1.7] text-white/60">
-        <span className="text-white/40">Built by </span>
+        <span className="text-white/40">Team: </span>
         {c.team}
       </p>
 

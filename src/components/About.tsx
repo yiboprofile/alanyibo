@@ -1,4 +1,4 @@
-import { Caption, Headline, Label, Lede, Split, Wrap } from './ui'
+import { Caption, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
 
 type Item = { title: string; detail: string; tbd?: boolean }
 
@@ -6,7 +6,7 @@ type Item = { title: string; detail: string; tbd?: boolean }
 const years: { year: string; built: Item[]; studied: Item[] }[] = [
   {
     year: '2023',
-    built: [{ title: 'HolidayHelperAI', detail: 'Led a team of five. Year to confirm.', tbd: true }],
+    built: [{ title: 'HolidayHelperAI', detail: 'Led a team of five, grade 9.' }],
     studied: [],
   },
   {
@@ -26,10 +26,11 @@ const years: { year: string; built: Item[]; studied: Item[] }[] = [
     year: '2026',
     built: [],
     studied: [
-      { title: 'Economics Challenge, 1st', detail: 'One of six chosen from about 100.' },
-      { title: 'Wharton', detail: 'Leadership in the Business World.' },
+      { title: 'Economics Challenge, 1st (state)', detail: 'One of six chosen from just under 100.' },
+      { title: 'Wharton LBW', detail: 'One of just over 100 accepted to session one.' },
       { title: 'TEDxSCA Youth', detail: 'A talk: Gen-Z is Cooked.' },
-      { title: 'AP Scholar with Distinction', detail: '' },
+      { title: 'SCISS startup program', detail: 'Best Presentation and Best Team.' },
+      { title: 'National Merit Semifinalist', detail: '' },
     ],
   },
 ]
@@ -54,15 +55,15 @@ function Chip({ item, lane }: { item: Item; lane: 'built' | 'studied' }) {
 const notes = [
   {
     title: 'Economics Challenge, 1st place',
-    body: 'Months of FOMC press conferences, the housing market and executive actions; I argued policy as Keir Starmer at Mount St. Mary’s University.',
+    body: 'Months of FOMC press conferences, housing market conditions and administrative actions. Each of us played a world figure; I chose former UK Prime Minister Keir Starmer because I knew little about him, and argued his policy recommendations before economics professors at Mount St. Mary’s University.',
   },
   {
     title: 'Wharton, Leadership in the Business World',
-    body: 'Three weeks of real Harvard Business School cases. My team’s final case was Chipotle’s entry into Asia.',
+    body: 'One of just over 100 students accepted to session one. Three weeks of Harvard Business School cases with Wharton faculty; my team built and presented a full case on Chipotle’s expansion into Asia.',
   },
   {
     title: 'TEDxSCA Youth',
-    body: 'One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
+    body: 'Gen-Z is Cooked, to an audience of 100, recorded and published on the TED website. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
   },
 ]
 
@@ -78,8 +79,8 @@ export default function About() {
     <Wrap id="about" labelledBy="h-about" className="pt-[clamp(96px,10vw,144px)]">
       <Split heading={<Headline id="h-about" lines={['Economics,', 'without an app.']} />}>
         <Lede>
-          Alan Wang &middot; Urbana High School, Frederick, Maryland &middot; Class of 2027. Economics is the direction.
-          The products are where he tests it.
+          Urbana High School, Frederick, Maryland &middot; Class of 2027. Economics is the direction; the products are
+          where I test it.
         </Lede>
       </Split>
 
@@ -133,7 +134,9 @@ export default function About() {
       <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <figure className="min-w-0">
           <img src="/media/tedx-stats.webp" alt="Alan on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
-          <Caption>TEDxSCA Youth, 2026. The slide, as photographed.</Caption>
+          <Caption>
+            TEDxSCA Youth, 2026. The slide, as photographed. Watch the talk on TED.com: <Tbd>[link]</Tbd>
+          </Caption>
         </figure>
         <figure className="bg-panel p-6 md:p-8 flex flex-col">
           <Label className="block mb-6">The slide&rsquo;s numbers, to scale</Label>

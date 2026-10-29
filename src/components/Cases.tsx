@@ -4,14 +4,17 @@ import {
   JudgesThenMarket,
   MinutePacks,
   Ratings,
+  ScoreGain,
   StemSplit,
   TierLadder,
   TrustScale,
+  TutorTeam,
   YearlyMonths,
 } from './charts'
 import { ChartFrame, Tbd } from './ui'
 
-/* Ordered along the price spectrum in the overview: from free, to pay per use, to pay per month, to a two-sided market */
+/* Ordered along the price spectrum in the overview: free, pay per use, pay per month, pay per session, then a two-sided market.
+   Every fact here matches the Common App activity and honor lists; anything still unconfirmed is a <Tbd> blank. */
 export default function Cases() {
   return (
     <>
@@ -22,16 +25,19 @@ export default function Cases() {
         title={['Dermat AI.', 'No price at all.']}
         lede={
           <>
-            An iPhone app that photographs skin, reports what it may be looking at with a confidence score, keeps a
-            history and compares scans. On the App Store since August 2025, free, with nothing to buy inside.
+            An iPhone app that photographs skin and reports what it may be looking at, with a confidence score, a
+            history and side-by-side comparisons. On the App Store since August 2025, free, with nothing to buy inside.
           </>
         }
-        link={{ href: 'https://apps.apple.com/us/app/dermat-ai/id6748587012', label: 'On the App Store' }}
+        links={[
+          { href: 'https://dermatai.com/', label: 'dermatai.com' },
+          { href: 'https://apps.apple.com/us/app/dermat-ai/id6748587012', label: 'On the App Store' },
+        ]}
         facts={[
           { label: 'Launched', value: 'Aug 2025', note: 'iPhone, rated 18+ for health' },
           { label: 'Price', value: '$0', note: 'nothing to buy inside' },
           { label: 'Rating', value: '5.0', note: 'from 1 rating' },
-          { label: 'Award', value: 'Emerging Standout', note: 'DFW IT Talent Champion, Sep 2025' },
+          { label: 'Award', value: 'Emerging Standout', note: 'DFW IT Talent Champion, 2025–26' },
         ]}
         product={{
           kind: 'phone',
@@ -48,15 +54,11 @@ export default function Cases() {
           height: 1244,
           caption: 'Emerging Standout Award, DFW IT Talent Champion Competition, September 2025.',
         }}
-        team={<Tbd>[Teammates, and who did what.]</Tbd>}
+        team={<Tbd>[Teammates, and what I did.]</Tbd>}
         blanks={[
-          'Who the app was for, and how the problem came up.',
-          'Why it has no price, in Alan’s words.',
-          'What the app says it does and does not do, from its own screens, and what Alan thinks it should say.',
-          'Downloads, and over what period.',
-          'What giving something away taught him that charging for the other two did not.',
-          'What he would change, and what he would keep.',
-          'Stack: framework, the model, where it runs.',
+          'Why it has no price, in my own words.',
+          'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
+          'What giving something away taught me that charging for the other apps did not.',
         ]}
       >
         <ChartFrame
@@ -74,17 +76,20 @@ export default function Cases() {
         title={['SoundSplit.', 'Sold by the minute.']}
         lede={
           <>
-            An iPhone app that separates a song into vocals, drums and instruments, each on its own slider. On the App
-            Store since August 2024. I chose to meter it instead of selling a subscription, which ties what a person
-            pays to how much they use.
+            An iPhone app that separates a song into its stems, so you can take the vocals out for karaoke or mute the
+            piano to practise along. On the App Store since August 2024. I chose to meter it instead of selling a
+            subscription, so what a person pays follows how much they use.
           </>
         }
-        link={{ href: 'https://apps.apple.com/us/app/sound-split/id6618147632', label: 'On the App Store' }}
+        links={[
+          { href: 'https://soundsplitai.com/', label: 'soundsplitai.com' },
+          { href: 'https://apps.apple.com/us/app/sound-split/id6618147632', label: 'On the App Store' },
+        ]}
         facts={[
           { label: 'Launched', value: 'Aug 2024', note: 'iPhone, free to download' },
           { label: 'Price', value: '$14.99–$119.99', note: 'a block of minutes' },
           { label: 'Rating', value: '4.0', note: 'from 4 ratings' },
-          { label: 'Award', value: 'Future Star', note: 'DFW IT Association' },
+          { label: 'Award', value: 'Future Star', note: 'DFW IT Association, 2024–25' },
         ]}
         product={{
           kind: 'phone',
@@ -103,23 +108,18 @@ export default function Cases() {
         }}
         team={
           <>
-            Alan with Vaibhav Sykhesh, Raymond Zhou, Bradley Chen and Mihir Kumar. Sound Split and Dermat AI are
-            published through a family member&rsquo;s company developer account, APIDEED LLC.
+            Vaibhav Sykhesh, Raymond Zhou, Bradley Chen, Mihir Kumar and me. SoundSplit and Dermat AI are published
+            through a family member&rsquo;s company developer account, APIDEED LLC.
           </>
         }
         blanks={[
-          'Who the app was for, and how the problem came up.',
           'Minutes in each block: Basic, Standard, Premium.',
-          'Why metered rather than a subscription, and how the three amounts were set.',
-          'Purchases by tier, the revenue, and the period.',
-          'Downloads, and over what period.',
-          'What the buyers chose, and what that said about the three amounts.',
-          'What he would change, and what he would keep.',
-          'Who did what, and the stack: framework, separation model, where it runs.',
+          'Why metered rather than a subscription, in my own words.',
+          'Purchases so far, and over what period.',
         ]}
       >
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
-          <ChartFrame title="What one import does" caption="One song in, three tracks out. The waveforms are drawn for illustration.">
+          <ChartFrame title="What one import does" caption="One song in, separate tracks out. The waveforms are drawn for illustration.">
             <StemSplit />
           </ChartFrame>
           <ChartFrame title="What a block of minutes costs" caption="In-app purchases on the App Store, October 2026. Bars share one scale.">
@@ -138,16 +138,17 @@ export default function Cases() {
         title={['HolidayHelperAI.', 'Three tiers.']}
         lede={
           <>
-            A web app for planning a trip: an AI assistant, travel plans, an inspiration board and a journal. I led the
-            team of five that built it, and I set the prices. More than ten people have paid for it.
+            A website that plans trips and vacations: an AI assistant, travel plans, an inspiration board and a journal.
+            I led the team of five that built it in ninth grade, and I set the prices. More than ten people have paid
+            for it.
           </>
         }
-        link={{ href: 'https://holidayhelperai.com/', label: 'holidayhelperai.com' }}
+        links={[{ href: 'https://holidayhelperai.com/', label: 'holidayhelperai.com' }]}
         facts={[
-          { label: 'Built', value: <Tbd>2023</Tbd>, note: 'web app, still online' },
+          { label: 'Built', value: '2023–24', note: 'grade 9, still online' },
           { label: 'Price', value: '$2–$8.99', note: 'a month, three tiers' },
-          { label: 'Paid', value: '10+', note: 'people, exact count to come' },
-          { label: 'Award', value: 'Stellar Young Achiever', note: 'DCIA' },
+          { label: 'Paid', value: '10+', note: 'people' },
+          { label: 'Award', value: 'Stellar Young Achiever', note: 'DCIA, 2023–24' },
         ]}
         product={{
           kind: 'shot',
@@ -165,16 +166,10 @@ export default function Cases() {
           position: '0 50%',
           caption: 'The DCIA award slide, with the team listed.',
         }}
-        team={<>Alan (lead), William Liu, Raymond Zhou, Owen Liu and Hanna Lee, with James Wang as advisor.</>}
+        team={<>I led it, with William Liu, Raymond Zhou, Owen Liu and Hanna Lee, and James Wang as advisor.</>}
         blanks={[
-          'The year it was built (2023, to confirm).',
-          'Who the first users were meant to be, and how the problem came up.',
-          'Why three tiers and not one price, why $2, and what “Enterprise” meant to a team of five students.',
-          'Exact paying count by tier, monthly or yearly, and the period.',
-          'Sign-ups and active users over the same period.',
-          'What the people who paid taught him about the price, and which tier they chose.',
-          'What he would change about the tiers, and what he would keep.',
-          'Who built what, and the stack: framework, hosting, the AI service.',
+          'Why three tiers and not one price, and why $2, in my own words.',
+          'Which tier the paying users chose.',
         ]}
       >
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
@@ -191,30 +186,68 @@ export default function Cases() {
       </CaseShell>
 
       <CaseShell
-        id="cravedeals"
-        model="The other side pays"
-        captions={['The judges scored it.', 'The market never did.']}
-        title={['CraveDeals.', 'Third, then zero.']}
+        id="tutoring"
+        model="Per session"
+        captions={['Families pay for a result.', 'The one that sold.']}
+        title={['Urbana SAT Tutoring.', 'Paid for by results.']}
         lede={
           <>
-            A business plan for a coupon platform for small restaurants in Frederick, Montgomery and Baltimore. It
-            placed 3rd in Maryland, then 3rd in the nation. Then we tried to start the market, and it did not start.
+            An affordable one-on-one SAT tutoring business in Urbana that I co-founded. Every student gets a weekly and
+            monthly plan. We have worked with more than ten clients, and when the founders could not take on more, we
+            hired three tutors.
           </>
         }
-        link={{ href: 'http://crave.deals/', label: 'crave.deals' }}
+        links={[]}
         facts={[
-          { label: 'Written', value: '2025', note: 'FBLA, Urbana chapter' },
-          { label: 'Restaurant pays', value: <Tbd>[price]</Tbd>, note: 'the diner pays nothing' },
-          { label: 'Signed', value: '0', note: 'restaurants, 0 coupons' },
-          { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan Event' },
+          { label: 'Started', value: <Tbd>[grade 11]</Tbd>, note: 'co-founder and tutor' },
+          { label: 'Price', value: <Tbd>[rate]</Tbd>, note: 'a session, one-on-one' },
+          { label: 'Clients', value: '10+', note: 'with personal plans' },
+          { label: 'Best gain', value: '+280', note: '1220 to 1510' },
+        ]}
+        team={<>I co-founded it and tutor; three more tutors joined as it grew.</>}
+        blanks={[
+          'When it started: the activity list says grade 12, the additional information says grades 11 and 12.',
+          'What a session costs, and why that price counts as affordable.',
+          'Where the first clients came from.',
+          'One or two lines from a family or student, with their permission (can be anonymous).',
+        ]}
+      >
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+          <ChartFrame title="What a family pays for" caption="The largest improvement so far, on the SAT’s 400–1600 scale.">
+            <ScoreGain />
+          </ChartFrame>
+          <ChartFrame title="How it grew">
+            <TutorTeam />
+          </ChartFrame>
+        </div>
+      </CaseShell>
+
+      <CaseShell
+        id="cravedeals"
+        model="The other side pays"
+        captions={['The judges scored it.', 'The market is the harder test.']}
+        title={['Crave Deals.', 'Third, then the street.']}
+        lede={
+          <>
+            A coupon company I co-founded to help small local restaurants level the playing field against big chains.
+            The business plan placed 3rd in Maryland, then 3rd in the nation. Since then we have pitched restaurants
+            around Frederick and Urbana, venture firms and investors, and entered pitch competitions.
+          </>
+        }
+        links={[{ href: 'http://crave.deals/', label: 'crave.deals' }]}
+        facts={[
+          { label: 'Role', value: 'Co-founder, COO', note: <>grades <Tbd>[10–11 or 10–12]</Tbd></> },
+          { label: 'Restaurants pitched', value: <Tbd>[40+]</Tbd>, note: 'around Frederick and Urbana' },
+          { label: 'Pitch prizes', value: <Tbd>[$120+ or $320+]</Tbd>, note: 'local and national' },
+          { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan, 2025' },
         ]}
         product={{
           kind: 'shot',
           src: '/media/crave-top.webp',
-          alt: 'The top of the CraveDeals prototype: a banner reading Your Next Meal Awaits, with a town picker',
+          alt: 'The top of the Crave Deals website: a banner reading Your Next Meal Awaits, with a town picker',
           width: 1400,
           height: 680,
-          caption: 'The CraveDeals prototype, still online. The restaurants on it are samples, not clients.',
+          caption: 'crave.deals. The restaurants shown are samples, not clients.',
         }}
         photo={{
           src: '/assets/photos/fbla-3.webp',
@@ -222,31 +255,27 @@ export default function Cases() {
           width: 1280,
           height: 1218,
           position: '100% 50%',
-          caption: 'FBLA National Leadership Conference, Anaheim, 2025. Alan is on the right.',
+          caption: 'FBLA National Leadership Conference, Anaheim, 2025. I am on the right.',
         }}
         team={
           <>
-            A team of three. Alan wrote the market analysis and the financial sections, visited restaurants in the
-            Frederick area, and built part of the site. <Tbd>[Teammate names, and what each of them did.]</Tbd>
+            Three co-founders. As COO I wrote the market analysis and the financial sections and visited restaurants in
+            the Frederick area. <Tbd>[Co-founders&rsquo; names, and what each of them does.]</Tbd>
           </>
         }
         blanks={[
-          'How the question came up: which restaurant owners Alan talked to, what they said about commissions and regulars.',
-          'Why a restaurant would give a discount: the plan’s answer and figures, with the page number.',
-          'What the plan charged restaurants, and why that price.',
-          'The plan’s launch sequence: which side joins first.',
-          'How many restaurants were approached, over which months.',
-          'Three pages from the plan: market sizing, pricing, breakeven.',
-          'What the cold start looked like from a restaurant owner’s side, and what would have started it.',
-          'What he would do differently, and what he would keep. Stack: framework, hosting.',
+          'The real numbers, the same in the activity list, the additional information and here: restaurants pitched (several or 40+), prizes ($120+ or $320+), hours a week (1.5 or 3), grades (10–11 or 10–12).',
+          'Is it still running? If any restaurant has signed, say so; if not, “0 signed so far” stays.',
+          'Where the mobile app stands.',
+          'What the cold start looks like from a restaurant owner’s side, in my own words.',
         ]}
       >
-        <ChartFrame title="One plan, two scores">
+        <ChartFrame title="One plan, two tests">
           <JudgesThenMarket />
         </ChartFrame>
         <ChartFrame
-          title="Why it never started"
-          caption="A cold-start problem: diners won’t visit a site with no deals, and restaurants won’t post deals on a site with no diners."
+          title="The problem we are working on"
+          caption="A cold start: diners won’t visit a site with no deals, and restaurants won’t post deals on a site with no diners."
         >
           <div className="max-w-[560px] mx-auto">
             <ColdStartLoop />

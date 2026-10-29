@@ -20,10 +20,10 @@ export default function Hero() {
       {/* Side captions */}
       <div className="absolute inset-x-0 top-[30%] z-10 flex items-start justify-between px-6 md:px-12">
         <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem]">
-          One plan, three products.
+          Two companies, three apps.
         </span>
         <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem] text-right">
-          Four ways to set a price.
+          Five ways to set a price.
         </span>
       </div>
 
@@ -49,9 +49,13 @@ export default function Hero() {
           <div className="max-w-sm md:pb-1">
             <p className="text-white/60 text-[14.5px] leading-[1.7] font-light">
               I&rsquo;m Alan Wang, a senior at Urbana High School in Frederick,
-              Maryland. With student teams I wrote one business plan and built
-              three apps. Each one answered the same question differently: who
-              pays, and how?
+              Maryland. I co-founded a coupon company and an SAT tutoring
+              business, and built three apps with student teams. Each one
+              answered the same question differently: who pays, and how?
+            </p>
+            {/* proof line: every item here appears on the application and can be checked */}
+            <p className="mt-4 font-mono text-[10.5px] uppercase tracking-[0.12em] leading-[1.9] text-white/55">
+              National Merit Semifinalist &middot; FBLA, 3rd in the nation &middot; TEDx speaker &middot; 3 apps, 3 awards
             </p>
 
             <div className="mt-5 flex items-center gap-6">
@@ -59,7 +63,7 @@ export default function Hero() {
                 href="#cases"
                 className="inline-flex items-center px-6 py-2.5 rounded-full text-[13px] font-semibold text-black bg-white transition-all duration-200 hover:bg-white/85"
               >
-                Read the four cases
+                Read the cases
               </a>
               <a
                 href="#about"

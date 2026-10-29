@@ -3,11 +3,11 @@ import { Label, Tbd } from './ui'
 /* ---------- CraveDeals ---------- */
 
 const craveSteps = [
-  { value: 'Plan', label: 'Written by three of us, FBLA, 2025', phase: 'judges' },
+  { value: 'Plan', label: 'Written as co-founder and COO, FBLA, 2025', phase: 'judges' },
   { value: '3rd', label: 'in Maryland', phase: 'judges' },
   { value: '3rd', label: 'in the nation, Anaheim', phase: 'judges' },
-  { value: <Tbd>[N]</Tbd>, label: 'restaurants approached', phase: 'market' },
-  { value: '0', label: 'signed, 0 coupons redeemed', phase: 'market' },
+  { value: <Tbd>[40+]</Tbd>, label: 'restaurants pitched, plus VCs and investors', phase: 'market' },
+  { value: <Tbd>[0]</Tbd>, label: 'restaurants signed so far', phase: 'market' },
 ] as const
 
 /* Judged on paper, then tested on the street: the same plan, two very different scores */
@@ -16,7 +16,7 @@ export function JudgesThenMarket() {
     <div>
       <div className="hidden md:grid grid-cols-5 gap-4 mb-4">
         <Label className="col-span-3 border-b border-white/40 pb-2">Scored by judges</Label>
-        <Label className="col-span-2 border-b border-dashed border-accent/60 pb-2 text-accent">Tested by the market</Label>
+        <Label className="col-span-2 border-b border-dashed border-accent/60 pb-2 text-accent">Tested by the market, still going</Label>
       </div>
       <ol className="grid grid-cols-1 md:grid-cols-5 gap-x-4">
         {craveSteps.map((s, i) => {
@@ -316,6 +316,74 @@ export function TrustScale() {
           )
         })}
       </ol>
+    </div>
+  )
+}
+
+/* ---------- Urbana SAT Tutoring ---------- */
+
+/* The best result so far, drawn on the SAT's own 400–1600 scale so the gain is not exaggerated */
+export function ScoreGain() {
+  const lo = 400
+  const hi = 1600
+  const pct = (v: number) => ((v - lo) / (hi - lo)) * 100
+  const from = 1220
+  const to = 1510
+  return (
+    <div>
+      <div className="relative h-14">
+        <div className="absolute inset-x-0 top-1/2 h-px bg-white/20" aria-hidden="true" />
+        <div
+          className="absolute top-1/2 h-2 -translate-y-1/2 bg-accent"
+          style={{ left: `${pct(from)}%`, width: `${pct(to) - pct(from)}%` }}
+          aria-hidden="true"
+        />
+        {[
+          { v: from, label: 'Before', strong: false },
+          { v: to, label: 'After', strong: true },
+        ].map((m) => (
+          <div key={m.v} className="absolute top-0 -translate-x-1/2 text-center" style={{ left: `${pct(m.v)}%` }}>
+            <span className={`block font-display font-bold text-[18px] tabular-nums ${m.strong ? 'text-white' : 'text-white/70'}`}>{m.v}</span>
+            <span className={`mx-auto mt-1 block size-3 rounded-full ${m.strong ? 'bg-white' : 'border-2 border-white/70 bg-panel'}`} />
+          </div>
+        ))}
+      </div>
+      <div className="mt-3 flex justify-between font-mono text-[11px] text-white/45 tabular-nums">
+        <span>400</span>
+        <span>1000</span>
+        <span>1600</span>
+      </div>
+      <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="font-display font-extrabold text-[clamp(2.4rem,4.6vw,3.4rem)] leading-none text-accent tabular-nums">+280</span>
+        <span className="text-[14px] text-white/60">points, the largest gain so far</span>
+      </p>
+    </div>
+  )
+}
+
+/* How the business grew: the founders, then three tutors hired to keep up with clients */
+export function TutorTeam() {
+  return (
+    <div className="grid gap-6">
+      <div>
+        <div className="flex flex-wrap gap-2" aria-hidden="true">
+          {Array.from({ length: 10 }, (_, i) => (
+            <span key={i} className="size-6 rounded-full bg-white" />
+          ))}
+          <span className="size-6 rounded-full border border-dashed border-white/50" />
+        </div>
+        <span className="block mt-2.5 text-[13px] text-white/60">10+ clients, each with a weekly or monthly plan</span>
+      </div>
+      <div>
+        <div className="flex flex-wrap items-center gap-2" aria-hidden="true">
+          <span className="h-6 px-2.5 grid place-items-center rounded-full border border-accent text-accent font-mono text-[11px]">founders</span>
+          <span className="font-mono text-[11px] text-white/40">+</span>
+          {Array.from({ length: 3 }, (_, i) => (
+            <span key={i} className="size-6 rounded-full bg-accent" />
+          ))}
+        </div>
+        <span className="block mt-2.5 text-[13px] text-white/60">3 tutors hired once the founders could not take more students</span>
+      </div>
     </div>
   )
 }

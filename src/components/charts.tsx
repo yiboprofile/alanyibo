@@ -567,3 +567,30 @@ export function PriceVsMarket() {
     </div>
   )
 }
+
+/* SoundSplit on Android: the same app is paid for two ways, depending on whether a person has bought minutes */
+const androidPaths = [
+  { who: 'Free user', sees: 'A banner ad', pays: 'The advertiser pays', strong: false },
+  { who: 'Bought a block', sees: 'No ads', pays: 'The user pays per minute', strong: true },
+]
+
+export function WhoPaysAndroid() {
+  return (
+    <ol className="grid gap-3">
+      {androidPaths.map((p) => (
+        <li
+          key={p.who}
+          className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_20px_minmax(0,1fr)_20px_minmax(0,1.2fr)] items-center gap-2 sm:gap-3"
+        >
+          <span className={`px-3.5 py-2.5 text-[14px] font-semibold ${p.strong ? 'bg-white text-[#0b1210]' : 'border border-white/30 text-white'}`}>
+            {p.who}
+          </span>
+          <span className="hidden sm:block text-white/40" aria-hidden="true">&rarr;</span>
+          <span className="px-3.5 py-2.5 text-[14px] text-white/75 bg-white/[0.06]">{p.sees}</span>
+          <span className="hidden sm:block text-white/40" aria-hidden="true">&rarr;</span>
+          <span className={`px-3.5 py-2.5 text-[14px] font-semibold ${p.strong ? 'text-white' : 'text-accent'}`}>{p.pays}</span>
+        </li>
+      ))}
+    </ol>
+  )
+}

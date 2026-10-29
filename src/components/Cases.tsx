@@ -13,6 +13,7 @@ import {
   TierLadder,
   TrustScale,
   TutorTeam,
+  WhoPaysAndroid,
   YearlyMonths,
 } from './charts'
 import { ChartFrame, Tbd } from './ui'
@@ -148,7 +149,7 @@ export default function Cases() {
             A tool that separates a song into its stems, so you can take the vocals out for karaoke or mute the piano to
             practise along. It runs on the web at soundsplitai.com, and as an app on the App Store and Google Play since
             August 2024. I chose to meter it instead of selling a subscription, so what a person pays follows how much
-            they use.
+            they use. On Android, free users see a banner ad; buying any block of minutes removes it.
           </>
         }
         links={[
@@ -215,7 +216,8 @@ export default function Cases() {
         }
         blanks={[
           'Purchases so far: how many of the people who downloaded it bought minutes (App Store Connect, In-App Purchases; Play Console, Orders). This is the number that tests the pricing.',
-          'The Google Play listing is marked “Contains ads”. If the Android version shows ads, that is a second way of being paid and belongs in this case.',
+          'What the banner ads have earned so far, and whether seeing an ad pushes anyone to buy minutes.',
+          'Why ads on Android but not on iPhone, if the iPhone app has none.',
           'Web app use: visitors or sign-ups on soundsplitai.com, if they are tracked, so the web version is counted too.',
           'Why metered rather than a subscription, in my own words.',
         ]}
@@ -240,20 +242,28 @@ export default function Cases() {
             <WhereInstalled rows={soundsplit.playWhere} />
           </ChartFrame>
         </div>
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
-          <ChartFrame title="What one import does" caption="One song in, separate tracks out. The waveforms are drawn for illustration.">
-            <StemSplit />
-          </ChartFrame>
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <ChartFrame
             title="What a block of minutes costs"
             caption="In-app purchases on the App Store; minutes per block from the app’s purchase screen. Bars share one scale."
           >
             <MinutePacks />
           </ChartFrame>
+          <ChartFrame
+            title="Who pays, on Android"
+            caption="The same app, paid for two ways: advertisers pay for people who have not bought minutes, and buying any block of minutes removes the ad."
+          >
+            <WhoPaysAndroid />
+          </ChartFrame>
         </div>
-        <ChartFrame title="What people thought" caption="One dot per rating. Four ratings is a small sample.">
-          <Ratings average="4.0" count={4} store="App Store" />
-        </ChartFrame>
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+          <ChartFrame title="What one import does" caption="One song in, separate tracks out. The waveforms are drawn for illustration.">
+            <StemSplit />
+          </ChartFrame>
+          <ChartFrame title="What people thought" caption="One dot per rating. Four ratings is a small sample.">
+            <Ratings average="4.0" count={4} store="App Store" />
+          </ChartFrame>
+        </div>
       </CaseShell>
 
       <CaseShell

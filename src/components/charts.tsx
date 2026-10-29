@@ -268,8 +268,7 @@ export function MinutePacks() {
       </ul>
       <p className="mt-6 text-[13.5px] leading-snug text-white/65">
         The more minutes you buy, the less each one costs: from ${(packs[0].price / packs[0].minutes).toFixed(2)} down to $
-        {(premium.price / premium.minutes).toFixed(2)}. The {premium.buyers} Premium buyers brought in{' '}
-        {Math.round(((premium.price * premium.buyers) / revenue) * 100)}% of the {usd(revenue)} spent.
+        {(premium.price / premium.minutes).toFixed(2)}. Buyers spent {usd(revenue)} in all.
       </p>
     </div>
   )

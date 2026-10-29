@@ -220,7 +220,6 @@ export default function Cases() {
           </>
         }
         blanks={[
-          'What the 4–3–2 split says about the three prices, in my own words: most buyers chose the cheapest block, but the two Premium buyers brought in most of the money.',
         ]}
       >
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)]">
@@ -249,6 +248,11 @@ export default function Cases() {
             caption="In-app purchase prices; minutes per block from the app’s purchase screen; buyers by block from the store records. Amounts are before the stores’ fees. Bars share one scale."
           >
             <MinutePacks />
+            <p className="mt-6 border-l-2 border-accent/60 pl-4 text-[14.5px] leading-[1.65] text-white/80">
+              Most buyers started small: four of the nine chose Basic. But the two Premium buyers brought in 59% of the
+              money and bought 71% of the minutes, at my lowest price per minute. The next thing to check is whether
+              $0.15 still covers what a minute costs me to run.
+            </p>
           </ChartFrame>
           <ChartFrame
             title="Who pays"

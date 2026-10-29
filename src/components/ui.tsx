@@ -12,6 +12,30 @@ export function Arrow() {
   )
 }
 
+/* Small monochrome marks for where an external link goes: a website, the App Store or Google Play */
+function LinkIcon({ href }: { href: string }) {
+  const common = { width: 14, height: 14, viewBox: '0 0 24 24', 'aria-hidden': true, className: 'shrink-0' } as const
+  if (href.includes('apps.apple.com'))
+    return (
+      <svg {...common} fill="currentColor">
+        <path d="M16.37 12.79c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.39-3.69zM14.1 6.04c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z" />
+      </svg>
+    )
+  if (href.includes('play.google.com'))
+    return (
+      <svg {...common} fill="currentColor">
+        <path d="M4.2 2.3a1.5 1.5 0 0 0-.45 1.1v17.2c0 .44.17.83.45 1.1l9.55-9.7L4.2 2.3zm10.75 8.5 2.7-2.75L6.2 1.6a1.5 1.5 0 0 0-1.1-.2l9.85 9.4zm0 2.4-9.85 9.4c.36.08.75.03 1.1-.17l11.45-6.48-2.7-2.75zm3.98-3.88-3.03 3.08 3.03 3.08 2.68-1.52c.9-.5.9-1.6 0-2.1l-2.68-1.54z" />
+      </svg>
+    )
+  return (
+    <svg {...common} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="4" />
+      <path d="M21.17 8H12M3.95 6.06 8.54 14M10.88 21.94 15.46 14" />
+    </svg>
+  )
+}
+
 export function MoreLink({ href, children }: { href: string; children: ReactNode }) {
   const external = href.startsWith('http')
   return (
@@ -20,6 +44,7 @@ export function MoreLink({ href, children }: { href: string; children: ReactNode
       {...(external ? { target: '_blank', rel: 'noopener' } : {})}
       className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/80 hover:text-white transition-colors duration-200"
     >
+      {external && <LinkIcon href={href} />}
       {children}
       <Arrow />
     </a>

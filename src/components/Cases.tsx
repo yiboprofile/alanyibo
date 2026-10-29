@@ -26,15 +26,17 @@ export default function Cases() {
         lede={
           <>
             An iPhone app that photographs skin and reports what it may be looking at, with a confidence score, a
-            history and side-by-side comparisons. On the App Store since August 2025, free, with nothing to buy inside.
+            history and side-by-side comparisons. On the App Store since August 2025 and now on Google Play, free, with
+            nothing to buy inside.
           </>
         }
         links={[
           { href: 'https://dermatai.com/', label: 'dermatai.com' },
           { href: 'https://apps.apple.com/us/app/dermat-ai/id6748587012', label: 'On the App Store' },
+          { href: 'https://play.google.com/store/apps/details?id=com.dermatai.app', label: 'On Google Play' },
         ]}
         facts={[
-          { label: 'Launched', value: 'Aug 2025', note: 'iPhone, rated 18+ for health' },
+          { label: 'Launched', value: 'Aug 2025', note: 'iPhone and Android, rated 18+' },
           { label: 'Price', value: '$0', note: 'nothing to buy inside' },
           { label: 'Rating', value: '5.0', note: 'from 1 rating' },
           { label: 'Award', value: 'Emerging Standout', note: 'DFW IT Talent Champion, 2025–26' },

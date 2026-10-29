@@ -90,7 +90,7 @@ export default function Cases() {
           height: 1244,
           caption: 'Emerging Standout Award, DFW IT Talent Champion, September 2025.',
         }}
-        team={<Tbd>[Teammates, and what I did.]</Tbd>}
+        team={<>Just me. I built Dermat AI on my own.</>}
         blanks={[
           'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
           'How many countries in all: both consoles list them.',

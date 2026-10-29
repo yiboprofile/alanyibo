@@ -217,7 +217,6 @@ export default function Cases() {
         }
         blanks={[
           'What the 4–3–2 split says about the three prices, in my own words: most buyers chose the cheapest block, but the two Premium buyers brought in most of the money.',
-          'Whether seeing an ad pushes anyone to buy minutes, and what under $90 in ad revenue says about ads as a way to be paid.',
         ]}
       >
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)]">
@@ -252,6 +251,12 @@ export default function Cases() {
             caption="The same app, paid for two ways: advertisers pay for people who have not bought minutes, and buying any block of minutes removes the ad. Banner ads have earned under $90 in total."
           >
             <WhoPaysAndroid />
+            <p className="mt-6 border-l-2 border-accent/60 pl-4 text-[14.5px] leading-[1.65] text-white/80">
+              I can&rsquo;t yet tell whether the banner pushes anyone to buy: I never tracked how many ads a person saw
+              before paying. What the numbers do show is the gap. Each free user earned at most about ten cents in ads,
+              while each of the 9 buyers spent about $45, so one person who paid was worth roughly four hundred who
+              didn&rsquo;t.
+            </p>
           </ChartFrame>
         </div>
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">

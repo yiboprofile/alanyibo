@@ -323,14 +323,14 @@ export default function Cases() {
         links={[]}
         facts={[
           { label: 'Started', value: <Tbd>[grade 11]</Tbd>, note: 'co-founder and tutor' },
-          { label: 'Price', value: <Tbd>[rate]</Tbd>, note: 'a session, one-on-one' },
+          { label: 'Price', value: '$40', note: 'a session, one-on-one' },
           { label: 'Clients', value: '10+', note: 'with personal plans' },
           { label: 'Best gain', value: '+280', note: '1220 to 1510' },
         ]}
         team={<>I co-founded it and tutor; three more tutors joined as it grew.</>}
         blanks={[
           'When it started: the activity list says grade 12, the additional information says grades 11 and 12.',
-          'What a session costs, and why that price counts as affordable.',
+          'Why $40 a session counts as affordable, and how it compares with other SAT tutoring around Urbana.',
           'Where the first clients came from.',
           'One or two lines from a family or student, with their permission (can be anonymous).',
         ]}

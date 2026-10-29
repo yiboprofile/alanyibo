@@ -100,7 +100,6 @@ export default function Cases() {
           'A screenshot of the notice that opens from the button at the top of the assistant (or of an answer ending with the note), to replace the current assistant screenshot, whose two greetings show no note.',
           'Why it has no price, in my own words.',
           'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
-          'What giving something away taught me that charging for the other apps did not.',
         ]}
       >
         <div className="grid gap-3 lg:grid-cols-2">
@@ -132,9 +131,14 @@ export default function Cases() {
           </ChartFrame>
           <ChartFrame
           title="When can you tell if it was right?"
-          caption="A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? Every answer Dermat AI gives ends with a note that it is not a medical diagnosis, the button at the top of the assistant opens the full notice, and every answer has a flag to report it as wrong."
+          caption="A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? In the app, a button at the top of the assistant opens the full notice, and every answer has a flag to report it as wrong."
         >
           <TrustScale />
+          <p className="mt-6 border-l-2 border-accent/60 pl-4 text-[14.5px] leading-[1.65] text-white/80">
+            Giving Dermat AI away reached about four times as many people a month as SoundSplit, which charges for
+            minutes. But free didn&rsquo;t lower my responsibility: people who pay nothing still trust the answer, so
+            every answer ends with a note that it is not a diagnosis.
+          </p>
         </ChartFrame>
         </div>
       </CaseShell>

@@ -14,6 +14,8 @@ export type CaseProps = {
   links: { href: string; label: string }[]
   facts: Fact[]
   product?: Image & { kind: 'shot' | 'phone' }
+  /* several phone screens side by side; when given, the photo shrinks to a small card beside them */
+  screens?: Image[]
   photo?: Image
   team: ReactNode
   blanks: string[]
@@ -90,6 +92,47 @@ function Media({ product, photo }: { product: NonNullable<CaseProps['product']>;
   )
 }
 
+/* A row of phone screens (scrolls sideways on narrow screens) and the award as a small card */
+function Screens({ screens, photo }: { screens: Image[]; photo?: Image }) {
+  return (
+    <div className="grid gap-x-3 gap-y-7 lg:grid-cols-[minmax(0,1fr)_15rem]">
+      <div className="min-w-0 -mx-1 px-1 flex gap-3 overflow-x-auto snap-x snap-mandatory [scrollbar-width:thin]">
+        {screens.map((s) => (
+          <figure key={s.src} className="snap-start shrink-0 w-[min(15rem,62vw)]">
+            <div className="bg-panel p-3 sm:p-4 flex items-center justify-center">
+              <img
+                src={s.src}
+                alt={s.alt}
+                width={s.width}
+                height={s.height}
+                loading="lazy"
+                className="w-full h-auto rounded-[14px]"
+              />
+            </div>
+            <Caption>{s.caption}</Caption>
+          </figure>
+        ))}
+      </div>
+      {photo && (
+        <figure className="min-w-0 max-w-[15rem] lg:max-w-none self-start">
+          <div className="bg-panel p-2">
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              width={photo.width}
+              height={photo.height}
+              loading="lazy"
+              className="w-full h-auto"
+              style={{ objectPosition: photo.position }}
+            />
+          </div>
+          <Caption>{photo.caption}</Caption>
+        </figure>
+      )}
+    </div>
+  )
+}
+
 /* What Alan still has to write for this case, gathered in one place instead of scattered through the text */
 function Blanks({ items }: { items: string[] }) {
   return (
@@ -152,10 +195,17 @@ export default function CaseShell(c: CaseProps) {
 
       <div className="mt-3 grid gap-3">{c.children}</div>
 
-      {c.product && c.photo && (
+      {c.screens ? (
         <div className="mt-[clamp(48px,5vw,72px)]">
-          <Media product={c.product} photo={c.photo} />
+          <Screens screens={c.screens} photo={c.photo} />
         </div>
+      ) : (
+        c.product &&
+        c.photo && (
+          <div className="mt-[clamp(48px,5vw,72px)]">
+            <Media product={c.product} photo={c.photo} />
+          </div>
+        )
       )}
 
       <p className="mt-8 max-w-[44rem] text-[14.5px] leading-[1.7] text-white/60">

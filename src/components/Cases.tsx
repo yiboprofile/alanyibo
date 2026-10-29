@@ -46,25 +46,27 @@ export default function Cases() {
           { label: 'Still installed', value: '~117', note: 'Android devices now; peak 221' },
           { label: 'Award', value: 'Emerging Standout', note: 'DFW IT Talent Champion, 2025–26' },
         ]}
-        product={{
-          kind: 'phone',
-          src: '/media/dermat-dashboard.webp',
-          alt: "Dermat AI's skin health dashboard: a latest scan reading healthy skin at 90 percent confidence, a trend line and a conditions breakdown",
-          width: 512,
-          height: 1104,
-          caption: 'The dashboard: the latest scan, the trend, the history.',
-        }}
+        screens={[
+          {
+            src: '/media/dermat-dashboard.webp',
+            alt: "Dermat AI's skin health dashboard: a latest scan reading healthy skin at 90 percent confidence, a trend line and a conditions breakdown",
+            width: 512,
+            height: 1104,
+            caption: 'The dashboard: the latest scan, the trend, the history.',
+          },
+        ]}
         photo={{
           src: '/assets/photos/award-dermat.webp',
           alt: 'Certificate: Emerging Standout Award, DFW IT Talent Champion Competition, to Team Dermat AI, 15 September 2025',
           width: 1600,
           height: 1244,
-          caption: 'Emerging Standout Award, DFW IT Talent Champion Competition, September 2025.',
+          caption: 'Emerging Standout Award, DFW IT Talent Champion, September 2025.',
         }}
         team={<Tbd>[Teammates, and what I did.]</Tbd>}
         blanks={[
           'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
           'How many countries in all: both consoles list them.',
+          'Four or five App Store screenshots (scan, result with confidence score, history, comparison, the not-a-diagnosis notice), from App Store Connect or the project folder.',
           'Why it has no price, in my own words.',
           'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
           'What giving something away taught me that charging for the other apps did not.',

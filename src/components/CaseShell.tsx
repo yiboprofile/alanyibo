@@ -98,7 +98,7 @@ function Screens({ screens, photo }: { screens: Image[]; photo?: Image }) {
     <div className="grid gap-x-3 gap-y-7 lg:grid-cols-[minmax(0,1fr)_15rem]">
       <div className="min-w-0 -mx-1 px-1 flex gap-3 overflow-x-auto snap-x snap-mandatory [scrollbar-width:thin]">
         {screens.map((s) => (
-          <figure key={s.src} className="snap-start shrink-0 w-[min(15rem,62vw)]">
+          <figure key={s.src} className="snap-start shrink-0 w-[min(12rem,44vw)]">
             <div className="bg-panel p-3 sm:p-4 flex items-center justify-center">
               <img
                 src={s.src}

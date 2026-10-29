@@ -48,11 +48,39 @@ export default function Cases() {
         ]}
         screens={[
           {
-            src: '/media/dermat-dashboard.webp',
-            alt: "Dermat AI's skin health dashboard: a latest scan reading healthy skin at 90 percent confidence, a trend line and a conditions breakdown",
-            width: 512,
-            height: 1104,
-            caption: 'The dashboard: the latest scan, the trend, the history.',
+            src: '/media/dermat-scan.webp',
+            alt: 'Dermat AI scanner: a photo of a face, buttons for gallery and camera, and a skin analysis reading healthy skin with severity none',
+            width: 540,
+            height: 1170,
+            caption: 'Scan: a photo in, a condition and a confidence score out.',
+          },
+          {
+            src: '/media/dermat-analysis.webp',
+            alt: 'Dermat AI skin health dashboard: latest scan healthy at 90 percent confidence, a health score trend and a conditions breakdown',
+            width: 540,
+            height: 1170,
+            caption: 'Dashboard: the latest result, the trend, the breakdown.',
+          },
+          {
+            src: '/media/dermat-diary.webp',
+            alt: 'Dermat AI skin diary: dated entries for face and hand, each with a photo, a note and recommendations',
+            width: 540,
+            height: 1170,
+            caption: 'Diary: each scan saved with notes, to compare over time.',
+          },
+          {
+            src: '/media/dermat-routine.webp',
+            alt: 'Dermat AI personalized skin routine: morning steps, evening routine and recommended product types',
+            width: 540,
+            height: 1170,
+            caption: 'Routine: morning and evening steps for the result.',
+          },
+          {
+            src: '/media/dermat-assistant.webp',
+            alt: 'Dermat AI skin assistant: a chat where the assistant answers questions about skin concerns',
+            width: 540,
+            height: 1170,
+            caption: 'Assistant: questions answered in a chat.',
           },
         ]}
         photo={{
@@ -66,7 +94,7 @@ export default function Cases() {
         blanks={[
           'What drove the rise from November to January: the award, a post, a school, word of mouth? And was any of it paid advertising?',
           'How many countries in all: both consoles list them.',
-          'Four or five App Store screenshots (scan, result with confidence score, history, comparison, the not-a-diagnosis notice), from App Store Connect or the project folder.',
+          'A screenshot of the app’s “not a diagnosis” notice, if it has one: for a health app it shows care for the people using it.',
           'Why it has no price, in my own words.',
           'One sentence on what the app does and does not claim. The honor list says it recommends treatment; the site says it reports what it may be looking at. Pick one wording for both.',
           'What giving something away taught me that charging for the other apps did not.',

@@ -61,8 +61,9 @@ export function MoreLink({ href, children, compact = false }: { href: string; ch
 export function Captions({ left, right, className = '' }: { left: string; right: string; className?: string }) {
   return (
     <div className={`flex items-start justify-between gap-6 ${className}`} aria-hidden="true">
-      <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem]">{left}</span>
-      <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[9rem] text-right">{right}</span>
+      {/* one line each from small tablets up; on phones they may wrap to keep both sides apart */}
+      <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[48%] sm:max-w-none sm:whitespace-nowrap">{left}</span>
+      <span className="text-white/50 text-[11px] font-medium tracking-[0.08em] max-w-[48%] sm:max-w-none sm:whitespace-nowrap text-right">{right}</span>
     </div>
   )
 }

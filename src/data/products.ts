@@ -4,7 +4,7 @@ export const products = [
   {
     id: 'dermat',
     name: 'Dermat AI',
-    kind: 'iPhone and Android app, skin scans',
+    kind: 'iPhone and Android app, skin care',
     model: 'Free',
     who: 'Nobody pays',
     price: '$0',

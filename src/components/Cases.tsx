@@ -30,9 +30,10 @@ export default function Cases() {
         title={['Dermat AI.', 'No price at all.']}
         lede={
           <>
-            An iPhone app that photographs skin and reports what it may be looking at, with a confidence score, a
-            history and side-by-side comparisons. On the App Store since August 2025 and now on Google Play, free, with
-            nothing to buy inside.
+            An iPhone and Android app for looking after your skin. Scan a photo to see what it may be and how confident
+            the model is, track every result over time in a skin diary, follow a morning and evening routine built for
+            your skin, and ask an AI assistant questions at any hour. On the App Store since August 2025 and now on
+            Google Play, free, with nothing to buy inside.
           </>
         }
         links={[

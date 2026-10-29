@@ -161,7 +161,7 @@ export default function Cases() {
         facts={[
           { label: 'Downloads', value: '854', note: '606 App Store, 248 Google Play, in 27 months' },
           { label: 'Price', value: '$14.99–$119.99', note: 'a block of minutes; free to download' },
-          { label: 'Bought minutes', value: '9', note: 'people, about 1 in 95 downloads' },
+          { label: 'Bought minutes', value: '9', note: 'people, about 1 in 95 downloads; $404.91 spent' },
           { label: 'Award', value: 'Future Star', note: 'DFW IT Association, 2024–25' },
         ]}
         screens={[
@@ -216,7 +216,7 @@ export default function Cases() {
           </>
         }
         blanks={[
-          'Which blocks the 9 buyers chose, and what that says about the three prices.',
+          'What the 4–3–2 split says about the three prices, in my own words: most buyers chose the cheapest block, but the two Premium buyers brought in most of the money.',
           'Whether seeing an ad pushes anyone to buy minutes, and what under $90 in ad revenue says about ads as a way to be paid.',
         ]}
       >
@@ -243,7 +243,7 @@ export default function Cases() {
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <ChartFrame
             title="What a block of minutes costs"
-            caption="In-app purchases on the App Store; minutes per block from the app’s purchase screen. Bars share one scale."
+            caption="In-app purchase prices; minutes per block from the app’s purchase screen; buyers by block from the store records. Amounts are before the stores’ fees. Bars share one scale."
           >
             <MinutePacks />
           </ChartFrame>

@@ -226,16 +226,20 @@ export function StemSplit() {
   )
 }
 
-/* The three blocks as sold on the App Store, with the minutes each buys (from the in-app purchase screen) */
+/* The three blocks as sold on the App Store, the minutes each buys (from the in-app purchase screen),
+   and how many of the 9 buyers chose each */
 const packs = [
-  { name: 'Basic', price: 14.99, minutes: 50 },
-  { name: 'Standard', price: 34.99, minutes: 150 },
-  { name: 'Premium', price: 119.99, minutes: 800 },
+  { name: 'Basic', price: 14.99, minutes: 50, buyers: 4 },
+  { name: 'Standard', price: 34.99, minutes: 150, buyers: 3 },
+  { name: 'Premium', price: 119.99, minutes: 800, buyers: 2 },
 ]
+const usd = (n: number) => `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
-/* Three blocks of minutes, bars to one scale, and what a minute costs in each */
+/* Three blocks of minutes: price to one scale, what a minute costs, and who bought which */
 export function MinutePacks() {
   const top = packs[packs.length - 1].price
+  const revenue = packs.reduce((s, p) => s + p.price * p.buyers, 0)
+  const premium = packs[packs.length - 1]
   return (
     <div>
       <ul className="grid gap-5">
@@ -247,8 +251,16 @@ export function MinutePacks() {
                 <span className="block h-7 bg-white shrink-0" style={{ width: `${(p.price / top) * 62}%` }} />
                 <span className="font-display font-bold text-[18px] text-white tabular-nums">${p.price}</span>
               </div>
-              <span className="block mt-1.5 text-[12.5px] text-white/55 tabular-nums">
-                {p.minutes} minutes &middot; <span className="text-accent">${(p.price / p.minutes).toFixed(2)} a minute</span>
+              <span className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12.5px] text-white/55 tabular-nums">
+                <span>
+                  {p.minutes} minutes &middot; <span className="text-accent">${(p.price / p.minutes).toFixed(2)} a minute</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5" aria-label={`${p.buyers} buyers`}>
+                  {Array.from({ length: p.buyers }, (_, k) => (
+                    <i key={k} className="size-2 rounded-full bg-accent" aria-hidden="true" />
+                  ))}
+                  <span>{p.buyers} bought it</span>
+                </span>
               </span>
             </div>
           </li>
@@ -256,7 +268,8 @@ export function MinutePacks() {
       </ul>
       <p className="mt-6 text-[13.5px] leading-snug text-white/65">
         The more minutes you buy, the less each one costs: from ${(packs[0].price / packs[0].minutes).toFixed(2)} down to $
-        {(packs[2].price / packs[2].minutes).toFixed(2)}.
+        {(premium.price / premium.minutes).toFixed(2)}. The {premium.buyers} Premium buyers brought in{' '}
+        {Math.round(((premium.price * premium.buyers) / revenue) * 100)}% of the {usd(revenue)} spent.
       </p>
     </div>
   )

@@ -220,7 +220,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .quote .soft{color:var(--ink-3)}
 
 /* ===== ROOM (signature) ===== */
-.room{position:relative;height:100svh;min-height:560px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center;padding:80px var(--gut) 40px;max-width:1440px;margin-inline:auto}
+.room{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(40px,4vw,64px) var(--gut);max-width:1440px;margin-inline:auto}
 .room-count{font-family:var(--serif);font-size:clamp(110px,17vw,270px);line-height:.82;letter-spacing:-.04em;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
 .room-count .t{font-size:.55em;vertical-align:.38em;margin-right:.04em;color:rgba(242,169,59,.7)}
 .room-label{margin-top:20px;font-size:17px;color:var(--ink-2);max-width:26rem;min-height:3.2em}
@@ -596,7 +596,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     </div>
   </div>
 
-  <div class="wrap chap" style="padding-top:clamp(70px,8vw,120px)">
+  <div class="wrap chap" style="padding-top:clamp(24px,3vw,44px)">
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">01</span>
       <p class="eyebrow mono" data-r><b>01</b><i></i>People</p>
@@ -1242,7 +1242,7 @@ if(window.gsap && window.ScrollTrigger && !RM){
   gsap.to('#heroIn',{y:-120,opacity:0,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom 15%',scrub:true}});
   /* the room: pinned, dots fill 1 -> 150 -> 400 */
   setRoom(0);
-  ScrollTrigger.create({trigger:'#room',start:'top top',end:'+=170%',pin:true,scrub:true,anticipatePin:1,
+  ScrollTrigger.create({trigger:'#room',start:'center center',end:'+=120%',pin:true,scrub:true,anticipatePin:1,
     onUpdate:function(s){ roomP=s.progress; setRoom(s.progress); }});
   /* full-bleed photo settles from a push-in */
   gsap.fromTo('#fblaImg',{scale:1.18},{scale:1,ease:'none',scrollTrigger:{trigger:'#fblaImg',start:'top bottom',end:'bottom 40%',scrub:true}});

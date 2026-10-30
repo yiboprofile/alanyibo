@@ -68,7 +68,11 @@ const notes: { title: string; body: string }[] = [
 /* The talk itself, beside the photo of its slide */
 const talk = {
   title: 'TEDxSCA Youth',
-  body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel.',
+  body: [
+    '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel.',
+    'People ask that question about my generation a lot. My answer was no. Gen Z has more tools than any generation before it for turning an idea into something real, and that gives us a chance and a responsibility to build the future we say we want.',
+    'My evidence was my own work: three apps, in health, music and travel, that each won an award, and a coupon company for local restaurants.',
+  ],
 }
 
 export default function About() {
@@ -131,11 +135,15 @@ export default function About() {
       <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <figure className="min-w-0">
           <img src={asset('/media/tedx-stats.webp')} alt="Yibo on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
-          <Caption>TEDxSCA Youth, 2026. The slide, as photographed.</Caption>
+          <Caption>TEDxSCA Youth, 2026.</Caption>
         </figure>
         <article className="bg-panel p-6 md:p-8 flex flex-col">
           <h3 className="font-display font-bold text-[18px] leading-snug text-white">{talk.title}</h3>
-          <p className="mt-2 text-[14.5px] leading-[1.65] text-white/65">{talk.body}</p>
+          {talk.body.map((t) => (
+            <p key={t} className="mt-2 first-of-type:text-white/80 text-[14.5px] leading-[1.65] text-white/65">
+              {t}
+            </p>
+          ))}
           <div className="mt-6 lg:mt-auto lg:pt-6">
             <WatchTalk />
           </div>

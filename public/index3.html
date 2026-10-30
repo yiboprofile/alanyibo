@@ -494,6 +494,15 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 .grid3 .panel-q .lab{display:block;margin-bottom:12px;color:var(--amber)}
 @media (max-width:1060px){.grid3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.grid3 .panel-q{grid-column:1 / -1}}
 @media (max-width:860px){.grid3{grid-template-columns:minmax(0,1fr)}}
+
+/* People: a wider roles column so each role stays on one line */
+@media (min-width:861px){
+  #people .intro{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+  #people .intro>*{max-width:none}
+  #people .intro .lede{max-width:34rem}
+  #people .roles>div{grid-template-columns:minmax(0,9.5rem) minmax(0,1fr)}
+}
+@media (min-width:1180px){#people .roles dd{white-space:nowrap}}
 </style>
 </head>
 <body>

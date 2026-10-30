@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow, noarchive" />
+<title>Yibo Wang · Some products sell. I want to know why.</title>
+<meta name="description" content="Yibo Wang, Urbana High School, Class of 2027: five products, from free to a commission paid only on results." />
+<meta name="theme-color" content="#0b0c0b" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preload" as="image" href="hero-poster.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+html,body{background:#0b0c0b;color:#eceee6;margin:0}
+:root{
+  --bg:#0b0c0b;--panel:#101210;--panel2:#151815;
+  --line:rgba(236,238,230,.08);--line2:rgba(236,238,230,.16);--line3:rgba(236,238,230,.3);
+  --fg:#eceee6;--fg80:rgba(236,238,230,.82);--muted:#a7aaa0;--dim:#8a8d83;
+  --acc:#c6ff3d;--acc-ink:#0b0c0b;--acc20:rgba(198,255,61,.2);
+  --as:rgba(236,238,230,.78);
+  --disp:'Archivo','Arial Narrow',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --rail:248px;--gut:56px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  font-family:var(--disp);font-size:17px;line-height:1.6;font-variation-settings:'wdth' 100;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-position:-1px -1px;background-attachment:fixed;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(120% 90% at 60% 0%,transparent 40%,rgba(11,12,11,.75) 100%)}
+img,video,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--acc);color:var(--acc-ink)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.tab{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- shell ---------- */
+.shell{position:relative;z-index:1;display:grid;grid-template-columns:var(--rail) minmax(0,1fr)}
+.rail{position:sticky;top:0;height:100vh;height:100dvh;border-right:1px solid var(--line2);
+  display:flex;flex-direction:column;padding:28px 0 24px;background:rgba(11,12,11,.72);backdrop-filter:blur(6px)}
+.brand{display:flex;align-items:baseline;gap:10px;padding:0 24px 28px;text-decoration:none;border-bottom:1px solid var(--line2)}
+.brand b{font-weight:850;font-size:22px;letter-spacing:-.03em;font-variation-settings:'wdth' 118}
+.brand span{color:var(--dim)}
+.idx{list-style:none;margin:0;padding:18px 0;display:grid;gap:0;flex:1}
+.idx a{display:grid;grid-template-columns:34px 1fr;align-items:baseline;padding:7px 24px;text-decoration:none;color:var(--dim);
+  border-left:2px solid transparent;transition:color .2s,border-color .2s,background .2s}
+.idx a span:last-child{font-size:15px;letter-spacing:-.005em;font-weight:500}
+.idx small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--dim);margin-top:1px;font-weight:400}
+.idx a.on small{color:var(--fg80)}
+.idx a:hover{color:var(--fg);background:rgba(236,238,230,.03)}
+.idx a.on{color:var(--fg);border-left-color:var(--acc);background:rgba(198,255,61,.05)}
+.idx a.on .mono{color:var(--acc)}
+.readout{padding:16px 24px 0;border-top:1px solid var(--line2);display:grid;gap:10px}
+.readout div{display:flex;justify-content:space-between;color:var(--dim)}
+.readout div b{color:var(--fg);font-weight:500}
+.prog{height:2px;background:var(--line2);position:relative}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--acc)}
+.topbar{display:none}
+main{min-width:0}
+.wrap{max-width:1240px;padding:0 var(--gut);margin:0 auto}
+
+/* ---------- sections ---------- */
+.sec{border-top:1px solid var(--line2);padding:clamp(72px,8vw,120px) 0;scroll-margin-top:0}
+.sec-h{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start;margin-bottom:clamp(36px,4vw,56px)}
+.sec-h .no{grid-column:span 3;display:flex;gap:14px;align-items:baseline;color:var(--dim)}
+.sec-h .no b{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--acc);letter-spacing:.06em}
+.sec-h .kick{grid-column:span 9;color:var(--muted);text-align:right}
+h1,h2,h3{margin:0;font-weight:820;letter-spacing:-.035em;font-variation-settings:'wdth' 112}
+.h2{font-size:clamp(34px,4.3vw,66px);line-height:.96;max-width:20ch}
+.h2 .d{color:var(--dim)}
+.lede{font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:var(--fg80);max-width:58ch;margin:0}
+.p{color:var(--muted);font-size:16px;line-height:1.65;margin:0;max-width:62ch}
+.p b{color:var(--fg);font-weight:600}
+.split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end}
+.cap{font-size:14.5px;line-height:1.55;color:var(--muted);margin:12px 0 0;display:flex;gap:12px}
+.cap .mono{color:var(--dim);flex:none;padding-top:2px;font-size:10.5px}
+.panel{background:var(--panel);border:1px solid var(--line2);position:relative}
+.panel.pad{padding:clamp(20px,2.6vw,36px)}
+.ph{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:24px;color:var(--dim)}
+.ph .mono:first-child{color:var(--fg80)}
+.corner::before,.corner::after{content:"";position:absolute;width:10px;height:10px;border-color:var(--acc);border-style:solid;pointer-events:none}
+.corner::before{top:-1px;left:-1px;border-width:1px 0 0 1px}
+.corner::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.grid2{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
+.c12{grid-column:span 12}.c7{grid-column:span 7}.c5{grid-column:span 5}.c6{grid-column:span 6}.c8{grid-column:span 8}.c4{grid-column:span 4}
+.note{font-size:13.5px;line-height:1.55;color:var(--dim);margin:20px 0 0;max-width:72ch}
+.big{font-weight:850;font-size:clamp(40px,4.4vw,64px);line-height:.92;letter-spacing:-.04em;font-variation-settings:'wdth' 110;font-variant-numeric:tabular-nums}
+.big.acc{color:var(--acc)}
+.figline{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end;margin-top:24px}
+.figline p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5;max-width:46ch}
+
+/* ---------- buttons/links ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 20px;text-decoration:none;font-weight:650;font-size:15px;
+  border:1px solid var(--line3);transition:background .18s,color .18s,border-color .18s}
+.btn svg{width:14px;height:14px;transition:transform .18s var(--ease)}
+.btn:hover svg{transform:translate(2px,-2px)}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.btn.pri:hover{background:#d8ff7a}
+.btn:not(.pri):hover{border-color:var(--fg);background:rgba(236,238,230,.05)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.lk{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--line2);text-decoration:none;
+  font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--fg80);transition:border-color .18s,color .18s}
+.lk:hover{border-color:var(--acc);color:var(--acc)}
+.lk svg{width:11px;height:11px}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(28px,3vw,48px) 0 clamp(56px,6vw,96px);border-top:0}
+.hero-top{display:flex;justify-content:space-between;color:var(--dim);margin-bottom:clamp(28px,3.4vw,48px);gap:12px}
+.hero-top .live{color:var(--fg80);display:inline-flex;gap:8px;align-items:center}
+.hero-top .live i{width:7px;height:7px;background:var(--acc);display:inline-block;animation:blink 1.6s steps(2,end) infinite}
+@keyframes blink{50%{opacity:.15}}
+.kicker{color:var(--muted);margin:0 0 16px;line-height:1.7}
+.h1{font-size:clamp(44px,calc((100vw - var(--rail)) * .078),112px);line-height:.9;letter-spacing:-.045em;font-weight:860;font-variation-settings:'wdth' 100}
+.h1 .l{display:block;overflow:hidden;padding-bottom:.04em}
+.h1 .l>span{display:inline-block}
+.h1 .q{color:var(--acc)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,56px);margin-top:clamp(24px,2.6vw,40px);align-items:start}
+.hero-copy .lede{max-width:56ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.vid{position:relative;aspect-ratio:16/9;border:1px solid var(--line2);background:#111 url(hero-poster.webp) center/cover;overflow:hidden}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.06) brightness(.82)}
+.vid::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/48px 48px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/48px 48px,
+  linear-gradient(to top,rgba(11,12,11,.6),transparent 40%);pointer-events:none}
+.vid .tag{position:absolute;z-index:2;left:12px;bottom:10px;color:var(--fg80)}
+.vid .tag2{position:absolute;z-index:2;right:12px;bottom:10px;color:var(--fg80)}
+.vid .xh{position:absolute;z-index:2;left:50%;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;pointer-events:none}
+.vid .xh::before,.vid .xh::after{content:"";position:absolute;background:var(--acc)}
+.vid .xh::before{left:13px;top:0;width:1px;height:28px}.vid .xh::after{top:13px;left:0;height:1px;width:28px}
+.tiles{display:grid;grid-template-columns:1.25fr 1fr .8fr .8fr 1.15fr;border:1px solid var(--line2);background:var(--panel);margin-top:clamp(24px,3vw,40px)}
+.tile{padding:20px 20px 22px;border-right:1px solid var(--line2);display:flex;flex-direction:column;gap:14px;min-width:0}
+.tile:last-child{border-right:0}
+.tile .mono{color:var(--dim)}
+.tile .v{overflow-wrap:anywhere;font-weight:820;font-size:clamp(24px,2.3vw,34px);line-height:1;letter-spacing:-.03em;font-variation-settings:'wdth' 108;font-variant-numeric:tabular-nums}
+.tile .v.acc{color:var(--acc)}
+.tile .s{font-size:14.5px;color:var(--muted);line-height:1.45}
+.tiles.t4{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(28px,3vw,40px)}
+.tiles.t4 .tile:first-child .v,.tiles.t4 .v.acc{}
+
+.jump{margin-top:12px;border:1px solid var(--line2);display:grid;grid-template-columns:120px minmax(0,1fr);background:rgba(16,18,16,.7)}
+.jump .jl{padding:16px 20px;color:var(--dim);border-right:1px solid var(--line2)}
+.jump ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(8,minmax(0,1fr))}
+.jump a{display:flex;flex-direction:column;gap:3px;padding:14px 14px 16px;text-decoration:none;border-right:1px solid var(--line);height:100%;transition:background .18s}
+.jump li:last-child a{border-right:0}
+.jump a:hover{background:rgba(198,255,61,.06)}
+.jump a .mono{color:var(--acc);font-size:10.5px}
+.jump b{font-size:15px;font-weight:680;letter-spacing:-.01em;line-height:1.2}
+.jump .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.35}
+/* ---------- room ---------- */
+.room{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:40px;align-items:end}
+.seats{display:grid;grid-template-columns:repeat(40,minmax(0,1fr));gap:6px}
+.seats i{aspect-ratio:1;border-radius:50%;background:rgba(236,238,230,.08);transition:background-color .3s,transform .3s}
+.seats i.on{background:var(--fg)}
+.seats i.first{background:var(--acc);transform:scale(1.35)}
+.roomnum{font-weight:860;font-size:clamp(60px,7vw,104px);line-height:.85;letter-spacing:-.05em;font-variation-settings:'wdth' 108;font-variant-numeric:tabular-nums}
+.stagel{display:block;min-height:3em;margin-top:14px;color:var(--fg80);font-size:16px;line-height:1.4}
+.stagebars{display:grid;gap:6px;margin-top:16px}
+.stagebars i{height:2px;background:var(--line2);transition:background .4s}
+.stagebars i.on{background:var(--acc)}
+.fbla{margin:12px 0 0}
+.fbla img{width:100%;height:auto;border:1px solid var(--line2)}
+.groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.group{display:flex;flex-direction:column;gap:18px}
+.dots{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--fg)}
+.dots i.e{background:rgba(236,238,230,.4)}
+.dots i.d{background:none;border:1px dashed rgba(236,238,230,.55)}
+.dots em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--muted);line-height:9px}
+.group h3{font-size:19px;letter-spacing:-.015em;font-weight:720;font-variation-settings:'wdth' 104}
+.group h3 span{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--acc);margin-left:8px;letter-spacing:0}
+.group p{margin:6px 0 0;color:var(--muted);font-size:16px;line-height:1.6}
+.also{margin:20px 0 0;color:var(--muted);font-size:16px;line-height:1.6;display:flex;gap:16px;max-width:90ch}
+.also .mono{color:var(--acc);padding-top:3px;flex:none}
+
+/* ---------- price axis ---------- */
+.spec{border:1px solid var(--line2);background:var(--panel);margin-top:clamp(40px,5vw,64px)}
+.spec-h{display:flex;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--line2);color:var(--dim)}
+.spec-h .mono:first-child{color:var(--fg80)}
+.spec-h .arrow{display:inline-flex;gap:10px;align-items:center}
+.spec-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.spec-row::before{content:"";position:absolute;left:24px;right:24px;top:40px;height:1px;background:linear-gradient(90deg,var(--line3),var(--acc))}
+.pt{position:relative;padding:62px 22px 26px;text-decoration:none;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;transition:background .2s}
+.pt:last-child{border-right:0}
+.pt:hover{background:rgba(198,255,61,.04)}
+.pt::before{content:"";position:absolute;left:22px;top:34px;width:13px;height:13px;background:var(--bg);border:1px solid var(--fg);transform:rotate(45deg)}
+.pt:hover::before{background:var(--acc);border-color:var(--acc)}
+.pt .mono{color:var(--dim)}
+.pt .pr{font-weight:850;font-size:clamp(28px,2.4vw,40px);white-space:nowrap;line-height:.95;letter-spacing:-.04em;font-variation-settings:'wdth' 108;margin-top:8px}
+.pt .un{font-size:13.5px;color:var(--muted)}
+.pt .who{font-size:15px;color:var(--fg80);line-height:1.45;margin-top:14px;min-height:4.4em}
+.pt .nm{font-weight:720;font-size:18px;letter-spacing:-.015em;margin-top:8px;padding-top:14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pt .nm svg{width:12px;height:12px;color:var(--acc);flex:none}
+.pt .pf{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+
+.axis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-bottom:clamp(40px,5vw,64px)}
+.axis::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line2)}
+.axis a{position:relative;display:flex;align-items:center;gap:10px;padding:12px 12px 12px 0;text-decoration:none;color:var(--dim);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;min-height:44px}
+.axis a::before{content:"";flex:none;width:9px;height:9px;transform:rotate(45deg);background:var(--bg);border:1px solid var(--dim);position:relative;z-index:1}
+.axis a span{background:var(--bg);padding-right:8px;position:relative;z-index:1;white-space:nowrap}
+.axis a:hover{color:var(--fg)}
+.axis a.here{color:var(--acc)}
+.axis a.here::before{background:var(--acc);border-color:var(--acc);box-shadow:0 0 0 5px var(--acc20)}
+.axis a.past::before{border-color:var(--fg80)}
+
+/* ---------- product intro ---------- */
+.prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;margin-top:clamp(36px,4vw,56px);align-items:start}
+.mode{display:inline-block;padding:6px 10px;border:1px solid var(--acc);color:var(--acc)}
+.prod h3{font-size:clamp(30px,3vw,44px);line-height:1;margin-top:18px}
+.prod .sub{color:var(--muted);font-size:18px;margin:8px 0 0}
+
+/* ---------- charts ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:18px;color:var(--muted);font-size:13px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:10px;height:10px;display:inline-block}
+.sw-as{background:var(--as)}.sw-gp{background:var(--acc)}
+.bars{position:relative;height:240px;margin-left:34px;margin-top:22px}
+.bars .gl{position:absolute;left:0;right:0;height:1px;background:var(--line2)}
+.bars .gl span{position:absolute;right:calc(100% + 8px);top:-7px;font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+.bars .cols{position:absolute;inset:0;display:grid;gap:3px;align-items:end}
+.bars .col{height:100%;display:flex;flex-direction:column-reverse;position:relative;transform-origin:bottom;outline:none}
+.bars .col b{display:block;width:100%}
+.bars .col .a{background:var(--as)}
+.bars .col .g{background:var(--acc)}
+.bars .col .pk{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--fg);white-space:nowrap}
+.bars .col:hover b,.bars .col:focus b{filter:brightness(1.2)}
+.bars .tip{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);font-family:var(--mono);font-size:10.5px;padding:5px 7px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .12s;z-index:3;line-height:1.35}
+.bars .col:hover .tip,.bars .col:focus .tip{opacity:1}
+.xl{position:relative;height:22px;margin-left:34px;margin-top:8px}
+.xl span{position:absolute;top:0;font-family:var(--mono);font-size:10.5px;color:var(--dim);white-space:nowrap}
+.line{position:relative;height:220px;margin-left:34px;margin-top:22px}
+.line svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.line .gl{position:absolute;left:0;right:0;height:1px;background:var(--line2)}
+.line .gl span{position:absolute;right:calc(100% + 8px);top:-7px;font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+.line .ref{position:absolute;left:0;right:0;border-top:1px dashed rgba(236,238,230,.4)}
+.line .ref span,.line .now span{position:absolute;font-family:var(--mono);font-size:10.5px;white-space:nowrap}
+.line .ref span{left:0;bottom:4px;color:var(--fg80)}
+.line .now{position:absolute;right:0;width:9px;height:9px;margin:-4px -4px 0 0;background:var(--acc);border-radius:50%}
+.line .now span{right:0;top:-22px;color:var(--acc)}
+.hb{display:grid;gap:12px}
+.hb li{display:grid;grid-template-columns:150px minmax(0,1fr) 48px;gap:14px;align-items:center;font-size:14px;color:var(--fg80)}
+.hb .tr{height:12px;background:rgba(236,238,230,.05);position:relative}
+.hb .tr i{position:absolute;left:0;top:0;bottom:0;background:var(--fg80);transform-origin:left}
+.hb li.top .tr i{background:var(--acc)}
+.hb li.rest .tr i{background:rgba(236,238,230,.25)}
+.hb .pc{font-family:var(--mono);font-size:12px;text-align:right;color:var(--fg)}
+.hb{list-style:none;margin:0;padding:0}
+
+.goods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative;margin:8px 0 0;padding:0;list-style:none}
+.goods::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background:linear-gradient(90deg,var(--line3),var(--acc))}
+.goods li{position:relative;padding:30px 20px 0 0}
+.goods li::before{content:"";position:absolute;top:1px;left:0;width:11px;height:11px;border-radius:50%;background:var(--fg80)}
+.goods li.here::before{background:var(--acc);box-shadow:0 0 0 5px var(--acc20)}
+.goods b{display:block;font-size:19px;font-weight:720;letter-spacing:-.015em}
+.goods li.here b{color:var(--acc)}
+.goods span{display:block;color:var(--muted);font-size:15.5px;line-height:1.5;margin-top:6px}
+.goods .eg{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.02em}
+.goods .flag{display:inline-block;margin-top:14px;background:var(--acc);color:var(--acc-ink);padding:5px 9px}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px;padding-top:28px;border-top:1px solid var(--line2)}
+
+.pull{margin:24px 0 0;padding:4px 0 4px 20px;border-left:2px solid var(--acc);font-size:clamp(17px,1.35vw,19.5px);line-height:1.55;color:var(--fg);max-width:62ch;letter-spacing:-.003em}
+.cols2 .pull{margin:0}
+.insight{display:grid;gap:20px}
+.insight-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.insight-cols .pull{margin:0}
+/* screens */
+.screens{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:12px 0 0;padding:0;list-style:none}
+.screens li{display:flex;flex-direction:column;gap:12px}
+.screens .sh{background:#000;border:1px solid var(--line2);padding:8px;position:relative}
+.screens img{width:100%;height:auto;aspect-ratio:540/1170;object-fit:cover}
+.screens p{margin:0;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.screens p b{display:block;color:var(--fg);font-weight:650;margin-bottom:2px}
+.screens .mono{color:var(--dim);font-size:10px}
+
+.award{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:12px;margin-top:12px}
+.award figure{margin:0}
+.award img{width:100%;height:auto;border:1px solid var(--line2)}
+.team{display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.team p{margin:0}
+.team .who{font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:var(--fg80);letter-spacing:-.005em}
+.team .who b{color:var(--fg);font-weight:700}
+.team .small{font-size:13.5px;color:var(--muted)}
+
+/* tiers */
+.tiers{width:100%;border-collapse:collapse;text-align:left}
+.tiers th,.tiers td{padding:14px 10px 14px 0;vertical-align:bottom}
+.tiers thead th{font-weight:400}
+.tiers .pr{display:block;font-weight:850;font-size:clamp(24px,2.6vw,38px);line-height:1;letter-spacing:-.035em;font-variation-settings:'wdth' 108}
+.tiers .tn{display:block;margin-top:8px;color:var(--dim)}
+.tiers .x{display:block;margin-top:4px;height:16px;color:var(--acc);font-family:var(--mono);font-size:11.5px}
+.tiers tbody th{font-weight:400;color:var(--fg80);font-size:14.5px;line-height:1.4;width:36%}
+.tiers tbody tr{border-top:1px solid var(--line2)}
+.tiers .in{display:block;height:10px;width:72%;background:var(--fg80)}
+.tiers .in.n{background:var(--acc)}
+.tiers .out{display:block;height:1px;width:72%;background:var(--line3)}
+.yr{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.yr .hd{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:10px;font-size:14.5px;color:var(--fg80)}
+.yr .hd b{color:var(--fg)}
+.yr .hd .mono{color:var(--dim);text-transform:none;letter-spacing:.02em}
+.months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px}
+.months i{height:20px;background:var(--fg80)}
+.months i.f{background:none;border:1px dashed var(--acc)}
+
+/* soundsplit packs */
+.packs{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.packs .row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:center}
+.packs .tr{height:30px;position:relative;background:rgba(236,238,230,.04)}
+.packs .tr i{position:absolute;left:0;top:0;bottom:0;background:var(--fg80);transform-origin:left;display:flex;align-items:center}
+.packs li:last-child .tr i{background:var(--acc)}
+.packs .tr span{position:absolute;top:50%;transform:translateY(-50%);font-weight:800;font-size:17px;letter-spacing:-.02em;white-space:nowrap}
+.packs .meta{grid-column:2;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px;color:var(--muted);align-items:center}
+.packs .buy{display:inline-flex;gap:5px;align-items:center}
+.packs .buy i{width:9px;height:9px;border-radius:50%;background:var(--acc)}
+.flow{display:grid;gap:14px}
+.flow .fr{display:grid;grid-template-columns:1fr auto 1fr auto 1.3fr;gap:10px;align-items:stretch}
+.flow .bx{border:1px solid var(--line2);padding:12px 14px;font-size:14.5px;line-height:1.35;display:flex;flex-direction:column;justify-content:center}
+.flow .bx small{display:block;font-family:var(--mono);font-size:11px;color:var(--acc);margin-top:6px}
+.flow .ar{display:grid;place-items:center;color:var(--dim);font-family:var(--mono)}
+.flow .fr.b .bx:last-child{border-color:var(--acc)}
+.stems svg{width:100%;height:auto}
+.rating{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 22px}
+.rating .pts{display:flex;gap:7px}
+.rating .pts i{width:12px;height:12px;border-radius:50%;background:var(--acc)}
+.rating p{margin:8px 0 0;font-size:13.5px;color:var(--muted)}
+
+/* tutoring scales */
+.scale{position:relative;height:66px;margin:36px 4px 6px}
+.scale .base{position:absolute;left:0;right:0;top:30px;height:1px;background:var(--line3)}
+.scale .tk{position:absolute;top:36px;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+.scale .tk::before{content:"";position:absolute;left:50%;top:-10px;height:6px;width:1px;background:var(--line3)}
+.scale .rng{position:absolute;top:24px;height:13px;background:rgba(236,238,230,.22);border:1px solid rgba(236,238,230,.4)}
+.scale .mk{position:absolute;top:22px;width:17px;height:17px;margin-left:-8.5px;border-radius:50%}
+.scale .mk.us{background:var(--acc)}
+.scale .mk.was{background:var(--bg);border:2px solid var(--fg80)}
+.scale .lb{position:absolute;top:-6px;transform:translateX(-50%);font-family:var(--mono);font-size:12px;white-space:nowrap}
+.scale .gain{position:absolute;top:29px;height:3px;background:var(--acc);transform-origin:left}
+.grow{display:grid;gap:18px}
+.grow .chip{display:inline-grid;place-items:center;height:26px;padding:0 10px;border:1px solid var(--acc);color:var(--acc);font-family:var(--mono);font-size:11px}
+
+/* crave */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
+.steps-h{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.steps-h span{padding-bottom:8px;border-bottom:1px solid var(--line3);color:var(--fg80)}
+.steps-h span+span{border-bottom:1px dashed var(--acc);color:var(--acc)}
+.steps li{position:relative;padding:28px 18px 0 0}
+.steps li::before{content:"";position:absolute;top:4px;left:0;width:11px;height:11px;border-radius:50%;background:var(--fg80);z-index:1}
+.steps li::after{content:"";position:absolute;top:9px;left:11px;right:0;border-top:1px solid var(--line3)}
+.steps li.m::before{background:var(--acc)}
+.steps li.m::after{border-top:1px dashed var(--acc)}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-weight:850;font-size:clamp(34px,3.2vw,48px);line-height:.95;letter-spacing:-.04em;font-variation-settings:'wdth' 108}
+.steps li.m b{color:var(--acc)}
+.steps span{display:block;margin-top:10px;font-size:14px;color:var(--muted);line-height:1.45}
+.loop svg{width:100%;height:auto;max-width:560px;margin:0 auto}
+.shot{margin:0}
+.shot img{width:100%;height:auto;border:1px solid var(--line2)}
+
+/* about */
+.tl{border-top:1px solid var(--line2)}
+.tl-h,.tl-r{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,1fr);gap:24px}
+.tl-h{padding:14px 0;color:var(--dim);border-bottom:1px solid var(--line2)}
+.tl-r{padding:22px 0;border-bottom:1px solid var(--line)}
+.tl-r .yr2{font-weight:850;font-size:30px;letter-spacing:-.04em;line-height:1;font-variation-settings:'wdth' 108;color:var(--fg)}
+.tl-r ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.tl-r li b{display:block;font-weight:700;font-size:16.5px;letter-spacing:-.01em}
+.tl-r li span{display:block;color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:2px}
+.tl-r .lab{display:none}
+.cards{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:12px}
+.cards article{display:flex;flex-direction:column;gap:14px}
+.cards h3{font-size:clamp(22px,2vw,28px);line-height:1.05;letter-spacing:-.025em}
+.cards .p{font-size:15.5px}
+.ted{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0;padding:0!important}
+.ted figure{margin:0;position:relative;min-height:100%}
+.ted img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.ted .tx{padding:clamp(20px,2.6vw,36px);display:flex;flex-direction:column;gap:14px}
+.ted .q{font-size:clamp(26px,2.6vw,38px);font-weight:820;letter-spacing:-.03em;line-height:1;font-variation-settings:'wdth' 110}
+
+footer{border-top:1px solid var(--line2);padding:40px 0 56px}
+footer p{margin:0 0 8px;font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--muted);letter-spacing:.01em}
+footer p:first-child{color:var(--fg)}
+
+/* ---------- reveal ---------- */
+.js .r{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .r.in{opacity:1;transform:none}
+.js .bars .col{transform:scaleY(0);transition:transform .6s var(--ease)}
+.js .bars.in .col{transform:none}
+.js .hb .tr i,.js .packs .tr i,.js .scale .gain{transform:scaleX(0);transition:transform .9s var(--ease)}
+.js .hb.in .tr i,.js .packs.in .tr i,.js .scale.in .gain{transform:none}
+.js .h1 .l>span{transform:translateY(105%);transition:transform .8s var(--ease)}
+.js .h1.in .l>span{transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1280px){:root{--gut:40px}.tiles .tile{padding:18px 16px}.jump ol{grid-template-columns:repeat(4,minmax(0,1fr))}.jump li:nth-child(4) a{border-right:0}.jump li:nth-child(-n+4) a{border-bottom:1px solid var(--line)}}
+@media (max-width:1100px){
+  .shell{grid-template-columns:minmax(0,1fr)}
+  .rail{display:none}
+  .topbar{display:flex;position:sticky;top:0;z-index:20;height:52px;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;
+    background:rgba(11,12,11,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line2)}
+  .topbar .brand{padding:0;border:0}
+  .topbar .brand b{font-size:19px}
+  .topbar .cur{flex:1;min-width:0;color:var(--fg80);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar .cur b{color:var(--acc);font-weight:500;margin-right:8px}
+  .topbar button{font:inherit;background:none;border:1px solid var(--line3);color:var(--fg);height:36px;padding:0 12px;cursor:pointer}
+  .topbar .prog{position:absolute;left:0;right:0;bottom:-1px}
+  .sheet{position:fixed;inset:52px 0 0 0;z-index:19;background:rgba(11,12,11,.97);padding:12px 0 24px;overflow:auto;
+    opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+  .sheet.open{opacity:1;visibility:visible}
+  .sheet .idx a{padding:14px 16px;min-height:48px}
+  .sheet .idx a span:last-child{font-size:20px}
+}
+@media (min-width:1101px){.sheet{display:none}}
+@media (max-width:900px){
+  :root{--gut:16px}
+  body{font-size:16px;background-size:32px 32px}
+  .sec-h{grid-template-columns:1fr;gap:10px}
+  .sec-h .no,.sec-h .kick{grid-column:auto;text-align:left}
+  .split,.prod,.hero-grid,.room,.award,.cols2,.ted{grid-template-columns:minmax(0,1fr)}
+  .split{gap:24px}.prod{gap:20px}
+  .c7,.c5,.c6,.c8,.c4{grid-column:span 12}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tiles .tile{border-right:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+  .tiles .tile:nth-child(2n){border-right:0}
+  .tiles:not(.t4) .tile:last-child{grid-column:span 2;border-bottom:0}
+  .tiles.t4 .tile:nth-last-child(-n+2){border-bottom:0}
+  .seats{grid-template-columns:repeat(20,minmax(0,1fr));gap:5px}
+  .room{gap:28px}
+  .groups{grid-template-columns:minmax(0,1fr)}
+  .spec-row{grid-template-columns:minmax(0,1fr)}
+  .spec-row::before{left:30px;right:auto;top:24px;bottom:24px;width:1px;height:auto;background:linear-gradient(180deg,var(--line3),var(--acc))}
+  .pt{padding:22px 16px 22px 60px;border-right:0;border-bottom:1px solid var(--line)}
+  .pt::before{left:24px;top:30px}
+  .pt .who{min-height:0;margin-top:6px}
+  .pt .nm{padding-top:10px;margin-top:8px}
+  .spec-h{padding:14px 16px;flex-direction:column;gap:6px}
+  .axis{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .axis a{padding:10px 0;justify-content:flex-start}
+  .axis a span{display:none}
+  .axis{padding-bottom:30px}
+  .axis::before{top:22px}
+  .axis::after{content:'You are here: ' attr(data-label);position:absolute;left:0;bottom:8px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+  .screens{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:10px;margin-right:calc(-1 * var(--gut));padding-right:var(--gut)}
+  .screens li{flex:0 0 58%;scroll-snap-align:start}
+  .hb li{grid-template-columns:110px minmax(0,1fr) 40px;gap:10px;font-size:13px}
+  .goods{grid-template-columns:minmax(0,1fr);gap:22px}
+  .goods::before{left:5px;right:auto;top:6px;bottom:6px;width:1px;height:auto;background:linear-gradient(180deg,var(--line3),var(--acc))}
+  .goods li{padding:0 0 0 30px}
+  .goods li::before{top:6px}
+  .flow .fr{grid-template-columns:minmax(0,1fr);gap:6px}
+  .flow .ar{transform:rotate(90deg);height:18px}
+  .steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:28px}
+  .steps-h{display:none}
+  .steps li::after{display:none}
+
+  .packs .row{grid-template-columns:minmax(0,1fr);gap:8px}
+  .packs .meta{grid-column:1}
+  .tl-h{display:none}
+  .tl-r{grid-template-columns:minmax(0,1fr);gap:14px}
+  .tl-r .lab{display:block;color:var(--dim);margin-bottom:8px}
+  .tl-r ul:empty,.tl-r .col:empty{display:none}
+  .ted figure{aspect-ratio:16/9}
+  .bars{margin-left:28px;height:200px}
+  .xl{margin-left:28px}
+  .line{margin-left:28px;height:180px}
+  .hero-top span:last-child{display:none}
+  .hero .wrap{display:flex;flex-direction:column}
+  .hero-grid{display:contents}
+  .hero-copy{margin-top:20px}
+  .hero .vid{order:9;margin-top:12px}
+  .insight-cols{grid-template-columns:minmax(0,1fr);gap:20px}
+  .jump{grid-template-columns:minmax(0,1fr)}
+  .jump .jl{border-right:0;border-bottom:1px solid var(--line2);padding:12px 16px}
+  .jump ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .jump a{border-bottom:1px solid var(--line);padding:12px 14px;min-height:48px}
+  .jump li:nth-child(2n) a{border-right:0}
+  .h2{max-width:none}
+}
+@media (max-width:420px){
+  .h1{font-size:clamp(46px,13.4vw,60px)}
+  .tile .v{font-size:24px}
+  .bars .cols{gap:2px}
+  .tiers .pr{font-size:22px}
+  .tiers tbody th{font-size:13px}
+}
+.steps .ph2{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+@media (max-width:900px){.steps .ph2{display:block}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .r,.js .bars .col,.js .hb .tr i,.js .packs .tr i,.js .scale .gain,.js .h1 .l>span{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="topbar" aria-label="Section index">
+  <a class="brand" href="#home"><b>YW</b><span class="mono">2027</span></a>
+  <span class="cur mono" id="cur"><b>00</b>Start</span>
+  <button class="mono" id="menuBtn" aria-expanded="false" aria-controls="sheet">Index</button>
+  <div class="prog"><i id="prog2"></i></div>
+</header>
+<nav class="sheet" id="sheet" aria-label="Sections"><ol class="idx" id="idx2"></ol></nav>
+
+<div class="shell">
+  <aside class="rail" aria-label="Section index">
+    <a class="brand" href="#home"><b>Yibo Wang</b><span class="mono">27</span></a>
+    <ol class="idx" id="idx"></ol>
+    <div class="readout mono">
+      <div><span>Section</span><b id="secno">00/08</b></div>
+      <div><span>Read</span><b id="pct" class="tab">000%</b></div>
+      <div class="prog"><i id="prog"></i></div>
+    </div>
+  </aside>
+
+<main>
+<!-- ============ 00 HERO ============ -->
+<section class="sec hero" id="home" data-k="Some products sell" data-name="Start" aria-labelledby="h-home">
+  <div class="wrap">
+    <div class="hero-top mono r">
+      <span class="live"><i></i>Yibo Wang</span>
+      <span>Urbana High School · Frederick, Maryland · Class of 2027</span>
+    </div>
+    <p class="kicker mono r">First one person.<br />Then the room.</p>
+    <h1 class="h1" id="h-home"><span class="l"><span>Some products sell.</span></span><span class="l"><span>I want to know <span class="q">why.</span></span></span></h1>
+
+    <div class="hero-grid">
+      <div class="hero-copy r">
+        <p class="lede">I’m Yibo Wang, a senior at Urbana High School in Frederick, Maryland. I helped grow our FBLA chapter from about 150 members to 400, co-founded a coupon company and an SAT tutoring business, and built three apps. Most of it came down to getting the first person to say yes.</p>
+        <div class="cta">
+          <a class="btn pri" href="#people">See who joined <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+          <a class="btn" href="#about">About Yibo</a>
+        </div>
+      </div>
+      <div class="vid r" aria-hidden="true">
+        <video id="heroVid" src="hero.mp4" poster="hero-poster.webp" muted autoplay loop playsinline preload="metadata"></video>
+        <span class="xh"></span>
+        <span class="tag mono">Fig. 00</span>
+        <span class="tag2 mono tab" id="tc">00:00:00</span>
+      </div>
+    </div>
+
+    <div class="tiles r" role="list">
+      <div class="tile" role="listitem"><span class="mono">FBLA chapter</span><span class="v tab">~<span class="cnt">150</span> → ~<span class="cnt acc">400</span></span><span class="s">members</span></div>
+      <div class="tile" role="listitem"><span class="mono">2 apps</span><span class="v tab cnt">~2,850</span><span class="s">downloads</span></div>
+      <div class="tile" role="listitem"><span class="mono">Business plan</span><span class="v">3rd</span><span class="s">in the nation</span></div>
+      <div class="tile" role="listitem"><span class="mono">Talk</span><span class="v">TEDx</span><span class="s">speaker</span></div>
+      <div class="tile" role="listitem"><span class="mono">National Merit</span><span class="v" style="font-variation-settings:'wdth' 90">Semifinalist</span><span class="s">2026</span></div>
+    </div>
+    <nav class="jump r" aria-label="Contents"><span class="mono jl">Contents</span><ol><li><a href="#people"><span class="mono">01</span><b>People</b><span class="k">~400 members</span></a></li><li><a href="#cases"><span class="mono">02</span><b>Who pays</b><span class="k">$0 to a share</span></a></li><li><a href="#dermat"><span class="mono">03</span><b>Dermat AI</b><span class="k">1,996 downloads</span></a></li><li><a href="#holidayhelperai"><span class="mono">04</span><b>HolidayHelperAI</b><span class="k">10+ people paid</span></a></li><li><a href="#soundsplit"><span class="mono">05</span><b>SoundSplit</b><span class="k">854 downloads</span></a></li><li><a href="#tutoring"><span class="mono">06</span><b>SAT Tutoring</b><span class="k">+280 points</span></a></li><li><a href="#cravedeals"><span class="mono">07</span><b>Crave Deals</b><span class="k">3rd in the nation</span></a></li><li><a href="#about"><span class="mono">08</span><b>About</b><span class="k">TEDxSCA Youth</span></a></li></ol></nav>
+  </div>
+</section>
+
+<!-- ============ 01 PEOPLE ============ -->
+<section class="sec" id="people" data-k="~400 members" data-name="People" aria-labelledby="h-people">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>01</b><span class="mono">People</span></span><span class="kick mono">Members, students, / interns, clients.</span></div>
+    <div class="split">
+      <h2 class="h2 r" id="h-people">Every room starts <span class="d">with one person.</span></h2>
+      <p class="lede r">Before anything I built had a customer, I learned how to fill a room: a chapter, a club, a cohort of interns.</p>
+    </div>
+
+    <figure class="panel pad corner r" style="margin:clamp(40px,5vw,64px) 0 0" aria-label="Urbana FBLA chapter: about 150 members when Yibo joined, about 400 now">
+      <div class="ph"><span class="mono">Urbana FBLA chapter</span><span class="mono">One dot, one person</span></div>
+      <div class="room">
+        <div class="seats" id="seats" aria-hidden="true"></div>
+        <div>
+          <span class="roomnum" id="roomnum">~400</span>
+          <span class="stagel" id="stagel" aria-live="polite">Members of the Urbana FBLA chapter.</span>
+          <div class="stagebars" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <figcaption class="cap" style="margin-top:28px"><span><b style="color:var(--fg);font-weight:600">Urbana FBLA chapter.</b> Team lead 2025–26, vice president 2026–27, one of six on the Maryland state council. More than 60 members went to nationals, the 8th largest chapter there.</span></figcaption>
+    </figure>
+
+    <figure class="fbla r">
+      <img src="media/fbla-nlc-2026.webp" width="1860" height="519" loading="lazy" alt="About sixty members of the Urbana FBLA chapter in matching orange shirts and conference badges, standing together in a convention center hall" />
+      <figcaption class="cap"><span class="mono">Fig. 01</span><span>Our chapter at the FBLA National Leadership Conference, 2026.</span></figcaption>
+    </figure>
+
+    <div class="groups">
+      <article class="panel pad group r"><div class="dots" data-n="90" data-e="35" data-plus aria-hidden="true"></div><div><h3>Computer Science Club <span>35 → 90+</span></h3><p>35 members when I became co-president, 90+ now. Nearly 30 entered USACO, MITIT and CALICO.</p></div></article>
+      <article class="panel pad group r"><div class="dots" data-n="50" data-plus aria-hidden="true"></div><div><h3>SCISS startup program <span>50+</span></h3><p>Participants in the two-week program where I was a student counselor, while competing in it. My team won Best Presentation and Best Team.</p></div></article>
+      <article class="panel pad group r"><div class="dots" data-n="40" data-d="5" aria-hidden="true"></div><div><h3>DreamCollegeAI <span>35–40</span></h3><p>In grade 10 I managed 35–40 interns in marketing, quality control and software. Our posts got close to 300,000 views.</p></div></article>
+      <article class="panel pad group r"><div class="dots" data-n="10" data-plus aria-hidden="true"></div><div><h3>Urbana SAT Tutoring <span>10+</span></h3><p>Clients so far. We hired three tutors as it grew.</p></div></article>
+    </div>
+    <p class="also r"><span class="mono">Also</span><span>Co-president of Students Demand Action, chosen by the outgoing officers; joined a Capitol advocacy visit for a gun-related bill that later passed.</span></p>
+  </div>
+</section>
+
+<!-- ============ 02 WHO PAYS ============ -->
+<section class="sec" id="cases" data-k="5 products" data-name="Who pays" aria-labelledby="h-cases">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>02</b><span class="mono">Who pays</span></span><span class="kick mono">Joining is free. / Paying is not.</span></div>
+    <div class="split">
+      <h2 class="h2 r" id="h-cases">Getting people to join <span class="d">is one cold start.</span></h2>
+      <p class="lede r">Getting them to pay is another. These are five things I built or co-founded, in order from free to a commission paid only on results.</p>
+    </div>
+
+    <div class="spec corner r">
+      <div class="spec-h"><span class="mono">Who pays, and how</span><span class="mono arrow">Free <svg width="40" height="8" viewBox="0 0 40 8" aria-hidden="true"><path d="M0 4h38M34 1l4 3-4 3" stroke="currentColor" fill="none"/></svg> paid only on results</span></div>
+      <div class="spec-row">
+        <a class="pt" href="#dermat"><span class="mono">Free</span><span class="pr">$0</span><span class="un">Nobody pays</span><span class="who">&nbsp;</span><span class="nm">Dermat AI <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></span><span class="pf">~2,000 downloads, 2 stores</span></a>
+        <a class="pt" href="#holidayhelperai"><span class="mono">Per month</span><span class="pr">$2+</span><span class="un">a month, three tiers</span><span class="who">You pay to keep using it</span><span class="nm">HolidayHelperAI <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></span><span class="pf">10+ people paid</span></a>
+        <a class="pt" href="#soundsplit"><span class="mono">Per minute</span><span class="pr">$14.99+</span><span class="un">a block of minutes</span><span class="who">You pay for what you use; ads pay for free users</span><span class="nm">SoundSplit <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></span><span class="pf">854 downloads, 9 bought minutes</span></a>
+        <a class="pt" href="#tutoring"><span class="mono">Per session</span><span class="pr">$37</span><span class="un">a session, one-on-one</span><span class="who">Families pay for a result</span><span class="nm">Urbana SAT Tutoring <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></span><span class="pf">10+ clients, up to +280</span></a>
+        <a class="pt" href="#cravedeals"><span class="mono">Commission on results</span><span class="pr">A share</span><span class="un">of what those diners spend</span><span class="who">Restaurants pay only for the diners we bring in; diners pay nothing</span><span class="nm">Crave Deals <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></span><span class="pf">3rd in the nation, still pitching</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 DERMAT ============ -->
+<section class="sec" id="dermat" data-k="1,996 downloads" data-name="Dermat AI" aria-labelledby="h-dermat">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>03</b><span class="mono">Dermat AI</span></span><span class="kick mono">Free</span></div>
+    <nav class="axis r" data-here="0" aria-label="Where this sits on the price axis"></nav>
+    <h2 class="h2 r" id="h-dermat">A skin check is a trust good. <span class="d">What does $0 say?</span></h2>
+    <div class="tiles t4 r">
+      <div class="tile"><span class="mono">Price</span><span class="v tab">$0</span><span class="s">nothing to buy inside</span></div>
+      <div class="tile"><span class="mono">Downloads</span><span class="v tab cnt acc">1,996</span><span class="s">811 App Store, 1,185 Google Play, in 15 months</span></div>
+      <div class="tile"><span class="mono">Still installed</span><span class="v tab cnt">~117</span><span class="s">Android devices now; peak 221</span></div>
+      <div class="tile"><span class="mono">Award</span><span class="v" style="font-size:clamp(20px,1.8vw,26px)">Emerging Standout</span><span class="s">DFW IT Talent Champion, 2025–26</span></div>
+    </div>
+
+    <div class="prod">
+      <div class="r"><span class="mode mono">Free</span><h3>Dermat AI.</h3><p class="sub">No price at all.</p></div>
+      <div class="r">
+        <p class="lede">An iPhone and Android app for looking after your skin. You scan a photo and it shows what it may be and how sure the model is. There’s also a skin diary, a routine built for your skin and an AI assistant you can ask at any hour. It’s free, with nothing to buy inside.</p>
+        <div class="links">
+          <a class="lk" href="https://dermatai.com/" target="_blank" rel="noopener">dermatai.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+          <a class="lk" href="https://apps.apple.com/us/app/dermat-ai/id6748587012" target="_blank" rel="noopener">On the App Store <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+          <a class="lk" href="https://play.google.com/store/apps/details?id=com.dermatai.app" target="_blank" rel="noopener">On Google Play <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <figure class="panel pad c7 r" style="margin:0">
+        <div class="ph"><span class="mono">Who found it</span><span class="mono">Fig. 03.1</span></div>
+        <div class="legend"><span><i class="sw-as"></i>App Store</span><span><i class="sw-gp"></i>Google Play</span></div>
+        <div class="bars" id="dBars" role="img" aria-label="Dermat AI downloads by month, August 2025 to October 2026, peaking at 378 in January 2026"></div>
+        <div class="xl" id="dX"></div>
+        <div class="figline"><span class="big cnt">1,996</span><p>downloads in 15 months: 811 on the App Store, 1,185 on Google Play. The most, 378, in Jan 2026.</p></div>
+        <p class="note">Downloads by month. App Store: “Total Downloads” from App Store Connect. Google Play: “User acquisition, all users” from the Play Console. Both count reinstalls; the last month is as exported. The rise from November to January came from my social media marketing.</p>
+      </figure>
+      <figure class="panel pad c5 r" style="margin:0">
+        <div class="ph"><span class="mono">Who kept it</span><span class="mono">Fig. 03.2</span></div>
+        <div class="line" id="dLine" role="img" aria-label="Devices with Dermat AI installed on Android by week: peak day 221, now about 117"></div>
+        <div class="xl" id="dLX"></div>
+        <div class="figline"><span class="big acc cnt">~117</span><p>Android devices still have it installed, a year after launch</p></div>
+        <p class="note">Google Play “installed audience”: devices with the app installed, averaged by week, from the Play Console. It counts people who kept the app, not new downloads.</p>
+      </figure>
+      <figure class="panel pad c5 r" style="margin:0">
+        <div class="ph"><span class="mono">Where Android installs came from</span></div>
+        <ul class="hb" id="dWhere"></ul>
+        <p class="note">Share of all 1,185 Google Play installs. The console names its top four countries; the rest are grouped.</p>
+      </figure>
+      <figure class="panel pad c7 r" style="margin:0">
+        <div class="ph"><span class="mono">When can you tell if it was right?</span></div>
+        <ol class="goods">
+          <li><b>Search good</b><span>You can judge it before you buy.</span><span class="eg">e.g. a T-shirt</span></li>
+          <li><b>Experience good</b><span>You can judge it after you use it.</span><span class="eg">e.g. a restaurant meal</span></li>
+          <li class="here"><b>Trust good</b><span>You may never judge it yourself.</span><span class="eg">e.g. a diagnosis</span><span class="flag mono">A skin check sits here</span></li>
+        </ol>
+      </figure>
+      <div class="panel pad c12 r insight"><span class="mono" style="color:var(--dim)">Reading the numbers</span>
+        <div class="insight-cols">
+          <p class="pull">Giving Dermat AI away reached about four times as many people a month as SoundSplit, which charges for minutes. People who pay nothing still trust the answer, though, so every answer ends with a note that it is not a diagnosis.</p>
+          <p class="pull">A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? In the app, a button at the top of the assistant opens the full notice, and every answer has a flag to report it as wrong.</p>
+        </div>
+      </div>
+    </div>
+
+    <ul class="screens r">
+      <li><div class="sh"><img src="media/dermat-scan.webp" width="540" height="1170" loading="lazy" alt="Dermat AI scanner: a photo of a face, buttons for gallery and camera, and a skin analysis reading healthy skin with severity none" /></div><p><span class="mono">S.01</span><b>Scan</b>a photo in, a condition and a confidence score out.</p></li>
+      <li><div class="sh"><img src="media/dermat-analysis.webp" width="540" height="1170" loading="lazy" alt="Dermat AI skin health dashboard: latest scan healthy at 90 percent confidence, a health score trend and a conditions breakdown" /></div><p><span class="mono">S.02</span><b>Dashboard</b>the latest result, the trend, the breakdown.</p></li>
+      <li><div class="sh"><img src="media/dermat-diary.webp" width="540" height="1170" loading="lazy" alt="Dermat AI skin diary: dated entries for face and hand, each with a photo, a note and recommendations" /></div><p><span class="mono">S.03</span><b>Diary</b>each scan saved with notes, to compare over time.</p></li>
+      <li><div class="sh"><img src="media/dermat-routine.webp" width="540" height="1170" loading="lazy" alt="Dermat AI personalized skin routine: morning steps, evening routine and recommended product types" /></div><p><span class="mono">S.04</span><b>Routine</b>morning and evening steps for the result.</p></li>
+      <li><div class="sh"><img src="media/dermat-assistant.webp" width="540" height="1170" loading="lazy" alt="Dermat AI skin assistant: a chat where the assistant answers questions about skin concerns" /></div><p><span class="mono">S.05</span><b>Assistant</b>questions answered in a chat.</p></li>
+    </ul>
+
+    <div class="award">
+      <figure class="r"><img src="assets/photos/award-dermat.webp" width="1600" height="1244" loading="lazy" alt="Certificate: Emerging Standout Award, DFW IT Talent Champion Competition, to Team Dermat AI, 15 September 2025" /><figcaption class="cap"><span class="mono">Award</span><span>Emerging Standout Award, DFW IT Talent Champion, September 2025. Entered on my own.</span></figcaption></figure>
+      <div class="panel pad team r"><span class="mono" style="color:var(--dim)">Team</span><p class="who"><b>Just me.</b> I designed and built Dermat AI, connected the AI model, published it on both stores and did the marketing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 HOLIDAYHELPERAI ============ -->
+<section class="sec" id="holidayhelperai" data-k="10+ people paid" data-name="HolidayHelperAI" aria-labelledby="h-hhai">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>04</b><span class="mono">HolidayHelperAI</span></span><span class="kick mono">Per month</span></div>
+    <nav class="axis r" data-here="1" aria-label="Where this sits on the price axis"></nav>
+    <h2 class="h2 r" id="h-hhai">I set the prices. <span class="d">More than ten people paid.</span></h2>
+    <div class="tiles t4 r">
+      <div class="tile"><span class="mono">Built</span><span class="v tab">2023–24</span><span class="s">grade 9, still online</span></div>
+      <div class="tile"><span class="mono">Price</span><span class="v tab">$2–<wbr>$8.99</span><span class="s">a month, three tiers</span></div>
+      <div class="tile"><span class="mono">Paid</span><span class="v tab cnt acc">10+</span><span class="s">people</span></div>
+      <div class="tile"><span class="mono">Award</span><span class="v" style="font-size:clamp(20px,1.8vw,26px)">Stellar Young Achiever</span><span class="s">DCIA, 2023–24</span></div>
+    </div>
+    <div class="prod">
+      <div class="r"><span class="mode mono">Per month</span><h3>HolidayHelperAI.</h3><p class="sub">Three tiers.</p></div>
+      <div class="r">
+        <p class="lede">A website for planning trips, with an AI assistant, travel plans, an inspiration board and a journal. I led the team of five that built it in ninth grade, and I set the prices. More than ten people have paid for it.</p>
+        <div class="links"><a class="lk" href="https://holidayhelperai.com/" target="_blank" rel="noopener">holidayhelperai.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a></div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <figure class="panel pad c7 r" style="margin:0">
+        <div class="ph"><span class="mono">What each tier adds</span><span class="mono">Fig. 04.1</span></div>
+        <table class="tiers" id="tiers"></table>
+        <p class="pull" style="margin-top:24px">The tiers are one product with features taken away, so what a person pays depends on which feature they can’t do without. Each step roughly doubles the price.</p>
+      </figure>
+      <figure class="panel pad c5 r" style="margin:0">
+        <div class="ph"><span class="mono">What a year costs</span><span class="mono">Fig. 04.2</span></div>
+        <ul class="yr" id="yr"></ul>
+        <p class="note">Prices on holidayhelperai.com in October 2026. Dashed months are free.</p>
+      </figure>
+    </div>
+    <div class="award">
+      <figure class="r"><img src="media/hhai-pricing.webp" width="1280" height="980" loading="lazy" alt="The HolidayHelperAI pricing page: Standard $2 a month or $20 a year, Premium $4 or $40, Enterprise $8.99 or $80.99" /><figcaption class="cap"><span class="mono">Fig. 04.3</span><span>holidayhelperai.com/pricing, October 2026.</span></figcaption></figure>
+      <div style="display:grid;gap:12px;align-content:start">
+        <figure class="r" style="margin:0"><img src="assets/photos/award-holidayhelper.webp" width="1386" height="782" loading="lazy" alt="The DCIA Stellar Young Achiever Award slide for HolidayHelperAI, naming Yibo Wang as team leader" style="width:100%;height:auto;border:1px solid var(--line2)" /><figcaption class="cap"><span class="mono">Award</span><span>The DCIA award slide, with the team listed.</span></figcaption></figure>
+        <div class="panel pad team r"><span class="mono" style="color:var(--dim)">Team</span><p class="who"><b>I led it,</b> with William Liu, Raymond Zhou, Owen Liu and Hanna Lee, and James Wang as advisor.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 SOUNDSPLIT ============ -->
+<section class="sec" id="soundsplit" data-k="854 downloads" data-name="SoundSplit" aria-labelledby="h-ss">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>05</b><span class="mono">SoundSplit</span></span><span class="kick mono">Per minute</span></div>
+    <nav class="axis r" data-here="2" aria-label="Where this sits on the price axis"></nav>
+    <h2 class="h2 r" id="h-ss">Free to download. <span class="d">Every minute has a cost.</span></h2>
+    <div class="tiles t4 r">
+      <div class="tile"><span class="mono">Downloads</span><span class="v tab cnt">854</span><span class="s">606 App Store, 248 Google Play, in 27 months</span></div>
+      <div class="tile"><span class="mono">Price</span><span class="v tab" style="font-size:clamp(20px,1.8vw,26px)">$14.99–<wbr>$119.99</span><span class="s">a block of minutes; free to download</span></div>
+      <div class="tile"><span class="mono">Bought minutes</span><span class="v tab cnt acc">9</span><span class="s">people, about 1 in 95 downloads; $404.91 spent</span></div>
+      <div class="tile"><span class="mono">Award</span><span class="v" style="font-size:clamp(20px,1.8vw,26px)">Future Star</span><span class="s">DFW IT Association, 2024–25</span></div>
+    </div>
+    <div class="prod">
+      <div class="r"><span class="mode mono">Per minute</span><h3>SoundSplit.</h3><p class="sub">Sold by the minute.</p></div>
+      <div class="r">
+        <p class="lede">An iPhone and Android app that splits a song into its stems, so you can take out the vocals for karaoke or mute the piano to practise along. I charge by the minute because every minute processed costs me money. With a subscription, the heaviest users would cost more than they paid.</p>
+        <div class="links">
+          <a class="lk" href="https://soundsplitai.com/" target="_blank" rel="noopener">soundsplitai.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+          <a class="lk" href="https://apps.apple.com/us/app/sound-split/id6618147632" target="_blank" rel="noopener">On the App Store <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+          <a class="lk" href="https://play.google.com/store/apps/details?id=sound.split.ai" target="_blank" rel="noopener">On Google Play <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <figure class="panel pad c8 r" style="margin:0">
+        <div class="ph"><span class="mono">Who found it</span><span class="mono">Fig. 05.1</span></div>
+        <div class="legend"><span><i class="sw-as"></i>App Store</span><span><i class="sw-gp"></i>Google Play</span></div>
+        <div class="bars" id="sBars" role="img" aria-label="SoundSplit downloads by month, August 2024 to October 2026, peaking at 79 in September 2024"></div>
+        <div class="xl" id="sX"></div>
+        <div class="figline"><span class="big cnt">854</span><p>downloads in 27 months: 606 on the App Store, 248 on Google Play. The most, 79, in Sep 2024.</p></div>
+        <p class="note">Downloads by month. App Store: “Total Downloads” from App Store Connect. Google Play: “User acquisition, all users” from the Play Console. Both count reinstalls, the same measures used for Dermat AI.</p>
+      </figure>
+      <figure class="panel pad c4 r" style="margin:0">
+        <div class="ph"><span class="mono">Where Android installs came from</span></div>
+        <ul class="hb" id="sWhere"></ul>
+        <p class="note">Share of all 248 Google Play installs. The console names its top four countries; the rest are grouped.</p>
+      </figure>
+      <figure class="panel pad c7 r" style="margin:0">
+        <div class="ph"><span class="mono">What a block of minutes costs</span><span class="mono">Fig. 05.2</span></div>
+        <ul class="packs" id="packs"></ul>
+        <div class="figline"><p style="max-width:60ch;color:var(--fg80)">The more minutes you buy, the less each one costs: from $0.30 down to $0.15. Buyers spent $404.91 in all.</p></div>
+        <p class="pull">Most buyers started small: four of the nine chose Basic. But the two Premium buyers brought in 59% of the money and bought 71% of the minutes, at my lowest price per minute. The next thing to check is whether $0.15 still covers what a minute costs me to run.</p>
+        <p class="note">In-app purchase prices; minutes per block from the app’s purchase screen; buyers by block from the store records. Amounts are before the stores’ fees. Bars share one scale.</p>
+      </figure>
+      <figure class="panel pad c5 r" style="margin:0">
+        <div class="ph"><span class="mono">Who pays</span><span class="mono">Fig. 05.3</span></div>
+        <div class="flow">
+          <div class="fr"><div class="bx">Free user</div><span class="ar" aria-hidden="true">→</span><div class="bx">A banner ad</div><span class="ar" aria-hidden="true">→</span><div class="bx">The advertiser pays<small>under $90 so far</small></div></div>
+          <div class="fr b"><div class="bx">Bought a block</div><span class="ar" aria-hidden="true">→</span><div class="bx">No ads</div><span class="ar" aria-hidden="true">→</span><div class="bx">The user pays per minute<small>9 people so far</small></div></div>
+        </div>
+        <p class="pull">I can’t yet tell whether the banner pushes anyone to buy, because I never tracked how many ads a person saw before paying. Each free user earned at most about ten cents in ads, while each of the 9 buyers spent about $45, so one person who paid was worth roughly four hundred who didn’t.</p>
+        <p class="note">The same app, paid for two ways: advertisers pay for people who have not bought minutes, and buying any block of minutes removes the ad. Banner ads have earned under $90 in total.</p>
+      </figure>
+      <figure class="panel pad c8 r stems" style="margin:0">
+        <div class="ph"><span class="mono">What one import does</span><span class="mono">Fig. 05.4</span></div>
+        <svg id="stems" viewBox="0 0 600 270" role="img" aria-label="One song in, separate tracks out: vocals, drums, instruments"></svg>
+        <p class="note">One song in, separate tracks out. The waveforms are drawn for illustration.</p>
+      </figure>
+      <figure class="panel pad c4 r" style="margin:0">
+        <div class="ph"><span class="mono">What people thought</span></div>
+        <div class="rating"><span class="big">4.0</span><div><div class="pts" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p>from 4 ratings on the App Store</p></div></div>
+        <p class="note">One dot per rating. Four ratings is a small sample.</p>
+      </figure>
+    </div>
+    <ul class="screens r">
+      <li><div class="sh"><img src="media/soundsplit-import.webp" width="540" height="1170" loading="lazy" alt="SoundSplit: an empty song screen with an Add Song button and a Subscribe button" /></div><p><span class="mono">S.01</span><b>Import</b>add a song from the phone.</p></li>
+      <li><div class="sh"><img src="media/soundsplit-stems.webp" width="540" height="1170" loading="lazy" alt="SoundSplit: a grid of stems to choose, such as vocals, drums, bass, piano and guitar, with waveform previews" /></div><p><span class="mono">S.02</span><b>Split</b>choose the stems and preview each one.</p></li>
+      <li><div class="sh"><img src="media/soundsplit-mixer-hd.webp" width="540" height="1170" loading="lazy" alt="SoundSplit's mixer: one slider per instrument above a song called Shape of You" /></div><p><span class="mono">S.03</span><b>Mix</b>one slider per stem.</p></li>
+      <li><div class="sh"><img src="media/soundsplit-pricing.webp" width="540" height="1170" loading="lazy" alt="SoundSplit Go Premium screen: Basic 50 minutes for $15, Standard 150 minutes for $35, Premium 800 minutes for $120, one-time fees" /></div><p><span class="mono">S.04</span><b>Pay</b>three blocks of minutes, one-time fees.</p></li>
+      <li><div class="sh"><img src="media/soundsplit-balance.webp" width="540" height="1170" loading="lazy" alt="SoundSplit balance screen: minutes left on a timer, an Add Minutes button, and a history of songs processed" /></div><p><span class="mono">S.05</span><b>Meter</b>minutes left, and what each song used.</p></li>
+    </ul>
+    <div class="award">
+      <figure class="r"><img src="assets/photos/Future-star-award-soundsplit.webp" width="1600" height="1200" loading="lazy" alt="The Future Star Award slide for SoundSplit projected in a hall, listing the team" /><figcaption class="cap"><span class="mono">Award</span><span>The DFW IT Association’s Future Star Award, as it was announced.</span></figcaption></figure>
+      <div class="panel pad team r"><span class="mono" style="color:var(--dim)">Team</span><p class="who">Vaibhav Sykhesh, Raymond Zhou, Bradley Chen, Mihir Kumar and <b>me.</b></p><p class="small">SoundSplit and Dermat AI are published through a family member’s company developer account, APIDEED LLC.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 TUTORING ============ -->
+<section class="sec" id="tutoring" data-k="+280 points" data-name="SAT Tutoring" aria-labelledby="h-tut">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>06</b><span class="mono">Urbana SAT Tutoring</span></span><span class="kick mono">Per session</span></div>
+    <nav class="axis r" data-here="3" aria-label="Where this sits on the price axis"></nav>
+    <h2 class="h2 r" id="h-tut">Families pay for a result. <span class="d">The one that sold.</span></h2>
+    <div class="tiles t4 r" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="tile"><span class="mono">Price</span><span class="v tab cnt">$37</span><span class="s">a session; the usual rate is $70–90</span></div>
+      <div class="tile"><span class="mono">Clients</span><span class="v tab cnt">10+</span><span class="s">with personal plans</span></div>
+      <div class="tile"><span class="mono">Best gain</span><span class="v tab cnt acc">+280</span><span class="s">1220 to 1510</span></div>
+    </div>
+    <div class="prod">
+      <div class="r"><span class="mode mono">Per session</span><h3>Urbana SAT Tutoring.</h3><p class="sub">Paid for by results.</p></div>
+      <div class="r"><p class="lede">I co-founded a one-on-one SAT tutoring business in Urbana. We charge $37 a session; others usually charge $70 to $90. Every student gets a weekly and a monthly plan. We had more than ten clients, more than the founders could teach, so we hired three tutors.</p></div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <figure class="panel pad c6 r" style="margin:0">
+        <div class="ph"><span class="mono">What a family pays</span><span class="mono">Fig. 06.1</span></div>
+        <div class="scale" id="payScale" role="img" aria-label="$37 a session against the usual $70 to $90, on a scale from $0 to $100">
+          <div class="base"></div>
+          <div class="rng" style="left:70%;width:20%"></div>
+          <div class="lb" style="left:80%;color:var(--fg80)">$70–90</div>
+          <div class="mk us" style="left:37%"></div>
+          <div class="lb" style="left:37%;color:var(--acc)">$37</div>
+          <div class="tk" style="left:0%">$0</div><div class="tk" style="left:50%">$50</div><div class="tk" style="left:100%">$100</div>
+        </div>
+        <div class="figline"><span class="big acc">About ½</span><p>of the usual price</p></div>
+        <p class="note">Our price for one session against the usual range for one-on-one SAT tutoring.</p>
+      </figure>
+      <figure class="panel pad c6 r" style="margin:0">
+        <div class="ph"><span class="mono">What a family gets</span><span class="mono">Fig. 06.2</span></div>
+        <div class="scale" id="satScale" role="img" aria-label="From 1220 to 1510 on the SAT scale of 400 to 1600">
+          <div class="base"></div>
+          <div class="gain" style="left:68.33%;width:24.17%"></div>
+          <div class="mk was" style="left:68.33%"></div><div class="lb" style="left:66%;color:var(--fg80)">1220</div>
+          <div class="mk us" style="left:92.5%"></div><div class="lb" style="left:94%;color:var(--acc)">1510</div>
+          <div class="tk" style="left:0%">400</div><div class="tk" style="left:50%">1000</div><div class="tk" style="left:100%">1600</div>
+        </div>
+        <div class="figline"><span class="big acc cnt">+280</span><p>points, from 1220 to 1510</p></div>
+        <p class="note">The largest gain so far, on the SAT’s 400–1600 scale.</p>
+      </figure>
+      <figure class="panel pad c12 r" style="margin:0">
+        <div class="ph"><span class="mono">How it grew</span><span class="mono">Fig. 06.3</span></div>
+        <div class="grow">
+          <div><div class="dots" data-n="10" data-plus aria-hidden="true"></div><p class="p" style="margin-top:10px;font-size:16px">10+ clients, the first ones through friends; each has a weekly or monthly plan</p></div>
+          <div style="padding-top:18px;border-top:1px solid var(--line2)"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="chip">founders</span><span class="mono" style="color:var(--dim)">+</span><span class="dots" style="display:inline-flex"><i></i><i></i><i></i></span></div><p class="p" style="margin-top:10px;font-size:16px">3 tutors hired once the founders could not take more students</p></div>
+        </div>
+      </figure>
+    </div>
+    <div class="panel pad team r" style="margin-top:12px"><span class="mono" style="color:var(--dim)">Team</span><p class="who"><b>I co-founded it and tutor;</b> three more tutors joined as it grew.</p></div>
+  </div>
+</section>
+
+<!-- ============ 07 CRAVE ============ -->
+<section class="sec" id="cravedeals" data-k="3rd in the nation" data-name="Crave Deals" aria-labelledby="h-crave">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>07</b><span class="mono">Crave Deals</span></span><span class="kick mono">Commission on results</span></div>
+    <nav class="axis r" data-here="4" aria-label="Where this sits on the price axis"></nav>
+    <h2 class="h2 r" id="h-crave">The judges scored it. <span class="d">The market is the harder test.</span></h2>
+    <div class="tiles t4 r">
+      <div class="tile"><span class="mono">Role</span><span class="v" style="font-size:clamp(20px,1.8vw,26px)">Co-founder, COO</span><span class="s">with two co-founders</span></div>
+      <div class="tile"><span class="mono">Restaurants pay</span><span class="v" style="font-size:clamp(20px,1.8vw,26px)">On results</span><span class="s">a commission on what new diners spend</span></div>
+      <div class="tile"><span class="mono">Pitch prizes</span><span class="v tab cnt acc">$320+</span><span class="s">local and national competitions</span></div>
+      <div class="tile"><span class="mono">Award</span><span class="v" style="font-size:clamp(20px,1.8vw,26px)">3rd in the nation</span><span class="s">FBLA Business Plan, 2025</span></div>
+    </div>
+    <div class="prod">
+      <div class="r"><span class="mode mono">Commission on results</span><h3>Crave Deals.</h3><p class="sub">Third, then the street.</p></div>
+      <div class="r">
+        <p class="lede">I co-founded this coupon company, and run it as COO, to help small local restaurants compete with big chains. We only take a commission on what the diners we bring in spend, so a restaurant pays nothing if we bring no one in. Our business plan placed 3rd in the nation, and since then we have pitched more than 40 restaurants, venture firms and investors.</p>
+        <div class="links"><a class="lk" href="http://crave.deals/" target="_blank" rel="noopener">crave.deals <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a></div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <figure class="panel pad c12 r" style="margin:0">
+        <div class="ph"><span class="mono">One plan, two tests</span><span class="mono">Fig. 07.1</span></div>
+        <div class="steps-h mono"><span>Scored by judges</span><span>Tested by the market, still going</span></div>
+        <ol class="steps">
+          <li><span class="ph2">Scored by judges</span><b>3rd</b><span>in Maryland, FBLA Business Plan, 2025</span></li>
+          <li><span class="ph2">&nbsp;</span><b>3rd</b><span>in the nation, Anaheim</span></li>
+          <li class="m"><span class="ph2" style="color:var(--acc)">Tested by the market, still going</span><b class="cnt">40+</b><span>restaurants pitched, plus VCs and investors</span></li>
+          <li class="m"><span class="ph2">&nbsp;</span><b>0</b><span>restaurants signed so far</span></li>
+        </ol>
+      </figure>
+      <figure class="c5 r shot" style="margin:0"><img src="assets/photos/fbla-3.webp" width="1280" height="1218" loading="lazy" alt="Yibo, right, with two FBLA teammates beside the Welcome to the 2025 National Leadership Conference sign" /><figcaption class="cap"><span class="mono">Fig. 07.2</span><span>FBLA nationals, Anaheim, 2025, where the plan placed 3rd. I am on the right.</span></figcaption></figure>
+      <figure class="panel pad c7 r loop" style="margin:0">
+        <div class="ph"><span class="mono">The problem we are working on</span><span class="mono">Fig. 07.3</span></div>
+        <svg viewBox="0 0 520 280" role="img" aria-labelledby="loopT"><title id="loopT">A cold start: diners won’t visit a site with no deals, and restaurants won’t post deals on a site with no diners.</title>
+          <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c6ff3d"/></marker></defs>
+          <path d="M150,96 Q260,14 370,96" fill="none" stroke="#c6ff3d" stroke-width="1.6" stroke-dasharray="6 6" marker-end="url(#ar)"><animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.2s" repeatCount="indefinite"/></path>
+          <path d="M370,184 Q260,266 150,184" fill="none" stroke="#c6ff3d" stroke-width="1.6" stroke-dasharray="6 6" marker-end="url(#ar)"><animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.2s" repeatCount="indefinite"/></path>
+          <text x="260" y="34" text-anchor="middle" fill="rgba(236,238,230,.7)" font-family="JetBrains Mono, monospace" font-size="16">waits for deals</text>
+          <text x="260" y="270" text-anchor="middle" fill="rgba(236,238,230,.7)" font-family="JetBrains Mono, monospace" font-size="16">waits for diners</text>
+          <circle cx="96" cy="140" r="66" fill="#0b0c0b" stroke="rgba(236,238,230,.85)" stroke-width="1.3"/>
+          <text x="96" y="136" text-anchor="middle" fill="#eceee6" font-family="Archivo, sans-serif" font-weight="800" font-size="22">Diners</text>
+          <text x="96" y="160" text-anchor="middle" fill="rgba(236,238,230,.6)" font-family="JetBrains Mono, monospace" font-size="14">won’t visit</text>
+          <circle cx="424" cy="140" r="66" fill="#0b0c0b" stroke="rgba(236,238,230,.85)" stroke-width="1.3"/>
+          <text x="424" y="136" text-anchor="middle" fill="#eceee6" font-family="Archivo, sans-serif" font-weight="800" font-size="17">Restaurants</text>
+          <text x="424" y="160" text-anchor="middle" fill="rgba(236,238,230,.6)" font-family="JetBrains Mono, monospace" font-size="14">won’t post</text>
+          <rect x="204" y="120" width="112" height="40" fill="#0b0c0b" stroke="rgba(236,238,230,.3)" stroke-dasharray="3 3"/>
+          <text x="260" y="145" text-anchor="middle" fill="rgba(236,238,230,.8)" font-family="JetBrains Mono, monospace" font-size="14">crave.deals</text>
+        </svg>
+        <p class="note">A cold start: diners won’t visit a site with no deals, and restaurants won’t post deals on a site with no diners.</p>
+      </figure>
+      <figure class="c12 r shot" style="margin:0">
+        <div class="panel" style="padding:10px 14px;display:flex;justify-content:space-between;border-bottom:0"><span class="mono" style="color:var(--fg80)">How a diner uses it</span><span class="mono" style="color:var(--dim)">crave.deals</span></div>
+        <img src="media/crave-how.webp" width="1623" height="825" loading="lazy" alt="The How does it work section of crave.deals, in four steps: Choose Your Location, Select Restaurant, Save Coupon, Show Coupon" />
+        <figcaption class="cap"><span class="mono">Fig. 07.4</span><span>crave.deals: choose a location, pick a restaurant, save the coupon and show it at checkout.</span></figcaption>
+      </figure>
+    </div>
+    <div class="panel pad team r" style="margin-top:12px"><span class="mono" style="color:var(--dim)">Team</span><p class="who"><b>Three co-founders.</b> As COO I wrote the market analysis and the financial sections and visited restaurants in the Frederick area.</p></div>
+  </div>
+</section>
+
+<!-- ============ 08 ABOUT ============ -->
+<section class="sec" id="about" data-k="TEDxSCA Youth" data-name="About" aria-labelledby="h-about">
+  <div class="wrap">
+    <div class="sec-h r"><span class="no"><b>08</b><span class="mono">About</span></span><span class="kick mono">Urbana High School, Frederick, Maryland · Class of 2027</span></div>
+    <div class="split">
+      <h2 class="h2 r" id="h-about">Economics, <span class="d">without an app.</span></h2>
+      <p class="lede r">Urbana High School, Frederick, Maryland · Class of 2027. Economics is what I want to study, and my products are where I try out what I learn.</p>
+    </div>
+    <div class="tl r" style="margin-top:clamp(40px,5vw,64px)">
+      <div class="tl-h mono"><span></span><span>Built</span><span>Studied and argued</span></div>
+      <div class="tl-r"><span class="yr2 tab">2023</span><ul><li><span class="lab mono">Built</span><b>HolidayHelperAI</b><span>Led a team of five, grade 9.</span></li></ul><ul></ul></div>
+      <div class="tl-r"><span class="yr2 tab">2024</span><ul><li><span class="lab mono">Built</span><b>SoundSplit</b><span>On the App Store, August.</span></li></ul><ul></ul></div>
+      <div class="tl-r"><span class="yr2 tab">2025</span><ul><li><span class="lab mono">Built</span><b>Crave Deals</b><span>The business plan.</span></li><li><b>Dermat AI</b><span>On the App Store, August.</span></li></ul><ul><li><span class="lab mono">Studied and argued</span><b>FBLA, 3rd in the nation</b><span>Business Plan Event, after 3rd in Maryland.</span></li></ul></div>
+      <div class="tl-r"><span class="yr2 tab">2026</span><ul></ul><ul><li><span class="lab mono">Studied and argued</span><b>Economics Challenge, 1st (state)</b><span>One of six chosen from just under 100.</span></li><li><b>Wharton LBW</b><span>One of just over 100 accepted to session one.</span></li><li><b>TEDxSCA Youth</b><span>A talk: Is Gen-Z Cooked?</span></li><li><b>SCISS startup program</b><span>Best Presentation and Best Team.</span></li><li><b>National Merit Semifinalist</b></li></ul></div>
+    </div>
+    <div class="cards">
+      <article class="panel pad r" style="grid-column:span 6"><span class="mono" style="color:var(--acc)">1st place</span><h3>Economics Challenge, 1st place</h3><p class="p">Months of FOMC press conferences, housing market conditions and administrative actions. Each of us played a world figure; I chose former UK Prime Minister Keir Starmer because I knew little about him, and argued his policy recommendations before economics professors at Mount St. Mary’s University.</p></article>
+      <article class="panel pad r" style="grid-column:span 6"><span class="mono" style="color:var(--acc)">Session one</span><h3>Wharton, Leadership in the Business World</h3><p class="p">One of just over 100 students accepted to session one. Three weeks of Harvard Business School cases with Wharton faculty; my team built and presented a full case on Chipotle’s expansion into Asia.</p></article>
+      <article class="panel ted corner r" style="grid-column:span 12">
+        <figure><img src="media/tedx-open.webp" width="1280" height="720" loading="lazy" alt="Yibo on the TEDxSCA Youth stage, arms open to the audience, with a slide quoting Jalen Brunson" /><figcaption class="sr">TEDxSCA Youth, 2026.</figcaption></figure>
+        <div class="tx">
+          <span class="mono" style="color:var(--dim)">TEDxSCA Youth, 2026.</span>
+          <h3>TEDxSCA Youth</h3>
+          <p class="q">“Is Gen-Z Cooked?”</p>
+          <p class="p" style="font-size:16px">“Is Gen-Z Cooked?”, to an audience of 100. Published on the official TEDx Talks channel on October 19, 2026, with <span class="cnt tab" style="color:var(--fg)">577</span> views by the end of the month.</p>
+          <p class="p" style="font-size:16px">People ask that question about my generation a lot. My answer was no. Gen Z has more tools than any generation before it for turning an idea into something real, and that gives us a chance and a responsibility to build the future we say we want.</p>
+          <div><a class="btn pri" href="https://www.youtube.com/watch?v=PbbQxn38bcQ" target="_blank" rel="noopener">Watch the talk <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Yibo Wang · Urbana High School · Frederick, Maryland · Class of 2027</p>
+    <p>Product screenshots as published, October 2026. TEDxSCA Youth photographs by Dong Ho.</p>
+    <p>Content and data by Yibo Wang; site designed and built with Claude Code.</p>
+  </div>
+</footer>
+</main>
+</div>
+
+<script>
+(() => {
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const h = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+
+/* ---------- data (from the live site's data files) ---------- */
+const dermat = [['Aug 2025',30,3],['Sep 2025',20,8],['Oct 2025',31,37],['Nov 2025',81,67],['Dec 2025',101,175],['Jan 2026',133,245],['Feb 2026',95,213],['Mar 2026',74,147],['Apr 2026',41,91],['May 2026',38,55],['Jun 2026',40,47],['Jul 2026',26,27],['Aug 2026',34,31],['Sep 2026',30,20],['Oct 2026',37,19]];
+const sound = [['Aug 2024',22,15],['Sep 2024',24,55],['Oct 2024',19,21],['Nov 2024',19,3],['Dec 2024',28,4],['Jan 2025',27,1],['Feb 2025',22,5],['Mar 2025',27,8],['Apr 2025',34,9],['May 2025',33,5],['Jun 2025',27,3],['Jul 2025',24,3],['Aug 2025',30,4],['Sep 2025',30,7],['Oct 2025',39,4],['Nov 2025',24,6],['Dec 2025',24,9],['Jan 2026',24,14],['Feb 2026',15,14],['Mar 2026',17,17],['Apr 2026',17,8],['May 2026',15,10],['Jun 2026',14,4],['Jul 2026',8,6],['Aug 2026',15,7],['Sep 2026',18,4],['Oct 2026',10,2]];
+const weekly = [['2025-08-28',1.3],['2025-09-04',1.1],['2025-09-11',1.6],['2025-09-18',2.1],['2025-09-25',2],['2025-10-02',2.4],['2025-10-09',3.6],['2025-10-16',11.7],['2025-10-23',16.7],['2025-10-30',19.1],['2025-11-06',18.9],['2025-11-13',23],['2025-11-20',34.9],['2025-11-27',50.7],['2025-12-04',67.7],['2025-12-11',83.7],['2025-12-18',92.9],['2025-12-25',105.1],['2026-01-01',131.1],['2026-01-08',153.3],['2026-01-15',172.9],['2026-01-22',192.3],['2026-01-29',186.4],['2026-02-05',183],['2026-02-12',184.6],['2026-02-19',192.9],['2026-02-26',199.3],['2026-03-05',201.3],['2026-03-12',209.9],['2026-03-19',212.7],['2026-03-26',201.1],['2026-04-02',191.4],['2026-04-09',183.6],['2026-04-16',186.1],['2026-04-23',177.4],['2026-04-30',173.6],['2026-05-07',170.1],['2026-05-14',167.7],['2026-05-21',166.3],['2026-05-28',162],['2026-06-04',158.1],['2026-06-11',153.9],['2026-06-18',152.6],['2026-06-25',153.6],['2026-07-02',147.7],['2026-07-09',146],['2026-07-16',143.9],['2026-07-23',134.3],['2026-07-30',130.9],['2026-08-06',129.4],['2026-08-13',129.3],['2026-08-20',127.6],['2026-08-27',122.9],['2026-09-03',122.9],['2026-09-10',123],['2026-09-17',119.6],['2026-09-24',118.6],['2026-10-01',115.9],['2026-10-08',118.7],['2026-10-15',115.7],['2026-10-22',114.6]];
+const dWhere = [['India',415,'35%'],['Bangladesh',44,'4%'],['United States',43,'4%'],['Pakistan',32,'3%'],['All other countries',651,'55%']];
+const sWhere = [['United States',40,'16%'],['Germany',21,'8%'],['Hong Kong',2,'1%'],['Czechia',1,'<1%'],['All other countries',184,'74%']];
+
+/* ---------- index rail ---------- */
+const secs = $$('main > section');
+const mkIdx = (ol) => secs.forEach((s, i) => {
+  const li = h('li'); const a = h('a', '', `<span class="mono">${String(i).padStart(2,'0')}</span><span>${s.dataset.name}<small>${s.dataset.k}</small></span>`);
+  a.href = '#' + s.id; li.append(a); ol.append(li);
+});
+mkIdx($('#idx')); mkIdx($('#idx2'));
+const sheet = $('#sheet'), mb = $('#menuBtn');
+const setSheet = (o) => { sheet.classList.toggle('open', o); mb.setAttribute('aria-expanded', o); mb.textContent = o ? 'Close' : 'Index'; };
+mb.addEventListener('click', () => setSheet(!sheet.classList.contains('open')));
+$$('#idx2 a').forEach(a => a.addEventListener('click', () => setSheet(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape') setSheet(false); });
+let curI = -1;
+const onScroll = () => {
+  const y = scrollY, H = document.documentElement.scrollHeight - innerHeight;
+  const p = H > 0 ? Math.min(1, y / H) : 0;
+  $('#prog').style.width = $('#prog2').style.width = (p * 100).toFixed(1) + '%';
+  $('#pct').textContent = String(Math.round(p * 100)).padStart(3, '0') + '%';
+  let i = 0; secs.forEach((s, k) => { if (s.getBoundingClientRect().top < innerHeight * 0.35) i = k; });
+  if (i !== curI) {
+    curI = i;
+    $$('.idx').forEach(ol => $$('a', ol).forEach((a, k) => a.classList.toggle('on', k === i)));
+    $('#secno').textContent = String(i).padStart(2,'0') + '/08';
+    $('#cur').innerHTML = `<b>${String(i).padStart(2,'0')}</b>${secs[i].dataset.name}`;
+  }
+};
+addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); onScroll();
+
+/* ---------- hero video ---------- */
+const v = $('#heroVid');
+v.muted = true; v.defaultMuted = true;
+if (RM) { v.removeAttribute('autoplay'); v.pause(); } else { const pp = v.play(); if (pp) pp.catch(() => {}); }
+const tc = $('#tc');
+if (!RM) setInterval(() => { const t = v.currentTime || 0; const f = Math.floor((t % 1) * 25); tc.textContent = `00:${String(Math.floor(t)).padStart(2,'0')}:${String(f).padStart(2,'0')}`; }, 80);
+
+/* ---------- price axis strips ---------- */
+const axisPts = [['$0','Free','dermat'],['$2+/mo','Per month','holidayhelperai'],['$14.99+','Per minute','soundsplit'],['$37','Per session','tutoring'],['Share','Commission','cravedeals']];
+$$('.axis').forEach(ax => {
+  const here = +ax.dataset.here;
+  axisPts.forEach(([p, l, id], i) => {
+    const a = h('a', i === here ? 'here' : (i < here ? 'past' : ''), `<span>${p} · ${l}</span>`);
+    a.href = '#' + id; a.setAttribute('aria-label', `${l}, ${p}`); if (i === here) { a.setAttribute('aria-current', 'true'); ax.dataset.label = `${p} · ${l}`; }
+    ax.append(a);
+  });
+});
+
+/* ---------- dot rows ---------- */
+$$('.dots[data-n]').forEach(d => {
+  const n = +d.dataset.n, e = +(d.dataset.e || 0), ds = +(d.dataset.d || 0);
+  for (let i = 0; i < n; i++) d.append(h('i', i < e ? 'e' : (ds && i >= n - ds ? 'd' : '')));
+  if (d.hasAttribute('data-plus')) d.append(h('em', '', '+'));
+});
+
+/* ---------- the room ---------- */
+const ROOM = 400, JOINED = 150;
+const seats = $('#seats');
+for (let i = 0; i < ROOM; i++) seats.append(h('i'));
+const seatEls = [...seats.children];
+const order = (() => { const o = Array.from({ length: ROOM }, (_, i) => i); let s = 7; const r = () => ((s = (s * 16807) % 2147483647) - 1) / 2147483646; for (let i = ROOM - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [o[i], o[j]] = [o[j], o[i]]; } const c = o.indexOf(ROOM / 2 + 10); [o[0], o[c]] = [o[c], o[0]]; return o; })();
+const stageL = ['One person goes first.', 'About 150 members when I joined.', 'About 400 now.'];
+const sb = $$('.stagebars i');
+const light = (n) => { for (let k = 0; k < ROOM; k++) { const el = seatEls[order[k]]; el.className = k === 0 ? 'first' : k < n ? 'on' : ''; } $('#roomnum').textContent = n; };
+const stage = (i) => { $('#stagel').textContent = stageL[i]; sb.forEach((b, k) => b.classList.toggle('on', k <= i)); };
+light(ROOM); stage(2); $('#roomnum').textContent = '~400'; $('#stagel').textContent = 'Members of the Urbana FBLA chapter.';
+if (!RM) {
+  light(0); $('#roomnum').textContent = '~400'; sb.forEach(b => b.classList.remove('on'));
+  const io = new IntersectionObserver(([en]) => {
+    if (!en.isIntersecting) return; io.disconnect();
+    stage(0); light(1);
+    setTimeout(() => { stage(1); light(JOINED); }, 1100);
+    setTimeout(() => { stage(2); const t0 = performance.now(); const g = (t) => { const p = Math.min(1, (t - t0) / 2200); light(Math.round(JOINED + (ROOM - JOINED) * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(g); else $('#roomnum').textContent = '~400'; }; requestAnimationFrame(g); }, 2600);
+  }, { threshold: 0.35 });
+  io.observe(seats);
+}
+
+/* ---------- stacked monthly bars ---------- */
+function bars(host, xhost, data, top, step, labelIdx) {
+  const n = data.length; let peak = 0;
+  data.forEach((d, i) => { if (d[1] + d[2] > data[peak][1] + data[peak][2]) peak = i; });
+  for (let v = 0; v <= top; v += step) { const g = h('div', 'gl', `<span>${v}</span>`); g.style.bottom = (v / top * 100) + '%'; host.append(g); }
+  const cols = h('div', 'cols'); cols.style.gridTemplateColumns = `repeat(${n},minmax(0,1fr))`;
+  data.forEach((d, i) => {
+    const c = h('div', 'col'); c.tabIndex = 0; c.style.transitionDelay = (i * 18) + 'ms';
+    c.setAttribute('aria-label', `${d[0]}: ${d[1]} App Store, ${d[2]} Google Play`);
+    const a = h('b', 'a'); a.style.height = (d[1] / top * 100) + '%';
+    const g = h('b', 'g'); g.style.height = (d[2] / top * 100) + '%';
+    c.append(a, g);
+    c.append(h('span', 'tip', `${d[0]}<br>${d[1]} + ${d[2]} = ${d[1] + d[2]}`));
+    if (i === peak) { const pk = h('span', 'pk', String(d[1] + d[2])); pk.style.bottom = `calc(${(d[1] + d[2]) / top * 100}% + 4px)`; c.append(pk); }
+    cols.append(c);
+  });
+  host.append(cols);
+  labelIdx.forEach(([i, t]) => { const s = h('span', '', t); s.style.left = `calc(${(i + .5) / n * 100}% - 1.6em)`; xhost.append(s); });
+}
+bars($('#dBars'), $('#dX'), dermat, 400, 100, [[0,"Aug '25"],[3,"Nov '25"],[6,"Feb '26"],[9,"May '26"],[12,"Aug '26"]]);
+bars($('#sBars'), $('#sX'), sound, 100, 25, [[0,"Aug '24"],[6,"Feb '25"],[12,"Aug '25"],[18,"Feb '26"],[24,"Aug '26"]]);
+
+/* ---------- installed-audience line ---------- */
+(() => {
+  const host = $('#dLine'), top = 250, n = weekly.length;
+  [0, 100, 200].forEach(v => { const g = h('div', 'gl', `<span>${v}</span>`); g.style.bottom = (v / top * 100) + '%'; host.append(g); });
+  const ref = h('div', 'ref', '<span>peak day 221</span>'); ref.style.bottom = (221 / top * 100) + '%'; host.append(ref);
+  const X = i => i / (n - 1) * 1000, Y = v => (1 - v / top) * 1000;
+  const pts = weekly.map((w, i) => `${X(i).toFixed(1)},${Y(w[1]).toFixed(1)}`);
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg'); svg.setAttribute('viewBox', '0 0 1000 1000'); svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('aria-hidden', 'true');
+  const area = document.createElementNS(ns, 'path'); area.setAttribute('d', `M${pts.join(' L')} L1000,1000 L0,1000 Z`); area.setAttribute('fill', 'rgba(198,255,61,.1)');
+  const ln = document.createElementNS(ns, 'path'); ln.setAttribute('d', `M${pts.join(' L')}`); ln.setAttribute('fill', 'none'); ln.setAttribute('stroke', '#c6ff3d'); ln.setAttribute('stroke-width', '2'); ln.setAttribute('vector-effect', 'non-scaling-stroke'); ln.setAttribute('pathLength', '1');
+  if (!RM) { ln.style.strokeDasharray = '1'; ln.style.strokeDashoffset = '1'; ln.style.transition = 'stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1)'; }
+  svg.append(area, ln); host.append(svg);
+  const now = h('div', 'now', '<span>now ~117</span>'); now.style.top = (1 - weekly[n - 1][1] / top) * 100 + '%'; host.append(now);
+  host._draw = () => { ln.style.strokeDashoffset = '0'; };
+  const xl = $('#dLX');
+  [['2025-10',"Oct ’25"],['2026-01',"Jan ’26"],['2026-04',"Apr ’26"],['2026-07',"Jul ’26"],['2026-10',"Oct ’26"]].forEach(([m, t]) => {
+    const i = weekly.findIndex(w => w[0].startsWith(m)); const s = h('span', '', t); s.style.left = `calc(${i / (n - 1) * 100}% - 1.6em)`; xl.append(s);
+  });
+})();
+
+/* ---------- country shares ---------- */
+function shares(ul, data) {
+  const tot = data.reduce((s, d) => s + d[1], 0);
+  data.forEach((d, i) => {
+    const li = h('li', i === 0 ? 'top' : (i === data.length - 1 ? 'rest' : ''), `<span>${d[0]}</span><span class="tr"><i></i></span><span class="pc">${d[2]}</span>`);
+    li.querySelector('i').style.width = (d[1] / tot * 100) + '%'; li.querySelector('i').style.transitionDelay = (i * 70) + 'ms';
+    ul.append(li);
+  });
+}
+shares($('#dWhere'), dWhere); shares($('#sWhere'), sWhere);
+
+/* ---------- tiers ---------- */
+(() => {
+  const tiers = [['Standard',2,20,10],['Premium',4,40,10],['Enterprise',8.99,80.99,9]];
+  const feats = [['Trip planner, AI assistant, journal',0],['Albums',1],['Event calendar',2]];
+  const m = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
+  let html = '<thead><tr><th></th>' + tiers.map((t, i) => `<th><span class="pr tab">${m(t[1])}</span><span class="tn mono">${t[0]}</span><span class="x">${i ? '×' + (t[1] / tiers[i-1][1]).toFixed(2).replace(/\.00$/, '') : ''}</span></th>`).join('') + '</tr></thead><tbody>';
+  feats.forEach(f => { html += `<tr><th scope="row">${f[0]}</th>` + tiers.map((t, i) => `<td>${i >= f[1] ? `<span class="in${i === f[1] && f[1] > 0 ? ' n' : ''}" aria-label="Included"></span>` : '<span class="out" aria-label="Not included"></span>'}</td>`).join('') + '</tr>'; });
+  $('#tiers').innerHTML = html + '</tbody>';
+  $('#yr').innerHTML = tiers.map(t => `<li><div class="hd"><span>${t[0]} <b class="tab">${m(t[2])}</b> a year</span><span class="mono tab">pay ${t[3]}, get 12</span></div><div class="months" aria-hidden="true">${Array.from({ length: 12 }, (_, k) => `<i class="${k < t[3] ? '' : 'f'}"></i>`).join('')}</div></li>`).join('');
+})();
+
+/* ---------- packs ---------- */
+(() => {
+  const packs = [['Basic',14.99,50,'$0.30',4],['Standard',34.99,150,'$0.23',3],['Premium',119.99,800,'$0.15',2]];
+  const topP = 119.99;
+  $('#packs').innerHTML = packs.map((p, i) => {
+    const w = p[1] / topP * 100;
+    const lab = w > 40 ? `left:14px;color:#0b0c0b` : `left:calc(${w}% + 12px)`;
+    return `<li><div class="row"><span class="mono" style="color:var(--dim)">${p[0]}</span><span class="tr"><i style="width:${w}%;transition-delay:${i*90}ms"></i><span style="${lab}" class="tab">$${p[1].toFixed(2)}</span></span><span class="meta tab">${p[2]} minutes · ${p[3]} a minute <span class="buy" aria-label="${p[4]} buyers">${'<i></i>'.repeat(p[4])} ${p[4]} bought it</span></span></div></li>`;
+  }).join('');
+})();
+
+/* ---------- stems illustration ---------- */
+(() => {
+  const lanes = [['SONG',.9,.3,.21,1],['VOCALS',.55,1.1,.13,0],['DRUMS',1.7,.2,.47,0],['INSTRUMENTS',.32,2.4,.09,0]];
+  const svg = $('#stems'); const bars = 52, x0 = 150, st = 8.4; let s = '';
+  lanes.forEach((l, li) => {
+    const cy = li === 0 ? 36 : 82 + li * 58;
+    s += `<text x="0" y="${cy + 5}" fill="${li === 0 ? '#eceee6' : 'rgba(236,238,230,.6)'}" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="1.5">${l[0]}</text>`;
+    for (let i = 0; i < bars; i++) { const hh = 4 + 30 * Math.abs(Math.sin(i * l[1] + l[2]) * Math.cos(i * l[3])); s += `<rect x="${x0 + i * st}" y="${(cy - hh / 2).toFixed(1)}" width="5" height="${hh.toFixed(1)}" fill="${l[4] ? '#eceee6' : '#c6ff3d'}" fill-opacity="${l[4] ? .9 : .78}"/>`; }
+  });
+  s += `<line x1="${x0}" y1="78" x2="${x0 + bars * st - 4}" y2="78" stroke="rgba(236,238,230,.25)" stroke-dasharray="3 4"/>`;
+  svg.innerHTML = s;
+})();
+
+/* ---------- counters ---------- */
+function count(el) {
+  const txt = el.textContent; const m = txt.match(/[\d,]+(\.\d+)?/); if (!m) return;
+  const raw = m[0], dec = (m[1] || '').length ? m[1].length - 1 : 0, target = parseFloat(raw.replace(/,/g, '')), comma = raw.includes(',');
+  const pre = txt.slice(0, m.index), suf = txt.slice(m.index + raw.length);
+  const fmt = v => { let s = dec ? v.toFixed(dec) : String(Math.round(v)); if (comma) s = Number(s).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }); return pre + s + suf; };
+  el.textContent = fmt(0);
+  const t0 = performance.now(), D = 950;
+  const tick = t => { const p = Math.min(1, (t - t0) / D); el.textContent = fmt(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); else el.textContent = txt; };
+  requestAnimationFrame(tick);
+}
+
+/* ---------- reveal ---------- */
+if (RM) { $$('.r,.bars,.hb,.packs,.scale,.h1').forEach(e => e.classList.add('in')); $('#dLine')._draw(); }
+else {
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    if (!en.isIntersecting) return; const t = en.target; io.unobserve(t);
+    const sib = t.parentElement ? [...t.parentElement.children].filter(c => c.classList.contains('r')) : [];
+    const k = Math.max(0, sib.indexOf(t)); t.style.transitionDelay = Math.min(k, 4) * 60 + 'ms';
+    t.classList.add('in');
+    $$('.bars,.hb,.packs,.scale', t).forEach(e => e.classList.add('in'));
+    if (t.querySelector('#dLine')) setTimeout(() => $('#dLine')._draw(), 200);
+    $$('.cnt', t).forEach(count); if (t.classList.contains('cnt')) count(t);
+  }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  $$('.r').forEach(e => io.observe(e));
+  requestAnimationFrame(() => setTimeout(() => $('.h1').classList.add('in'), 60));
+}
+})();
+</script>
+</body>
+</html>

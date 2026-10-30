@@ -5,27 +5,31 @@ import { asset } from '../release'
 type Item = { title: string; detail: string; tbd?: boolean }
 
 /* Two lanes over the same four years: what Yibo built, and the economics he did away from a screen */
-const years: { year: string; built: Item[]; studied: Item[] }[] = [
+const years: { year: string; width: number; built: Item[]; studied: Item[] }[] = [
   {
     year: '2023',
+    width: 1,
     built: [{ title: 'HolidayHelperAI', detail: 'Led a team of five, grade 9.' }],
     studied: [],
   },
   {
     year: '2024',
+    width: 1,
     built: [{ title: 'SoundSplit', detail: 'On the App Store, August.' }],
     studied: [],
   },
   {
     year: '2025',
+    width: 1.35,
     built: [
-      { title: 'CraveDeals', detail: 'The business plan.' },
+      { title: 'Crave Deals', detail: 'The business plan.' },
       { title: 'Dermat AI', detail: 'On the App Store, August.' },
     ],
     studied: [{ title: 'FBLA, 3rd in the nation', detail: 'Business Plan Event, after 3rd in Maryland.' }],
   },
   {
     year: '2026',
+    width: 2.1,
     built: [],
     studied: [
       { title: 'Economics Challenge, 1st (state)', detail: 'One of six chosen from just under 100.' },
@@ -37,10 +41,10 @@ const years: { year: string; built: Item[]; studied: Item[] }[] = [
   },
 ]
 
-function Chip({ item, lane }: { item: Item; lane: 'built' | 'studied' }) {
+function Chip({ item, lane, className = '' }: { item: Item; lane: 'built' | 'studied'; className?: string }) {
   return (
     <li
-      className={`px-3.5 py-3 ${
+      className={`px-3.5 py-3 ${className} ${
         lane === 'built' ? 'bg-white text-[#0b1210]' : 'border border-accent/50 text-white'
       } ${item.tbd ? 'outline outline-1 outline-dashed outline-offset-2 outline-mark-ink/50' : ''}`}
     >
@@ -86,7 +90,7 @@ export default function About() {
 
       {/* the four-year timeline */}
       <div className="mt-[clamp(56px,6vw,88px)] bg-panel p-6 md:p-10">
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8 md:mb-10">
           <span className="inline-flex items-center gap-2">
             <span className="size-3 bg-white" aria-hidden="true" />
             <Label>Built</Label>
@@ -97,25 +101,57 @@ export default function About() {
           </span>
         </div>
 
-        <ol className="grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-8">
+        {/* wide screens: one axis of years, what I built above it and what I studied below it. Busier years get
+            wider columns, and 2026's five items sit in two columns, so neither half of the chart runs long. */}
+        <div className="hidden md:grid gap-x-4" style={{ gridTemplateColumns: years.map((y) => `${y.width}fr`).join(' ') }}>
           {years.map((y) => (
-            <li key={y.year} className="min-w-0 md:border-l md:border-line md:pl-4 first:md:border-l-0 first:md:pl-0">
-              <span className="block font-display font-extrabold text-[clamp(1.6rem,2.6vw,2rem)] leading-none text-white tabular-nums">
+            <ul key={`b-${y.year}`} className="flex flex-col justify-end gap-2 pb-6 min-w-0">
+              {y.built.map((it) => (
+                <Chip key={it.title} item={it} lane="built" />
+              ))}
+            </ul>
+          ))}
+          {years.map((y, i) => (
+            <div key={`a-${y.year}`} className="relative flex items-center h-12" aria-hidden="true">
+              <span className={`absolute left-0 top-1/2 h-px bg-white/30 ${i === years.length - 1 ? 'right-0' : '-right-4'}`} />
+              <span className="relative size-2.5 rounded-full bg-accent" />
+              <span className="relative ml-2 pr-3 bg-panel font-display font-extrabold text-[clamp(1.4rem,2.2vw,1.85rem)] leading-none text-white tabular-nums">
                 {y.year}
               </span>
-              <div className="mt-5 grid gap-5">
-                <ul className="grid gap-2 md:min-h-[150px] content-end">
-                  {y.built.map((it) => (
-                    <Chip key={it.title} item={it} lane="built" />
-                  ))}
-                </ul>
-                <div className="h-px bg-white/25" aria-hidden="true" />
-                <ul className="grid gap-2 content-start">
-                  {y.studied.map((it) => (
-                    <Chip key={it.title} item={it} lane="studied" />
-                  ))}
-                </ul>
-              </div>
+            </div>
+          ))}
+          {years.map((y) => (
+            <ul
+              key={`s-${y.year}`}
+              className={`grid gap-2 pt-6 content-start min-w-0 ${y.studied.length > 2 ? 'grid-cols-2' : ''}`}
+            >
+              {y.studied.map((it, i) => (
+                <Chip
+                  key={it.title}
+                  item={it}
+                  lane="studied"
+                  /* in two columns, an odd last item spans both rather than leaving a gap */
+                  className={y.studied.length > 2 && y.studied.length % 2 === 1 && i === y.studied.length - 1 ? 'col-span-2' : ''}
+                />
+              ))}
+            </ul>
+          ))}
+        </div>
+
+        {/* phones: the same years down one line */}
+        <ol className="md:hidden grid gap-8 border-l border-white/25 pl-5">
+          {years.map((y) => (
+            <li key={y.year} className="relative min-w-0">
+              <span className="absolute -left-[25px] top-2 size-2.5 rounded-full bg-accent" aria-hidden="true" />
+              <span className="block font-display font-extrabold text-[1.6rem] leading-none text-white tabular-nums">{y.year}</span>
+              <ul className="mt-4 grid gap-2">
+                {y.built.map((it) => (
+                  <Chip key={it.title} item={it} lane="built" />
+                ))}
+                {y.studied.map((it) => (
+                  <Chip key={it.title} item={it} lane="studied" />
+                ))}
+              </ul>
             </li>
           ))}
         </ol>

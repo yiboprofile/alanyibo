@@ -122,6 +122,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .eyebrow i{display:block;width:36px;height:1px;background:var(--line-2)}
 .h2{position:relative;font-family:var(--serif);font-size:clamp(40px,5.2vw,80px);line-height:.98;letter-spacing:-.022em;max-width:22ch;text-wrap:balance}
 .h2 .soft{color:var(--ink-3);font-style:italic}
+/* a heading kept on one line on wide screens; sized down so it still fits the column */
+@media (min-width:900px){.h2.one-line{max-width:none;white-space:nowrap;font-size:clamp(30px,3.85vw,66px)}}
 .pname{position:relative;margin-top:clamp(20px,2.6vw,34px);font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);line-height:1.1}
 .pname em{color:var(--ink-3)}
 .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(32px,4vw,56px);padding-top:clamp(24px,2.6vw,36px);border-top:1px solid var(--line-2);align-items:start}
@@ -547,7 +549,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">02</span>
       <p class="eyebrow mono" data-r><b>02</b><i></i>Who pays, and how</p>
-      <h2 class="h2" id="pay-h" data-r>Joining is free. <span class="soft">Paying is not.</span></h2>
+      <h2 class="h2 one-line" id="pay-h" data-r>Joining is free. <span class="soft">Paying is not.</span></h2>
     </div>
     <div class="intro">
       <p class="lede" data-r>Getting people to join is one cold start. Getting them to pay is another. These are five things I built or co-founded, in order from free to a commission paid only on results.</p>
@@ -596,7 +598,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">03</span>
       <p class="eyebrow mono" data-r><b>03</b><i></i>Free</p>
-      <h2 class="h2" id="dermat-h" data-r>A skin check is a trust good. <span class="soft">What does $0 say?</span></h2>
+      <h2 class="h2 one-line" id="dermat-h" data-r>A skin check is a trust good. <span class="soft">What does $0 say?</span></h2>
       <p class="pname" data-r>Dermat AI. <em>No price at all.</em></p>
     </div>
     <div class="facts" style="--n:4" data-r>
@@ -669,7 +671,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">04</span>
       <p class="eyebrow mono" data-r><b>04</b><i></i>Per month</p>
-      <h2 class="h2" id="hh-h" data-r>I set the prices. <span class="soft">More than ten people paid.</span></h2>
+      <h2 class="h2 one-line" id="hh-h" data-r>I set the prices. <span class="soft">More than ten people paid.</span></h2>
       <p class="pname" data-r>HolidayHelperAI. <em>Three tiers.</em></p>
     </div>
     <div class="facts" style="--n:4" data-r>
@@ -724,7 +726,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">05</span>
       <p class="eyebrow mono" data-r><b>05</b><i></i>Per minute</p>
-      <h2 class="h2" id="ss-h" data-r>Free to download. <span class="soft">Every minute has a cost.</span></h2>
+      <h2 class="h2 one-line" id="ss-h" data-r>Free to download. <span class="soft">Every minute has a cost.</span></h2>
       <p class="pname" data-r>SoundSplit. <em>Sold by the minute.</em></p>
     </div>
     <div class="facts" style="--n:4" data-r>
@@ -816,7 +818,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">06</span>
       <p class="eyebrow mono" data-r><b>06</b><i></i>Per session</p>
-      <h2 class="h2" id="tu-h" data-r>Families pay for a result. <span class="soft">The one that sold.</span></h2>
+      <h2 class="h2 one-line" id="tu-h" data-r>Families pay for a result. <span class="soft">The one that sold.</span></h2>
       <p class="pname" data-r>Urbana SAT Tutoring. <em>Paid for by results.</em></p>
     </div>
     <div class="facts" style="--n:3" data-r>
@@ -875,7 +877,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">07</span>
       <p class="eyebrow mono" data-r><b>07</b><i></i>Commission on results</p>
-      <h2 class="h2" id="cd-h" data-r>The judges scored it. <span class="soft">The market is the harder test.</span></h2>
+      <h2 class="h2 one-line" id="cd-h" data-r>The judges scored it. <span class="soft">The market is the harder test.</span></h2>
       <p class="pname" data-r>Crave Deals. <em>Third, then the street.</em></p>
     </div>
     <div class="facts" style="--n:4" data-r>
@@ -943,7 +945,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">08</span>
       <p class="eyebrow mono" data-r><b>08</b><i></i>About</p>
-      <h2 class="h2" id="ab-h" data-r>Economics, <span class="soft">without an app.</span></h2>
+      <h2 class="h2 one-line" id="ab-h" data-r>Economics, <span class="soft">without an app.</span></h2>
     </div>
     <div class="intro">
       <p class="lede" data-r>Urbana High School, Frederick, Maryland · Class of 2027. Economics is what I want to study, and my products are where I try out what I learn.</p>

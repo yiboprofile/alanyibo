@@ -69,7 +69,7 @@ const notes: { title: string; body: string }[] = [
 const talk = {
   title: 'TEDxSCA Youth',
   body: [
-    '“Is Gen-Z Cooked?”, to an audience of 100. Published on the official TEDx Talks channel on October 19, 2026, with 577 views by the end of the month.',
+    '“Is Gen-Z Cooked?”, to an audience of 100. Published on the official TEDx Talks channel on October 19, 2026, with 610 views by the end of the month.',
     'People ask that question about my generation a lot. My answer was no. Gen Z has more tools than any generation before it for turning an idea into something real, and that gives us a chance and a responsibility to build the future we say we want.',
   ],
 }

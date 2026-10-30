@@ -59,7 +59,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 /* top bar */
 .bar{position:fixed;inset:0 0 auto 0;z-index:50;height:60px;display:flex;align-items:center;justify-content:space-between;padding-inline:var(--gut);transition:background .4s var(--ease),backdrop-filter .4s}
 .bar.solid{background:rgba(17,15,13,.74);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.bar .name{font-family:var(--serif);font-size:23px;text-decoration:none;letter-spacing:-.01em}
+.bar .name{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-size:23px;text-decoration:none;letter-spacing:-.01em}
+.bar .name .mark{flex:none}
 .bar nav{display:flex;gap:4px;align-items:center}
 .bar nav a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink-3);padding:10px 10px;border-radius:999px;transition:color .25s}
 .bar nav a:hover,.bar nav a.on{color:var(--ink)}
@@ -524,7 +525,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 <a class="skip" href="#people">Skip to content</a>
 
 <header class="bar" id="bar">
-  <a class="name" href="#top">Yibo Wang</a>
+  <a class="name" href="#top"><svg class="mark" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.25" stroke="currentColor" stroke-width="1.3" stroke-opacity="0.9"/><circle cx="9" cy="9" r="2" fill="currentColor"/></svg>Yibo Wang</a>
   <nav aria-label="Chapters">
     <a href="#people">People</a>
     <a href="#pricing">Who pays</a>

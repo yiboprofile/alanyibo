@@ -33,6 +33,7 @@ function App() {
         <footer className="flex flex-wrap justify-between gap-x-6 gap-y-2 px-6 md:px-12 pt-7 pb-[84px] text-[13px] leading-[1.6] text-white/50">
           <span>Alan Wang &middot; Urbana High School &middot; Frederick, Maryland &middot; Class of 2027</span>
           <span>Product screenshots as published, October 2026. TEDxSCA Youth photographs by Dong Ho.</span>
+          <span className="basis-full">Site designed by Alan Wang and Claude Code.</span>
         </footer>
       </main>
 

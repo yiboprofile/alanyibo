@@ -511,6 +511,13 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 /* the facts row already ends with a rule, so the intro under it needs none; less air before the screenshots */
 .facts + .intro{border-top:0;padding-top:0}
 .phones{margin-top:clamp(36px,4vw,60px)}
+
+/* Dermat AI: the reflection and the trust-good note as a matched pair, same type and alignment */
+.reflect.pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(24px,3vw,56px);margin-top:clamp(32px,3.6vw,52px)}
+.reflect.pair .quote{max-width:none;font-size:clamp(20px,1.65vw,26px);line-height:1.28}
+.reflect.pair .quote.side{color:var(--ink-2);border-left-color:var(--line-2)}
+.reflect.pair .quote.side .lab{color:var(--ink-3)}
+@media (max-width:860px){.reflect.pair{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -749,9 +756,9 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
       </div>
     </div>
 
-    <div class="reflect">
+    <div class="reflect pair">
       <p class="quote" data-r><span class="mono lab">What I learned</span>Giving Dermat AI away reached about four times as many people a month as SoundSplit, which charges for minutes. <span class="soft">People who pay nothing still trust the answer, though, so every answer ends with a note that it is not a diagnosis.</span></p>
-      <p class="lede" data-r style="--d:.1s">A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? In the app, a button at the top of the assistant opens the full notice, and every answer has a flag to report it as wrong.</p>
+      <p class="quote side" data-r style="--d:.1s"><span class="mono lab">Why it matters</span>A skin check is a trust good: you can’t tell whether the answer was right until someone qualified tells you, so what a person will pay depends on what they believe about who made it. What does $0 say about a health app from a student team? In the app, a button at the top of the assistant opens the full notice, and every answer has a flag to report it as wrong.</p>
     </div>
   </div>
 

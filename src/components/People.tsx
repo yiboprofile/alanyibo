@@ -100,7 +100,7 @@ function Room() {
       <figcaption className="mt-8 grid gap-1 text-[13.5px] leading-[1.6] text-white/55 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-8">
         <span>
           <b className="font-medium text-white/85">Urbana FBLA chapter.</b> Team lead 2025–26, vice president 2026–27, one of six
-          on the Maryland state council. More than 50 members went to nationals, the 8th largest chapter there.{' '}
+          on the Maryland state council. More than 60 members went to nationals, the 8th largest chapter there.{' '}
           <Tbd>[Confirm: “helped grow”, and my part in it.]</Tbd>
         </span>
         <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 self-end">One dot, one person</span>

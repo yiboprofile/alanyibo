@@ -6,7 +6,7 @@ import { Label, Tbd } from './ui'
 const craveSteps = [
   { value: '3rd', label: 'in Maryland, FBLA Business Plan, 2025', phase: 'judges' },
   { value: '3rd', label: 'in the nation, Anaheim', phase: 'judges' },
-  { value: <Tbd release="Several">[40+]</Tbd>, label: 'restaurants pitched, plus VCs and investors', phase: 'market' },
+  { value: '40+', label: 'restaurants pitched, plus VCs and investors', phase: 'market' },
   { value: <Tbd release="0">[0]</Tbd>, label: 'restaurants signed so far', phase: 'market' },
 ] as const
 

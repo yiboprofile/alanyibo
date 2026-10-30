@@ -384,21 +384,21 @@ export default function Cases() {
           <>
             I co-founded this coupon company, and run it as COO, to help small local restaurants compete with big
             chains. We only take a commission on what the diners we bring in spend, so a restaurant pays nothing if we
-            bring no one in. Our business plan placed 3rd in the nation, and since then we have pitched restaurants,
-            venture firms and investors.
+            bring no one in. Our business plan placed 3rd in the nation, and since then we have pitched more than 40
+            restaurants, venture firms and investors.
           </>
         }
         links={[{ href: 'http://crave.deals/', label: 'crave.deals' }]}
         facts={[
           { label: 'Commission', value: <Tbd>[x%]</Tbd>, note: 'of what new diners spend; diners pay nothing' },
-          { label: 'Restaurants pitched', value: <Tbd>[40+]</Tbd>, note: 'around Frederick and Urbana' },
-          { label: 'Pitch prizes', value: <Tbd>[$120+ or $320+]</Tbd>, note: 'local and national' },
+          { label: 'Restaurants pitched', value: '40+', note: 'around Frederick and Urbana' },
+          { label: 'Pitch prizes', value: '$320+', note: 'local and national competitions' },
           { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan, 2025' },
         ]}
         releaseFacts={[
           { label: 'Role', value: 'Co-founder, COO', note: 'with two co-founders' },
           { label: 'Restaurants pay', value: 'On results', note: 'a commission on what new diners spend' },
-          { label: 'Pitch prizes', value: '$120+', note: 'local and national competitions' },
+          { label: 'Pitch prizes', value: '$320+', note: 'local and national competitions' },
           { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan, 2025' },
         ]}
         team={
@@ -412,7 +412,7 @@ export default function Cases() {
         blanks={[
           'The commission rate, and why that rate. Delivery apps also take a cut of every order: how does Crave Deals compare, and why would a restaurant prefer it?',
           'How a diner brought in by Crave Deals is counted (a coupon code, a scan at the counter?), since the commission depends on it.',
-          'The real numbers, the same in the activity list, the additional information and here: restaurants pitched (several or 40+), prizes ($120+ or $320+), hours a week (1.5 or 3), grades (10–11 or 10–12).',
+          'The real numbers, the same in the activity list, the additional information and here: hours a week (1.5 or 3), grades (10–11 or 10–12).',
           'Is it still running? If any restaurant has signed, say so; if not, “0 signed so far” stays.',
           'Where the mobile app stands.',
           'What the cold start looks like from a restaurant owner’s side, in my own words.',

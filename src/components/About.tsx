@@ -54,7 +54,7 @@ function Chip({ item, lane }: { item: Item; lane: 'built' | 'studied' }) {
   )
 }
 
-const notes: { title: string; body: string; talk?: boolean }[] = [
+const notes: { title: string; body: string }[] = [
   {
     title: 'Economics Challenge, 1st place',
     body: 'Months of FOMC press conferences, housing market conditions and administrative actions. Each of us played a world figure; I chose former UK Prime Minister Keir Starmer because I knew little about him, and argued his policy recommendations before economics professors at Mount St. Mary’s University.',
@@ -63,19 +63,13 @@ const notes: { title: string; body: string; talk?: boolean }[] = [
     title: 'Wharton, Leadership in the Business World',
     body: 'One of just over 100 students accepted to session one. Three weeks of Harvard Business School cases with Wharton faculty; my team built and presented a full case on Chipotle’s expansion into Asia.',
   },
-  {
-    title: 'TEDxSCA Youth',
-    body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
-    talk: true,
-  },
 ]
 
-/* The TEDx slide's three numbers, as bars to one scale */
-const members = [
-  { name: 'FFA', count: 1040, label: '1.04M' },
-  { name: 'DECA', count: 316, label: '316K+' },
-  { name: 'FBLA', count: 230, label: '230K' },
-]
+/* The talk itself, beside the photo of its slide */
+const talk = {
+  title: 'TEDxSCA Youth',
+  body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
+}
 
 export default function About() {
   return (
@@ -124,17 +118,12 @@ export default function About() {
         </ol>
       </div>
 
-      {/* three of the 2026 items, in a little more detail */}
-      <div className="mt-3 grid gap-3 lg:grid-cols-3">
+      {/* two of the 2026 items, in a little more detail; the talk gets its own row below */}
+      <div className="mt-3 grid gap-3 lg:grid-cols-2">
         {notes.map((n) => (
           <article key={n.title} className="bg-panel p-6 md:p-8">
             <h3 className="font-display font-bold text-[18px] leading-snug text-white">{n.title}</h3>
             <p className="mt-2 text-[14.5px] leading-[1.65] text-white/65">{n.body}</p>
-            {n.talk && (
-              <div className="mt-4">
-                <WatchTalk />
-              </div>
-            )}
           </article>
         ))}
       </div>
@@ -142,26 +131,15 @@ export default function About() {
       <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <figure className="min-w-0">
           <img src={asset('/media/tedx-stats.webp')} alt="Yibo on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
-          <Caption>
-            TEDxSCA Youth, 2026. The slide, as photographed.{' '}
+          <Caption>TEDxSCA Youth, 2026. The slide, as photographed.</Caption>
+        </figure>
+        <article className="bg-panel p-6 md:p-8 flex flex-col">
+          <h3 className="font-display font-bold text-[18px] leading-snug text-white">{talk.title}</h3>
+          <p className="mt-2 text-[14.5px] leading-[1.65] text-white/65">{talk.body}</p>
+          <div className="mt-6 lg:mt-auto lg:pt-6">
             <WatchTalk />
-          </Caption>
-        </figure>
-        <figure className="bg-panel p-6 md:p-8 flex flex-col">
-          <Label className="block mb-6">The slide&rsquo;s numbers, to scale</Label>
-          <ul className="grid gap-5 flex-1 content-center">
-            {members.map((m) => (
-              <li key={m.name} className="grid grid-cols-[52px_minmax(0,1fr)] items-center gap-3">
-                <span className="font-mono text-[12px] text-white/60">{m.name}</span>
-                <span className="flex items-center gap-3 min-w-0">
-                  <span className="block h-6 bg-accent shrink-0" style={{ width: `${(m.count / 1040) * 72}%` }} />
-                  <span className="font-display font-bold text-[16px] text-white tabular-nums">{m.label}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-          <Caption className="mt-6">Student members of three career organizations, as given on the slide.</Caption>
-        </figure>
+          </div>
+        </article>
       </div>
     </Wrap>
   )

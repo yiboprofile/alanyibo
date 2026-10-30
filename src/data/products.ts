@@ -37,7 +37,7 @@ export const products = [
     kind: 'Tutoring business, co-founded',
     model: 'Per session',
     who: 'Families pay for a result',
-    price: '$40',
+    price: '$37',
     unit: 'a session, one-on-one',
     outcome: '10+ clients, up to +280',
   },

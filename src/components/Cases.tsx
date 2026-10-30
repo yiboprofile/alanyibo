@@ -339,28 +339,28 @@ export default function Cases() {
         title={['Urbana SAT Tutoring.', 'Paid for by results.']}
         lede={
           <>
-            An affordable one-on-one SAT tutoring business in Urbana that I co-founded: $40 a session, where one-on-one
-            SAT tutoring usually costs $80 to $120. Every student gets a weekly and monthly plan. We have worked with more than ten clients, and when the founders could not take on more, we
+            An affordable one-on-one SAT tutoring business in Urbana that I co-founded: $37 a session, where one-on-one
+            SAT tutoring usually costs $70 to $90. Every student gets a weekly and monthly plan. We have worked with more than ten clients, and when the founders could not take on more, we
             hired three tutors.
           </>
         }
         links={[]}
         facts={[
           { label: 'Started', value: <Tbd>[grade 11]</Tbd>, note: 'co-founder and tutor' },
-          { label: 'Price', value: '$40', note: 'a session; the usual rate is $80–120' },
+          { label: 'Price', value: '$37', note: 'a session; the usual rate is $70–90' },
           { label: 'Clients', value: '10+', note: 'with personal plans' },
           { label: 'Best gain', value: '+280', note: '1220 to 1510' },
         ]}
         releaseFacts={[
-          { label: 'Price', value: '$40', note: 'a session; the usual rate is $80–120' },
+          { label: 'Price', value: '$37', note: 'a session; the usual rate is $70–90' },
           { label: 'Clients', value: '10+', note: 'with personal plans' },
           { label: 'Best gain', value: '+280', note: '1220 to 1510' },
         ]}
         team={<>I co-founded it and tutor; three more tutors joined as it grew.</>}
         blanks={[
           'When it started: the activity list says grade 12, the additional information says grades 11 and 12.',
-          'Why $40 when others charge $80–120: what the low price cost you, and what it brought in (more students, word of mouth?).',
-          'Where the $80–120 range comes from (local tutors, test-prep companies), so a reader can check it.',
+          'Why $37 when others charge $70–90: what the low price cost you, and what it brought in (more students, word of mouth?).',
+          'Where the $70–90 range comes from (local tutors, test-prep companies), so a reader can check it.',
           'Where the first clients came from.',
           'One or two lines from a family or student, with their permission (can be anonymous).',
         ]}
@@ -373,7 +373,7 @@ export default function Cases() {
             <TutorTeam />
           </ChartFrame>
         </div>
-        <ChartFrame title="What a session costs" caption="$40 a session against the usual $80–120 for one-on-one SAT tutoring, on one dollar scale.">
+        <ChartFrame title="What a session costs" caption="$37 a session against the usual $70–90 for one-on-one SAT tutoring, on one dollar scale.">
           <PriceVsMarket />
         </ChartFrame>
       </CaseShell>

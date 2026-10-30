@@ -546,9 +546,9 @@ export function WhereInstalled({ rows }: { rows: { country: string; installs: nu
   )
 }
 
-/* $40 a session against the usual range for one-on-one SAT tutoring, on one dollar scale */
+/* $37 a session against the usual range for one-on-one SAT tutoring, on one dollar scale */
 export function PriceVsMarket() {
-  const top = 140
+  const top = 100
   const pct = (v: number) => (v / top) * 100
   return (
     <div>
@@ -556,24 +556,24 @@ export function PriceVsMarket() {
         <div className="absolute inset-x-0 top-1/2 h-px bg-white/20" aria-hidden="true" />
         <div
           className="absolute top-1/2 h-3 -translate-y-1/2 bg-white/25"
-          style={{ left: `${pct(80)}%`, width: `${pct(120) - pct(80)}%` }}
+          style={{ left: `${pct(70)}%`, width: `${pct(90) - pct(70)}%` }}
           aria-hidden="true"
         />
-        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-white/55 whitespace-nowrap" style={{ left: `${pct(100)}%` }}>
-          usual $80–120
+        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-white/55 whitespace-nowrap" style={{ left: `${pct(80)}%` }}>
+          usual $70–90
         </span>
-        <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 size-4 rounded-full bg-accent" style={{ left: `${pct(40)}%` }} aria-hidden="true" />
-        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-accent whitespace-nowrap" style={{ left: `${pct(40)}%` }}>
-          ours $40
+        <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 size-4 rounded-full bg-accent" style={{ left: `${pct(37)}%` }} aria-hidden="true" />
+        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-accent whitespace-nowrap" style={{ left: `${pct(37)}%` }}>
+          ours $37
         </span>
       </div>
       <div className="flex justify-between font-mono text-[11px] text-white/40 tabular-nums">
         <span>$0</span>
-        <span>$70</span>
-        <span>$140</span>
+        <span>$50</span>
+        <span>$100</span>
       </div>
       <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="font-display font-extrabold text-[clamp(2.2rem,4vw,3rem)] leading-none text-accent tabular-nums">½ to ⅓</span>
+        <span className="font-display font-extrabold text-[clamp(2.2rem,4vw,3rem)] leading-none text-accent tabular-nums">About ½</span>
         <span className="text-[14px] text-white/60">of the usual price for one-on-one SAT tutoring</span>
       </p>
     </div>

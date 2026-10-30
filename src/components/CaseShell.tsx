@@ -161,7 +161,8 @@ export default function CaseShell(c: CaseProps) {
     <Wrap id={c.id} labelledBy={`h-${c.id}`} className="pt-[clamp(96px,10vw,144px)] scroll-mt-16">
       <Captions left={c.captions[0]} right={c.captions[1]} className="mb-[clamp(40px,5vw,72px)]" />
 
-      <div className="flex flex-col min-[900px]:flex-row min-[900px]:items-end min-[900px]:justify-between gap-7 min-[900px]:gap-12">
+      {/* a wider text column than the other sections, so a case's longer intro stays about as tall as its headline */}
+      <div className="grid gap-7 min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] min-[900px]:items-end min-[900px]:gap-12">
         <div>
           <span className="inline-flex items-center gap-2 mb-5 rounded-full border border-accent/40 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
             <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
@@ -169,7 +170,7 @@ export default function CaseShell(c: CaseProps) {
           </span>
           <Headline id={`h-${c.id}`} lines={c.title} />
         </div>
-        <div className="max-w-md min-[900px]:pb-1">
+        <div className="max-w-xl min-[900px]:pb-1">
           <Lede>{c.lede}</Lede>
           {/* the links stay on one line: on phones the "On the" and the arrows drop, the icons say where each goes */}
           <div className="mt-5 flex flex-nowrap gap-x-2.5 whitespace-nowrap max-sm:[&_a]:text-[12.5px]">

@@ -33,10 +33,9 @@ export default function Cases() {
         title={['Dermat AI.', 'No price at all.']}
         lede={
           <>
-            An iPhone and Android app for looking after your skin. Scan a photo to see what it may be and how confident
-            the model is, track every result over time in a skin diary, follow a morning and evening routine built for
-            your skin, and ask an AI assistant questions at any hour. On the App Store since August 2025 and now on
-            Google Play, free, with nothing to buy inside.
+            An iPhone and Android app for looking after your skin. Scan a photo to see what it may be and how sure the
+            model is, keep a skin diary, follow a routine built for your skin, and ask an AI assistant at any hour.
+            Free, with nothing to buy inside.
           </>
         }
         links={[
@@ -151,11 +150,9 @@ export default function Cases() {
         title={['SoundSplit.', 'Sold by the minute.']}
         lede={
           <>
-            An iPhone and Android app that separates a song into its stems, so you can take the vocals out for karaoke or
-            mute the piano to practise along. On the App Store and Google Play since August 2024. I chose to meter it
-            instead of selling a subscription: every minute we process costs us money, so the cost follows how much a
-            person uses. A flat subscription would invite heavy use, and the heaviest users would cost more than they
-            paid.
+            An iPhone and Android app that splits a song into its stems, so you can take out the vocals for karaoke or
+            mute the piano to practise along. I charge by the minute, not by subscription: every minute processed costs
+            me money, and with a flat fee the heaviest users would cost more than they paid.
           </>
         }
         links={[
@@ -339,9 +336,9 @@ export default function Cases() {
         title={['Urbana SAT Tutoring.', 'Paid for by results.']}
         lede={
           <>
-            An affordable one-on-one SAT tutoring business in Urbana that I co-founded: $37 a session, where one-on-one
-            SAT tutoring usually costs $70 to $90. Every student gets a weekly and monthly plan. We have worked with more than ten clients, and when the founders could not take on more, we
-            hired three tutors.
+            A one-on-one SAT tutoring business in Urbana that I co-founded: $37 a session, where others charge $70 to
+            $90. Every student gets a weekly and monthly plan. After more than ten clients, more than the founders could
+            teach, we hired three tutors.
           </>
         }
         links={[]}
@@ -385,11 +382,9 @@ export default function Cases() {
         title={['Crave Deals.', 'Third, then the street.']}
         lede={
           <>
-            A coupon company I co-founded, and run as COO, to help small local restaurants level the playing field
-            against big chains. We promote a restaurant&rsquo;s deals and take a commission only on what the diners we
-            bring in spend, so a restaurant pays nothing unless it works. The plan placed 3rd in Maryland, then 3rd in
-            the nation; since then we have pitched restaurants around Frederick and Urbana, venture firms and
-            investors.
+            A coupon company I co-founded and run as COO, to help small local restaurants compete with big chains. We
+            take a commission only on what the diners we bring in spend, so a restaurant pays nothing unless it works.
+            The plan placed 3rd in the nation; since then we have pitched restaurants, venture firms and investors.
           </>
         }
         links={[{ href: 'http://crave.deals/', label: 'crave.deals' }]}

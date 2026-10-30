@@ -519,6 +519,10 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 .reflect.pair .quote.side{color:var(--ink-2);border-left-color:var(--line-2)}
 .reflect.pair .quote.side .lab{color:var(--ink-3)}
 @media (max-width:860px){.reflect.pair{grid-template-columns:minmax(0,1fr)}}
+
+/* SAT Tutoring has no links beside its intro, so the intro runs the full width */
+#tutoring .intro{grid-template-columns:minmax(0,1fr)}
+#tutoring .intro>.lede{max-width:none}
 </style>
 </head>
 <body>

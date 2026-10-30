@@ -169,7 +169,7 @@ export default function About() {
 
       <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <figure className="min-w-0">
-          <img src={asset('/media/tedx-forward.webp')} alt="Yibo on the TEDxSCA Youth stage, seen from behind the audience, with a slide quoting Jalen Brunson" width={1280} height={720} loading="lazy" className="w-full h-auto" />
+          <img src={asset('/media/tedx-open.webp')} alt="Yibo on the TEDxSCA Youth stage, arms open to the audience, with a slide quoting Jalen Brunson" width={1280} height={720} loading="lazy" className="w-full h-auto" />
           <Caption>TEDxSCA Youth, 2026.</Caption>
         </figure>
         <article className="bg-panel p-6 md:p-8 flex flex-col">

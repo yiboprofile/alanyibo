@@ -450,16 +450,28 @@ export default function Cases() {
               </div>
             </div>
           </ChartFrame>
-          <ChartFrame title="The site today" caption="crave.deals. The restaurants shown are samples, not clients.">
+          <ChartFrame
+            title="How a diner uses it"
+            caption="crave.deals: choose a location, pick a restaurant, save the coupon and show it at checkout."
+          >
+            {/* framed as a browser window, so the dark site stands apart from the dark panel */}
             <div className="h-full grid place-items-center">
-              <img
-                src={asset('/media/crave-top.webp')}
-                alt="The top of the Crave Deals website: a banner reading Your Next Meal Awaits, with a town picker"
-                width={1400}
-                height={680}
-                loading="lazy"
-                className="w-full h-auto"
-              />
+              <div className="w-full overflow-hidden rounded-lg border border-white/15 bg-[#1b2421] shadow-[0_18px_50px_-12px_rgba(0,0,0,0.8)] ring-1 ring-black/40">
+                <div className="flex items-center gap-1.5 px-3 h-7 border-b border-white/10" aria-hidden="true">
+                  <span className="size-2 rounded-full bg-white/25" />
+                  <span className="size-2 rounded-full bg-white/25" />
+                  <span className="size-2 rounded-full bg-white/25" />
+                  <span className="mx-auto -translate-x-4 rounded bg-black/30 px-3 py-0.5 font-mono text-[10px] text-white/55">crave.deals</span>
+                </div>
+                <img
+                  src={asset('/media/crave-how.webp')}
+                  alt="The How does it work section of crave.deals, in four steps: Choose Your Location, Select Restaurant, Save Coupon, Show Coupon"
+                  width={1623}
+                  height={825}
+                  loading="lazy"
+                  className="block w-full h-auto"
+                />
+              </div>
             </div>
           </ChartFrame>
         </div>

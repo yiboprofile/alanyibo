@@ -21,7 +21,7 @@ import * as dermat from '../data/dermat'
 import * as soundsplit from '../data/soundsplit'
 import { asset } from '../release'
 
-/* Ordered along the price spectrum in the overview: free, pay per use, pay per month, pay per session, then a two-sided market.
+/* Ordered along the price spectrum in the overview: free, per month, per block of minutes, per session, then a commission on results.
    Every fact here matches the Common App activity and honor lists; anything still unconfirmed is a <Tbd> blank. */
 export default function Cases() {
   return (
@@ -144,8 +144,62 @@ export default function Cases() {
       </CaseShell>
 
       <CaseShell
-        id="soundsplit"
+        id="holidayhelperai"
         tone="raised"
+        model="Per month"
+        captions={['I set the prices.', 'More than ten people paid.']}
+        title={['HolidayHelperAI.', 'Three tiers.']}
+        lede={
+          <>
+            A website for planning trips, with an AI assistant, travel plans, an inspiration board and a journal. I led
+            the team of five that built it in ninth grade, and I set the prices. More than ten people have paid for
+            it.
+          </>
+        }
+        links={[{ href: 'https://holidayhelperai.com/', label: 'holidayhelperai.com' }]}
+        facts={[
+          { label: 'Built', value: '2023–24', note: 'grade 9, still online' },
+          { label: 'Price', value: '$2–$8.99', note: 'a month, three tiers' },
+          { label: 'Paid', value: '10+', note: 'people' },
+          { label: 'Award', value: 'Stellar Young Achiever', note: 'DCIA, 2023–24' },
+        ]}
+        product={{
+          kind: 'shot',
+          src: asset('/media/hhai-pricing.webp'),
+          alt: 'The HolidayHelperAI pricing page: Standard $2 a month or $20 a year, Premium $4 or $40, Enterprise $8.99 or $80.99',
+          width: 1280,
+          height: 980,
+          caption: 'holidayhelperai.com/pricing, October 2026.',
+        }}
+        photo={{
+          src: asset('/assets/photos/award-holidayhelper.webp'),
+          alt: 'The DCIA Stellar Young Achiever Award slide for HolidayHelperAI, naming Yibo Wang as team leader',
+          width: 1386,
+          height: 782,
+          position: '0 50%',
+          caption: 'The DCIA award slide, with the team listed.',
+        }}
+        team={<>I led it, with William Liu, Raymond Zhou, Owen Liu and Hanna Lee, and James Wang as advisor.</>}
+        blanks={[
+          'Why three tiers and not one price, and why $2, in my own words.',
+          'Which tier the paying users chose.',
+        ]}
+      >
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+          <ChartFrame
+            title="What each tier adds"
+            caption="The tiers are one product with features taken away, so what a person pays depends on which feature they can’t do without. Each step roughly doubles the price."
+          >
+            <TierLadder />
+          </ChartFrame>
+          <ChartFrame title="What a year costs" caption="Prices on holidayhelperai.com in October 2026. Dashed months are free.">
+            <YearlyMonths />
+          </ChartFrame>
+        </div>
+      </CaseShell>
+
+      <CaseShell
+        id="soundsplit"
         model="Per minute"
         captions={['Free to download.', 'Every minute has a cost.']}
         title={['SoundSplit.', 'Sold by the minute.']}
@@ -272,60 +326,6 @@ export default function Cases() {
           </ChartFrame>
           <ChartFrame title="What people thought" caption="One dot per rating. Four ratings is a small sample.">
             <Ratings average="4.0" count={4} store="App Store" />
-          </ChartFrame>
-        </div>
-      </CaseShell>
-
-      <CaseShell
-        id="holidayhelperai"
-        model="Per month"
-        captions={['I set the prices.', 'More than ten people paid.']}
-        title={['HolidayHelperAI.', 'Three tiers.']}
-        lede={
-          <>
-            A website for planning trips, with an AI assistant, travel plans, an inspiration board and a journal. I led
-            the team of five that built it in ninth grade, and I set the prices. More than ten people have paid for
-            it.
-          </>
-        }
-        links={[{ href: 'https://holidayhelperai.com/', label: 'holidayhelperai.com' }]}
-        facts={[
-          { label: 'Built', value: '2023–24', note: 'grade 9, still online' },
-          { label: 'Price', value: '$2–$8.99', note: 'a month, three tiers' },
-          { label: 'Paid', value: '10+', note: 'people' },
-          { label: 'Award', value: 'Stellar Young Achiever', note: 'DCIA, 2023–24' },
-        ]}
-        product={{
-          kind: 'shot',
-          src: asset('/media/hhai-pricing.webp'),
-          alt: 'The HolidayHelperAI pricing page: Standard $2 a month or $20 a year, Premium $4 or $40, Enterprise $8.99 or $80.99',
-          width: 1280,
-          height: 980,
-          caption: 'holidayhelperai.com/pricing, October 2026.',
-        }}
-        photo={{
-          src: asset('/assets/photos/award-holidayhelper.webp'),
-          alt: 'The DCIA Stellar Young Achiever Award slide for HolidayHelperAI, naming Yibo Wang as team leader',
-          width: 1386,
-          height: 782,
-          position: '0 50%',
-          caption: 'The DCIA award slide, with the team listed.',
-        }}
-        team={<>I led it, with William Liu, Raymond Zhou, Owen Liu and Hanna Lee, and James Wang as advisor.</>}
-        blanks={[
-          'Why three tiers and not one price, and why $2, in my own words.',
-          'Which tier the paying users chose.',
-        ]}
-      >
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
-          <ChartFrame
-            title="What each tier adds"
-            caption="The tiers are one product with features taken away, so what a person pays depends on which feature they can’t do without. Each step roughly doubles the price."
-          >
-            <TierLadder />
-          </ChartFrame>
-          <ChartFrame title="What a year costs" caption="Prices on holidayhelperai.com in October 2026. Dashed months are free.">
-            <YearlyMonths />
           </ChartFrame>
         </div>
       </CaseShell>

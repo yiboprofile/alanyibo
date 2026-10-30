@@ -37,7 +37,8 @@ export default function Spectrum() {
                     {p.price.startsWith('[') ? <Tbd release={p.releasePrice}>{p.price}</Tbd> : p.price}
                   </span>
                   <span className="block mt-2 min-h-[1.25rem] text-[13px] text-white/50">{p.unit}</span>
-                  <span className="block mt-4 text-[14.5px] leading-snug text-white/75">{p.who}</span>
+                  {/* three lines tall on wide screens, so the product names below line up across all five */}
+                  <span className="block mt-4 lg:min-h-[4.15em] text-[14.5px] leading-snug text-white/75">{p.who}</span>
 
                   <span className="mt-6 pt-4 border-t border-line flex items-center justify-between gap-3">
                     <span className="min-w-0">

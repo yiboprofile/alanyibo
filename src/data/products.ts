@@ -12,16 +12,6 @@ export const products = [
     outcome: '~2,000 downloads, 2 stores',
   },
   {
-    id: 'soundsplit',
-    name: 'SoundSplit',
-    kind: 'iPhone and Android app, song stems',
-    model: 'Per minute',
-    who: 'You pay for what you use; ads pay for free users',
-    price: '$14.99+',
-    unit: 'a block of minutes',
-    outcome: '854 downloads, 9 bought minutes',
-  },
-  {
     id: 'holidayhelperai',
     name: 'HolidayHelperAI',
     kind: 'Web app, trip planner',
@@ -30,6 +20,16 @@ export const products = [
     price: '$2+',
     unit: 'a month, three tiers',
     outcome: '10+ people paid',
+  },
+  {
+    id: 'soundsplit',
+    name: 'SoundSplit',
+    kind: 'iPhone and Android app, song stems',
+    model: 'Per minute',
+    who: 'You pay for what you use; ads pay for free users',
+    price: '$14.99+',
+    unit: 'a block of minutes',
+    outcome: '854 downloads, 9 bought minutes',
   },
   {
     id: 'tutoring',

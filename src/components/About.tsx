@@ -76,8 +76,8 @@ export default function About() {
     <Wrap id="about" labelledBy="h-about" className="pt-[clamp(96px,10vw,144px)]">
       <Split heading={<Headline id="h-about" lines={['Economics,', 'without an app.']} />}>
         <Lede>
-          Urbana High School, Frederick, Maryland &middot; Class of 2027. Economics is the direction; the products are
-          where I test it.
+          Urbana High School, Frederick, Maryland &middot; Class of 2027. Economics is what I want to study, and my
+          products are where I try out what I learn.
         </Lede>
       </Split>
 

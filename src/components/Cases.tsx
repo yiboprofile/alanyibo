@@ -93,7 +93,7 @@ export default function Cases() {
           height: 1244,
           caption: 'Emerging Standout Award, DFW IT Talent Champion, September 2025. Entered on my own.',
         }}
-        team={<>Just me. I designed and built Dermat AI, connected the AI model, published it on both stores and did the marketing, all on my own.</>}
+        team={<>Just me. I designed and built Dermat AI, connected the AI model, published it on both stores and did the marketing.</>}
         blanks={[
           'The social media behind the November–January rise: which platforms, one or two posts with their views, and whether any of it was paid.',
           'How many countries in all: both consoles list them.',
@@ -136,8 +136,8 @@ export default function Cases() {
           <TrustScale />
           <p className="mt-6 border-l-2 border-accent/60 pl-4 text-[14.5px] leading-[1.65] text-white/80">
             Giving Dermat AI away reached about four times as many people a month as SoundSplit, which charges for
-            minutes. But free didn&rsquo;t lower my responsibility: people who pay nothing still trust the answer, so
-            every answer ends with a note that it is not a diagnosis.
+            minutes. People who pay nothing still trust the answer, though, so every answer ends with a note that it is
+            not a diagnosis.
           </p>
         </ChartFrame>
         </div>
@@ -258,8 +258,8 @@ export default function Cases() {
           >
             <WhoPaysAndroid />
             <p className="mt-6 border-l-2 border-accent/60 pl-4 text-[14.5px] leading-[1.65] text-white/80">
-              I can&rsquo;t yet tell whether the banner pushes anyone to buy: I never tracked how many ads a person saw
-              before paying. What the numbers do show is the gap. Each free user earned at most about ten cents in ads,
+              I can&rsquo;t yet tell whether the banner pushes anyone to buy, because I never tracked how many ads a
+              person saw before paying. Each free user earned at most about ten cents in ads,
               while each of the 9 buyers spent about $45, so one person who paid was worth roughly four hundred who
               didn&rsquo;t.
             </p>

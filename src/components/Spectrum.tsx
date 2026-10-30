@@ -8,8 +8,8 @@ export default function Spectrum() {
       <Captions left="Joining is free." right="Paying is not." className="mb-[clamp(40px,5vw,72px)]" />
       <Split heading={<Headline id="h-cases" lines={['Getting people to join', 'is one cold start.']} />}>
         <Lede>
-          Getting them to pay is another. Five things I built or co-founded, laid out by who pays and how, from free to a
-          commission paid only on results.
+          Getting them to pay is another. These are five things I built or co-founded, in order from free to a commission
+          paid only on results.
         </Lede>
       </Split>
       <div className="mt-[clamp(48px,5vw,72px)] bg-panel p-6 md:p-10">

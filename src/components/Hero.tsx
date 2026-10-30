@@ -81,8 +81,8 @@ export default function Hero() {
               I&rsquo;m Yibo Wang, a senior at Urbana High School in Frederick,
               Maryland. I helped grow our FBLA chapter from about 150 members to
               400, co-founded a coupon company and an SAT tutoring business,
-              and built three apps. Most of it came down to the same problem:
-              getting the first person to say yes.
+              and built three apps. Most of it came down to getting the first
+              person to say yes.
             </p>
             <p className="mt-4 flex flex-wrap gap-x-2 font-mono text-[10.5px] uppercase tracking-[0.12em] leading-[1.9] text-white/55">
               {proof.map((item, i) => (

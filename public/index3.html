@@ -459,6 +459,19 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
   .phones.with-award{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62vw}
   .award-card{scroll-snap-align:center}
 }
+
+/* Who pays: a tighter section, the five cards read as one compact row */
+.pay .chap{padding-top:clamp(64px,7vw,104px)}
+.pay .intro{margin-top:clamp(20px,2.2vw,30px);padding-top:clamp(16px,1.8vw,24px)}
+.pay .pay-pin{padding-top:clamp(24px,2.6vw,36px)}
+.pay .pay-axis{margin-bottom:16px}
+.pay .card{min-height:0;padding:clamp(16px,1.5vw,22px)}
+.pay .card .p{margin-top:14px;padding-top:0}
+.pay .card .ps{margin-top:6px}
+.pay .card .w{margin-top:12px;min-height:4.35em}
+.pay .card .n{margin-top:auto;padding-top:12px}
+.pay .card .w + .n{margin-top:12px}
+@media (max-width:860px){.pay .card .w{min-height:0}}
 </style>
 </head>
 <body>

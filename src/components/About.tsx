@@ -1,4 +1,4 @@
-import { Caption, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
+import { Caption, Headline, Label, Lede, MoreLink, Split, Wrap } from './ui'
 
 type Item = { title: string; detail: string; tbd?: boolean }
 
@@ -52,7 +52,7 @@ function Chip({ item, lane }: { item: Item; lane: 'built' | 'studied' }) {
   )
 }
 
-const notes = [
+const notes: { title: string; body: string; link?: { href: string; label: string } }[] = [
   {
     title: 'Economics Challenge, 1st place',
     body: 'Months of FOMC press conferences, housing market conditions and administrative actions. Each of us played a world figure; I chose former UK Prime Minister Keir Starmer because I knew little about him, and argued his policy recommendations before economics professors at Mount St. Mary’s University.',
@@ -63,7 +63,8 @@ const notes = [
   },
   {
     title: 'TEDxSCA Youth',
-    body: 'Gen-Z is Cooked, to an audience of 100, recorded and published on the TED website. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
+    body: 'Gen-Z is Cooked, to an audience of 100, professionally recorded. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
+    link: { href: 'https://www.youtube.com/watch?v=PbbQxn38bcQ', label: 'Watch the talk' },
   },
 ]
 
@@ -127,6 +128,11 @@ export default function About() {
           <article key={n.title} className="bg-panel p-6 md:p-8">
             <h3 className="font-display font-bold text-[18px] leading-snug text-white">{n.title}</h3>
             <p className="mt-2 text-[14.5px] leading-[1.65] text-white/65">{n.body}</p>
+            {n.link && (
+              <div className="mt-4">
+                <MoreLink href={n.link.href}>{n.link.label}</MoreLink>
+              </div>
+            )}
           </article>
         ))}
       </div>
@@ -135,7 +141,8 @@ export default function About() {
         <figure className="min-w-0">
           <img src="/media/tedx-stats.webp" alt="Alan on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
           <Caption>
-            TEDxSCA Youth, 2026. The slide, as photographed. Watch the talk on TED.com: <Tbd>[link]</Tbd>
+            TEDxSCA Youth, 2026. The slide, as photographed.{' '}
+            <MoreLink href="https://www.youtube.com/watch?v=PbbQxn38bcQ">Watch the talk</MoreLink>
           </Caption>
         </figure>
         <figure className="bg-panel p-6 md:p-8 flex flex-col">

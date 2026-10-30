@@ -1,5 +1,6 @@
 import WatchTalk from './TalkModal'
 import { Caption, Headline, Label, Lede, Split, Wrap } from './ui'
+import { asset } from '../release'
 
 type Item = { title: string; detail: string; tbd?: boolean }
 
@@ -140,7 +141,7 @@ export default function About() {
 
       <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <figure className="min-w-0">
-          <img src="/media/tedx-stats.webp" alt="Yibo on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
+          <img src={asset('/media/tedx-stats.webp')} alt="Yibo on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
           <Caption>
             TEDxSCA Youth, 2026. The slide, as photographed.{' '}
             <WatchTalk />

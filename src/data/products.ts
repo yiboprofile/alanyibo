@@ -48,6 +48,7 @@ export const products = [
     model: 'Commission on results',
     who: 'Restaurants pay only for the diners we bring in; diners pay nothing',
     price: '[x%]',
+    releasePrice: 'A share',
     unit: 'of what those diners spend',
     outcome: '3rd in the nation, still pitching',
   },

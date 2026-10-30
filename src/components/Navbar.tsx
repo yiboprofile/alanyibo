@@ -1,7 +1,9 @@
+import { RELEASE } from '../release'
+
 const navLinks = [
   { label: 'People', href: '#people' },
   { label: 'Cases', href: '#cases' },
-  { label: 'Pricing note', href: '#note' },
+  ...(RELEASE ? [] : [{ label: 'Pricing note', href: '#note' }]),
   { label: 'About', href: '#about' },
 ]
 

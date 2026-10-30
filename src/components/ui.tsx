@@ -1,6 +1,9 @@
+import { RELEASE } from '../release'
 import type { ReactNode } from 'react'
 
-export function Tbd({ children }: { children: ReactNode }) {
+/* A blank still to fill in. In the published build it shows `release` instead, or nothing at all. */
+export function Tbd({ children, release }: { children: ReactNode; release?: ReactNode }) {
+  if (RELEASE) return <>{release ?? null}</>
   return <mark className="tbd">{children}</mark>
 }
 

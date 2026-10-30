@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
+import { RELEASE } from '../release'
 import { Caption, Captions, Headline, Label, Lede, MoreLink, Wrap } from './ui'
 
 type Image = { src: string; alt: string; width: number; height: number; caption: ReactNode; position?: string }
@@ -13,6 +14,8 @@ export type CaseProps = {
   lede: ReactNode
   links: { href: string; label: string }[]
   facts: Fact[]
+  /* the facts to publish while some review facts are still blanks; defaults to `facts` */
+  releaseFacts?: Fact[]
   product?: Image & { kind: 'shot' | 'phone' }
   /* several phone screens side by side; when given, the photo shrinks to a small card beside them */
   screens?: Image[]
@@ -24,7 +27,10 @@ export type CaseProps = {
 
 function Facts({ facts }: { facts: Fact[] }) {
   return (
-    <dl className="grid grid-cols-2 lg:grid-cols-4 border-t border-line">
+    <dl
+      className="grid grid-cols-2 lg:[grid-template-columns:repeat(var(--n),minmax(0,1fr))] border-t border-line"
+      style={{ '--n': facts.length } as CSSProperties}
+    >
       {facts.map((f, i) => (
         <div
           key={f.label}
@@ -187,7 +193,7 @@ export default function CaseShell(c: CaseProps) {
       </div>
 
       <div className="mt-[clamp(40px,5vw,64px)]">
-        <Facts facts={c.facts} />
+        <Facts facts={RELEASE && c.releaseFacts ? c.releaseFacts : c.facts} />
       </div>
 
       <div className="mt-3 grid gap-3">{c.children}</div>
@@ -210,9 +216,11 @@ export default function CaseShell(c: CaseProps) {
         {c.team}
       </p>
 
-      <div className="mt-8">
-        <Blanks items={c.blanks} />
-      </div>
+      {!RELEASE && (
+        <div className="mt-8">
+          <Blanks items={c.blanks} />
+        </div>
+      )}
     </Wrap>
   )
 }

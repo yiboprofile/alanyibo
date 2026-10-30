@@ -7,8 +7,8 @@ const craveSteps = [
   { value: 'Plan', label: 'Written as co-founder and COO, FBLA, 2025', phase: 'judges' },
   { value: '3rd', label: 'in Maryland', phase: 'judges' },
   { value: '3rd', label: 'in the nation, Anaheim', phase: 'judges' },
-  { value: <Tbd>[40+]</Tbd>, label: 'restaurants pitched, plus VCs and investors', phase: 'market' },
-  { value: <Tbd>[0]</Tbd>, label: 'restaurants signed so far', phase: 'market' },
+  { value: <Tbd release="Several">[40+]</Tbd>, label: 'restaurants pitched, plus VCs and investors', phase: 'market' },
+  { value: <Tbd release="0">[0]</Tbd>, label: 'restaurants signed so far', phase: 'market' },
 ] as const
 
 /* Judged on paper, then tested on the street: the same plan, two very different scores */

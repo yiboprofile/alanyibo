@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { RELEASE } from '../release'
 import { Captions, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
 
 /* One dot is one person, everywhere in this section. */
@@ -167,6 +168,7 @@ export default function People() {
           gun-related bill that later passed.
         </p>
 
+        {!RELEASE && (
         <aside className="todo mt-2 border border-dashed border-mark-ink/30 p-6 md:p-8" aria-label="Still to confirm">
           <Label className="text-mark-ink/80">Still to confirm</Label>
           <ul className="mt-4 grid gap-3 text-[14px] leading-[1.55] text-mark-ink/85">
@@ -175,6 +177,7 @@ export default function People() {
             <li>A photo of the chapter or the club together, with permission, would make this section stronger than any chart.</li>
           </ul>
         </aside>
+        )}
       </div>
     </Wrap>
   )

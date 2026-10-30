@@ -19,6 +19,7 @@ import {
 import { ChartFrame, Tbd } from './ui'
 import * as dermat from '../data/dermat'
 import * as soundsplit from '../data/soundsplit'
+import { asset } from '../release'
 
 /* Ordered along the price spectrum in the overview: free, pay per use, pay per month, pay per session, then a two-sided market.
    Every fact here matches the Common App activity and honor lists; anything still unconfirmed is a <Tbd> blank. */
@@ -51,35 +52,35 @@ export default function Cases() {
         ]}
         screens={[
           {
-            src: '/media/dermat-scan.webp',
+            src: asset('/media/dermat-scan.webp'),
             alt: 'Dermat AI scanner: a photo of a face, buttons for gallery and camera, and a skin analysis reading healthy skin with severity none',
             width: 540,
             height: 1170,
             caption: 'Scan: a photo in, a condition and a confidence score out.',
           },
           {
-            src: '/media/dermat-analysis.webp',
+            src: asset('/media/dermat-analysis.webp'),
             alt: 'Dermat AI skin health dashboard: latest scan healthy at 90 percent confidence, a health score trend and a conditions breakdown',
             width: 540,
             height: 1170,
             caption: 'Dashboard: the latest result, the trend, the breakdown.',
           },
           {
-            src: '/media/dermat-diary.webp',
+            src: asset('/media/dermat-diary.webp'),
             alt: 'Dermat AI skin diary: dated entries for face and hand, each with a photo, a note and recommendations',
             width: 540,
             height: 1170,
             caption: 'Diary: each scan saved with notes, to compare over time.',
           },
           {
-            src: '/media/dermat-routine.webp',
+            src: asset('/media/dermat-routine.webp'),
             alt: 'Dermat AI personalized skin routine: morning steps, evening routine and recommended product types',
             width: 540,
             height: 1170,
             caption: 'Routine: morning and evening steps for the result.',
           },
           {
-            src: '/media/dermat-assistant.webp',
+            src: asset('/media/dermat-assistant.webp'),
             alt: 'Dermat AI skin assistant: a chat where the assistant answers questions about skin concerns',
             width: 540,
             height: 1170,
@@ -87,7 +88,7 @@ export default function Cases() {
           },
         ]}
         photo={{
-          src: '/assets/photos/award-dermat.webp',
+          src: asset('/assets/photos/award-dermat.webp'),
           alt: 'Certificate: Emerging Standout Award, DFW IT Talent Champion Competition, to Team Dermat AI, 15 September 2025',
           width: 1600,
           height: 1244,
@@ -170,35 +171,35 @@ export default function Cases() {
         ]}
         screens={[
           {
-            src: '/media/soundsplit-import.webp',
+            src: asset('/media/soundsplit-import.webp'),
             alt: 'SoundSplit: an empty song screen with an Add Song button and a Subscribe button',
             width: 540,
             height: 1170,
             caption: 'Import: add a song from the phone.',
           },
           {
-            src: '/media/soundsplit-stems.webp',
+            src: asset('/media/soundsplit-stems.webp'),
             alt: 'SoundSplit: a grid of stems to choose, such as vocals, drums, bass, piano and guitar, with waveform previews',
             width: 540,
             height: 1170,
             caption: 'Split: choose the stems and preview each one.',
           },
           {
-            src: '/media/soundsplit-mixer-hd.webp',
+            src: asset('/media/soundsplit-mixer-hd.webp'),
             alt: "SoundSplit's mixer: one slider per instrument above a song called Shape of You",
             width: 540,
             height: 1170,
             caption: 'Mix: one slider per stem.',
           },
           {
-            src: '/media/soundsplit-pricing.webp',
+            src: asset('/media/soundsplit-pricing.webp'),
             alt: 'SoundSplit Go Premium screen: Basic 50 minutes for $15, Standard 150 minutes for $35, Premium 800 minutes for $120, one-time fees',
             width: 540,
             height: 1170,
             caption: 'Pay: three blocks of minutes, one-time fees.',
           },
           {
-            src: '/media/soundsplit-balance.webp',
+            src: asset('/media/soundsplit-balance.webp'),
             alt: 'SoundSplit balance screen: minutes left on a timer, an Add Minutes button, and a history of songs processed',
             width: 540,
             height: 1170,
@@ -206,7 +207,7 @@ export default function Cases() {
           },
         ]}
         photo={{
-          src: '/assets/photos/Future-star-award-soundsplit.webp',
+          src: asset('/assets/photos/Future-star-award-soundsplit.webp'),
           alt: 'The Future Star Award slide for SoundSplit projected in a hall, listing the team',
           width: 1600,
           height: 1200,
@@ -298,14 +299,14 @@ export default function Cases() {
         ]}
         product={{
           kind: 'shot',
-          src: '/media/hhai-pricing.webp',
+          src: asset('/media/hhai-pricing.webp'),
           alt: 'The HolidayHelperAI pricing page: Standard $2 a month or $20 a year, Premium $4 or $40, Enterprise $8.99 or $80.99',
           width: 1280,
           height: 980,
           caption: 'holidayhelperai.com/pricing, October 2026.',
         }}
         photo={{
-          src: '/assets/photos/award-holidayhelper.webp',
+          src: asset('/assets/photos/award-holidayhelper.webp'),
           alt: 'The DCIA Stellar Young Achiever Award slide for HolidayHelperAI, naming Yibo Wang as team leader',
           width: 1386,
           height: 782,
@@ -346,6 +347,11 @@ export default function Cases() {
         links={[]}
         facts={[
           { label: 'Started', value: <Tbd>[grade 11]</Tbd>, note: 'co-founder and tutor' },
+          { label: 'Price', value: '$40', note: 'a session; the usual rate is $80–120' },
+          { label: 'Clients', value: '10+', note: 'with personal plans' },
+          { label: 'Best gain', value: '+280', note: '1220 to 1510' },
+        ]}
+        releaseFacts={[
           { label: 'Price', value: '$40', note: 'a session; the usual rate is $80–120' },
           { label: 'Clients', value: '10+', note: 'with personal plans' },
           { label: 'Best gain', value: '+280', note: '1220 to 1510' },
@@ -393,16 +399,22 @@ export default function Cases() {
           { label: 'Pitch prizes', value: <Tbd>[$120+ or $320+]</Tbd>, note: 'local and national' },
           { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan, 2025' },
         ]}
+        releaseFacts={[
+          { label: 'Role', value: 'Co-founder, COO', note: 'with two co-founders' },
+          { label: 'Restaurants pitched', value: 'Several', note: 'around Frederick and Urbana, with heavy interest' },
+          { label: 'Pitch prizes', value: '$120+', note: 'local and national competitions' },
+          { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan, 2025' },
+        ]}
         product={{
           kind: 'shot',
-          src: '/media/crave-top.webp',
+          src: asset('/media/crave-top.webp'),
           alt: 'The top of the Crave Deals website: a banner reading Your Next Meal Awaits, with a town picker',
           width: 1400,
           height: 680,
           caption: 'crave.deals. The restaurants shown are samples, not clients.',
         }}
         photo={{
-          src: '/assets/photos/fbla-3.webp',
+          src: asset('/assets/photos/fbla-3.webp'),
           alt: 'Yibo, right, with two FBLA teammates beside the Welcome to the 2025 National Leadership Conference sign',
           width: 1280,
           height: 1218,

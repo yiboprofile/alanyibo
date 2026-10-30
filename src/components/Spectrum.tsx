@@ -34,7 +34,7 @@ export default function Spectrum() {
                 <div className="lg:mt-6 min-w-0">
                   <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">{p.model}</span>
                   <span className="block mt-3 font-display font-extrabold text-[clamp(2rem,3.2vw,2.6rem)] leading-none tracking-[-0.02em] text-white tabular-nums">
-                    {p.price.startsWith('[') ? <Tbd>{p.price}</Tbd> : p.price}
+                    {p.price.startsWith('[') ? <Tbd release={p.releasePrice}>{p.price}</Tbd> : p.price}
                   </span>
                   <span className="block mt-2 min-h-[1.25rem] text-[13px] text-white/50">{p.unit}</span>
                   <span className="block mt-4 text-[14.5px] leading-snug text-white/75">{p.who}</span>

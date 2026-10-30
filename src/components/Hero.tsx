@@ -1,3 +1,5 @@
+import { asset } from '../release'
+
 /* every item here appears on the application or in the store data, and can be checked */
 const proof = [
   'FBLA chapter ~150 → ~400',
@@ -13,7 +15,7 @@ export default function Hero() {
       {/* Full-bleed video background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/hero.mp4"
+        src={asset('/hero.mp4')}
         autoPlay
         muted
         loop

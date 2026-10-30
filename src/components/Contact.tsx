@@ -1,4 +1,5 @@
 import { Captions, Headline, MoreLink } from './ui'
+import { asset } from '../release'
 
 /* Closes the page the way the hero opens it: full-bleed image, captions at 30%, content pinned to the bottom */
 export default function Contact() {
@@ -9,7 +10,7 @@ export default function Contact() {
       className="relative w-full h-screen min-h-[700px] mt-[clamp(96px,10vw,144px)] overflow-hidden"
     >
       <img
-        src="/media/tedx-forward.webp"
+        src={asset('/media/tedx-forward.webp')}
         alt=""
         width={1280}
         height={720}

@@ -375,7 +375,7 @@ export function ScoreGain() {
       </div>
       <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="font-display font-extrabold text-[clamp(2.4rem,4.6vw,3.4rem)] leading-none text-accent tabular-nums">+280</span>
-        <span className="text-[14px] text-white/60">points, the largest gain so far</span>
+        <span className="text-[14px] text-white/60">points, from 1220 to 1510</span>
       </p>
     </div>
   )
@@ -384,7 +384,7 @@ export function ScoreGain() {
 /* How the business grew: the founders, then three tutors hired to keep up with clients */
 export function TutorTeam() {
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-6 md:grid-cols-2 md:gap-10">
       <div>
         <div className="flex flex-wrap gap-2" aria-hidden="true">
           {Array.from({ length: 10 }, (_, i) => (
@@ -546,35 +546,35 @@ export function WhereInstalled({ rows }: { rows: { country: string; installs: nu
   )
 }
 
-/* $37 a session against the usual range for one-on-one SAT tutoring, on one dollar scale */
+/* $37 a session against the usual range for one-on-one SAT tutoring, drawn like ScoreGain so the two read as a pair */
 export function PriceVsMarket() {
   const top = 100
   const pct = (v: number) => (v / top) * 100
   return (
     <div>
-      <div className="relative h-16 mt-6">
+      <div className="relative h-14">
         <div className="absolute inset-x-0 top-1/2 h-px bg-white/20" aria-hidden="true" />
         <div
-          className="absolute top-1/2 h-3 -translate-y-1/2 bg-white/25"
+          className="absolute top-1/2 h-2 -translate-y-1/2 bg-white/30"
           style={{ left: `${pct(70)}%`, width: `${pct(90) - pct(70)}%` }}
           aria-hidden="true"
         />
-        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-white/55 whitespace-nowrap" style={{ left: `${pct(80)}%` }}>
-          usual $70–90
-        </span>
-        <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 size-4 rounded-full bg-accent" style={{ left: `${pct(37)}%` }} aria-hidden="true" />
-        <span className="absolute -top-1 -translate-x-1/2 font-mono text-[11px] text-accent whitespace-nowrap" style={{ left: `${pct(37)}%` }}>
-          ours $37
-        </span>
+        <div className="absolute top-0 -translate-x-1/2 text-center" style={{ left: `${pct(37)}%` }}>
+          <span className="block font-display font-bold text-[18px] tabular-nums text-white">$37</span>
+          <span className="mx-auto mt-1 block size-3 rounded-full bg-accent" />
+        </div>
+        <div className="absolute top-0 -translate-x-1/2 text-center" style={{ left: `${pct(80)}%` }}>
+          <span className="block font-display font-bold text-[18px] tabular-nums text-white/60 whitespace-nowrap">$70–90</span>
+        </div>
       </div>
-      <div className="flex justify-between font-mono text-[11px] text-white/40 tabular-nums">
+      <div className="mt-3 flex justify-between font-mono text-[11px] text-white/45 tabular-nums">
         <span>$0</span>
         <span>$50</span>
         <span>$100</span>
       </div>
       <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="font-display font-extrabold text-[clamp(2.2rem,4vw,3rem)] leading-none text-accent tabular-nums">About ½</span>
-        <span className="text-[14px] text-white/60">of the usual price for one-on-one SAT tutoring</span>
+        <span className="font-display font-extrabold text-[clamp(2.4rem,4.6vw,3.4rem)] leading-none text-accent tabular-nums">About ½</span>
+        <span className="text-[14px] text-white/60">of the usual price</span>
       </p>
     </div>
   )

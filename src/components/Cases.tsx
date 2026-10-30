@@ -362,16 +362,17 @@ export default function Cases() {
           'One or two lines from a family or student, with their permission (can be anonymous).',
         ]}
       >
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
-          <ChartFrame title="What a family pays for" caption="The largest improvement so far, on the SAT’s 400–1600 scale.">
+        {/* what a family pays, then what it gets, drawn the same way; then how the business grew */}
+        <div className="grid gap-3 lg:grid-cols-2">
+          <ChartFrame title="What a family pays" caption="Our price for one session against the usual range for one-on-one SAT tutoring.">
+            <PriceVsMarket />
+          </ChartFrame>
+          <ChartFrame title="What a family gets" caption="The largest gain so far, on the SAT’s 400–1600 scale.">
             <ScoreGain />
           </ChartFrame>
-          <ChartFrame title="How it grew">
-            <TutorTeam />
-          </ChartFrame>
         </div>
-        <ChartFrame title="What a session costs" caption="$37 a session against the usual $70–90 for one-on-one SAT tutoring, on one dollar scale.">
-          <PriceVsMarket />
+        <ChartFrame title="How it grew">
+          <TutorTeam />
         </ChartFrame>
       </CaseShell>
 

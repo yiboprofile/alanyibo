@@ -145,7 +145,7 @@ function Group({ g }: { g: (typeof groups)[number] }) {
 
 export default function People() {
   return (
-    <Wrap id="people" labelledBy="h-people" className="pt-[clamp(96px,10vw,144px)] scroll-mt-6">
+    <Wrap id="people" labelledBy="h-people" className="pt-[clamp(72px,8vw,112px)] scroll-mt-6">
       <Captions left="Members, students," right="interns, clients." className="mb-[clamp(40px,5vw,72px)]" />
 
       <Split heading={<Headline id="h-people" lines={['Every room starts', 'with one person.']} />}>

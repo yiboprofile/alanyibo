@@ -4,7 +4,7 @@ import { Arrow, Captions, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
 /* The page's thesis as one graphic: five products laid out along who pays, and how */
 export default function Spectrum() {
   return (
-    <Wrap id="cases" labelledBy="h-cases" className="pt-[clamp(96px,10vw,144px)] scroll-mt-6">
+    <Wrap id="cases" labelledBy="h-cases" tone="raised" className="pt-[clamp(72px,8vw,112px)] scroll-mt-6">
       <Captions left="Joining is free." right="Paying is not." className="mb-[clamp(40px,5vw,72px)]" />
       <Split heading={<Headline id="h-cases" lines={['Getting people to join', 'is one cold start.']} />}>
         <Lede>

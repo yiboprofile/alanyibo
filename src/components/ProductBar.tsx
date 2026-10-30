@@ -20,7 +20,7 @@ export default function ProductBar() {
   return (
     <nav
       aria-label="Products"
-      className="sticky top-0 z-40 mt-[clamp(72px,8vw,112px)] border-y border-line bg-[#0b1210]/85 backdrop-blur-md"
+      className="sticky top-0 z-40 border-y border-line bg-[#0b1210]/85 backdrop-blur-md"
     >
       <ul className="max-w-[calc(80rem+6rem)] mx-auto px-6 md:px-12 flex gap-6 md:gap-10 overflow-x-auto [scrollbar-width:none]">
         {products.map((p) => {

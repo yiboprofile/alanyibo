@@ -9,7 +9,7 @@ const prompts = [
 
 export default function Note() {
   return (
-    <Wrap id="note" labelledBy="h-note" className="pt-[clamp(96px,10vw,144px)]">
+    <Wrap id="note" labelledBy="h-note" className="pt-[clamp(72px,8vw,112px)]">
       <Split heading={<Headline id="h-note" lines={['A note on pricing', 'before users.']} />}>
         <Lede>
           Reserved for a short piece by Yibo, 500 to 800 words, on setting prices for things nobody had bought yet. It

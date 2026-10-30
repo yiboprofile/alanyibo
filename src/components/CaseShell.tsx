@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { RELEASE } from '../release'
 import { Caption, Captions, Headline, Label, Lede, MoreLink, Wrap } from './ui'
+import type { Tone } from './ui'
 
 type Image = { src: string; alt: string; width: number; height: number; caption: ReactNode; position?: string }
 
@@ -22,6 +23,8 @@ export type CaseProps = {
   photo?: Image
   team: ReactNode
   blanks: string[]
+  /* the band behind the case; cases alternate so each reads as its own chapter */
+  tone?: Tone
   children: ReactNode
 }
 
@@ -158,7 +161,7 @@ function Blanks({ items }: { items: string[] }) {
 
 export default function CaseShell(c: CaseProps) {
   return (
-    <Wrap id={c.id} labelledBy={`h-${c.id}`} className="pt-[clamp(96px,10vw,144px)] scroll-mt-16">
+    <Wrap id={c.id} labelledBy={`h-${c.id}`} tone={c.tone} className="pt-[clamp(72px,8vw,112px)] scroll-mt-16">
       <Captions left={c.captions[0]} right={c.captions[1]} className="mb-[clamp(40px,5vw,72px)]" />
 
       {/* a wider text column than the other sections, so a case's longer intro stays about as tall as its headline */}

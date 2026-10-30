@@ -39,7 +39,7 @@ export function JudgesThenMarket() {
               <span
                 aria-hidden="true"
                 className={`relative z-10 mt-1.5 md:mt-0 block size-[11px] rounded-full ${
-                  market ? 'border-2 border-accent bg-[#111a17]' : 'bg-white'
+                  market ? 'border-2 border-accent bg-panel' : 'bg-white'
                 }`}
               />
               <div className="md:mt-4">

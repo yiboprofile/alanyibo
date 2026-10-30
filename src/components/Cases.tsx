@@ -145,6 +145,7 @@ export default function Cases() {
 
       <CaseShell
         id="soundsplit"
+        tone="raised"
         model="Per minute"
         captions={['Free to download.', 'Every minute has a cost.']}
         title={['SoundSplit.', 'Sold by the minute.']}
@@ -331,6 +332,7 @@ export default function Cases() {
 
       <CaseShell
         id="tutoring"
+        tone="raised"
         model="Per session"
         captions={['Families pay for a result.', 'The one that sold.']}
         title={['Urbana SAT Tutoring.', 'Paid for by results.']}

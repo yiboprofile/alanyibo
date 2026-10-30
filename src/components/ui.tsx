@@ -135,20 +135,37 @@ export function ChartFrame({
   )
 }
 
+/* Each section sits on a full-width band. Neighbouring bands alternate tone so the page reads in chapters;
+   a band also sets its own panel colour, so cards stay one step lighter than whatever is behind them. */
+const tones = {
+  base: '',
+  raised: 'bg-[#131e1a] [--color-panel:#1b2823] border-t border-white/[0.06]',
+  deep: 'bg-[#070b0a] [--color-panel:#101916] border-t border-white/[0.07] bg-[radial-gradient(ellipse_70%_45%_at_50%_0%,rgba(143,203,182,0.07),transparent)]',
+}
+export type Tone = keyof typeof tones
+
 export function Wrap({
   children,
   className = '',
   id,
   labelledBy,
+  tone = 'base',
 }: {
   children: ReactNode
   className?: string
   id?: string
   labelledBy?: string
+  tone?: Tone
 }) {
   return (
-    <section id={id} aria-labelledby={labelledBy} className={`max-w-[calc(80rem+6rem)] mx-auto px-6 md:px-12 ${className}`}>
-      {children}
-    </section>
+    <div className={tones[tone]}>
+      <section
+        id={id}
+        aria-labelledby={labelledBy}
+        className={`max-w-[calc(80rem+6rem)] mx-auto px-6 md:px-12 pb-[clamp(72px,8vw,112px)] ${className}`}
+      >
+        {children}
+      </section>
+    </div>
   )
 }

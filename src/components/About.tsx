@@ -76,7 +76,7 @@ const talk = {
 
 export default function About() {
   return (
-    <Wrap id="about" labelledBy="h-about" className="pt-[clamp(96px,10vw,144px)]">
+    <Wrap id="about" labelledBy="h-about" tone="deep" className="pt-[clamp(72px,8vw,112px)]">
       <Split heading={<Headline id="h-about" lines={['Economics,', 'without an app.']} />}>
         <Lede>
           Urbana High School, Frederick, Maryland &middot; Class of 2027. Economics is what I want to study, and my

@@ -68,7 +68,7 @@ const notes: { title: string; body: string }[] = [
 /* The talk itself, beside the photo of its slide */
 const talk = {
   title: 'TEDxSCA Youth',
-  body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
+  body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel.',
 }
 
 export default function About() {

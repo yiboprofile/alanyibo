@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { RELEASE } from '../release'
-import { Captions, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
+import { RELEASE, asset } from '../release'
+import { Caption, Captions, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
 
 /* One dot is one person, everywhere in this section. */
 
@@ -157,6 +157,17 @@ export default function People() {
 
       <div className="mt-[clamp(48px,5vw,72px)] grid gap-3">
         <Room />
+        <figure className="min-w-0">
+          <img
+            src={asset('/media/fbla-nlc-2026.webp')}
+            alt="About sixty members of the Urbana FBLA chapter in matching orange shirts and conference badges, standing together in a convention center hall"
+            width={1860}
+            height={519}
+            loading="lazy"
+            className="w-full aspect-[16/9] sm:aspect-auto sm:h-auto object-cover"
+          />
+          <Caption>Our chapter at the FBLA National Leadership Conference, 2026.</Caption>
+        </figure>
         <div className="grid gap-3 md:grid-cols-2">
           {groups.map((g) => (
             <Group key={g.title} g={g} />
@@ -174,7 +185,6 @@ export default function People() {
           <ul className="mt-4 grid gap-3 text-[14px] leading-[1.55] text-mark-ink/85">
             <li>Every count here, exactly as in the activity list.</li>
             <li>If DreamCollegeAI or Pathspark is connected to my family, say so, as the site already does for APIDEED LLC.</li>
-            <li>A photo of the chapter or the club together, with permission, would make this section stronger than any chart.</li>
           </ul>
         </aside>
         )}

@@ -5,22 +5,19 @@ import { asset } from '../release'
 type Item = { title: string; detail: string; tbd?: boolean }
 
 /* Two lanes over the same four years: what Yibo built, and the economics he did away from a screen */
-const years: { year: string; width: number; built: Item[]; studied: Item[] }[] = [
+const years: { year: string; built: Item[]; studied: Item[] }[] = [
   {
     year: '2023',
-    width: 1,
     built: [{ title: 'HolidayHelperAI', detail: 'Led a team of five, grade 9.' }],
     studied: [],
   },
   {
     year: '2024',
-    width: 1,
     built: [{ title: 'SoundSplit', detail: 'On the App Store, August.' }],
     studied: [],
   },
   {
     year: '2025',
-    width: 1.35,
     built: [
       { title: 'Crave Deals', detail: 'The business plan.' },
       { title: 'Dermat AI', detail: 'On the App Store, August.' },
@@ -29,7 +26,6 @@ const years: { year: string; width: number; built: Item[]; studied: Item[] }[] =
   },
   {
     year: '2026',
-    width: 2.1,
     built: [],
     studied: [
       { title: 'Economics Challenge, 1st (state)', detail: 'One of six chosen from just under 100.' },
@@ -78,9 +74,6 @@ const talk = {
   ],
 }
 
-/* Preview only: ?tl=lanes | spine | rows shows the alternative layouts; the default is the axis */
-const variant = typeof window === 'undefined' ? 'axis' : new URLSearchParams(window.location.search).get('tl') || 'axis'
-
 /* year tiles: each year is a box with its cards inside */
 function Tile({ y, cols = 1, className = '' }: { y: (typeof years)[number]; cols?: number; className?: string }) {
   const items = [...y.built.map((it) => ({ it, lane: 'built' as const })), ...y.studied.map((it) => ({ it, lane: 'studied' as const }))]
@@ -101,170 +94,15 @@ function Tile({ y, cols = 1, className = '' }: { y: (typeof years)[number]; cols
   )
 }
 
+/* wide screens: one tile per year, sized by how much happened that year, so the block stays square */
 function TimelineWide() {
-  if (variant === 'lanes') {
-    /* a table: one row per lane, one column per year, lane names down the left */
-    const cols = `7.5rem ${years.map((y) => `${y.width}fr`).join(' ')}`
-    return (
-      <div className="hidden md:grid gap-x-4" style={{ gridTemplateColumns: cols }}>
-        <span />
-        {years.map((y) => (
-          <span key={y.year} className="pb-4 font-display font-extrabold text-[clamp(1.4rem,2.2vw,1.85rem)] leading-none text-white tabular-nums">
-            {y.year}
-          </span>
-        ))}
-        {(['built', 'studied'] as const).map((lane) => (
-          <div key={lane} className="contents">
-            <span className="border-t border-line pt-5 pb-5">
-              <Label className={lane === 'built' ? 'text-white/70' : 'text-accent'}>{lane === 'built' ? 'Built' : 'Studied and argued'}</Label>
-            </span>
-            {years.map((y) => (
-              <ul
-                key={y.year}
-                className={`border-t border-line pt-5 pb-5 grid gap-2 content-start min-w-0 ${y[lane].length > 2 ? 'grid-cols-2' : ''}`}
-              >
-                {y[lane].map((it, i) => (
-                  <Chip
-                    key={it.title}
-                    item={it}
-                    lane={lane}
-                    className={y[lane].length > 2 && y[lane].length % 2 === 1 && i === y[lane].length - 1 ? 'col-span-2' : ''}
-                  />
-                ))}
-              </ul>
-            ))}
-          </div>
-        ))}
-      </div>
-    )
-  }
-
-  if (variant === 'spine') {
-    /* one line down the middle: what I built on the left, what I studied on the right */
-    return (
-      <div className="hidden md:block relative">
-        <span className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-white/25" aria-hidden="true" />
-        <div className="grid grid-cols-[minmax(0,1fr)_7rem_minmax(0,1fr)] mb-6">
-          <Label className="text-right text-white/70">Built</Label>
-          <span />
-          <Label className="text-accent">Studied and argued</Label>
-        </div>
-        <ol className="grid gap-8">
-          {years.map((y) => (
-            <li key={y.year} className="grid grid-cols-[minmax(0,1fr)_7rem_minmax(0,1fr)] items-start">
-              <ul className="grid gap-2 justify-items-end">
-                {y.built.map((it) => (
-                  <Chip key={it.title} item={it} lane="built" className="w-full max-w-[22rem]" />
-                ))}
-              </ul>
-              <span className="relative z-10 justify-self-center px-3 py-1.5 rounded-full border border-accent/60 bg-panel font-display font-extrabold text-[1.35rem] leading-none text-white tabular-nums">
-                {y.year}
-              </span>
-              <ul className={`grid gap-2 ${y.studied.length > 2 ? 'grid-cols-2' : 'max-w-[22rem]'}`}>
-                {y.studied.map((it, i) => (
-                  <Chip
-                    key={it.title}
-                    item={it}
-                    lane="studied"
-                    className={y.studied.length > 2 && y.studied.length % 2 === 1 && i === y.studied.length - 1 ? 'col-span-2' : ''}
-                  />
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ol>
-      </div>
-    )
-  }
-
-  if (variant === 'split' || variant === 'bento') {
-    const [y23, y24, y25, y26] = years
-    if (variant === 'split') {
-      /* the first three years stacked on the left, the busiest year alone on the right */
-      return (
-        <div className="hidden md:grid grid-cols-2 gap-3">
-          <div className="grid gap-3 content-start">
-            <Tile y={y23} />
-            <Tile y={y24} />
-            <Tile y={y25} cols={3} />
-          </div>
-          <Tile y={y26} cols={2} />
-        </div>
-      )
-    }
-    /* bento: tiles sized by how much happened that year */
-    return (
-      <div className="hidden md:grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.7fr)] grid-rows-[auto_1fr] gap-3">
-        <Tile y={y23} />
-        <Tile y={y25} className="row-span-2" />
-        <Tile y={y26} cols={2} className="row-span-2" />
-        <Tile y={y24} />
-      </div>
-    )
-  }
-
-  if (variant === 'rows') {
-    /* one row per year: the year on the left, everything from that year in one line of cards */
-    return (
-      <ol className="hidden md:grid">
-        {years.map((y) => (
-          <li key={y.year} className="grid grid-cols-[8rem_minmax(0,1fr)] gap-6 border-t border-line py-6 first:border-t-0 first:pt-0">
-            <span className="font-display font-extrabold text-[clamp(1.6rem,2.6vw,2.2rem)] leading-none text-white tabular-nums">
-              {y.year}
-              <span className="block mt-2 font-mono text-[11px] font-normal tracking-[0.1em] text-white/45">
-                {y.built.length + y.studied.length} {y.built.length + y.studied.length === 1 ? 'item' : 'items'}
-              </span>
-            </span>
-            <ul className="grid grid-cols-3 lg:grid-cols-5 gap-2">
-              {y.built.map((it) => (
-                <Chip key={it.title} item={it} lane="built" />
-              ))}
-              {y.studied.map((it) => (
-                <Chip key={it.title} item={it} lane="studied" />
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ol>
-    )
-  }
-
-  /* wide screens: one axis of years, what I built above it and what I studied below it. Busier years get
-     wider columns, and 2026's five items sit in two columns, so neither half of the chart runs long. */
+  const [y23, y24, y25, y26] = years
   return (
-    <div className="hidden md:grid gap-x-4" style={{ gridTemplateColumns: years.map((y) => `${y.width}fr`).join(' ') }}>
-      {years.map((y) => (
-        <ul key={`b-${y.year}`} className="flex flex-col justify-end gap-2 pb-6 min-w-0">
-          {y.built.map((it) => (
-            <Chip key={it.title} item={it} lane="built" />
-          ))}
-        </ul>
-      ))}
-      {years.map((y, i) => (
-        <div key={`a-${y.year}`} className="relative flex items-center h-12" aria-hidden="true">
-          <span className={`absolute left-0 top-1/2 h-px bg-white/30 ${i === years.length - 1 ? 'right-0' : '-right-4'}`} />
-          <span className="relative size-2.5 rounded-full bg-accent" />
-          <span className="relative ml-2 pr-3 bg-panel font-display font-extrabold text-[clamp(1.4rem,2.2vw,1.85rem)] leading-none text-white tabular-nums">
-            {y.year}
-          </span>
-        </div>
-      ))}
-      {years.map((y) => (
-        <ul
-          key={`s-${y.year}`}
-          className={`grid gap-2 pt-6 content-start min-w-0 ${y.studied.length > 2 ? 'grid-cols-2' : ''}`}
-        >
-          {y.studied.map((it, i) => (
-            <Chip
-              key={it.title}
-              item={it}
-              lane="studied"
-              /* in two columns, an odd last item spans both rather than leaving a gap */
-              className={y.studied.length > 2 && y.studied.length % 2 === 1 && i === y.studied.length - 1 ? 'col-span-2' : ''}
-            />
-          ))}
-        </ul>
-      ))}
+    <div className="hidden md:grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.7fr)] grid-rows-[auto_1fr] gap-3">
+      <Tile y={y23} />
+      <Tile y={y25} className="row-span-2" />
+      <Tile y={y26} cols={2} className="row-span-2" />
+      <Tile y={y24} />
     </div>
   )
 }

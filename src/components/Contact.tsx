@@ -1,7 +1,5 @@
 import { Captions, Headline, MoreLink } from './ui'
 
-const email = '[email removed]'
-
 /* Closes the page the way the hero opens it: full-bleed image, captions at 30%, content pinned to the bottom */
 export default function Contact() {
   return (
@@ -29,21 +27,20 @@ export default function Contact() {
 
       <div className="absolute inset-x-0 bottom-0 z-10 px-6 md:px-12 pb-14 md:pb-16">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 max-w-7xl mx-auto">
-          <Headline id="h-write" lines={['Questions?', 'Write to me.']} />
+          <Headline id="h-write" lines={['Questions?', 'Ask me.']} />
 
           <div className="max-w-sm md:pb-1">
             <p className="text-white/60 text-[14.5px] leading-[1.7] font-light">
-              Questions about the plan, the prices or the numbers are welcome at{' '}
-              <span className="text-white select-all">{email}</span>.
+              Questions about the plan, the prices or the numbers are welcome. My contact details are in my application.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
               <a
-                href={`mailto:${email}?subject=A%20question%20about%20your%20products`}
+                href="#home"
                 className="inline-flex items-center px-6 py-2.5 rounded-full text-[13px] font-semibold text-black bg-white transition-all duration-200 hover:bg-white/85"
               >
-                Email Alan
+                Back to the top
               </a>
-              <MoreLink href="#home">Back to the top</MoreLink>
+              <MoreLink href="#cases">See the cases again</MoreLink>
             </div>
           </div>
         </div>

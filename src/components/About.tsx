@@ -1,4 +1,5 @@
-import { Caption, Headline, Label, Lede, MoreLink, Split, Wrap } from './ui'
+import WatchTalk from './TalkModal'
+import { Caption, Headline, Label, Lede, Split, Wrap } from './ui'
 
 type Item = { title: string; detail: string; tbd?: boolean }
 
@@ -28,7 +29,7 @@ const years: { year: string; built: Item[]; studied: Item[] }[] = [
     studied: [
       { title: 'Economics Challenge, 1st (state)', detail: 'One of six chosen from just under 100.' },
       { title: 'Wharton LBW', detail: 'One of just over 100 accepted to session one.' },
-      { title: 'TEDxSCA Youth', detail: 'A talk: Gen-Z is Cooked.' },
+      { title: 'TEDxSCA Youth', detail: 'A talk: Is Gen-Z Cooked?' },
       { title: 'SCISS startup program', detail: 'Best Presentation and Best Team.' },
       { title: 'National Merit Semifinalist', detail: '' },
     ],
@@ -52,7 +53,7 @@ function Chip({ item, lane }: { item: Item; lane: 'built' | 'studied' }) {
   )
 }
 
-const notes: { title: string; body: string; link?: { href: string; label: string } }[] = [
+const notes: { title: string; body: string; talk?: boolean }[] = [
   {
     title: 'Economics Challenge, 1st place',
     body: 'Months of FOMC press conferences, housing market conditions and administrative actions. Each of us played a world figure; I chose former UK Prime Minister Keir Starmer because I knew little about him, and argued his policy recommendations before economics professors at Mount St. Mary’s University.',
@@ -63,8 +64,8 @@ const notes: { title: string; body: string; link?: { href: string; label: string
   },
   {
     title: 'TEDxSCA Youth',
-    body: 'Gen-Z is Cooked, to an audience of 100, professionally recorded. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
-    link: { href: 'https://www.youtube.com/watch?v=PbbQxn38bcQ', label: 'Watch the talk' },
+    body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel under my given name, Yibo Wang. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
+    talk: true,
   },
 ]
 
@@ -128,9 +129,9 @@ export default function About() {
           <article key={n.title} className="bg-panel p-6 md:p-8">
             <h3 className="font-display font-bold text-[18px] leading-snug text-white">{n.title}</h3>
             <p className="mt-2 text-[14.5px] leading-[1.65] text-white/65">{n.body}</p>
-            {n.link && (
+            {n.talk && (
               <div className="mt-4">
-                <MoreLink href={n.link.href}>{n.link.label}</MoreLink>
+                <WatchTalk />
               </div>
             )}
           </article>
@@ -142,7 +143,7 @@ export default function About() {
           <img src="/media/tedx-stats.webp" alt="Alan on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
           <Caption>
             TEDxSCA Youth, 2026. The slide, as photographed.{' '}
-            <MoreLink href="https://www.youtube.com/watch?v=PbbQxn38bcQ">Watch the talk</MoreLink>
+            <WatchTalk />
           </Caption>
         </figure>
         <figure className="bg-panel p-6 md:p-8 flex flex-col">

@@ -46,7 +46,7 @@ export default function Navbar() {
         href="#write"
         className="shrink-0 text-[13px] font-medium text-white/85 hover:text-white transition-colors duration-200"
       >
-        Write to Alan
+        Contact
       </a>
     </nav>
   )

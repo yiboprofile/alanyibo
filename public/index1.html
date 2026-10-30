@@ -424,6 +424,36 @@ footer .f2 p{font-size:14px;color:var(--muted);margin:0 0 6px}
   .js .rise,.js .bars .col,.js .hbars .t i,.js .blocks .bar i,.js .pbar.ours,.js .seg{opacity:1!important;transform:none!important;transition:none!important}
   .room i{transition:none}
 }
+
+/* About timeline: one tile per year, sized by how much happened that year */
+.bento{margin-top:clamp(40px,5vw,64px)}
+.bento-key{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0 0 18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.bento-key span{display:inline-flex;align-items:center;gap:8px}
+.bento-key i{display:inline-block;width:11px;height:11px}
+.bento-key .kb{background:var(--ink)}
+.bento-key .ks{border:1px solid var(--accent)}
+.bento-g{display:grid;gap:12px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.7fr);grid-template-rows:auto 1fr}
+.bento .y2023{grid-column:1;grid-row:1}
+.bento .y2024{grid-column:1;grid-row:2}
+.bento .y2025{grid-column:2;grid-row:1 / span 2}
+.bento .y2026{grid-column:3;grid-row:1 / span 2}
+.bento .tile{border:1px solid var(--rule-2);background:transparent;padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.bento .ty{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.4vw,34px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.bento ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.bento .y2026 ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bento .y2026 li:last-child{grid-column:1 / -1}
+.bento li{padding:12px 14px;min-width:0}
+.bento li b{display:block;font-family:var(--sans);font-weight:600;font-size:15px;line-height:1.3;letter-spacing:-.005em}
+.bento li span{display:block;margin-top:3px;font-size:13px;line-height:1.45}
+.bento li.b{background:var(--ink);color:var(--paper)}
+.bento li.b span{color:rgba(244,239,230,.72)}
+.bento li.s{border:1px solid var(--accent);color:var(--ink)}
+.bento li.s span{color:var(--muted)}
+@media (max-width:900px){
+  .bento-g{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+  .bento .tile{grid-column:auto!important;grid-row:auto!important}
+}
+@media (max-width:520px){.bento .y2026 ul{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -976,24 +1006,14 @@ footer .f2 p{font-size:14px;color:var(--muted);margin:0 0 6px}
       <p class="lede2 rise" style="--d:.1s">Urbana High School, Frederick, Maryland · Class of 2027. Economics is what I want to study, and my products are where I try out what I learn.</p>
     </div>
 
-    <div class="tl">
-      <div class="tl-h"><span></span><span class="mono" style="color:var(--ink)">Built</span><span class="mono acc">Studied and argued</span></div>
-      <div class="tl-r rise"><span class="yr">2023</span>
-        <ul class="bt"><li><b>HolidayHelperAI</b><span>Led a team of five, grade 9.</span></li></ul><ul class="st"></ul></div>
-      <div class="tl-r rise"><span class="yr">2024</span>
-        <ul class="bt"><li><b>SoundSplit</b><span>On the App Store, August.</span></li></ul><ul class="st"></ul></div>
-      <div class="tl-r rise"><span class="yr">2025</span>
-        <ul class="bt"><li><b>Crave Deals</b><span>The business plan.</span></li><li><b>Dermat AI</b><span>On the App Store, August.</span></li></ul>
-        <ul class="st"><li><b>FBLA, 3rd in the nation</b><span>Business Plan Event, after 3rd in Maryland.</span></li></ul></div>
-      <div class="tl-r rise"><span class="yr">2026</span>
-        <ul class="bt"></ul>
-        <ul class="st">
-          <li><b>Economics Challenge, 1st (state)</b><span>One of six chosen from just under 100.</span></li>
-          <li><b>Wharton LBW</b><span>One of just over 100 accepted to session one.</span></li>
-          <li><b>TEDxSCA Youth</b><span>A talk: Is Gen-Z Cooked?</span></li>
-          <li><b>SCISS startup program</b><span>Best Presentation and Best Team.</span></li>
-          <li><b>National Merit Semifinalist</b></li>
-        </ul></div>
+    <div class="bento rise">
+      <p class="bento-key"><span><i class="kb"></i>Built</span><span><i class="ks"></i>Studied and argued</span></p>
+      <div class="bento-g">
+        <div class="tile y2023"><h3 class="ty">2023</h3><ul><li class="b"><b>HolidayHelperAI</b><span>Led a team of five, grade 9.</span></li></ul></div>
+        <div class="tile y2024"><h3 class="ty">2024</h3><ul><li class="b"><b>SoundSplit</b><span>On the App Store, August.</span></li></ul></div>
+        <div class="tile y2025"><h3 class="ty">2025</h3><ul><li class="b"><b>Crave Deals</b><span>The business plan.</span></li><li class="b"><b>Dermat AI</b><span>On the App Store, August.</span></li><li class="s"><b>FBLA, 3rd in the nation</b><span>Business Plan Event, after 3rd in Maryland.</span></li></ul></div>
+        <div class="tile y2026"><h3 class="ty">2026</h3><ul><li class="s"><b>Economics Challenge, 1st (state)</b><span>One of six chosen from just under 100.</span></li><li class="s"><b>Wharton LBW</b><span>One of just over 100 accepted to session one.</span></li><li class="s"><b>TEDxSCA Youth</b><span>A talk: Is Gen-Z Cooked?</span></li><li class="s"><b>SCISS startup program</b><span>Best Presentation and Best Team.</span></li><li class="s"><b>National Merit Semifinalist</b></li></ul></div>
+      </div>
     </div>
 
     <div class="stories">

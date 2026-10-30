@@ -117,7 +117,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .chap{position:relative;padding-top:clamp(96px,12vw,170px)}
 .chap-head{position:relative}
 .numeral{position:absolute;right:0;top:-.12em;font-family:var(--serif);font-size:clamp(130px,17vw,260px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(244,237,227,.13);letter-spacing:-.04em;pointer-events:none;user-select:none;z-index:0}
-.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:var(--ink-3)}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:12px;color:var(--ink-3)}
 .eyebrow b{font-weight:500;color:var(--amber)}
 .eyebrow i{display:block;width:36px;height:1px;background:var(--line-2)}
 .h2{position:relative;font-family:var(--serif);font-size:clamp(40px,5.2vw,80px);line-height:.98;letter-spacing:-.022em;max-width:22ch;text-wrap:balance}
@@ -126,7 +126,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 @media (min-width:900px){.h2.by-sentence{max-width:none}.h2.by-sentence .ln{display:block;white-space:nowrap}}
 /* a heading kept on one line on wide screens; sized down so it still fits the column */
 @media (min-width:900px){.h2.one-line{max-width:none;white-space:nowrap;font-size:clamp(30px,3.85vw,66px)}}
-.pname{position:relative;margin-top:clamp(4px,.6vw,10px);font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);line-height:1.1}
+.pname{position:relative;margin-top:2px;font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);line-height:1.1}
 .pname em{color:var(--ink-3)}
 .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(32px,4vw,56px);padding-top:clamp(24px,2.6vw,36px);border-top:1px solid var(--line-2);align-items:start}
 .intro>*{max-width:40rem}
@@ -136,7 +136,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .links a svg{width:12px;height:12px}
 
 /* facts row */
-.facts{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(28px,3.4vw,48px)}
+.facts{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(20px,2vw,28px)}
 .facts>div{padding:24px 22px 26px 0}
 .facts>div+div{padding-left:22px;border-left:1px solid var(--line)}
 .facts .v{display:block;font-family:var(--serif);font-size:clamp(36px,4vw,60px);line-height:1;letter-spacing:-.02em;margin:12px 0 10px;white-space:nowrap}

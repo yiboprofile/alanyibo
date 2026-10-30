@@ -37,7 +37,7 @@
 }
 
 @layer components {
-  /* Provisional copy, for Alan to fill in. The review switch in App.tsx turns the highlight off. */
+  /* Provisional copy, for Yibo to fill in. The review switch in App.tsx turns the highlight off. */
   mark.tbd {
     background: var(--color-mark);
     color: var(--color-mark-ink);

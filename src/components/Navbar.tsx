@@ -24,7 +24,7 @@ export default function Navbar() {
           className="text-white text-[15px] font-semibold tracking-[0.01em]"
           style={{ fontFamily: "'Manrope', sans-serif" }}
         >
-          Alan Wang
+          Yibo Wang
         </span>
       </a>
 

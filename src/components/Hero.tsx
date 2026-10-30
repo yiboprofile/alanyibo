@@ -1,6 +1,6 @@
 /* every item here appears on the application or in the store data, and can be checked */
 const proof = [
-  'FBLA chapter ~50 → ~400',
+  'FBLA chapter ~150 → ~400',
   '2 apps ~2,850 downloads',
   '3rd in the nation',
   'TEDx speaker',
@@ -52,8 +52,8 @@ export default function Hero() {
           {/* Subtext + CTAs */}
           <div className="max-w-sm md:pb-1">
             <p className="text-white/60 text-[14.5px] leading-[1.7] font-light">
-              I&rsquo;m Alan Wang, a senior at Urbana High School in Frederick,
-              Maryland. I helped grow our FBLA chapter from about 50 members to
+              I&rsquo;m Yibo Wang, a senior at Urbana High School in Frederick,
+              Maryland. I helped grow our FBLA chapter from about 150 members to
               400, co-founded a coupon company and an SAT tutoring business,
               and built three apps. Most of it came down to the same problem:
               getting the first person to say yes.
@@ -78,7 +78,7 @@ export default function Hero() {
                 href="#about"
                 className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/80 hover:text-white transition-colors duration-200"
               >
-                About Alan
+                About Yibo
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M4 2.5l4 3.5-4 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

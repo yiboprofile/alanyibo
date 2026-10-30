@@ -2,7 +2,7 @@ import { Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
 
 /* The essay will answer these in order: the first guess, the first customer, the question underneath */
 const prompts = [
-  'The first price Alan ever set, and what he was guessing at.',
+  'The first price Yibo ever set, and what he was guessing at.',
   'What the first paying customer changed.',
   'What a price measures when there are no customers yet.',
 ]
@@ -12,7 +12,7 @@ export default function Note() {
     <Wrap id="note" labelledBy="h-note" className="pt-[clamp(96px,10vw,144px)]">
       <Split heading={<Headline id="h-note" lines={['A note on pricing', 'before users.']} />}>
         <Lede>
-          Reserved for a short piece by Alan, 500 to 800 words, on setting prices for things nobody had bought yet. It
+          Reserved for a short piece by Yibo, 500 to 800 words, on setting prices for things nobody had bought yet. It
           will answer three questions.
         </Lede>
       </Split>

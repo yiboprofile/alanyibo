@@ -11,7 +11,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 
 function App() {
-  // Review aid: shows every blank Alan still has to fill in. Remove at launch.
+  // Review aid: shows every blank Yibo still has to fill in. Remove at launch.
   const [showBlanks, setShowBlanks] = useState(true)
 
   return (
@@ -31,9 +31,9 @@ function App() {
         <Contact />
 
         <footer className="flex flex-wrap justify-between gap-x-6 gap-y-2 px-6 md:px-12 pt-7 pb-[84px] text-[13px] leading-[1.6] text-white/50">
-          <span>Alan Wang &middot; Urbana High School &middot; Frederick, Maryland &middot; Class of 2027</span>
+          <span>Yibo Wang &middot; Urbana High School &middot; Frederick, Maryland &middot; Class of 2027</span>
           <span>Product screenshots as published, October 2026. TEDxSCA Youth photographs by Dong Ho.</span>
-          <span className="basis-full">Content and data by Alan Wang; site designed and built with Claude Code.</span>
+          <span className="basis-full">Content and data by Yibo Wang; site designed and built with Claude Code.</span>
         </footer>
       </main>
 

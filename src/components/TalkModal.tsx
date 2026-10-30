@@ -47,7 +47,7 @@ export default function WatchTalk() {
         <div className="flex items-center justify-between gap-4 pb-3">
           <span className="text-[14px] font-medium text-white/85">
             Is Gen-Z Cooked? &middot; TEDxSCA Youth, 2026{' '}
-            <span className="text-white/50">&middot; on the TEDx Talks channel, under my given name, Yibo Wang</span>
+            <span className="text-white/50">&middot; on the official TEDx Talks channel</span>
           </span>
           <button
             type="button"

@@ -130,7 +130,7 @@ function Screens({ screens, photo }: { screens: Image[]; photo?: Image }) {
   )
 }
 
-/* What Alan still has to write for this case, gathered in one place instead of scattered through the text */
+/* What Yibo still has to write for this case, gathered in one place instead of scattered through the text */
 function Blanks({ items }: { items: string[] }) {
   return (
     <aside className="todo border border-dashed border-mark-ink/30 p-6 md:p-8" aria-label="Still to write">

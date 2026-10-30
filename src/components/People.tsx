@@ -4,7 +4,7 @@ import { Captions, Headline, Label, Lede, Split, Tbd, Wrap } from './ui'
 /* One dot is one person, everywhere in this section. */
 
 const ROOM = 400 // FBLA chapter now
-const JOINED = 50 // FBLA chapter when Alan joined
+const JOINED = 150 // FBLA chapter when Yibo joined
 
 /* A fixed shuffle, so the room fills in scattered seats rather than row by row, and the same way on every visit */
 function seatOrder(n: number) {
@@ -23,7 +23,7 @@ function seatOrder(n: number) {
 
 const stages = [
   { count: 1, label: 'One person goes first.' },
-  { count: JOINED, label: 'About 50 members when I joined.' },
+  { count: JOINED, label: 'About 150 members when I joined.' },
   { count: ROOM, label: 'About 400 now.' },
 ]
 
@@ -67,7 +67,7 @@ function Room() {
   }, [])
 
   return (
-    <figure className="bg-panel p-6 md:p-10" aria-label="Urbana FBLA chapter: about 50 members when Alan joined, about 400 now">
+    <figure className="bg-panel p-6 md:p-10" aria-label="Urbana FBLA chapter: about 150 members when Yibo joined, about 400 now">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,17rem)] lg:items-end">
         <div
           ref={host}

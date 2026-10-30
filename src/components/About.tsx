@@ -3,7 +3,7 @@ import { Caption, Headline, Label, Lede, Split, Wrap } from './ui'
 
 type Item = { title: string; detail: string; tbd?: boolean }
 
-/* Two lanes over the same four years: what Alan built, and the economics he did away from a screen */
+/* Two lanes over the same four years: what Yibo built, and the economics he did away from a screen */
 const years: { year: string; built: Item[]; studied: Item[] }[] = [
   {
     year: '2023',
@@ -64,7 +64,7 @@ const notes: { title: string; body: string; talk?: boolean }[] = [
   },
   {
     title: 'TEDxSCA Youth',
-    body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel under my given name, Yibo Wang. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
+    body: '“Is Gen-Z Cooked?”, to an audience of 100, published on the official TEDx Talks channel. One slide counted the members of FBLA (230K), DECA (316K+) and FFA (1.04M).',
     talk: true,
   },
 ]
@@ -140,7 +140,7 @@ export default function About() {
 
       <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <figure className="min-w-0">
-          <img src="/media/tedx-stats.webp" alt="Alan on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
+          <img src="/media/tedx-stats.webp" alt="Yibo on the TEDx stage in front of the slide with the membership numbers for FBLA, DECA and FFA" width={1800} height={1200} loading="lazy" className="w-full h-auto" />
           <Caption>
             TEDxSCA Youth, 2026. The slide, as photographed.{' '}
             <WatchTalk />

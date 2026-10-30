@@ -306,7 +306,7 @@ export default function Cases() {
         }}
         photo={{
           src: '/assets/photos/award-holidayhelper.webp',
-          alt: 'The DCIA Stellar Young Achiever Award slide for HolidayHelperAI, naming Alan Wang as team leader',
+          alt: 'The DCIA Stellar Young Achiever Award slide for HolidayHelperAI, naming Yibo Wang as team leader',
           width: 1386,
           height: 782,
           position: '0 50%',
@@ -403,7 +403,7 @@ export default function Cases() {
         }}
         photo={{
           src: '/assets/photos/fbla-3.webp',
-          alt: 'Alan, right, with two FBLA teammates beside the Welcome to the 2025 National Leadership Conference sign',
+          alt: 'Yibo, right, with two FBLA teammates beside the Welcome to the 2025 National Leadership Conference sign',
           width: 1280,
           height: 1218,
           position: '100% 50%',

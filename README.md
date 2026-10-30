@@ -2,7 +2,13 @@
 
 Source for **https://yiboprofile.github.io**, a portfolio of the products Yibo Wang built and the people they brought in.
 
-Content and data by Yibo Wang; site designed and built with Claude Code.
+Content and data by Yibo Wang; analysis, site design and build with Claude Code, using skills including MotionSites Web Builder and Humanizer.
+
+## Pages
+
+- `/` is `public/index.html`, a single hand-built page (the former `index3.html`; that address now redirects here).
+- `/4.html` is the React + Vite version (source in `4.html` and `src/`).
+- `/index1.html` and `/index2.html` are two alternative designs kept for comparison.
 
 ## Run it
 

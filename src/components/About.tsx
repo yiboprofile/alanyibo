@@ -81,6 +81,26 @@ const talk = {
 /* Preview only: ?tl=lanes | spine | rows shows the alternative layouts; the default is the axis */
 const variant = typeof window === 'undefined' ? 'axis' : new URLSearchParams(window.location.search).get('tl') || 'axis'
 
+/* year tiles: each year is a box with its cards inside */
+function Tile({ y, cols = 1, className = '' }: { y: (typeof years)[number]; cols?: number; className?: string }) {
+  const items = [...y.built.map((it) => ({ it, lane: 'built' as const })), ...y.studied.map((it) => ({ it, lane: 'studied' as const }))]
+  return (
+    <div className={`border border-white/10 p-5 flex flex-col gap-4 min-w-0 ${className}`}>
+      <span className="font-display font-extrabold text-[clamp(1.4rem,2.2vw,1.85rem)] leading-none text-white tabular-nums">{y.year}</span>
+      <ul className="grid gap-2" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
+        {items.map(({ it, lane }, i) => (
+          <Chip
+            key={it.title}
+            item={it}
+            lane={lane}
+            className={cols > 1 && items.length % cols === 1 && i === items.length - 1 ? 'col-span-full' : ''}
+          />
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function TimelineWide() {
   if (variant === 'lanes') {
     /* a table: one row per lane, one column per year, lane names down the left */
@@ -153,6 +173,32 @@ function TimelineWide() {
             </li>
           ))}
         </ol>
+      </div>
+    )
+  }
+
+  if (variant === 'split' || variant === 'bento') {
+    const [y23, y24, y25, y26] = years
+    if (variant === 'split') {
+      /* the first three years stacked on the left, the busiest year alone on the right */
+      return (
+        <div className="hidden md:grid grid-cols-2 gap-3">
+          <div className="grid gap-3 content-start">
+            <Tile y={y23} />
+            <Tile y={y24} />
+            <Tile y={y25} cols={3} />
+          </div>
+          <Tile y={y26} cols={2} />
+        </div>
+      )
+    }
+    /* bento: tiles sized by how much happened that year */
+    return (
+      <div className="hidden md:grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.7fr)] grid-rows-[auto_1fr] gap-3">
+        <Tile y={y23} />
+        <Tile y={y25} className="row-span-2" />
+        <Tile y={y26} cols={2} className="row-span-2" />
+        <Tile y={y24} />
       </div>
     )
   }

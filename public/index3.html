@@ -132,6 +132,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(32px,4vw,56px);padding-top:clamp(24px,2.6vw,36px);border-top:1px solid var(--line-2);align-items:start}
 .intro>*{max-width:40rem}
 .links{display:flex;flex-wrap:wrap;gap:8px}
+.links a .li{flex:none;margin-right:2px;opacity:.9}
+.links a .li{flex:none;opacity:.9}
 .links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--line-2);border-radius:999px;text-decoration:none;font-size:14px;color:var(--ink-2);transition:border-color .25s,color .25s}
 .links a:hover{border-color:var(--amber);color:var(--ink)}
 .links a svg{width:12px;height:12px}
@@ -523,6 +525,13 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 /* SAT Tutoring has no links beside its intro, so the intro runs the full width */
 #tutoring .intro{grid-template-columns:minmax(0,1fr)}
 #tutoring .intro>.lede{max-width:none}
+
+/* intros without links beside them run the full width */
+#pricing .intro{grid-template-columns:minmax(0,1fr)}
+#pricing .intro>.lede{max-width:none}
+#cravedeals .intro{grid-template-columns:minmax(0,1fr)}
+#cravedeals .intro>.lede{max-width:none}
+.crave-link{display:flex;justify-content:flex-end;margin-top:14px}
 </style>
 </head>
 <body>
@@ -718,9 +727,9 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="intro">
       <p class="lede" data-r>An iPhone and Android app for looking after your skin. You scan a photo and it shows what it may be and how sure the model is. There’s also a skin diary, a routine built for your skin and an AI assistant you can ask at any hour. It’s free, with nothing to buy inside.</p>
       <div class="links" data-r style="--d:.1s">
-        <a href="https://dermatai.com/" target="_blank" rel="noopener">dermatai.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
-        <a href="https://apps.apple.com/us/app/dermat-ai/id6748587012" target="_blank" rel="noopener">On the App Store <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dermatai.app" target="_blank" rel="noopener">On Google Play <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="https://dermatai.com/" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M21.17 8H12M3.95 6.06 8.54 14M10.88 21.94 15.46 14"/></svg>dermatai.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="https://apps.apple.com/us/app/dermat-ai/id6748587012" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M16.37 12.79c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.39-3.69zM14.1 6.04c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg>On the App Store <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="https://play.google.com/store/apps/details?id=com.dermatai.app" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M4.2 2.3a1.5 1.5 0 0 0-.45 1.1v17.2c0 .44.17.83.45 1.1l9.55-9.7L4.2 2.3zm10.75 8.5 2.7-2.75L6.2 1.6a1.5 1.5 0 0 0-1.1-.2l9.85 9.4zm0 2.4-9.85 9.4c.36.08.75.03 1.1-.17l11.45-6.48-2.7-2.75zm3.98-3.88-3.03 3.08 3.03 3.08 2.68-1.52c.9-.5.9-1.6 0-2.1l-2.68-1.54z"/></svg>On Google Play <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
       </div>
     </div>
 
@@ -788,7 +797,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="intro">
       <p class="lede" data-r>A website for planning trips, with an AI assistant, travel plans, an inspiration board and a journal. I led the team of five that built it in ninth grade, and I set the prices. More than ten people have paid for it.</p>
       <div class="links" data-r style="--d:.1s">
-        <a href="https://holidayhelperai.com/" target="_blank" rel="noopener">holidayhelperai.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="https://holidayhelperai.com/" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M21.17 8H12M3.95 6.06 8.54 14M10.88 21.94 15.46 14"/></svg>holidayhelperai.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
       </div>
     </div>
     <div class="grid3" id="hhRow">
@@ -843,9 +852,9 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="intro">
       <p class="lede" data-r>An iPhone and Android app that splits a song into its stems, so you can take out the vocals for karaoke or mute the piano to practise along. I charge by the minute because every minute processed costs me money. With a subscription, the heaviest users would cost more than they paid.</p>
       <div class="links" data-r style="--d:.1s">
-        <a href="https://soundsplitai.com/" target="_blank" rel="noopener">soundsplitai.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
-        <a href="https://apps.apple.com/us/app/sound-split/id6618147632" target="_blank" rel="noopener">On the App Store <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
-        <a href="https://play.google.com/store/apps/details?id=sound.split.ai" target="_blank" rel="noopener">On Google Play <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="https://soundsplitai.com/" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M21.17 8H12M3.95 6.06 8.54 14M10.88 21.94 15.46 14"/></svg>soundsplitai.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="https://apps.apple.com/us/app/sound-split/id6618147632" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M16.37 12.79c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.39-3.69zM14.1 6.04c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg>On the App Store <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="https://play.google.com/store/apps/details?id=sound.split.ai" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M4.2 2.3a1.5 1.5 0 0 0-.45 1.1v17.2c0 .44.17.83.45 1.1l9.55-9.7L4.2 2.3zm10.75 8.5 2.7-2.75L6.2 1.6a1.5 1.5 0 0 0-1.1-.2l9.85 9.4zm0 2.4-9.85 9.4c.36.08.75.03 1.1-.17l11.45-6.48-2.7-2.75zm3.98-3.88-3.03 3.08 3.03 3.08 2.68-1.52c.9-.5.9-1.6 0-2.1l-2.68-1.54z"/></svg>On Google Play <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
       </div>
     </div>
 
@@ -989,9 +998,6 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     </div>
     <div class="intro">
       <p class="lede" data-r>I co-founded this coupon company, and run it as COO, to help small local restaurants compete with big chains. We only take a commission on what the diners we bring in spend, so a restaurant pays nothing if we bring no one in. Our business plan placed 3rd in the nation, and since then we have pitched more than 40 restaurants, venture firms and investors.</p>
-      <div class="links" data-r style="--d:.1s">
-        <a href="http://crave.deals/" target="_blank" rel="noopener">crave.deals <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
-      </div>
     </div>
   </div>
 
@@ -1034,6 +1040,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
         <span class="mono">How a diner uses it</span>
         <div class="photo"><img class="zoom" src="media/crave-how.webp" width="1623" height="825" loading="lazy" decoding="async" alt="The How does it work section of crave.deals, in four steps: Choose Your Location, Select Restaurant, Save Coupon, Show Coupon" /></div>
         <p class="note">crave.deals: choose a location, pick a restaurant, save the coupon and show it at checkout.</p>
+        <div class="links crave-link"><a href="http://crave.deals/" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M21.17 8H12M3.95 6.06 8.54 14M10.88 21.94 15.46 14"/></svg>crave.deals <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a></div>
       </div>
     </div>
     <div class="team" data-r><span class="mono">Team</span><p>Three co-founders. As COO I wrote the market analysis and the financial sections and visited restaurants in the Frederick area.</p></div>
@@ -1090,7 +1097,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 <footer>
   <p>Yibo Wang · Urbana High School · Frederick, Maryland · Class of 2027</p>
   <p>Product screenshots as published, October 2026. TEDxSCA Youth photographs by Dong Ho.</p>
-  <p>Content and data by Yibo Wang; site designed and built using Claude Code skills including MotionSites Web Builder and Humanizer.</p>
+  <p>Content and data by Yibo Wang; analysis, site design and build with Claude Code, using skills including MotionSites Web Builder and Humanizer.</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

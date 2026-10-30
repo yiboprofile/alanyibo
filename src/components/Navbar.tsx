@@ -4,7 +4,6 @@ const navLinks = [
   { label: 'People', href: '#people' },
   { label: 'Cases', href: '#cases' },
   ...(RELEASE ? [] : [{ label: 'Pricing note', href: '#note' }]),
-  { label: 'About', href: '#about' },
 ]
 
 function AnchorMark() {
@@ -43,12 +42,12 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* Contact */}
+      {/* About sits on the right, where it stays visible on phones too */}
       <a
-        href="#write"
+        href="#about"
         className="shrink-0 text-[13px] font-medium text-white/85 hover:text-white transition-colors duration-200"
       >
-        Contact
+        About
       </a>
     </nav>
   )

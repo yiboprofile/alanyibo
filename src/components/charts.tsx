@@ -392,7 +392,7 @@ export function TutorTeam() {
           ))}
           <span className="size-6 rounded-full border border-dashed border-white/50" />
         </div>
-        <span className="block mt-2.5 text-[13px] text-white/60">10+ clients, each with a weekly or monthly plan</span>
+        <span className="block mt-2.5 text-[13px] text-white/60">10+ clients, the first ones through friends; each has a weekly or monthly plan</span>
       </div>
       <div>
         <div className="flex flex-wrap items-center gap-2" aria-hidden="true">

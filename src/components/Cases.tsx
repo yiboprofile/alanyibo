@@ -358,7 +358,6 @@ export default function Cases() {
           'When it started: the activity list says grade 12, the additional information says grades 11 and 12.',
           'Why $37 when others charge $70–90: what the low price cost you, and what it brought in (more students, word of mouth?).',
           'Where the $70–90 range comes from (local tutors, test-prep companies), so a reader can check it.',
-          'Where the first clients came from.',
           'One or two lines from a family or student, with their permission (can be anonymous).',
         ]}
       >

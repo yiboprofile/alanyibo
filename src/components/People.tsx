@@ -113,7 +113,7 @@ function Room() {
 const groups = [
   { count: 90, before: 35, plus: true, title: 'Computer Science Club', what: '35 members when I became co-president, 90+ now. Nearly 30 entered USACO, MITIT and CALICO.' },
   { count: 50, plus: true, title: 'SCISS startup program', what: 'Participants in the two-week program where I was a student counselor, while competing in it. My team won Best Presentation and Best Team.' },
-  { count: 40, dashed: 5, title: 'DreamCollegeAI', what: 'In grade 10 I managed 35–40 interns in marketing, quality control and software. Our posts were viewed close to 300,000 times.' },
+  { count: 40, dashed: 5, title: 'DreamCollegeAI', what: 'In grade 10 I managed 35–40 interns in marketing, quality control and software. Our posts got close to 300,000 views.' },
   { count: 10, plus: true, title: 'Urbana SAT Tutoring', what: 'Clients so far, with three tutors hired as it grew.' },
 ]
 

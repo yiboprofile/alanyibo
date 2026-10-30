@@ -33,9 +33,9 @@ export default function Cases() {
         title={['Dermat AI.', 'No price at all.']}
         lede={
           <>
-            An iPhone and Android app for looking after your skin. Scan a photo to see what it may be and how sure the
-            model is, keep a skin diary, follow a routine built for your skin, and ask an AI assistant at any hour.
-            Free, with nothing to buy inside.
+            An iPhone and Android app for looking after your skin. You scan a photo and it shows what it may be and how
+            sure the model is. There&rsquo;s also a skin diary, a routine built for your skin and an AI assistant you can
+            ask at any hour. It&rsquo;s free, with nothing to buy inside.
           </>
         }
         links={[
@@ -151,8 +151,8 @@ export default function Cases() {
         lede={
           <>
             An iPhone and Android app that splits a song into its stems, so you can take out the vocals for karaoke or
-            mute the piano to practise along. I charge by the minute, not by subscription: every minute processed costs
-            me money, and with a flat fee the heaviest users would cost more than they paid.
+            mute the piano to practise along. I charge by the minute because every minute processed costs me money.
+            With a subscription, the heaviest users would cost more than they paid.
           </>
         }
         links={[
@@ -282,9 +282,9 @@ export default function Cases() {
         title={['HolidayHelperAI.', 'Three tiers.']}
         lede={
           <>
-            A website that plans trips and vacations: an AI assistant, travel plans, an inspiration board and a journal.
-            I led the team of five that built it in ninth grade, and I set the prices. More than ten people have paid
-            for it.
+            A website for planning trips, with an AI assistant, travel plans, an inspiration board and a journal. I led
+            the team of five that built it in ninth grade, and I set the prices. More than ten people have paid for
+            it.
           </>
         }
         links={[{ href: 'https://holidayhelperai.com/', label: 'holidayhelperai.com' }]}
@@ -336,9 +336,9 @@ export default function Cases() {
         title={['Urbana SAT Tutoring.', 'Paid for by results.']}
         lede={
           <>
-            A one-on-one SAT tutoring business in Urbana that I co-founded: $37 a session, where others charge $70 to
-            $90. Every student gets a weekly and monthly plan. After more than ten clients, more than the founders could
-            teach, we hired three tutors.
+            I co-founded a one-on-one SAT tutoring business in Urbana. We charge $37 a session; others usually charge
+            $70 to $90. Every student gets a weekly and a monthly plan. We had more than ten clients, more than the
+            founders could teach, so we hired three tutors.
           </>
         }
         links={[]}
@@ -382,9 +382,10 @@ export default function Cases() {
         title={['Crave Deals.', 'Third, then the street.']}
         lede={
           <>
-            A coupon company I co-founded and run as COO, to help small local restaurants compete with big chains. We
-            take a commission only on what the diners we bring in spend, so a restaurant pays nothing unless it works.
-            The plan placed 3rd in the nation; since then we have pitched restaurants, venture firms and investors.
+            I co-founded this coupon company, and run it as COO, to help small local restaurants compete with big
+            chains. We only take a commission on what the diners we bring in spend, so a restaurant pays nothing if we
+            bring no one in. Our business plan placed 3rd in the nation, and since then we have pitched restaurants,
+            venture firms and investors.
           </>
         }
         links={[{ href: 'http://crave.deals/', label: 'crave.deals' }]}

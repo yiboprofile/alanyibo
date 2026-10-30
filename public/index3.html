@@ -487,6 +487,13 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 .tedx2 .lede{font-size:16px;line-height:1.55}
 .tedx2 .go{margin-top:auto;padding-top:6px}
 @media (max-width:860px){.tedx2{grid-template-columns:minmax(0,1fr)}.tedx2 .ph{aspect-ratio:16/9;min-height:0}.tedx2 h3{white-space:normal}}
+
+/* HolidayHelperAI: the two charts and the reflection share one row */
+.grid3{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,.9fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(24px,2.6vw,36px);align-items:stretch}
+.grid3 .panel-q{max-width:none;margin:0;font-size:clamp(20px,1.7vw,26px);line-height:1.25;align-self:center}
+.grid3 .panel-q .lab{display:block;margin-bottom:12px;color:var(--amber)}
+@media (max-width:1060px){.grid3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.grid3 .panel-q{grid-column:1 / -1}}
+@media (max-width:860px){.grid3{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -755,7 +762,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
         <a href="https://holidayhelperai.com/" target="_blank" rel="noopener">holidayhelperai.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a>
       </div>
     </div>
-    <div class="grid2" style="margin-top:clamp(40px,5vw,72px)">
+    <div class="grid3" id="hhRow">
       <div class="panel" data-r>
         <span class="mono">What each tier adds</span>
         <table class="tiers">
@@ -779,9 +786,9 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
         </ul>
         <p class="note">Prices on holidayhelperai.com in October 2026. Dashed months are free.</p>
       </div>
+      <p class="quote panel-q" data-r style="--d:.16s"><span class="mono lab">What I learned</span>The tiers are one product with features taken away, so what a person pays depends on which feature they can’t do without. <span class="soft">Each step roughly doubles the price.</span></p>
     </div>
-    <div class="reflect"><p class="quote" data-r><span class="mono lab">What I learned</span>The tiers are one product with features taken away, so what a person pays depends on which feature they can’t do without. <span class="soft">Each step roughly doubles the price.</span></p></div>
-    <div class="grid2 same-h" style="margin-top:clamp(40px,5vw,72px);align-items:start">
+    <div class="grid2 same-h" style="margin-top:12px;align-items:start">
       <figure data-r><div class="photo"><img class="zoom" src="media/hhai-pricing.webp" width="1280" height="980" loading="lazy" decoding="async" alt="The HolidayHelperAI pricing page: Standard $2 a month or $20 a year, Premium $4 or $40, Enterprise $8.99 or $80.99" /></div><figcaption class="cap">holidayhelperai.com/pricing, October 2026.</figcaption></figure>
       <figure data-r style="--d:.08s"><div class="photo"><img class="zoom" src="assets/photos/award-holidayhelper.webp" width="1386" height="782" loading="lazy" decoding="async" alt="The DCIA Stellar Young Achiever Award slide for HolidayHelperAI, naming Yibo Wang as team leader" /></div><figcaption class="cap">The DCIA award slide, with the team listed.</figcaption></figure>
     </div>

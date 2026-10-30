@@ -503,6 +503,14 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
   #people .roles>div{grid-template-columns:minmax(0,9.5rem) minmax(0,1fr)}
 }
 @media (min-width:1180px){#people .roles dd{white-space:nowrap}}
+
+/* SoundSplit: the three reflections side by side */
+.reflect.three{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:clamp(20px,2.4vw,40px);margin-top:clamp(32px,3.6vw,52px)}
+.reflect.three .quote{max-width:none;font-size:clamp(20px,1.65vw,26px);line-height:1.25}
+@media (max-width:1060px){.reflect.three{grid-template-columns:minmax(0,1fr)}}
+/* the facts row already ends with a rule, so the intro under it needs none; less air before the screenshots */
+.facts + .intro{border-top:0;padding-top:0}
+.phones{margin-top:clamp(36px,4vw,60px)}
 </style>
 </head>
 <body>
@@ -857,12 +865,11 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
       </div>
     </div>
 
-    <div class="reflect">
+    <div class="reflect three">
       <p class="quote" data-r><span class="mono lab">What I learned</span>Most buyers started small: four of the nine chose Basic. <span class="soft">But the two Premium buyers brought in 59% of the money and bought 71% of the minutes, at my lowest price per minute.</span></p>
       <p class="quote" data-r style="--d:.1s"><span class="mono lab">What I’d test next</span>The next thing to check is whether $0.15 still covers what a minute costs me to run.</p>
+      <p class="quote" data-r style="--d:.2s"><span class="mono lab">What I can’t tell yet</span>I can’t yet tell whether the banner pushes anyone to buy, because I never tracked how many ads a person saw before paying. <span class="soft">Each free user earned at most about ten cents in ads, while each of the 9 buyers spent about $45, so one person who paid was worth roughly four hundred who didn’t.</span></p>
     </div>
-
-    <div class="reflect"><p class="quote" data-r><span class="mono lab">What I can’t tell yet</span>I can’t yet tell whether the banner pushes anyone to buy, because I never tracked how many ads a person saw before paying. <span class="soft">Each free user earned at most about ten cents in ads, while each of the 9 buyers spent about $45, so one person who paid was worth roughly four hundred who didn’t.</span></p></div>
     <div class="grid2" style="margin-top:clamp(40px,5vw,72px)">
       <div class="panel" data-r>
         <span class="mono">Who pays</span>

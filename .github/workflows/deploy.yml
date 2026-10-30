@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
       - run: npm run build:release
         env:
-          # "/alanyibo" on yiboprofile.github.io/alanyibo, empty on a custom domain
+          # empty on yiboprofile.github.io and on a custom domain, "/<repo>" on a project site
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -448,8 +448,9 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 }
 @media (max-width:520px){.bento .y2026 ul{grid-template-columns:minmax(0,1fr)}}
 
-/* award shown as the last item in a product's screenshot row, at the phones' height */
+/* award shown as the last item in a product's screenshot row, a little shorter than the phones and centred on them */
 .phones.with-award{grid-template-columns:repeat(5,minmax(0,1fr)) minmax(0,var(--award))}
+.phones.with-award .award-card{align-self:center}
 .award-card img{width:100%;height:auto;border-radius:6px;border:1px solid var(--line);background:var(--bg-2);display:block}
 .award-card figcaption{margin-top:12px;font-size:13px;line-height:1.45;color:var(--ink-3)}
 /* pricing page and award slide: columns in proportion to each image's width-to-height, so both are the same height */
@@ -659,7 +660,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
       </div>
     </div>
 
-    <div class="phones with-award" id="dermatPhones" style="--award:2.787fr">
+    <div class="phones with-award" id="dermatPhones" style="--award:2.37fr">
       <figure data-p="0"><img src="media/dermat-scan.webp" width="540" height="1170" loading="lazy" decoding="async" alt="Dermat AI scanner: a photo of a face, buttons for gallery and camera, and a skin analysis reading healthy skin with severity none" /><figcaption><b>Scan:</b> a photo in, a condition and a confidence score out.</figcaption></figure>
       <figure data-p="1"><img src="media/dermat-analysis.webp" width="540" height="1170" loading="lazy" decoding="async" alt="Dermat AI skin health dashboard: latest scan healthy at 90 percent confidence, a health score trend and a conditions breakdown" /><figcaption><b>Dashboard:</b> the latest result, the trend, the breakdown.</figcaption></figure>
       <figure data-p="2"><img src="media/dermat-diary.webp" width="540" height="1170" loading="lazy" decoding="async" alt="Dermat AI skin diary: dated entries for face and hand, each with a photo, a note and recommendations" /><figcaption><b>Diary:</b> each scan saved with notes, to compare over time.</figcaption></figure>
@@ -784,7 +785,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
       </div>
     </div>
 
-    <div class="phones with-award" id="ssPhones" style="--award:2.889fr">
+    <div class="phones with-award" id="ssPhones" style="--award:2.46fr">
       <figure data-p="0"><img src="media/soundsplit-import.webp" width="540" height="1170" loading="lazy" decoding="async" alt="SoundSplit: an empty song screen with an Add Song button and a Subscribe button" /><figcaption><b>Import:</b> add a song from the phone.</figcaption></figure>
       <figure data-p="1"><img src="media/soundsplit-stems.webp" width="540" height="1170" loading="lazy" decoding="async" alt="SoundSplit: a grid of stems to choose, such as vocals, drums, bass, piano and guitar, with waveform previews" /><figcaption><b>Split:</b> choose the stems and preview each one.</figcaption></figure>
       <figure data-p="2"><img src="media/soundsplit-mixer-hd.webp" width="540" height="1170" loading="lazy" decoding="async" alt="SoundSplit's mixer: one slider per instrument above a song called Shape of You" /><figcaption><b>Mix:</b> one slider per stem.</figcaption></figure>
@@ -1198,7 +1199,7 @@ if(window.gsap && window.ScrollTrigger && !RM){
     /* phone rows: staggered parallax */
     ['#dermatPhones','#ssPhones'].forEach(function(id){
       gsap.utils.toArray(id+' figure').forEach(function(f,i){
-        var o=[60,-10,40,-30,20][i];
+        var o=[60,-10,40,-30,20,30][i];  /* the sixth item is the award */
         gsap.fromTo(f,{y:o+60},{y:-o*0.6,ease:'none',scrollTrigger:{trigger:id,start:'top bottom',end:'bottom top',scrub:true}}); }); });
   });
   addEventListener('load',function(){ ScrollTrigger.refresh(); });

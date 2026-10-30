@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { asset } from '../release'
 
 /* every item here appears on the application or in the store data, and can be checked */
@@ -9,13 +10,36 @@ const proof = [
   'National Merit Semifinalist',
 ]
 
+/* Phones only autoplay a video that is muted from the start. React sets `muted` as a property, never as the
+   attribute, so iPhone Safari treats the video as having sound and refuses to play it. Set both, then start it
+   ourselves, and try once more on the first touch if the browser still said no (Low Power Mode, data saver). */
+function useAutoplay() {
+  const ref = useRef<HTMLVideoElement>(null)
+  useEffect(() => {
+    const v = ref.current
+    if (!v) return
+    v.muted = true
+    v.defaultMuted = true
+    v.setAttribute('muted', '')
+    const start = () => v.play().catch(() => {})
+    start()
+    window.addEventListener('touchstart', start, { once: true, passive: true })
+    return () => window.removeEventListener('touchstart', start)
+  }, [])
+  return ref
+}
+
 export default function Hero() {
+  const video = useAutoplay()
   return (
     <section id="home" className="relative w-full h-screen min-h-[760px] overflow-hidden">
       {/* Full-bleed video background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
+        ref={video}
         src={asset('/hero.mp4')}
+        poster={asset('/hero-poster.webp')}
+        preload="auto"
         autoPlay
         muted
         loop

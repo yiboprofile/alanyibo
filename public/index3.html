@@ -472,6 +472,21 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 .pay .card .n{margin-top:auto;padding-top:12px}
 .pay .card .w + .n{margin-top:12px}
 @media (max-width:860px){.pay .card .w{min-height:0}}
+
+/* About: one compact column of parts */
+#about .chap{padding-top:clamp(64px,7vw,104px)}
+#about .intro{margin-top:clamp(18px,2vw,26px);padding-top:clamp(14px,1.6vw,20px)}
+#about .bento{margin-top:clamp(22px,2.4vw,32px)}
+#about .grid2{margin-top:12px}
+#about .panel{padding:clamp(18px,2vw,26px)}
+.tedx2{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);margin-top:12px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.tedx2 .ph{margin:0;position:relative;min-height:320px}
+.tedx2 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.tedx2 .tx{padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:12px}
+.tedx2 h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3vw,46px);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.tedx2 .lede{font-size:16px;line-height:1.55}
+.tedx2 .go{margin-top:auto;padding-top:6px}
+@media (max-width:860px){.tedx2{grid-template-columns:minmax(0,1fr)}.tedx2 .ph{aspect-ratio:16/9;min-height:0}.tedx2 h3{white-space:normal}}
 </style>
 </head>
 <body>
@@ -588,7 +603,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
       <li data-r>
         <div><h3>DreamCollegeAI</h3><div class="dots" data-dots="35:a,5:h" aria-hidden="true"></div></div>
         <p class="gv tnum">35–40</p>
-        <p>In grade 10 I managed 35–40 interns in marketing, quality control and software. Our posts got close to 300,000 views.</p>
+        <p>In grade 10 I managed 35–40 interns in marketing, quality control and software. Our posts got close to 300K views.</p>
       </li>
       <li data-r>
         <div><h3>Urbana SAT Tutoring</h3><div class="dots" data-dots="10:a" aria-hidden="true"></div></div>
@@ -1012,7 +1027,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
       </div>
     </div>
 
-    <div class="grid2" style="margin-top:clamp(48px,6vw,90px)">
+    <div class="grid2">
       <div class="panel" data-r>
         <span class="mono">Economics Challenge, 1st place</span>
         <p style="font-size:15.5px;color:var(--ink-2)">Months of FOMC press conferences, housing market conditions and administrative actions. Each of us played a world figure; I chose former UK Prime Minister Keir Starmer because I knew little about him, and argued his policy recommendations before economics professors at Mount St. Mary’s University.</p>
@@ -1024,20 +1039,16 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     </div>
   </div>
 
-  <div class="tedx">
-    <div class="bg"><img class="zoom" src="media/tedx-open.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Yibo on the TEDxSCA Youth stage, arms open to the audience, with a slide quoting Jalen Brunson" /></div>
-    <div class="in">
-      <p class="mono muted" data-r>TEDxSCA Youth, 2026.</p>
-      <h3 class="h2" style="font-size:clamp(40px,6vw,96px);margin-top:16px" data-r>“Is Gen-Z Cooked?”</h3>
-      <div class="intro" style="margin-top:22px">
-        <p class="lede" data-r>“Is Gen-Z Cooked?”, to an audience of 100. Published on the official TEDx Talks channel on October 19, 2026, with 577 views by the end of the month.</p>
-        <div data-r style="--d:.1s">
-          <p class="lede" style="color:var(--ink)">People ask that question about my generation a lot. My answer was no. Gen Z has more tools than any generation before it for turning an idea into something real, and that gives us a chance and a responsibility to build the future we say we want.</p>
-          <p style="margin-top:22px"><a class="btn fill" href="https://www.youtube.com/watch?v=PbbQxn38bcQ" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg> Watch the talk</a></p>
-        </div>
-      </div>
+  <div class="wrap"><div class="tedx2" data-r>
+    <figure class="ph"><img src="media/tedx-open.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Yibo on the TEDxSCA Youth stage, arms open to the audience, with a slide quoting Jalen Brunson" /></figure>
+    <div class="tx">
+      <p class="mono muted">TEDxSCA Youth, 2026.</p>
+      <h3>“Is Gen-Z Cooked?”</h3>
+      <p class="lede">“Is Gen-Z Cooked?”, to an audience of 100. Published on the official TEDx Talks channel on October 19, 2026, with 577 views by the end of the month.</p>
+      <p class="lede" style="color:var(--ink)">People ask that question about my generation a lot. My answer was no. Gen Z has more tools than any generation before it for turning an idea into something real, and that gives us a chance and a responsibility to build the future we say we want.</p>
+      <p class="go"><a class="btn fill" href="https://www.youtube.com/watch?v=PbbQxn38bcQ" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg> Watch the talk</a></p>
     </div>
-  </div>
+  </div></div>
 </section>
 </main>
 

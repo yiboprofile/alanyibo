@@ -122,6 +122,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .eyebrow i{display:block;width:36px;height:1px;background:var(--line-2)}
 .h2{position:relative;font-family:var(--serif);font-size:clamp(40px,5.2vw,80px);line-height:.98;letter-spacing:-.022em;max-width:22ch;text-wrap:balance}
 .h2 .soft{color:var(--ink-3);font-style:italic}
+/* one sentence per line on wide screens */
+@media (min-width:900px){.h2.by-sentence{max-width:none}.h2.by-sentence .ln{display:block;white-space:nowrap}}
 /* a heading kept on one line on wide screens; sized down so it still fits the column */
 @media (min-width:900px){.h2.one-line{max-width:none;white-space:nowrap;font-size:clamp(30px,3.85vw,66px)}}
 .pname{position:relative;margin-top:clamp(20px,2.6vw,34px);font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);line-height:1.1}
@@ -228,7 +230,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .room-canvas{width:100%;aspect-ratio:25/16;max-height:72svh}
 .room-foot{display:flex;justify-content:space-between;margin-top:14px;color:var(--ink-4)}
 
-.groups{margin-top:clamp(56px,7vw,100px);border-top:1px solid var(--line)}
+.groups{margin-top:14px;border-top:1px solid var(--line)}
 .groups>li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(18px,3vw,48px);padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
 .groups h3{font-size:18px;font-weight:500;line-height:1.3}
 .groups .gv{font-family:var(--serif);font-size:clamp(38px,3.8vw,56px);line-height:.95;white-space:nowrap}
@@ -452,7 +454,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 .award-card figcaption{margin-top:12px;font-size:13px;line-height:1.45;color:var(--ink-3)}
 /* pricing page and award slide: columns in proportion to each image's width-to-height, so both are the same height */
 @media (min-width:901px){.grid2.same-h{grid-template-columns:minmax(0,1.306fr) minmax(0,1.772fr)}}
-@media (max-width:900px){
+@media (max-width:860px){
   .phones.with-award{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62vw}
   .award-card{scroll-snap-align:center}
 }
@@ -538,7 +540,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     <div class="chap-head">
       <span class="numeral" aria-hidden="true">01</span>
       <p class="eyebrow mono" data-r><b>01</b><i></i>People</p>
-      <h2 class="h2" id="people-h" data-r>Members, students, interns, clients. <span class="soft">Every room starts with one person.</span></h2>
+      <h2 class="h2 by-sentence" id="people-h" data-r><span class="ln">Members, students, interns, clients.</span> <span class="soft ln">Every room starts with one person.</span></h2>
     </div>
     <div class="intro">
       <p class="lede" data-r>Before anything I built had a customer, I learned how to fill a room: a chapter, a club, a cohort of interns.</p>
@@ -557,7 +559,7 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
   <p class="bleed-cap">Our chapter at the FBLA National Leadership Conference, 2026.</p>
 
   <div class="wrap">
-    <p class="mono muted" style="margin-top:clamp(56px,7vw,96px)" data-r>One dot, one person</p>
+    <p class="mono muted" style="margin-top:clamp(48px,5vw,72px)" data-r>One dot, one person</p>
     <ul class="groups">
       <li data-r>
         <div><h3>Computer Science Club</h3><div class="dots" data-dots="35:a,55:b" aria-hidden="true"></div></div>

@@ -52,7 +52,7 @@ a{color:inherit}
 .brand{display:flex;align-items:baseline;gap:10px;padding:0 24px 28px;text-decoration:none;border-bottom:1px solid var(--line2)}
 .brand b{font-weight:850;font-size:22px;letter-spacing:-.03em;font-variation-settings:'wdth' 118}
 .brand span{color:var(--dim)}
-.idx{list-style:none;margin:0;padding:18px 0;display:grid;gap:0;flex:1}
+.idx{list-style:none;margin:0;padding:18px 0;display:grid;align-content:start;gap:0;flex:1;min-height:0;overflow-y:auto;scrollbar-width:none}
 .idx a{display:grid;grid-template-columns:34px 1fr;align-items:baseline;padding:7px 24px;text-decoration:none;color:var(--dim);
   border-left:2px solid transparent;transition:color .2s,border-color .2s,background .2s}
 .idx a span:last-child{font-size:15px;letter-spacing:-.005em;font-weight:500}
@@ -380,9 +380,10 @@ h1,h2,h3{margin:0;font-weight:820;letter-spacing:-.035em;font-variation-settings
 .cards article{display:flex;flex-direction:column;gap:14px}
 .cards h3{font-size:clamp(22px,2vw,28px);line-height:1.05;letter-spacing:-.025em}
 .cards .p{font-size:15.5px}
-.ted{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0;padding:0!important}
-.ted figure{margin:0;position:relative;min-height:100%}
-.ted img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+/* .cards article is a flex column; the talk card needs its own two-column grid, so it must out-rank that rule */
+.cards .ted{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0;padding:0!important;align-items:stretch}
+.ted figure{margin:0;position:relative;min-height:340px}
+.ted img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
 .ted .tx{padding:clamp(20px,2.6vw,36px);display:flex;flex-direction:column;gap:14px}
 .ted .q{font-size:clamp(26px,2.6vw,38px);font-weight:820;letter-spacing:-.03em;line-height:1;font-variation-settings:'wdth' 110}
 
@@ -402,7 +403,7 @@ footer p:first-child{color:var(--fg)}
 
 /* ---------- responsive ---------- */
 @media (max-width:1280px){:root{--gut:40px}.tiles .tile{padding:18px 16px}.jump ol{grid-template-columns:repeat(4,minmax(0,1fr))}.jump li:nth-child(4) a{border-right:0}.jump li:nth-child(-n+4) a{border-bottom:1px solid var(--line)}}
-@media (max-width:1100px){
+@media (max-width:900px){
   .shell{grid-template-columns:minmax(0,1fr)}
   .rail{display:none}
   .topbar{display:flex;position:sticky;top:0;z-index:20;height:52px;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;
@@ -419,7 +420,8 @@ footer p:first-child{color:var(--fg)}
   .sheet .idx a{padding:14px 16px;min-height:48px}
   .sheet .idx a span:last-child{font-size:20px}
 }
-@media (min-width:1101px){.sheet{display:none}}
+@media (min-width:901px){.sheet{display:none}}
+@media (max-width:1100px) and (min-width:901px){:root{--rail:208px;--gut:32px}.idx a{padding:6px 18px}.brand{padding:0 18px 24px}}
 @media (max-width:900px){
   :root{--gut:16px}
   body{font-size:16px;background-size:32px 32px}
@@ -468,7 +470,8 @@ footer p:first-child{color:var(--fg)}
   .tl-r{grid-template-columns:minmax(0,1fr);gap:14px}
   .tl-r .lab{display:block;color:var(--dim);margin-bottom:8px}
   .tl-r ul:empty,.tl-r .col:empty{display:none}
-  .ted figure{aspect-ratio:16/9}
+  .cards .ted{grid-template-columns:minmax(0,1fr)}
+  .ted figure{aspect-ratio:16/9;min-height:0}
   .bars{margin-left:28px;height:200px}
   .xl{margin-left:28px}
   .line{margin-left:28px;height:180px}
@@ -1006,6 +1009,9 @@ const onScroll = () => {
   if (i !== curI) {
     curI = i;
     $$('.idx').forEach(ol => $$('a', ol).forEach((a, k) => a.classList.toggle('on', k === i)));
+    /* scroll only the index list, never the page, so the current entry stays in view on short windows */
+    const ol = $('#idx'), onA = $('#idx a.on');
+    if (onA && ol.scrollHeight > ol.clientHeight) { const t = onA.offsetTop - ol.offsetTop, b = t + onA.offsetHeight; if (t < ol.scrollTop) ol.scrollTop = t; else if (b > ol.scrollTop + ol.clientHeight) ol.scrollTop = b - ol.clientHeight; }
     $('#secno').textContent = String(i).padStart(2,'0') + '/08';
     $('#cur').innerHTML = `<b>${String(i).padStart(2,'0')}</b>${secs[i].dataset.name}`;
   }

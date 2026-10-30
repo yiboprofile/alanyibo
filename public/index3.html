@@ -116,15 +116,15 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 /* chapters */
 .chap{position:relative;padding-top:clamp(96px,12vw,170px)}
 .chap-head{position:relative}
-.numeral{position:absolute;right:calc(var(--gut) * -0.2);top:-.18em;font-family:var(--serif);font-size:clamp(150px,24vw,360px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(244,237,227,.13);letter-spacing:-.04em;pointer-events:none;user-select:none;z-index:0}
+.numeral{position:absolute;right:0;top:-.12em;font-family:var(--serif);font-size:clamp(130px,17vw,260px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(244,237,227,.13);letter-spacing:-.04em;pointer-events:none;user-select:none;z-index:0}
 .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:var(--ink-3)}
 .eyebrow b{font-weight:500;color:var(--amber)}
 .eyebrow i{display:block;width:36px;height:1px;background:var(--line-2)}
-.h2{position:relative;font-family:var(--serif);font-size:clamp(42px,6.8vw,108px);line-height:.95;letter-spacing:-.025em;max-width:17ch;text-wrap:balance}
+.h2{position:relative;font-family:var(--serif);font-size:clamp(40px,5.2vw,80px);line-height:.98;letter-spacing:-.022em;max-width:22ch;text-wrap:balance}
 .h2 .soft{color:var(--ink-3);font-style:italic}
 .pname{position:relative;margin-top:clamp(20px,2.6vw,34px);font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);line-height:1.1}
 .pname em{color:var(--ink-3)}
-.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(28px,3.4vw,48px);align-items:start}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);margin-top:clamp(32px,4vw,56px);padding-top:clamp(24px,2.6vw,36px);border-top:1px solid var(--line-2);align-items:start}
 .intro>*{max-width:40rem}
 .links{display:flex;flex-wrap:wrap;gap:8px}
 .links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--line-2);border-radius:999px;text-decoration:none;font-size:14px;color:var(--ink-2);transition:border-color .25s,color .25s}
@@ -144,6 +144,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .panel{background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:clamp(22px,2.6vw,36px)}
 .panel .mono{color:var(--ink-3);margin-bottom:20px;display:block}
 .panel .note{margin-top:20px;font-size:13px;line-height:1.55;color:var(--ink-3)}
+.roles{display:grid;gap:0;margin:0}
+.roles>div{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--line-2)}
+.roles>div:first-child{padding-top:0}
+.roles dt{color:var(--ink-3);padding-top:4px}
+.roles dd{margin:0;font-size:17px;line-height:1.45;color:var(--ink)}
+@media (max-width:640px){.roles>div{grid-template-columns:minmax(0,1fr);gap:4px}}
 .big{font-family:var(--serif);font-size:clamp(44px,5vw,72px);line-height:.95;letter-spacing:-.02em}
 .kv{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:24px}
 .kv p{font-size:14.5px;color:var(--ink-2);max-width:34rem;line-height:1.5}
@@ -493,11 +499,12 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     </div>
     <div class="intro">
       <p class="lede" data-r>Before anything I built had a customer, I learned how to fill a room: a chapter, a club, a cohort of interns.</p>
-      <div data-r style="--d:.1s">
-        <p class="big amber tnum">~400</p>
-        <p style="margin-top:10px;font-size:16px;color:var(--ink)">Members of the Urbana FBLA chapter.</p>
-        <p class="small" style="margin-top:8px;font-size:14.5px">Urbana FBLA chapter. Team lead 2025–26, vice president 2026–27, one of six on the Maryland state council. More than 60 members went to nationals, the 8th largest chapter there.</p>
-      </div>
+      <dl class="roles" data-r style="--d:.1s">
+        <div><dt class="mono">Team lead</dt><dd>Urbana FBLA chapter, 2025–26</dd></div>
+        <div><dt class="mono">Vice president</dt><dd>Urbana FBLA chapter, 2026–27</dd></div>
+        <div><dt class="mono">State council</dt><dd>One of six on the Maryland state council</dd></div>
+        <div><dt class="mono">Nationals</dt><dd>More than 60 members went, the 8th largest chapter there</dd></div>
+      </dl>
     </div>
   </div>
 

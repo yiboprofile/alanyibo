@@ -16,7 +16,7 @@ import {
   WhoPaysAndroid,
   YearlyMonths,
 } from './charts'
-import { ChartFrame, Tbd } from './ui'
+import { Caption, ChartFrame, Tbd } from './ui'
 import * as dermat from '../data/dermat'
 import * as soundsplit from '../data/soundsplit'
 import { asset } from '../release'
@@ -397,26 +397,10 @@ export default function Cases() {
         ]}
         releaseFacts={[
           { label: 'Role', value: 'Co-founder, COO', note: 'with two co-founders' },
-          { label: 'Restaurants pitched', value: 'Several', note: 'around Frederick and Urbana, with heavy interest' },
+          { label: 'Restaurants pay', value: 'On results', note: 'a commission on what new diners spend' },
           { label: 'Pitch prizes', value: '$120+', note: 'local and national competitions' },
           { label: 'Award', value: '3rd in the nation', note: 'FBLA Business Plan, 2025' },
         ]}
-        product={{
-          kind: 'shot',
-          src: asset('/media/crave-top.webp'),
-          alt: 'The top of the Crave Deals website: a banner reading Your Next Meal Awaits, with a town picker',
-          width: 1400,
-          height: 680,
-          caption: 'crave.deals. The restaurants shown are samples, not clients.',
-        }}
-        photo={{
-          src: asset('/assets/photos/fbla-3.webp'),
-          alt: 'Yibo, right, with two FBLA teammates beside the Welcome to the 2025 National Leadership Conference sign',
-          width: 1280,
-          height: 1218,
-          position: '100% 50%',
-          caption: 'FBLA National Leadership Conference, Anaheim, 2025. I am on the right.',
-        }}
         team={
           <>
             Three co-founders. As COO I wrote the market analysis and the financial sections and visited restaurants in
@@ -434,17 +418,51 @@ export default function Cases() {
           'What the cold start looks like from a restaurant owner’s side, in my own words.',
         ]}
       >
-        <ChartFrame title="One plan, two tests">
-          <JudgesThenMarket />
-        </ChartFrame>
-        <ChartFrame
-          title="The problem we are working on"
-          caption="A cold start: diners won’t visit a site with no deals, and restaurants won’t post deals on a site with no diners."
-        >
-          <div className="max-w-[560px] mx-auto">
-            <ColdStartLoop />
-          </div>
-        </ChartFrame>
+        {/* the judges' test beside the team that took it; then the market's test beside the site it is about */}
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+          <ChartFrame title="One plan, two tests" caption="The judges scored the plan in 2025. The market test is still going.">
+            <JudgesThenMarket />
+          </ChartFrame>
+          <figure className="min-w-0 flex flex-col">
+            {/* on wide screens the photo fills the row the timeline sets, instead of setting it */}
+            <div className="relative bg-panel overflow-hidden aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-[260px]">
+              <img
+                src={asset('/assets/photos/fbla-3.webp')}
+                alt="Yibo, right, with two FBLA teammates beside the Welcome to the 2025 National Leadership Conference sign"
+                width={1280}
+                height={1218}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ objectPosition: '50% 35%' }}
+              />
+            </div>
+            <Caption>FBLA nationals, Anaheim, 2025, where the plan placed 3rd. I am on the right.</Caption>
+          </figure>
+        </div>
+        <div className="grid gap-3 lg:grid-cols-2">
+          <ChartFrame
+            title="The problem we are working on"
+            caption="A cold start: diners won’t visit a site with no deals, and restaurants won’t post deals on a site with no diners."
+          >
+            <div className="h-full grid place-items-center">
+              <div className="w-full max-w-[460px]">
+                <ColdStartLoop />
+              </div>
+            </div>
+          </ChartFrame>
+          <ChartFrame title="The site today" caption="crave.deals. The restaurants shown are samples, not clients.">
+            <div className="h-full grid place-items-center">
+              <img
+                src={asset('/media/crave-top.webp')}
+                alt="The top of the Crave Deals website: a banner reading Your Next Meal Awaits, with a town picker"
+                width={1400}
+                height={680}
+                loading="lazy"
+                className="w-full h-auto"
+              />
+            </div>
+          </ChartFrame>
+        </div>
       </CaseShell>
     </>
   )

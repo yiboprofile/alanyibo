@@ -4,8 +4,7 @@ import { Label, Tbd } from './ui'
 /* ---------- CraveDeals ---------- */
 
 const craveSteps = [
-  { value: 'Plan', label: 'Written as co-founder and COO, FBLA, 2025', phase: 'judges' },
-  { value: '3rd', label: 'in Maryland', phase: 'judges' },
+  { value: '3rd', label: 'in Maryland, FBLA Business Plan, 2025', phase: 'judges' },
   { value: '3rd', label: 'in the nation, Anaheim', phase: 'judges' },
   { value: <Tbd release="Several">[40+]</Tbd>, label: 'restaurants pitched, plus VCs and investors', phase: 'market' },
   { value: <Tbd release="0">[0]</Tbd>, label: 'restaurants signed so far', phase: 'market' },
@@ -15,11 +14,11 @@ const craveSteps = [
 export function JudgesThenMarket() {
   return (
     <div>
-      <div className="hidden md:grid grid-cols-5 gap-4 mb-4">
-        <Label className="col-span-3 border-b border-white/40 pb-2">Scored by judges</Label>
+      <div className="hidden md:grid grid-cols-4 gap-4 mb-4">
+        <Label className="col-span-2 border-b border-white/40 pb-2">Scored by judges</Label>
         <Label className="col-span-2 border-b border-dashed border-accent/60 pb-2 text-accent">Tested by the market, still going</Label>
       </div>
-      <ol className="grid grid-cols-1 md:grid-cols-5 gap-x-4">
+      <ol className="grid grid-cols-1 md:grid-cols-4 gap-x-4">
         {craveSteps.map((s, i) => {
           const market = s.phase === 'market'
           return (
@@ -28,13 +27,13 @@ export function JudgesThenMarket() {
               <span
                 aria-hidden="true"
                 className={`absolute left-[5px] top-3 bottom-0 w-px md:hidden ${
-                  i === craveSteps.length - 1 ? 'hidden' : i >= 2 ? 'border-l border-dashed border-accent/60' : 'bg-white/40'
+                  i === craveSteps.length - 1 ? 'hidden' : i >= 1 ? 'border-l border-dashed border-accent/60' : 'bg-white/40'
                 }`}
               />
               <span
                 aria-hidden="true"
                 className={`absolute top-[5px] left-0 -right-4 h-0 hidden ${
-                  i === craveSteps.length - 1 ? '' : i >= 2 ? 'md:block border-t border-dashed border-accent/60' : 'md:block border-t border-white/40'
+                  i === craveSteps.length - 1 ? '' : i >= 1 ? 'md:block border-t border-dashed border-accent/60' : 'md:block border-t border-white/40'
                 }`}
               />
               <span
@@ -45,7 +44,7 @@ export function JudgesThenMarket() {
               />
               <div className="md:mt-4">
                 <span
-                  className={`block font-display font-extrabold text-[clamp(1.8rem,3.4vw,2.6rem)] leading-none tracking-[-0.02em] tabular-nums ${
+                  className={`block font-display font-extrabold text-[clamp(1.8rem,2.8vw,2.4rem)] leading-none tracking-[-0.02em] tabular-nums ${
                     market ? 'text-accent' : 'text-white'
                   } [&_mark]:text-[0.5em] [&_mark]:font-medium`}
                 >

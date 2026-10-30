@@ -43,6 +43,12 @@ export function JudgesThenMarket() {
                 }`}
               />
               <div className="md:mt-4">
+                {/* on phones the two phase headings sit inside the list, above the first step of each */}
+                {(i === 0 || craveSteps[i - 1].phase !== s.phase) && (
+                  <Label className={`md:hidden block mb-3 ${market ? 'text-accent' : ''}`}>
+                    {market ? 'Tested by the market, still going' : 'Scored by judges'}
+                  </Label>
+                )}
                 <span
                   className={`block font-display font-extrabold text-[clamp(1.8rem,2.8vw,2.4rem)] leading-none tracking-[-0.02em] tabular-nums ${
                     market ? 'text-accent' : 'text-white'

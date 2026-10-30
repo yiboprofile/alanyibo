@@ -420,7 +420,7 @@ export default function Cases() {
       >
         {/* the judges' test beside the team that took it; then the market's test beside the site it is about */}
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
-          <ChartFrame title="One plan, two tests" caption="The judges scored the plan in 2025. The market test is still going.">
+          <ChartFrame title="One plan, two tests">
             <JudgesThenMarket />
           </ChartFrame>
           <figure className="min-w-0 flex flex-col">

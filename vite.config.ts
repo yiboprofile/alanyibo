@@ -6,8 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 // "/<repo>/" on a GitHub Pages project site. The deploy workflow sets it.
 export default defineConfig({
   base: process.env.BASE_PATH || '/',
-  // The React page is published as /4.html; the site's front page is the hand-built public/index.html
-  build: { rollupOptions: { input: '4.html' } },
+  // The React page is published as /index3.html; the site's front page is the hand-built public/index.html
+  build: { rollupOptions: { input: 'index3.html' } },
   plugins: [
     react(),
     tailwindcss(),

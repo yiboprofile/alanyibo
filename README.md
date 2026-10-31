@@ -6,8 +6,8 @@ Content and data by Yibo Wang; analysis, site design and build with Claude Code,
 
 ## Pages
 
-- `/` is `public/index.html`, a single hand-built page (the former `index3.html`; that address now redirects here).
-- `/4.html` is the React + Vite version (source in `4.html` and `src/`).
+- `/` is `public/index.html`, a single hand-built page.
+- `/index3.html` is the React + Vite version (source in `index3.html` and `src/`).
 - `/index1.html` and `/index2.html` are two alternative designs kept for comparison.
 
 ## Run it

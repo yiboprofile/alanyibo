@@ -545,6 +545,14 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
 #cravedeals .intro{grid-template-columns:minmax(0,1fr)}
 #cravedeals .intro>.lede{max-width:none}
 .crave-link{display:flex;justify-content:flex-end;margin-top:14px}
+
+/* hero: the idea only, no résumé */
+.hero .h1{font-size:clamp(40px,4.5vw,76px)}
+.hero .vision{margin-top:clamp(20px,2.4vw,32px);max-width:40rem;font-size:clamp(17px,1.35vw,20px);line-height:1.6;color:var(--ink-2)}
+.hero .cue{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;margin:clamp(28px,4vh,48px) 0 clamp(28px,5vh,56px);font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:6px;border-bottom:1px solid var(--amber)}
+.hero .cue svg{color:var(--amber)}
+@media (prefers-reduced-motion:no-preference){.hero .cue svg{animation:cueBob 2.2s ease-in-out infinite}}
+@keyframes cueBob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 </style>
 </head>
 <body>
@@ -575,22 +583,9 @@ footer p:first-child{font-family:var(--serif);font-size:24px;color:var(--ink);li
     </video>
   </div>
   <div class="hero-in" id="heroIn">
-    <p class="kick"><span data-h style="--d:.1s">First one person.</span><span data-h style="--d:.25s">Then the room.</span></p>
-    <h1 class="h1"><span class="l" data-h style="--d:.42s">Some products sell.</span><span class="l l2" data-h style="--d:.58s">I want to know why.</span></h1>
-    <div class="hero-row">
-      <p class="lede" data-h style="--d:.78s">I’m Yibo Wang, a senior at Urbana High School in Frederick, Maryland. I helped grow our FBLA chapter from about 150 members to 400, co-founded a coupon company and an SAT tutoring business, and built three apps. Most of it came down to getting the first person to say yes.</p>
-      <div class="ctas" data-h style="--d:.9s">
-        <a class="btn fill" href="#people">See who joined <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
-        <a class="btn" href="#about">About Yibo</a>
-      </div>
-    </div>
-    <ul class="facts-strip" data-h style="--d:1.02s" aria-label="Highlights">
-      <li>FBLA CHAPTER ~150 → ~400</li>
-      <li>2 APPS ~2,850 DOWNLOADS</li>
-      <li>3RD IN THE NATION</li>
-      <li>TEDX SPEAKER</li>
-      <li>NATIONAL MERIT SEMIFINALIST</li>
-    </ul>
+    <h1 class="h1"><span class="l" data-h style="--d:.3s">Every market starts</span><span class="l l2" data-h style="--d:.46s">with someone going first.</span></h1>
+    <p class="vision" data-h style="--d:.7s">Before a product has customers or a club has members, one person has to decide it’s worth their time, money or trust. I want to understand that decision, and to build things that earn it.</p>
+    <a class="cue" href="#people" data-h style="--d:.95s">Start with one person <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><path d="M8 2v11M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.6"/></svg></a>
   </div>
 </section>
 

@@ -348,12 +348,12 @@ export default function Cases() {
           { label: 'Started', value: <Tbd>[grade 11]</Tbd>, note: 'co-founder and tutor' },
           { label: 'Price', value: '$37', note: 'a session; the usual rate is $70–90' },
           { label: 'Clients', value: '10+', note: 'with personal plans' },
-          { label: 'Best gain', value: '+280', note: '1220 to 1510' },
+          { label: 'Best gain', value: '+280', note: '1230 to 1510' },
         ]}
         releaseFacts={[
           { label: 'Price', value: '$37', note: 'a session; the usual rate is $70–90' },
           { label: 'Clients', value: '10+', note: 'with personal plans' },
-          { label: 'Best gain', value: '+280', note: '1220 to 1510' },
+          { label: 'Best gain', value: '+280', note: '1230 to 1510' },
         ]}
         team={<>I co-founded it and tutor; three more tutors joined as it grew.</>}
         blanks={[

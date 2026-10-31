@@ -352,7 +352,7 @@ export function ScoreGain() {
   const lo = 400
   const hi = 1600
   const pct = (v: number) => ((v - lo) / (hi - lo)) * 100
-  const from = 1220
+  const from = 1230
   const to = 1510
   return (
     <div>
@@ -380,7 +380,7 @@ export function ScoreGain() {
       </div>
       <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="font-display font-extrabold text-[clamp(2.4rem,4.6vw,3.4rem)] leading-none text-accent tabular-nums">+280</span>
-        <span className="text-[14px] text-white/60">points, from 1220 to 1510</span>
+        <span className="text-[14px] text-white/60">points, from 1230 to 1510</span>
       </p>
     </div>
   )
